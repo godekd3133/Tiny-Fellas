@@ -1,0 +1,467 @@
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-miaox" (connect: 0.00s, validation: 0.01s, handshake: 1.71s)
+Entitlement-based licensing initiated
+[LicensingClient] Licenses updated successfully
+
+LICENSE SYSTEM [20221030 15:23:24] Next license update check is after 2021-10-16T06:38:29
+
+
+LICENSE SYSTEM [20221030 15:23:24] Current license is already valid and activated. Skipping license activation process (Provided username/password will be ignored).
+Built from '2020.3/staging' branch; Version is '2020.3.16f1 (049d6eca3c44) revision 302446'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Enterprise; OS build 19042.1645; Version 2009; 64bit' Language: 'en' Physical Memory: 16227 MB
+[Licensing::Module] Serial number assigned to: "F4-WSMS-NCBB-Y6KS-W2PZ-XXXX"
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+[Package Manager] Server::Start -- Port 53193 was selected
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.16f1\Editor\Unity.exe
+-batchmode
+-quit
+-projectPath
+.\Samples~\SampleGame
+-logFile
+.\Samples~\SampleGameBuildLog.txt
+-executeMethod
+UnityPackageExporter.Export
+Successfully changed project path to: C:/Users/miaox/workplace/game-scale-unity-plugin/src/GameScaleUnityPlugin/Samples~/SampleGame
+C:/Users/miaox/workplace/game-scale-unity-plugin/src/GameScaleUnityPlugin/Samples~/SampleGame
+Using Asset Import Pipeline V2.
+[Package Manager] Restoring resolved packages state from cache
+[Package Manager] Done checking package constraints in 0.00s seconds
+[Package Manager] 
+Registered 45 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.ide.rider@2.0.7 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.ide.rider@2.0.7)
+    com.unity.ide.visualstudio@2.0.11 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.ide.visualstudio@2.0.11)
+    com.unity.ide.vscode@1.2.3 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.ide.vscode@1.2.3)
+    com.unity.test-framework@1.1.27 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.test-framework@1.1.27)
+    com.unity.timeline@1.4.8 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.timeline@1.4.8)
+    com.unity.xr.legacyinputhelpers@2.1.7 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.xr.legacyinputhelpers@2.1.7)
+    com.unity.ext.nunit@1.0.6 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.ext.nunit@1.0.6)
+    com.unity.nuget.newtonsoft-json@2.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0)
+  Built-in packages:
+    com.unity.2d.sprite@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.2d.sprite@1.0.0)
+    com.unity.2d.tilemap@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.2d.tilemap@1.0.0)
+    com.unity.ugui@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.ugui@1.0.0)
+    com.unity.modules.ai@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.ai@1.0.0)
+    com.unity.modules.androidjni@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.androidjni@1.0.0)
+    com.unity.modules.animation@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.animation@1.0.0)
+    com.unity.modules.assetbundle@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.assetbundle@1.0.0)
+    com.unity.modules.audio@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.audio@1.0.0)
+    com.unity.modules.cloth@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.cloth@1.0.0)
+    com.unity.modules.director@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.director@1.0.0)
+    com.unity.modules.imageconversion@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.imageconversion@1.0.0)
+    com.unity.modules.imgui@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.imgui@1.0.0)
+    com.unity.modules.jsonserialize@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.jsonserialize@1.0.0)
+    com.unity.modules.particlesystem@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.particlesystem@1.0.0)
+    com.unity.modules.physics@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.physics@1.0.0)
+    com.unity.modules.physics2d@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.physics2d@1.0.0)
+    com.unity.modules.screencapture@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.screencapture@1.0.0)
+    com.unity.modules.terrain@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.terrain@1.0.0)
+    com.unity.modules.terrainphysics@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.terrainphysics@1.0.0)
+    com.unity.modules.tilemap@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.tilemap@1.0.0)
+    com.unity.modules.ui@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.ui@1.0.0)
+    com.unity.modules.uielements@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.uielements@1.0.0)
+    com.unity.modules.umbra@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.umbra@1.0.0)
+    com.unity.modules.unityanalytics@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.unityanalytics@1.0.0)
+    com.unity.modules.unitywebrequest@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.unitywebrequest@1.0.0)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle@1.0.0)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.unitywebrequestaudio@1.0.0)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.unitywebrequesttexture@1.0.0)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.unitywebrequestwww@1.0.0)
+    com.unity.modules.vehicles@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.vehicles@1.0.0)
+    com.unity.modules.video@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.video@1.0.0)
+    com.unity.modules.vr@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.vr@1.0.0)
+    com.unity.modules.wind@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.wind@1.0.0)
+    com.unity.modules.xr@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.xr@1.0.0)
+    com.unity.modules.subsystems@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.subsystems@1.0.0)
+    com.unity.modules.uielementsnative@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.uielementsnative@1.0.0)
+  Local packages:
+    com.amazonaws.gamelift@file:C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin)
+
+[Subsystems] No new subsystems found in resolved package list.
+Package Manager log level set to [2]
+[Package Manager] Done registering packages in 0.12s seconds
+[Package Manager] Done resolving packages in 1.21s seconds
+[Package Manager] Done checking package constraints in 0.00s seconds
+[Package Manager] 
+Registered 45 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.ide.rider@2.0.7 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.ide.rider@2.0.7)
+    com.unity.ide.visualstudio@2.0.11 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.ide.visualstudio@2.0.11)
+    com.unity.ide.vscode@1.2.3 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.ide.vscode@1.2.3)
+    com.unity.test-framework@1.1.27 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.test-framework@1.1.27)
+    com.unity.timeline@1.4.8 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.timeline@1.4.8)
+    com.unity.xr.legacyinputhelpers@2.1.7 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.xr.legacyinputhelpers@2.1.7)
+    com.unity.ext.nunit@1.0.6 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.ext.nunit@1.0.6)
+    com.unity.nuget.newtonsoft-json@2.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0)
+  Built-in packages:
+    com.unity.2d.sprite@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.2d.sprite@1.0.0)
+    com.unity.2d.tilemap@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.2d.tilemap@1.0.0)
+    com.unity.ugui@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.ugui@1.0.0)
+    com.unity.modules.ai@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.ai@1.0.0)
+    com.unity.modules.androidjni@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.androidjni@1.0.0)
+    com.unity.modules.animation@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.animation@1.0.0)
+    com.unity.modules.assetbundle@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.assetbundle@1.0.0)
+    com.unity.modules.audio@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.audio@1.0.0)
+    com.unity.modules.cloth@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.cloth@1.0.0)
+    com.unity.modules.director@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.director@1.0.0)
+    com.unity.modules.imageconversion@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.imageconversion@1.0.0)
+    com.unity.modules.imgui@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.imgui@1.0.0)
+    com.unity.modules.jsonserialize@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.jsonserialize@1.0.0)
+    com.unity.modules.particlesystem@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.particlesystem@1.0.0)
+    com.unity.modules.physics@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.physics@1.0.0)
+    com.unity.modules.physics2d@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.physics2d@1.0.0)
+    com.unity.modules.screencapture@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.screencapture@1.0.0)
+    com.unity.modules.terrain@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.terrain@1.0.0)
+    com.unity.modules.terrainphysics@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.terrainphysics@1.0.0)
+    com.unity.modules.tilemap@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.tilemap@1.0.0)
+    com.unity.modules.ui@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.ui@1.0.0)
+    com.unity.modules.uielements@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.uielements@1.0.0)
+    com.unity.modules.umbra@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.umbra@1.0.0)
+    com.unity.modules.unityanalytics@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.unityanalytics@1.0.0)
+    com.unity.modules.unitywebrequest@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.unitywebrequest@1.0.0)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle@1.0.0)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.unitywebrequestaudio@1.0.0)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.unitywebrequesttexture@1.0.0)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.unitywebrequestwww@1.0.0)
+    com.unity.modules.vehicles@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.vehicles@1.0.0)
+    com.unity.modules.video@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.video@1.0.0)
+    com.unity.modules.vr@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.vr@1.0.0)
+    com.unity.modules.wind@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.wind@1.0.0)
+    com.unity.modules.xr@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.xr@1.0.0)
+    com.unity.modules.subsystems@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.subsystems@1.0.0)
+    com.unity.modules.uielementsnative@1.0.0 (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Samples~\SampleGame\Library\PackageCache\com.unity.modules.uielementsnative@1.0.0)
+  Local packages:
+    com.amazonaws.gamelift@file:C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin (location: C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin)
+
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.00s seconds
+Refreshing native plugins compatible for Editor in 41.67 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.16f1 (049d6eca3c44)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/miaox/workplace/game-scale-unity-plugin/src/GameScaleUnityPlugin/Samples~/SampleGame/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) UHD Graphics 620 (ID=0x5917)
+    Vendor:   
+    VRAM:     8113 MB
+    Driver:   26.20.100.7757
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56228
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002186 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 30.25 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.728 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1758ms)
+		BeginReloadAssembly (73ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (535ms)
+			LoadAssemblies (71ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (185ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (44ms)
+			SetupLoadedEditorAssemblies (186ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (30ms)
+				BeforeProcessingInitializeOnLoad (20ms)
+				ProcessInitializeOnLoadAttributes (98ms)
+				ProcessInitializeOnLoadMethodAttributes (32ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Validating Project structure ... 0.002617 seconds.
+Shader import version has changed; will reimport all shaders...
+Upgrading shader files ...0.002438 seconds.
+Application.AssetDatabase Initial Script Refresh Start
+A meta data file (.meta) exists but its folder 'Packages/com.amazonaws.gamelift/Runtime/Core/obj' can't be found, and has been created. Empty directories cannot be stored in version control, so it's assumed that the meta data file is for an empty directory in version control. When moving or deleting folders outside of Unity, please ensure that the corresponding .meta file is moved or deleted along with it.
+
+Start importing Packages/com.amazonaws.gamelift/Runtime/Core/Plugins/System.Threading.Tasks.Extensions.dll using Guid(10002b6ae5f5d02419617f3379b59278) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'e8649901e6f89f9639f16ac9df760a95') in 0.109188 seconds 
+Start importing Packages/com.amazonaws.gamelift/Runtime/Plugins/GameLiftServerSDKNet45.dll using Guid(0385ffa1cdc4e0c479dd4f5f9251fd88) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'e17f50f410fcb0f2a59ba47a57c65db8') in 0.035648 seconds 
+Start importing Packages/com.amazonaws.gamelift/Runtime/Core/Plugins/AWSSDK.SecurityToken.dll using Guid(24413a61e892adc43af680c09f098481) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'a2d41d472ca316df661fc7ab5d3eb556') in 0.047502 seconds 
+Start importing Packages/com.amazonaws.gamelift/Runtime/Core/Plugins/AWSSDK.Core.dll using Guid(541bc955cdded744d991030231c619e8) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '69126daed94769b2f0e9a7581d288f15') in 0.067515 seconds 
+Start importing Packages/com.amazonaws.gamelift/Runtime/Core/Plugins/Serilog.Sinks.File.dll using Guid(7442ce1c3bd45014b89ee6ecb0750f4a) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '9d1767ba63ee3651bf1b02c85966e541') in 0.043916 seconds 
+Start importing Packages/com.amazonaws.gamelift/Runtime/Core/Plugins/Microsoft.IdentityModel.Tokens.dll using Guid(c518b65ce5b6a2a48ae0c044b7010fd8) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '0ea255eeda1d1d1eed232138c4b2bd0b') in 0.073749 seconds 
+Start importing Packages/com.amazonaws.gamelift/Runtime/Core/Plugins/System.IdentityModel.Tokens.Jwt.dll using Guid(c5ec475cdb55f824197b3ae259a7d1af) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'd9942bc3e151c51f1504ed28871af954') in 0.047412 seconds 
+Start importing Packages/com.amazonaws.gamelift/Runtime/Core/Plugins/Microsoft.IdentityModel.JsonWebTokens.dll using Guid(86e31dcdfa99a2f459bef86137dc12ad) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'afab92222132828b4444ee8d771f80c2') in 0.050881 seconds 
+Start importing Packages/com.amazonaws.gamelift/Runtime/Core/Plugins/AWSSDK.CognitoIdentityProvider.dll using Guid(c7748453d401aab45be78c8b519f9a6a) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '0a8aaebbcbd790bbbcc45372df2f1f07') in 0.054359 seconds 
+Start importing Packages/com.amazonaws.gamelift/Runtime/Core/Plugins/Moq.dll using Guid(58f4ce41eb51a024b89a15653f73c34f) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '81dfb6b00c354b0bb8031ffbc61a4289') in 0.051182 seconds 
+Start importing Packages/com.amazonaws.gamelift/Runtime/Core/Plugins/AWSSDK.GameLift.dll using Guid(0ac3af22b0add774a9fca39f12ffee87) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '0f02e0e84fed21b752c2bc362f59ea6a') in 0.049990 seconds 
+Start importing Packages/com.amazonaws.gamelift/Runtime/Core/Plugins/Serilog.dll using Guid(ca99dcb97e2305149b0c2173ea406f45) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'd08c134535689fa85976986e27d62d92') in 0.041174 seconds 
+Start importing Packages/com.amazonaws.gamelift/Runtime/Core/Plugins/YamlDotNet.dll using Guid(0b09288ed2f19ad4b97476447be4079f) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'e8c546444619c81c0f75f958ec989eef') in 0.043811 seconds 
+Start importing Packages/com.amazonaws.gamelift/Runtime/Core/Plugins/AWSSDK.CloudFormation.dll using Guid(5b251dc9dfc5bad47856c0b71b24c2c1) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '3fd5413253a1539a914b3b18fb86cd7a') in 0.048140 seconds 
+Start importing Packages/com.amazonaws.gamelift/Runtime/Core/Plugins/AWSSDK.S3.dll using Guid(8b8b9ddb5284a004788a6708396b52f6) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '191a1b643f0801540c448ec4a4a6d050') in 0.053050 seconds 
+Start importing Packages/com.amazonaws.gamelift/Runtime/Core/Plugins/Microsoft.IdentityModel.Logging.dll using Guid(0e4022d4e3af2f74184db7fc5955348e) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '933bc8091e37dac23589a55552d38abf') in 0.041187 seconds 
+Start importing Packages/com.amazonaws.gamelift/Runtime/Core/Plugins/Castle.Core.dll using Guid(bfa7b2f8e1565234b9d3b3a9343fe15d) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'c4e7480b7982b8a9155737b1c3c587f2') in 0.093828 seconds 
+Registering precompiled user dll's ...
+Registered in 0.018763 seconds.
+[ScriptCompilation] Recompiling all scripts because: InitialRefresh: Cached user assemblies were invalid
+[API Updater] Processing imported assemblies took 131 ms (0/0 assembly(ies)).
+Assembly Updater Post Process Assets time: 0.139878s
+- Starting script compilation
+- Starting compile Library/ScriptAssemblies/UnityEngine.TestRunner.dll
+- Starting compile Library/ScriptAssemblies/UnityEngine.UI.dll
+Deleting stamp file at Library/ScriptAssemblies/BuiltinAssemblies.stamp
+- Finished compile Library/ScriptAssemblies/UnityEngine.TestRunner.dll in 2.293973 seconds
+- Starting compile Library/ScriptAssemblies/UnityEditor.TestRunner.dll
+- Finished compile Library/ScriptAssemblies/UnityEngine.UI.dll in 2.342833 seconds
+- Finished compile Library/ScriptAssemblies/UnityEditor.TestRunner.dll in 0.994524 seconds
+- Starting compile Library/ScriptAssemblies/UnityEditor.UI.dll
+- Finished compile Library/ScriptAssemblies/UnityEditor.UI.dll in 0.713399 seconds
+- Starting compile Library/ScriptAssemblies/Unity.VSCode.Editor.dll
+- Starting compile Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll
+- Starting compile Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll
+- Starting compile Library/ScriptAssemblies/Unity.Timeline.dll
+- Starting compile Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll
+- Starting compile Library/ScriptAssemblies/AmazonGameLiftPlugin.Runtime.Core.dll
+- Starting compile Library/ScriptAssemblies/Unity.Rider.Editor.dll
+- Starting compile Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll
+- Finished compile Library/ScriptAssemblies/Unity.VSCode.Editor.dll in 2.41176 seconds
+- Finished compile Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll in 2.441261 seconds
+- Finished compile Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll in 2.210119 seconds
+- Starting compile Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll
+- Starting compile Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll
+- Finished compile Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll in 2.655382 seconds
+- Finished compile Library/ScriptAssemblies/AmazonGameLiftPlugin.Runtime.Core.dll in 2.583902 seconds
+- Finished compile Library/ScriptAssemblies/Unity.Rider.Editor.dll in 2.542675 seconds
+- Starting compile Library/ScriptAssemblies/AmazonGameLiftPlugin.Runtime.dll
+- Starting compile Library/ScriptAssemblies/AmazonGameLiftPlugin.EditorCoreAPI.dll
+- Finished compile Library/ScriptAssemblies/Unity.Timeline.dll in 2.83002 seconds
+- Finished compile Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll in 2.797245 seconds
+- Starting compile Library/ScriptAssemblies/Unity.Timeline.Editor.dll
+- Finished compile Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll in 1.002966 seconds
+- Finished compile Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll in 1.100685 seconds
+- Starting compile Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll
+- Finished compile Library/ScriptAssemblies/AmazonGameLiftPlugin.Runtime.dll in 1.312451 seconds
+- Starting compile Library/ScriptAssemblies/SampleGame.dll
+- Finished compile Library/ScriptAssemblies/AmazonGameLiftPlugin.EditorCoreAPI.dll in 1.353331 seconds
+- Starting compile Library/ScriptAssemblies/AmazonGameLiftPlugin.AuthOnly.dll
+- Starting compile Library/ScriptAssemblies/AmazonGameLiftPlugin.MrfQueue.dll
+- Starting compile Library/ScriptAssemblies/AmazonGameLiftPlugin.SpotFleets.dll
+- Starting compile Library/ScriptAssemblies/AmazonGameLiftPlugin.Editor.dll
+- Starting compile Library/ScriptAssemblies/AmazonGameLiftPlugin.SingleFleet.dll
+- Finished compile Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll in 1.867064 seconds
+- Starting compile Library/ScriptAssemblies/AmazonGameLiftPlugin.FlexMatch.dll
+- Finished compile Library/ScriptAssemblies/AmazonGameLiftPlugin.MrfQueue.dll in 2.516424 seconds
+- Finished compile Library/ScriptAssemblies/AmazonGameLiftPlugin.AuthOnly.dll in 2.589447 seconds
+- Finished compile Library/ScriptAssemblies/AmazonGameLiftPlugin.SingleFleet.dll in 2.464356 seconds
+- Finished compile Library/ScriptAssemblies/AmazonGameLiftPlugin.SpotFleets.dll in 2.676991 seconds
+- Finished compile Library/ScriptAssemblies/Unity.Timeline.Editor.dll in 4.0771 seconds
+- Finished compile Library/ScriptAssemblies/SampleGame.dll in 2.983901 seconds
+- Starting compile Library/ScriptAssemblies/SampleTests.Unit.dll
+- Starting compile Library/ScriptAssemblies/SampleTests.UI.dll
+- Finished compile Library/ScriptAssemblies/AmazonGameLiftPlugin.Editor.dll in 2.91391 seconds
+- Finished compile Library/ScriptAssemblies/AmazonGameLiftPlugin.FlexMatch.dll in 1.784952 seconds
+- Starting compile Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+- Finished compile Library/ScriptAssemblies/SampleTests.Unit.dll in 1.126009 seconds
+- Finished compile Library/ScriptAssemblies/SampleTests.UI.dll in 1.119503 seconds
+- Finished compile Library/ScriptAssemblies/Assembly-CSharp-Editor.dll in 0.875054 seconds
+- Finished script compilation in 12.738693 seconds
+C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Runtime\Core\Shared\ProcessManagement\IProcessWrapper.cs(10,15): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+
+C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Runtime\Core\Shared\ProcessManagement\ProcessWrapper.cs(25,22): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+
+C:\Users\miaox\workplace\game-scale-unity-plugin\src\GameScaleUnityPlugin\Runtime\Core\InstalledJavaVersionCheck\InstalledJavaVersionProvider.cs(39,19): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+
+AssetDatabase: script compilation time: 12.923624s
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.41 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.701 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1770ms)
+		BeginReloadAssembly (237ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (11ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (28ms)
+		EndReloadAssembly (1452ms)
+			LoadAssemblies (417ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (419ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (67ms)
+			SetupLoadedEditorAssemblies (358ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (123ms)
+				ProcessInitializeOnLoadAttributes (194ms)
+				ProcessInitializeOnLoadMethodAttributes (24ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.29 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+RefreshInfo: InitialScriptRefreshV2(NoUpdateAssetOptions) scanfilter:  ... 1 filters
+RefreshProfiler: Total: 17352.404ms
+	InvokeBeforeRefreshCallbacks: 1.236ms
+	ApplyChangesToAssetFolders: 0.070ms
+	Scan: 166.905ms
+	OnSourceAssetsModified: 1.275ms
+	UnregisterDeletedAssets: 0.001ms
+	InitializeImportedAssetsSnapshot: 0.129ms
+	GetAllGuidsForCategorization: 0.208ms
+	CategorizeAssets: 27.090ms
+	ImportAndPostprocessOutOfDateAssets: 17129.246ms (2626.058ms without children)
+		ImportManagerImport: 971.326ms (2.428ms without children)
+			ImportInProcess: 968.768ms
+			UpdateCategorizedAssets: 0.131ms
+		CompileScripts: 13064.111ms
+		PostProcessAllAssets: 462.941ms
+		ReloadImportedAssets: 0.396ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.160ms
+		InitializingProgressBar: 0.003ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.230ms
+		RestoreLoadedAssetsState: 0.062ms
+	UpdateImportedAssetsSnapshot: 3.960ms
+	ReloadSourceAssets: 0.262ms
+	UnloadImportedAssets: 0.018ms
+	Hotreload: 1.553ms
+	FixTempGuids: 0.003ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.000ms
+	UnloadStreamsBegin: 0.495ms
+	LoadedImportedAssetsSnapshotReleaseGCHandles: 0.242ms
+	GetLoadedSourceAssetsSnapshot: 0.362ms
+	PersistCurrentRevisions: 0.819ms
+	UnloadStreamsEnd: 10.003ms
+	GenerateScriptTypeHashes: 0.635ms
+	Untracked: 12.487ms
+Application.AssetDatabase Initial Script Refresh End
+Application.AssetDatabase.Refresh Start
+Start importing Packages/com.amazonaws.gamelift/Runtime/Core/AmazonGameLiftPlugin.Core.csproj using Guid(5c4e8d496187c9a4990c04bbb3c9e80a) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '5d5600be5b131a7e45ee772a30136045') in 0.049705 seconds 
+Start importing Packages/com.amazonaws.gamelift/package.json using Guid(c7d5549934538aa438983c8047a76bd8) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'e0097f0ed2e7569c257610a68a2a3c93') in 0.004820 seconds 
+Start importing Packages/com.amazonaws.gamelift/CHANGELOG.md using Guid(cd9ddb7452d257f49b78cd3dbe5d180f) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '48ee3b6f83f1bb006c3ca0d460d9e693') in 0.003959 seconds 
+Start importing Packages/com.amazonaws.gamelift/README.md using Guid(1e643bcfff72735499ca5c5df5f86261) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'daaebcfa2bdf6a78c51b0c68315764b3') in 0.003899 seconds 
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Refresh completed in 0.177618 seconds.
+RefreshInfo: RefreshV2(ForceSynchronousImport) scanfilter: 
+RefreshProfiler: Total: 177.601ms
+Application.AssetDatabase.Refresh End
+RefreshInfo: StopAssetImportingV2(ForceSynchronousImport) scanfilter: 
+RefreshProfiler: Total: 4.913ms
+Refresh completed in 0.035416 seconds.
+RefreshInfo: RefreshV2(NoUpdateAssetOptions) scanfilter: 
+RefreshProfiler: Total: 35.396ms
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Initializing Unity extensions:
+Unloading 56 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 65.6 MB.
+System memory in use after: 64.6 MB.
+
+Unloading 110 unused Assets to reduce memory usage. Loaded Objects now: 1768.
+Total: 4.071600 ms (FindLiveObjects: 0.131800 ms CreateObjectMapping: 0.042300 ms MarkObjects: 3.246900 ms  DeleteObjects: 0.649600 ms)
+
+ProgressiveSceneManager::Cancel()
+Exporting Sample Game...
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityPackageExporter:Export () (at Assets/Editor/Scripts/UnityPackageExporter.cs:22)
+
+(Filename: Assets/Editor/Scripts/UnityPackageExporter.cs Line: 22)
+
+Sample Game exported to ..\SampleGame.unitypackage
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityPackageExporter:Export () (at Assets/Editor/Scripts/UnityPackageExporter.cs:40)
+
+(Filename: Assets/Editor/Scripts/UnityPackageExporter.cs Line: 40)
+
+Batchmode quit successfully invoked - shutting down!
+[Performance] WinEditorMain                                               :        1 samples, Peak.  2.13 s (1.0x), Avg.  2.13 s, Total. 2.129 s (7.4%)
+[Performance] WinEditorMain.ConfigureCrashHandler                         :        1 samples, Peak.  37.7 us (1.0x), Avg.  37.7 us, Total. 37.70 us (0.0%)
+[Performance] WinEditorMain.CurlRequestInitialize                         :        1 samples, Peak.  2.01 ms (1.0x), Avg.  2.01 ms, Total. 2.011 ms (0.0%)
+[Performance] WinEditorMain.SetupLogFile                                  :        1 samples, Peak.   642 us (1.0x), Avg.   642 us, Total. 642.4 us (0.0%)
+[Performance] WinEditorMain.RunNativeTestsIfRequiredAndExit               :        1 samples, Peak.  2.20 us (1.0x), Avg.  2.20 us, Total. 2.200 us (0.0%)
+[Performance] WinEditorMain.Licensing                                     :        1 samples, Peak.  2.09 s (1.0x), Avg.  2.09 s, Total. 2.093 s (7.3%)
+[Performance] WinEditorMain.InitializeCrashHandler                        :        1 samples, Peak.  12.7 ms (1.0x), Avg.  12.7 ms, Total. 12.67 ms (0.0%)
+[Performance] WinEditorMain.CreateApplication                             :        1 samples, Peak.   453 us (1.0x), Avg.   453 us, Total. 452.9 us (0.0%)
+[Performance] Application.InitializeProject                               :        1 samples, Peak.  25.5 s (1.0x), Avg.  25.5 s, Total. 25.47 s (88.5%)
+[Performance] Application.PackageManager.StartServer                      :        1 samples, Peak.   346 ms (1.0x), Avg.   346 ms, Total. 345.8 ms (1.2%)
+[Performance] Application.AcquireProjectLock                              :        1 samples, Peak.  32.8 ms (1.0x), Avg.  32.8 ms, Total. 32.78 ms (0.1%)
+[Performance] Application.InitializeEngineNoGraphics                      :        1 samples, Peak.  41.3 ms (1.0x), Avg.  41.3 ms, Total. 41.26 ms (0.1%)
+[Performance] Application.PackageManager.Initialize                       :        1 samples, Peak.  1.52 s (1.0x), Avg.  1.52 s, Total. 1.518 s (5.3%)
+[Performance] CurlRequestCheck                                            :       25 samples, Peak.  51.3 us (7.1x), Avg.  7.26 us, Total. 181.5 us (0.0%)
+[Performance] PackageManager::RunRequestSynchronously                     :       20 samples, Peak.   935 us (18.4x), Avg.  50.7 us, Total. 1.014 ms (0.0%)
+[Performance] VersionControl.Task.Wait                                    :        1 samples, Peak.  14.4 us (1.0x), Avg.  14.4 us, Total. 14.40 us (0.0%)
+[Performance] Application.EngineGraphics.Initialize                       :        1 samples, Peak.   124 ms (1.0x), Avg.   124 ms, Total. 124.0 ms (0.4%)
+[Performance] Application.GI.Initialize                                   :        1 samples, Peak.  3.60 ms (1.0x), Avg.  3.60 ms, Total. 3.596 ms (0.0%)
+[Performance] Application.LoadAllDefaultResourcesFromEditor               :        1 samples, Peak.  2.40 ms (1.0x), Avg.  2.40 ms, Total. 2.401 ms (0.0%)
+[Performance] Application.LoadMonoAssemblies                              :        1 samples, Peak.  1.77 s (1.0x), Avg.  1.77 s, Total. 1.770 s (6.1%)
+[Performance] RestoreManagedReferences                                    :        2 samples, Peak.   107 ms (2.0x), Avg.  53.6 ms, Total. 107.2 ms (0.4%)
+[Performance] ProcessService.EditorAfterLoadAllAssemblies                 :        2 samples, Peak.  68.2 ms (1.4x), Avg.  48.6 ms, Total. 97.16 ms (0.3%)
+[Performance] Application.ReadLicenseInfo                                 :        1 samples, Peak.  11.8 ms (1.0x), Avg.  11.8 ms, Total. 11.82 ms (0.0%)
+[Performance] Application.InitialScriptRefresh                            :        1 samples, Peak.  17.4 s (1.0x), Avg.  17.4 s, Total. 17.35 s (60.3%)
+[Performance] PresetManagerPostProcessor.OnPreprocessAsset                :       21 samples, Peak.   709 us (8.9x), Avg.  79.9 us, Total. 1.677 ms (0.0%)
+[Performance] CancelSplashScreenOnAssetChange.OnPreprocessAsset           :       21 samples, Peak.   232 us (9.3x), Avg.  25.0 us, Total. 524.2 us (0.0%)
+[Performance] Compiling Scripts                                           :        1 samples, Peak.  13.1 s (1.0x), Avg.  13.1 s, Total. 13.06 s (45.4%)
+[Performance] AssetDatabase.ImportAssets                                  :        4 samples, Peak.   800 ns (1.6x), Avg.   500 ns, Total. 2.000 us (0.0%)
+[Performance] AssemblyPostProcessor.OnPostprocessAllAssets                :        2 samples, Peak.  1.12 ms (1.9x), Avg.   581 us, Total. 1.163 ms (0.0%)
+[Performance] SpriteEditorTexturePostprocessor.OnPostprocessAllAssets     :        2 samples, Peak.   404 us (1.9x), Avg.   213 us, Total. 425.5 us (0.0%)
+[Performance] AssetProcessor.OnPostprocessAllAssets                       :        6 samples, Peak.  1.95 ms (3.7x), Avg.   523 us, Total. 3.140 ms (0.0%)
+[Performance] RetainedMode.OnPostprocessAllAssets                         :        2 samples, Peak.  1.75 ms (1.8x), Avg.   972 us, Total. 1.944 ms (0.0%)
+[Performance] EditorAtlasMonitorInjector.OnPostprocessAllAssets           :        2 samples, Peak.   375 us (1.8x), Avg.   205 us, Total. 411.0 us (0.0%)
+[Performance] AudioMixerPostprocessor.OnPostprocessAllAssets              :        2 samples, Peak.   615 us (2.0x), Avg.   310 us, Total. 619.7 us (0.0%)
+[Performance] AssetEvents.OnPostprocessAllAssets                          :        4 samples, Peak.   281 us (2.9x), Avg.  96.2 us, Total. 384.7 us (0.0%)
+[Performance] ModelImporterPostProcessor.OnPostprocessAllAssets           :        2 samples, Peak.  1.47 ms (1.2x), Avg.  1.26 ms, Total. 2.521 ms (0.0%)
+[Performance] StyleCatalogPostProcessor.OnPostprocessAllAssets            :        2 samples, Peak.   116 ms (2.0x), Avg.  58.0 ms, Total. 116.1 ms (0.4%)
+[Performance] BuildCatalog                                                :        1 samples, Peak.   114 ms (1.0x), Avg.   114 ms, Total. 114.5 ms (0.4%)
+[Performance] Application.AssetDatabase.Refresh                           :        1 samples, Peak.   178 ms (1.0x), Avg.   178 ms, Total. 177.8 ms (0.6%)
+[Performance] AssetDatabase.Refresh                                       :        1 samples, Peak.   178 ms (1.0x), Avg.   178 ms, Total. 177.7 ms (0.6%)
+[Performance] Application.ImportAssetsWithMismatchingAssetImporterVersion :        1 samples, Peak.  64.9 ms (1.0x), Avg.  64.9 ms, Total. 64.94 ms (0.2%)
+[Performance] Application.SyncCurrentColorSpace                           :        1 samples, Peak.  1.34 s (1.0x), Avg.  1.34 s, Total. 1.338 s (4.6%)
+[Performance] Application.OnUsbDevicesChanged                             :        1 samples, Peak.  15.8 ms (1.0x), Avg.  15.8 ms, Total. 15.80 ms (0.1%)
+[Performance] Application.AssetInstanceCacheUpdate                        :        1 samples, Peak.   300 ns (1.0x), Avg.   300 ns, Total. 300.0 ns (0.0%)
+[Performance] Application.UnityExtensions.Initialize                      :        1 samples, Peak.   866 us (1.0x), Avg.   866 us, Total. 866.2 us (0.0%)
+[Performance] Application.InitializeManagedCompilationPipeline            :        1 samples, Peak.  84.1 ms (1.0x), Avg.  84.1 ms, Total. 84.11 ms (0.3%)
+[Performance] Application.ExecuteStartups                                 :        1 samples, Peak.   113 ms (1.0x), Avg.   113 ms, Total. 112.7 ms (0.4%)
+[Performance] Gizmo.RebuildRenderers                                      :        1 samples, Peak.   109 ms (1.0x), Avg.   109 ms, Total. 109.0 ms (0.4%)
+[Performance] Gizmo.AddGizmoRenderers                                     :       66 samples, Peak.  2.36 ms (39.0x), Avg.  60.6 us, Total. 4.000 ms (0.0%)
+[Performance] Application.InitializeMenu                                  :        1 samples, Peak.  81.5 ms (1.0x), Avg.  81.5 ms, Total. 81.47 ms (0.3%)
+[Performance] UpdateAllMenus                                              :        1 samples, Peak.  78.6 ms (1.0x), Avg.  78.6 ms, Total. 78.59 ms (0.3%)
+[Performance] Application.editorInitializingProject                       :        1 samples, Peak.  26.9 us (1.0x), Avg.  26.9 us, Total. 26.90 us (0.0%)
+[Performance] GUIView.RepaintAll.PlayerLoopController                     :        1 samples, Peak.  1.50 us (1.0x), Avg.  1.50 us, Total. 1.500 us (0.0%)
+[Performance] Application.InvokeFinishedLoadingProject                    :        1 samples, Peak.   148 ms (1.0x), Avg.   148 ms, Total. 148.3 ms (0.5%)
+[Performance] ProcessService.OnProjectLoaded                              :        1 samples, Peak.  50.6 ms (1.0x), Avg.  50.6 ms, Total. 50.57 ms (0.2%)
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+Exiting batchmode successfully now!
+Exiting without the bug reporter. Application will terminate with return code 0
