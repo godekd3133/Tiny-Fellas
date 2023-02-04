@@ -14,7 +14,7 @@ public enum EStatName
 }
 
 [Serializable]
-public class Stat<T> where T: struct
+public class Stat
 {
     private EStatName statName;
     private T maxValue;
