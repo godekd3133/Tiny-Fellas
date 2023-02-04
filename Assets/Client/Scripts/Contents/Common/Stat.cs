@@ -3,58 +3,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public enum EStatName
 {
-    NONE,
     HEALTH,
-    MOVEMNT_CONTRIBUTION,
+    MOVEMENT_CONTRIBUTION,
     DAMAGE,
     ATTACK_RAGNE,
-    
 }
 
 [Serializable]
-public class Stat
+public class Stat : ScriptableObject
 {
+    [SerializeField]
     private EStatName statName;
-    private T maxValue;
-    private T minValue;
-    private T currentValue;
+    private float maxValue;
+    private float minValue;
+    private float currentValue;
 
     public EStatName StatName => statName;
-    public virtual T MaxValue
+    public virtual float MaxValue
     {
         get => maxValue;
         set => maxValue = value;
     }
 
-    public virtual T MinValue
+    public virtual float MinValue
     {
         get => minValue;
         set => minValue = value;
     }
 
-    public virtual T CurrentValue
+    public virtual float CurrentValue
     {
         get => currentValue;
         set => currentValue = value;
     }
 
-    private Stat() { }
-
-    public Stat(EStatName statName, T maxValue, T minValue)
+    public bool IsInRange(float value)
     {
-        this.statName = statName;
-        this.maxValue = maxValue;
-        this.minValue = minValue;
-        currentValue = maxValue;
-    }
-    
-    public Stat(EStatName statName, T maxValue, T minValue, T currentValue)
-    {
-        this.statName = statName;
-        this.maxValue = maxValue;
-        this.minValue = minValue;
-        this.currentValue = currentValue;
+        return value >= minValue && value < maxValue;
     }
 }
