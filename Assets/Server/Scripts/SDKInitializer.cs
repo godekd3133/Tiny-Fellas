@@ -5,6 +5,7 @@ using System;
 using Aws.GameLift;
 using Aws.GameLift.Server;
 
+#if UNITY_SERVER
 public class SDKInitializer : MonoBehaviour
 {
     private bool isConnected;
@@ -154,3 +155,4 @@ private void ProcessReady()
         }
     }
 }
+#endif
