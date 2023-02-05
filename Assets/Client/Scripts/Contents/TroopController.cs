@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class TroopController : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class TroopController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        NavMesh.pathfindingIterationsPerFrame = 100;
     }
 
     // Update is called once per frame
@@ -19,13 +20,20 @@ public class TroopController : MonoBehaviour
         if (direction.magnitude > 0)
         {
             foreach (var each in minions)
-                each.agent.SetDestination(each.transform.position + direction * 100);
+            {
+                each.agent.stoppingDistance = 0;
+                each.agent.SetDestination(each.transform.position + direction);
+
+            }
         }
         else
             foreach (var each in minions)
             {
-                if (!each.agent.SetDestination(centerMinion.transform.position))
-                    each.agent.Stop();
+                if (each != centerMinion && each.agent.destination != centerMinion.transform.position)
+                {
+                    each.agent.stoppingDistance = 2.5f;
+                    each.agent.SetDestination(centerMinion.transform.position);
+                }
             }
 
 
