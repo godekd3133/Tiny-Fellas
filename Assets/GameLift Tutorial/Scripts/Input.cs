@@ -4,7 +4,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Input
+public class InputAdmin
 {
     // record what keys are in the current move that we are making
     private readonly Chord _chord = new Chord();
@@ -32,7 +32,7 @@ public class Input
         {KeyCode.I, 8}
     };
 
-    public Input(GameLogic gl)
+    public InputAdmin(GameLogic gl)
     {
         _gl = gl;
     }

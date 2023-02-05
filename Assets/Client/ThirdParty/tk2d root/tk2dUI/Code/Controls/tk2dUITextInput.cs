@@ -1,5 +1,5 @@
 #if (UNITY_IPHONE || UNITY_ANDROID || UNITY_WP8)
-    #define TOUCH_SCREEN_KEYBOARD
+#define TOUCH_SCREEN_KEYBOARD
 #endif
 
 using UnityEngine;
@@ -68,24 +68,29 @@ public class tk2dUITextInput : MonoBehaviour
     /// </summary>
     public string passwordChar = "*";
 
-	[SerializeField]
-	[HideInInspector]
-	private tk2dUILayout layoutItem = null;
+    [SerializeField]
+    [HideInInspector]
+    private tk2dUILayout layoutItem = null;
 
-	public tk2dUILayout LayoutItem {
-		get { return layoutItem; }
-		set {
-			if (layoutItem != value) {
-				if (layoutItem != null) {
-					layoutItem.OnReshape -= LayoutReshaped;
-				}
-				layoutItem = value;
-				if (layoutItem != null) {
-					layoutItem.OnReshape += LayoutReshaped;
-				}
-			}
-		}
-	}
+    public tk2dUILayout LayoutItem
+    {
+        get { return layoutItem; }
+        set
+        {
+            if (layoutItem != value)
+            {
+                if (layoutItem != null)
+                {
+                    layoutItem.OnReshape -= LayoutReshaped;
+                }
+                layoutItem = value;
+                if (layoutItem != null)
+                {
+                    layoutItem.OnReshape += LayoutReshaped;
+                }
+            }
+        }
+    }
 
     private bool isSelected = false;
 
@@ -95,11 +100,11 @@ public class tk2dUITextInput : MonoBehaviour
 #if TOUCH_SCREEN_KEYBOARD
     private TouchScreenKeyboard keyboard = null;
 #endif
-	private bool useTouchScreenKeyboard = false;
+    private bool useTouchScreenKeyboard = false;
 
     private bool listenForKeyboardText = false;
 
-    private bool isDisplayTextShown =false;
+    private bool isDisplayTextShown = false;
 
     public System.Action<tk2dUITextInput> OnTextChange;
 
@@ -120,10 +125,10 @@ public class tk2dUITextInput : MonoBehaviour
             if (selectionBtn != null && selectionBtn.sendMessageTarget != value)
             {
                 selectionBtn.sendMessageTarget = value;
-            
-                #if UNITY_EDITOR
-                    tk2dUtil.SetDirty(selectionBtn);
-                #endif
+
+#if UNITY_EDITOR
+                tk2dUtil.SetDirty(selectionBtn);
+#endif
             }
         }
     }
@@ -198,10 +203,10 @@ public class tk2dUITextInput : MonoBehaviour
             }
         }
 
-		if (layoutItem != null)
-		{
-			layoutItem.OnReshape += LayoutReshaped;
-		}
+        if (layoutItem != null)
+        {
+            layoutItem.OnReshape += LayoutReshaped;
+        }
 
         selectionBtn.OnClick += InputSelected;
     }
@@ -211,7 +216,7 @@ public class tk2dUITextInput : MonoBehaviour
         if (tk2dUIManager.Instance__NoCreate != null)
         {
             tk2dUIManager.Instance.OnAnyPress -= AnyPress;
-			if (!useTouchScreenKeyboard && listenForKeyboardText)
+            if (!useTouchScreenKeyboard && listenForKeyboardText)
             {
                 tk2dUIManager.Instance.OnInputUpdate -= ListenForKeyboardTextUpdate;
             }
@@ -223,10 +228,10 @@ public class tk2dUITextInput : MonoBehaviour
 
         listenForKeyboardText = false;
 
-		if (layoutItem != null)
-		{
-			layoutItem.OnReshape -= LayoutReshaped;
-		}
+        if (layoutItem != null)
+        {
+            layoutItem.OnReshape -= LayoutReshaped;
+        }
     }
 
     public void SetFocus()
@@ -242,10 +247,12 @@ public class tk2dUITextInput : MonoBehaviour
     /// </summary>
     public void SetFocus(bool focus)
     {
-        if (!IsFocus && focus) {
+        if (!IsFocus && focus)
+        {
             InputSelected();
         }
-        else if (IsFocus && !focus) {
+        else if (IsFocus && !focus)
+        {
             InputDeselected();
         }
     }
@@ -255,25 +262,25 @@ public class tk2dUITextInput : MonoBehaviour
         if (isPasswordField)
         {
             int charLength = modifiedText.Length;
-            char passwordReplaceChar = ( passwordChar.Length > 0 ) ? passwordChar[0] : '*';
+            char passwordReplaceChar = (passwordChar.Length > 0) ? passwordChar[0] : '*';
             modifiedText = "";
-            modifiedText=modifiedText.PadRight(charLength, passwordReplaceChar);
+            modifiedText = modifiedText.PadRight(charLength, passwordReplaceChar);
         }
 
         inputLabel.text = modifiedText;
         inputLabel.Commit();
 
-		float actualLabelWidth = inputLabel.GetComponent<Renderer>().bounds.size.x / inputLabel.transform.lossyScale.x;
+        float actualLabelWidth = inputLabel.GetComponent<Renderer>().bounds.size.x / inputLabel.transform.lossyScale.x;
         while (actualLabelWidth > fieldLength)
         {
-            modifiedText=modifiedText.Substring(1, modifiedText.Length - 1);
+            modifiedText = modifiedText.Substring(1, modifiedText.Length - 1);
             inputLabel.text = modifiedText;
             inputLabel.Commit();
 
-			actualLabelWidth = inputLabel.GetComponent<Renderer>().bounds.size.x / inputLabel.transform.lossyScale.x;
+            actualLabelWidth = inputLabel.GetComponent<Renderer>().bounds.size.x / inputLabel.transform.lossyScale.x;
         }
 
-        if (modifiedText.Length==0 && !listenForKeyboardText)
+        if (modifiedText.Length == 0 && !listenForKeyboardText)
         {
             ShowDisplayText();
         }
@@ -291,7 +298,7 @@ public class tk2dUITextInput : MonoBehaviour
 
         string inputStr = Input.inputString;
         char c;
-        for (int i=0; i<inputStr.Length; i++)
+        for (int i = 0; i < inputStr.Length; i++)
         {
             c = inputStr[i];
             if (c == "\b"[0])
@@ -304,9 +311,9 @@ public class tk2dUITextInput : MonoBehaviour
             }
             else if (c == "\n"[0] || c == "\r"[0])
             {
-                
+
             }
-            else if ((int)c!=9 && (int)c!=27) //deal with a Mac only Unity bug where it returns a char for escape and tab
+            else if ((int)c != 9 && (int)c != 27) //deal with a Mac only Unity bug where it returns a char for escape and tab
             {
                 newText += c;
                 change = true;
@@ -323,22 +330,22 @@ public class tk2dUITextInput : MonoBehaviour
         if (change)
         {
             Text = newText;
-			NotifyTextChange();
+            NotifyTextChange();
 
         }
     }
 
-	void NotifyTextChange()
-	{
-		if (OnTextChange != null)
-		{
-			OnTextChange(this);
-		}
-		if (SendMessageTarget != null && SendMessageOnTextChangeMethodName.Length > 0)
-		{
-			SendMessageTarget.SendMessage(SendMessageOnTextChangeMethodName, this, SendMessageOptions.RequireReceiver);
-		}
-	}
+    void NotifyTextChange()
+    {
+        if (OnTextChange != null)
+        {
+            OnTextChange(this);
+        }
+        if (SendMessageTarget != null && SendMessageOnTextChangeMethodName.Length > 0)
+        {
+            SendMessageTarget.SendMessage(SendMessageOnTextChangeMethodName, this, SendMessageOptions.RequireReceiver);
+        }
+    }
 
     private void InputSelected()
     {
@@ -347,7 +354,7 @@ public class tk2dUITextInput : MonoBehaviour
             HideDisplayText();
         }
         isSelected = true;
-		if (!useTouchScreenKeyboard && !listenForKeyboardText)
+        if (!useTouchScreenKeyboard && !listenForKeyboardText)
         {
             tk2dUIManager.Instance.OnInputUpdate += ListenForKeyboardTextUpdate;
         }
@@ -407,7 +414,7 @@ public class tk2dUITextInput : MonoBehaviour
             ShowDisplayText();
         }
         isSelected = false;
-		if (!useTouchScreenKeyboard && listenForKeyboardText)
+        if (!useTouchScreenKeyboard && listenForKeyboardText)
         {
             tk2dUIManager.Instance.OnInputUpdate -= ListenForKeyboardTextUpdate;
         }
@@ -463,11 +470,11 @@ public class tk2dUITextInput : MonoBehaviour
                 chr = inputLabel.font.inst.chars[' '];
             }
 
-            cursorOffset += chr.advance * inputLabel.scale.x/2;
+            cursorOffset += chr.advance * inputLabel.scale.x / 2;
         }
 
-		float renderBoundsRight = inputLabel.GetComponent<Renderer>().bounds.extents.x / gameObject.transform.lossyScale.x;
-		cursor.transform.localPosition = new Vector3(inputLabel.transform.localPosition.x + (renderBoundsRight + cursorOffset) * multiplier, cursor.transform.localPosition.y, cursor.transform.localPosition.z);
+        float renderBoundsRight = inputLabel.GetComponent<Renderer>().bounds.extents.x / gameObject.transform.lossyScale.x;
+        cursor.transform.localPosition = new Vector3(inputLabel.transform.localPosition.x + (renderBoundsRight + cursorOffset) * multiplier, cursor.transform.localPosition.y, cursor.transform.localPosition.z);
     }
 
     private void ShowDisplayText()
@@ -495,12 +502,12 @@ public class tk2dUITextInput : MonoBehaviour
         }
     }
 
-	private void LayoutReshaped(Vector3 dMin, Vector3 dMax)
-	{
-		fieldLength += (dMax.x - dMin.x);
+    private void LayoutReshaped(Vector3 dMin, Vector3 dMax)
+    {
+        fieldLength += (dMax.x - dMin.x);
         // No way to trigger re-format yet
         string tmpText = this.text;
         text = "";
         Text = tmpText;
-	}
+    }
 }

@@ -23,7 +23,8 @@ public class tk2dUIManager : MonoBehaviour
             if (instance == null)
             {
                 instance = FindObjectOfType(typeof(tk2dUIManager)) as tk2dUIManager;
-                if (instance == null) {
+                if (instance == null)
+                {
                     GameObject go = new GameObject("tk2dUIManager");
                     instance = go.AddComponent<tk2dUIManager>();
                 }
@@ -31,33 +32,38 @@ public class tk2dUIManager : MonoBehaviour
             return instance;
         }
     }
-	
-	public static tk2dUIManager Instance__NoCreate {
-		get {
-			return instance;
-		}
-	}
-	
+
+    public static tk2dUIManager Instance__NoCreate
+    {
+        get
+        {
+            return instance;
+        }
+    }
+
     /// <summary>
     /// UICamera which raycasts for mouse/touch inputs are cast from
     /// </summary>
     [SerializeField]
 #pragma warning disable 649
-	private Camera uiCamera;
+    private Camera uiCamera;
 #pragma warning restore 649
-	
+
     public Camera UICamera
     {
         get { return uiCamera; }
         set { uiCamera = value; }
     }
 
-    public Camera GetUICameraForControl( GameObject go ) {
+    public Camera GetUICameraForControl(GameObject go)
+    {
         int layer = 1 << go.layer;
         int cameraCount = allCameras.Count;
-        for (int i = 0; i < cameraCount; ++i) {
+        for (int i = 0; i < cameraCount; ++i)
+        {
             tk2dUICamera camera = allCameras[i];
-            if ((camera.FilteredMask & layer) != 0) {
+            if ((camera.FilteredMask & layer) != 0)
+            {
                 return camera.HostCamera;
             }
         }
@@ -68,11 +74,13 @@ public class tk2dUIManager : MonoBehaviour
     static List<tk2dUICamera> allCameras = new List<tk2dUICamera>();
     List<tk2dUICamera> sortedCameras = new List<tk2dUICamera>();
 
-    public static void RegisterCamera(tk2dUICamera cam) {
+    public static void RegisterCamera(tk2dUICamera cam)
+    {
         allCameras.Add(cam);
     }
 
-    public static void UnregisterCamera(tk2dUICamera cam) {
+    public static void UnregisterCamera(tk2dUICamera cam)
+    {
         allCameras.Remove(cam);
     }
 
@@ -89,7 +97,7 @@ public class tk2dUIManager : MonoBehaviour
     public bool InputEnabled
     {
         get { return inputEnabled; }
-        set 
+        set
         {
             if (inputEnabled && !value) //disable current presses/hovers
             {
@@ -126,14 +134,14 @@ public class tk2dUIManager : MonoBehaviour
     /// </summary>
     public tk2dUIItem PressedUIItem
     {
-        get 
+        get
         {
             //if multi-touch return the last item (most recent touch)
             if (useMultiTouch)
             {
                 if (pressedUIItems.Length > 0)
                 {
-                    return pressedUIItems[pressedUIItems.Length-1];
+                    return pressedUIItems[pressedUIItems.Length - 1];
                 }
                 else
                 {
@@ -170,7 +178,7 @@ public class tk2dUIManager : MonoBehaviour
     public bool UseMultiTouch
     {
         get { return useMultiTouch; }
-        set 
+        set
         {
             if (useMultiTouch != value && inputEnabled) //changed
             {
@@ -224,19 +232,22 @@ public class tk2dUIManager : MonoBehaviour
     /// </summary>
     public event System.Action<float> OnScrollWheelChange;
 
-    void SortCameras() {
+    void SortCameras()
+    {
         sortedCameras.Clear();
 
         int cameraCount = allCameras.Count;
-        for (int i = 0; i < cameraCount; ++i) {
+        for (int i = 0; i < cameraCount; ++i)
+        {
             tk2dUICamera camera = allCameras[i];
-            if (camera != null) {
-                sortedCameras.Add( camera );
+            if (camera != null)
+            {
+                sortedCameras.Add(camera);
             }
         }
 
         // Largest depth gets priority
-        sortedCameras.Sort( (a, b) => b.GetComponent<Camera>().depth.CompareTo( a.GetComponent<Camera>().depth ) );
+        sortedCameras.Sort((a, b) => b.GetComponent<Camera>().depth.CompareTo(a.GetComponent<Camera>().depth));
     }
 
     void Awake()
@@ -245,13 +256,15 @@ public class tk2dUIManager : MonoBehaviour
         {
             instance = this;
 
-            if (instance.transform.childCount != 0) {
+            if (instance.transform.childCount != 0)
+            {
                 Debug.LogError("You should not attach anything to the tk2dUIManager object. " +
                     "The tk2dUIManager will not get destroyed between scene switches and any children will persist as well.");
             }
 
-            if (Application.isPlaying) {
-                DontDestroyOnLoad( gameObject );
+            if (Application.isPlaying)
+            {
+                DontDestroyOnLoad(gameObject);
             }
         }
         else
@@ -261,7 +274,8 @@ public class tk2dUIManager : MonoBehaviour
             {
                 Debug.Log("Discarding unnecessary tk2dUIManager instance.");
 
-                if (uiCamera != null) {
+                if (uiCamera != null)
+                {
                     HookUpLegacyCamera(uiCamera);
                     uiCamera = null;
                 }
@@ -270,28 +284,33 @@ public class tk2dUIManager : MonoBehaviour
 
                 return;
             }
-        } 
+        }
 
         tk2dUITime.Init();
         Setup();
     }
 
-    void HookUpLegacyCamera(Camera cam) {
-        if (cam.GetComponent<tk2dUICamera>() == null) {
+    void HookUpLegacyCamera(Camera cam)
+    {
+        if (cam.GetComponent<tk2dUICamera>() == null)
+        {
             // Handle registration properly
             tk2dUICamera newUICam = cam.gameObject.AddComponent<tk2dUICamera>();
-            newUICam.AssignRaycastLayerMask( raycastLayerMask );
+            newUICam.AssignRaycastLayerMask(raycastLayerMask);
         }
     }
 
-    void Start() {
-        if (uiCamera != null) {
+    void Start()
+    {
+        if (uiCamera != null)
+        {
             Debug.Log("It is no longer necessary to hook up a camera to the tk2dUIManager. You can simply attach a tk2dUICamera script to the cameras that interact with UI.");
             HookUpLegacyCamera(uiCamera);
             uiCamera = null;
         }
 
-        if (allCameras.Count == 0) {
+        if (allCameras.Count == 0)
+        {
             Debug.LogError("Unable to find any tk2dUICameras, and no cameras are connected to the tk2dUIManager. You will not be able to interact with the UI.");
         }
     }
@@ -472,7 +491,7 @@ public class tk2dUIManager : MonoBehaviour
             {
                 if (!isPrimaryTouchFound && !isSecondaryTouchFound && hitUIItem == null && !Input.GetMouseButton(0)) //if raycast for a button has not yet been done
                 {
-                    hitUIItem = RaycastForUIItem( Input.mousePosition );
+                    hitUIItem = RaycastForUIItem(Input.mousePosition);
                 }
                 else if (Input.GetMouseButton(0)) //if mouse button is down clear it
                 {
@@ -572,22 +591,22 @@ public class tk2dUIManager : MonoBehaviour
         {
             pressedUIItems[p] = RaycastForUIItem(allTouches[p].position);
         }
-       
+
         //deals with all the previous presses
-        for (int f=0; f<prevPressedUIItemList.Count; f++)
+        for (int f = 0; f < prevPressedUIItemList.Count; f++)
         {
             prevPressedItem = prevPressedUIItemList[f];
             if (prevPressedItem != null)
             {
                 prevFingerID = prevPressedItem.Touch.fingerId;
 
-                wasPrevTouchFound=false;
+                wasPrevTouchFound = false;
                 for (int t = 0; t < touchCounter; t++)
                 {
                     currTouch = allTouches[t];
                     if (currTouch.fingerId == prevFingerID)
                     {
-                        wasPrevTouchFound=true;
+                        wasPrevTouchFound = true;
                         currPressedItem = pressedUIItems[t];
                         if (currTouch.phase == TouchPhase.Began)
                         {
@@ -617,7 +636,7 @@ public class tk2dUIManager : MonoBehaviour
                     }
                 }
 
-                if(!wasPrevTouchFound)
+                if (!wasPrevTouchFound)
                 {
                     prevPressedItem.CurrentOverUIItem(null);
                     prevPressedItem.Release();
@@ -651,23 +670,29 @@ public class tk2dUIManager : MonoBehaviour
         }
     }
 
-    tk2dUIItem RaycastForUIItem( Vector2 screenPos ) {
+    tk2dUIItem RaycastForUIItem(Vector2 screenPos)
+    {
         int cameraCount = sortedCameras.Count;
-        for (int i = 0; i < cameraCount; ++i) {
+        for (int i = 0; i < cameraCount; ++i)
+        {
             tk2dUICamera currCamera = sortedCameras[i];
-            if (currCamera.RaycastType == tk2dUICamera.tk2dRaycastType.Physics3D) {
+            if (currCamera.RaycastType == tk2dUICamera.tk2dRaycastType.Physics3D)
+            {
 #if !STRIP_PHYSICS_3D
-				ray = currCamera.HostCamera.ScreenPointToRay( screenPos );
-                if (Physics.Raycast( ray, out hit, currCamera.HostCamera.farClipPlane - currCamera.HostCamera.nearClipPlane, currCamera.FilteredMask )) {
+                ray = currCamera.HostCamera.ScreenPointToRay(screenPos);
+                if (Physics.Raycast(ray, out hit, currCamera.HostCamera.farClipPlane - currCamera.HostCamera.nearClipPlane, currCamera.FilteredMask))
+                {
                     return hit.collider.GetComponent<tk2dUIItem>();
                 }
 #endif
             }
-            else if (currCamera.RaycastType == tk2dUICamera.tk2dRaycastType.Physics2D) {
+            else if (currCamera.RaycastType == tk2dUICamera.tk2dRaycastType.Physics2D)
+            {
 #if !(UNITY_3_5 || UNITY_4_0 || UNITY_4_0_1 || UNITY_4_1 || UNITY_4_2)
 #if !STRIP_PHYSICS_2D
                 Collider2D collider = Physics2D.OverlapPoint(currCamera.HostCamera.ScreenToWorldPoint(screenPos), currCamera.FilteredMask);
-                if (collider != null) {
+                if (collider != null)
+                {
                     return collider.GetComponent<tk2dUIItem>();
                 }
 #endif
@@ -688,7 +713,7 @@ public class tk2dUIManager : MonoBehaviour
             for (int n = 0; n < pressedUIItems.Length; n++)
             {
                 tempUIItem = pressedUIItems[n];
-                if (tempUIItem!=null)
+                if (tempUIItem != null)
                 {
                     if (item.CheckIsUIItemChildOfMe(tempUIItem))
                     {

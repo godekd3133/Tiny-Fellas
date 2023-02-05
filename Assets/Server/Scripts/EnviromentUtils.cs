@@ -4,10 +4,10 @@ public class EnviromentUtils
 {
     private static bool hadTriedToGetPort = false;
     private static int? port;
-    
+
     private static bool hadTriedToGetLogFiledPath = false;
     private static string logFilePath;
-    
+
     public static int? Port
     {
         get
@@ -20,14 +20,14 @@ public class EnviromentUtils
             return port;
         }
     }
-    
+
     public static string LogFilePath
     {
         get
         {
             if (hadTriedToGetLogFiledPath == false)
             {
-                logFilePath = ReadLogFilePathFromCmd;
+                logFilePath = ReadLogFilePathFromCmd();
                 hadTriedToGetLogFiledPath = true;
             }
             return logFilePath;

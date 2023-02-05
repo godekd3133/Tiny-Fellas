@@ -18,7 +18,7 @@ public class GameLogic : MonoBehaviour
 
     private readonly Logger _logger = Logger.SharedInstance;
 
-    private Input _input;
+    private InputAdmin _input;
 
     private Simulation _simulation;
 
@@ -97,7 +97,7 @@ public class GameLogic : MonoBehaviour
         _logger.Write(":) GAMELOGIC START");
         // create owned objects
         Log = new GameLog(this, _logger);
-        _input = new Input(this);
+        _input = new InputAdmin(this);
         Status = new Status(this);
         _simulation = new Simulation(this);
         Render = new Render();
