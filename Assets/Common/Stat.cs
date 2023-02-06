@@ -13,12 +13,16 @@ public enum EStatName
 }
 
 [Serializable]
+[CreateAssetMenu(fileName = "Stat", menuName = "ScriptableObjects/Stat")]
 public class Stat : ScriptableObject
 {
     [SerializeField]
     private EStatName statName;
+    [SerializeField]
     private float maxValue;
+    [SerializeField]
     private float minValue;
+    [SerializeField]
     private float currentValue;
 
     public EStatName StatName => statName;
