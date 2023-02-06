@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.amazonaws.gamelift": {
-      "version": "file:C:/Users/godek/Downloads/com.amazonaws.gamelift-1.2.1.tgz",
+      "version": "file:../PluginTarBalls/com.amazonaws.gamelift-1.2.1.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
