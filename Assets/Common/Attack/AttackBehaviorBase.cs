@@ -9,7 +9,7 @@ public class AtackBehaviourBase : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private Minion owner;
 
-    private MinionStat targetStat;
+    private MinionInstanceStat targetStat;
     private BattleAbility battleAbility;
     
     private bool isOnAttacking;
@@ -24,7 +24,7 @@ public class AtackBehaviourBase : MonoBehaviour
         if (IsInAttackRagne(target.transform) == false)
             return false;
         
-        var targetStat = target.GetComponent<MinionStat>();
+        var targetStat = target.GetComponent<MinionInstanceStat>();
         if (target.GetComponent<MinionStat>() == null)
         {
             Logger.SharedInstance.Write(string.Format("{0} tride to damage {1}, but stat component is null",target.name));
@@ -50,7 +50,7 @@ public class AtackBehaviourBase : MonoBehaviour
 
     public virtual void ImpactDamage()
     {
-        targetStat.TakeDamage(owner,battleAbility[EStatName.DAMAGE].CurrentValue);
+        targetStat.TakeDamage(owner,battleAbility);
     }
     
     // called as animation event

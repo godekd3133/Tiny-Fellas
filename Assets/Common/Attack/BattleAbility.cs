@@ -30,4 +30,13 @@ public class BattleAbility : StatContainer
                return new(attackAnimationParameterAsString);
         }
     }
+
+    private BattleAbility()
+    {
+    }
+
+    public BattleAbility(BattleAbility origin) : base(origin)
+    {
+        attackAnimationParameter = origin.attackAnimationParameter;
+    }
 }
