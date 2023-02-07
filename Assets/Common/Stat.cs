@@ -12,7 +12,6 @@ public enum EStatName
     ATTACK_RAGNE,
 }
 
-[Serializable]
 [CreateAssetMenu(fileName = "Stat", menuName = "ScriptableObjects/Stat")]
 public class Stat : ScriptableObject
 {

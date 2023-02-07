@@ -10,7 +10,7 @@ public class AtackBehaviourBase : MonoBehaviour
     [SerializeField] private Minion owner;
 
     private MinionStat targetStat;
-    private Stat damageStat;
+    private BattleAbility battleAbility;
     
     private bool isOnAttacking;
     public bool IsOnAttacking
@@ -18,14 +18,19 @@ public class AtackBehaviourBase : MonoBehaviour
         get => isOnAttacking;
     }
 
-    public bool AttackStart(Minion target, Stat damageStat)
+    public bool AttackStart(Minion target, BattleAbility battleAbility)
     {
+        this.battleAbility = battleAbility;
+        if (IsInAttackRagne(target.transform) == false)
+            return false;
+        
         var targetStat = target.GetComponent<MinionStat>();
         if (target.GetComponent<MinionStat>() == null)
         {
             Logger.SharedInstance.Write(string.Format("{0} tride to damage {1}, but stat component is null",target.name));
             return false;
         }
+        this.targetStat = targetStat;
 
         if (isOnAttacking)
         {
@@ -34,16 +39,18 @@ public class AtackBehaviourBase : MonoBehaviour
         }
 
         isOnAttacking = true;
-        this.targetStat = targetStat;
-        this.damageStat = damageStat;
+        animator.SetTrigger(battleAbility.AttackAnimationParameter);
         return true;
     }
 
-    // TODO : apply buff system 
-    // called as animation event
-    public void ImpactDamage()
+    public bool IsInAttackRagne(Transform target)
     {
-        targetStat.TakeDamage(owner,damageStat.CurrentValue);
+        return (gameObject.transform.position - target.position).magnitude <= battleAbility[EStatName.ATTACK_RAGNE].CurrentValue;
+    }
+
+    public virtual void ImpactDamage()
+    {
+        targetStat.TakeDamage(owner,battleAbility[EStatName.DAMAGE].CurrentValue);
     }
     
     // called as animation event

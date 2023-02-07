@@ -15,15 +15,19 @@ public enum EMinionAnimationParameter
     CAST_SPELL,
     ROAR,
 }
-public class BattleAbility : SerializedScriptableObject
+
+[CreateAssetMenu(fileName = "BattleAbility", menuName = "ScriptableObjects/BattleAbility")]
+public class BattleAbility : StatContainer
 {
     [SerializeField] private EMinionAnimationParameter attackAnimationParameter;
 
     private string attackAnimationParameterAsString;
-    public string AttackAnimationParameter => new (attackAnimationParameterAsString);
-
-    private void Awake()
+    public string AttackAnimationParameter 
     {
-        attackAnimationParameterAsString = attackAnimationParameter.ToString();
+        get
+        {
+           if(attackAnimationParameterAsString == null) attackAnimationParameterAsString = attackAnimationParameter.ToString();
+               return new(attackAnimationParameterAsString);
+        }
     }
 }
