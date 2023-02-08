@@ -10,6 +10,7 @@ public enum EStatName
     MOVEMENT_CONTRIBUTION,
     DAMAGE,
     ATTACK_RAGNE,
+    GEM_COST,
 }
 
 [CreateAssetMenu(fileName = "Stat", menuName = "ScriptableObjects/Stat")]

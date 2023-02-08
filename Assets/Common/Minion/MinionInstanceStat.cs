@@ -7,7 +7,7 @@ using UnityEngine;
 public class MinionInstanceStat : MonoBehaviour
 {
     private MinionStat originStat;
-    public MinionStat currentStat;
+    private MinionStat currentStat;
 
     public bool IsDead => currentStat[EStatName.HEALTH].CurrentValue <= currentStat[EStatName.HEALTH].MinValue;
     private void OnEnable()

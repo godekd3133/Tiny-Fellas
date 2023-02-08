@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[CreateAssetMenu(fileName = "MinionStat", menuName = "ScriptableObjects/MinionStat")]
 public class MinionStat : StatContainer
 {
     [SerializeField] private BattleAbility battleAbility;
