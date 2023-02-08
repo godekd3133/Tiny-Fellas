@@ -9,7 +9,8 @@ public abstract class MonoWeakSingletonPerScene<T> : MonoBehaviour where T : Mon
 
     public static T GetInstanceOfScene(Scene scene)
     {
-        if(instanceMap.ContainsKey(scene) == false) instanceMap.Add(scene, CreateSingleton());
+        if(instanceMap.ContainsKey(scene) == false ) instanceMap.Add(scene, CreateSingleton());
+        else if (instanceMap[scene] == null) instanceMap[scene] = CreateSingleton();
         return instanceMap[scene];
     }
     
