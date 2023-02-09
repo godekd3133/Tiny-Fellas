@@ -21,10 +21,6 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/TestScene.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 9eee0e0463bae1d4487ea62e7861fcfc
-    m_Address: "Assets/ProjectA/Prefabs/[Skill] _ \uC368\uBA38\uC194\uD2B8\uD0A5.prefab"
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 2d76699a70b8d7f42b906184e25a8b7e
     m_Address: Assets/ProjectA/Prefabs/TitleScene.prefab
     m_ReadOnly: 0

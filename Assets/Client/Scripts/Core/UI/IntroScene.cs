@@ -56,22 +56,22 @@ public class IntroScene : UIScene
 
             await UniTask.NextFrame();
         }
-        await UniTask.Delay(2000);
+        await UniTask.Delay(1000);
     }
     private async Task DownLoadResourceFlow()
     {
         logLoading.text = "리소스 다운로드 중";
-        await UniTask.Delay(2000);
+        await UniTask.Delay(1000);
     }
     private async Task UseLoginFlow()
     {
         logLoading.text = "로그인중";
-        await UniTask.Delay(2000);
+        await UniTask.Delay(1000);
     }
 
     private async Task CompletedLoadFlow()
     {
-        logLoading.text = "로그인중";
-        await UniTask.Delay(2000);
+        logLoading.text = "로그인 완료";
+        await UniTask.Delay(1000);
     }
 }

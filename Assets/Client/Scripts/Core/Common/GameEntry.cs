@@ -11,7 +11,7 @@ public class GameEntry : MonoBehaviour
 
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
-        // È­¸é ºñÀ²
+        // È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         {
             float screenHeight = Screen.height;
             float screenWidth = Screen.width;
