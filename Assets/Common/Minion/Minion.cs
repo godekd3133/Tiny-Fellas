@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Minion : MonoBehaviour
 {
+    public PlayerData ownerPlayer;
     public float moveSpeed;
     public NavMeshAgent agent;
     private void Awake()
