@@ -5,16 +5,15 @@ using Amazon.GameLift.Model;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GameSession : MonoWeakSingletonPerScene<GameSession> , IMinionDeployable
+public class GameSessionInstance : MonoWeakSingletonPerScene<GameSessionInstance> , IMinionDeployable
 {
     private List<PlayerData> playerDataList;
     private Dictionary<string, PlayerData> playerDataByPlayerID ;
     private List<Minion> minionDeck;
     private List<Minion> minionInstanceList;
-    private GameSess playerSession;
+    private GameSession gameSession;
 
     public IReadOnlyList<Minion> MinionDeck => minionDeck;
-
     public IReadOnlyList<Minion> MinionInstanceList => minionInstanceList;
     public IReadOnlyList<PlayerData> PlayerDataList => playerDataList;
 
