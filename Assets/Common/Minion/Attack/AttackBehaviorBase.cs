@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using AmazonGameLift;
 
-public class AtackBehaviourBase : MonoBehaviour
+public class AttackBehaviourBase : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private Minion owner;
