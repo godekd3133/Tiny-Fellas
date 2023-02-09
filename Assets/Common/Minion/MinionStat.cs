@@ -8,7 +8,8 @@ using UnityEngine.Events;
 public class MinionStat : StatContainer
 {
     [SerializeField] private BattleAbility battleAbility;
-    //TODO: ACombatAI member
+
+    public BattleAbility MyBattleAbility => battleAbility;
 
     private MinionStat()
     {
