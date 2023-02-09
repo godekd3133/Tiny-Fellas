@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Amazon.GameLift.Model;
 
 [Serializable]
-public class PlayerData
+public class PlayerData : IMinionDeployable
 {
     private List<Minion> minionDeck;
     private List<Minion> minionInstanceList;
@@ -13,5 +13,5 @@ public class PlayerData
 
     public IReadOnlyList<Minion> MinionInstanceList => minionInstanceList;
 
-    public PlayerSession PlayerSession1 => playerSession;
+    public PlayerSession PlayerSession => playerSession;
 }
