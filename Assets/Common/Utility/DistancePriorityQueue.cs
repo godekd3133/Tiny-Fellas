@@ -1,21 +1,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DistancePriorityQueue
+public class DistancePriorityQueue<T> where T: class
 {
-    struct LocationDatas
+    struct LocationDatas<T>
     {
         public Transform transform;
         public float distance;
+        public T owner;
 
-        public LocationDatas(Transform transform, float distance)
+        public LocationDatas(T owner,Transform transform, float distance)
         {
             this.transform = transform;
             this.distance = distance;
+            this.owner = owner;
         }
     }
 
-    private List<LocationDatas> nearestDistanceHeap;
+    private List<LocationDatas<T>> nearestDistanceHeap;
     private Vector3 standardPos;
 
     public Vector3 StandardPos
@@ -28,12 +30,12 @@ public class DistancePriorityQueue
         get => nearestDistanceHeap.Count;
     }
 
-    public Transform Peek
+    public T Peek
     {
         get
         {
             if (Count > 0)
-                return nearestDistanceHeap[0].transform;
+                return nearestDistanceHeap[0].owner;
             return null;
         }
     }
@@ -42,7 +44,7 @@ public class DistancePriorityQueue
     public DistancePriorityQueue(Vector3 standard, int capacity = 100)
     {
         standardPos = standard;
-        nearestDistanceHeap = new List<LocationDatas>(capacity);
+        nearestDistanceHeap = new List<LocationDatas<T>>(capacity);
     }
 
 
@@ -51,10 +53,10 @@ public class DistancePriorityQueue
         nearestDistanceHeap.Clear();
     }
 
-    public void Enqueue(Transform pos)
+    public void Enqueue(T owner ,Transform pos)
     {
         float distance = (standardPos - pos.position).magnitude;
-        LocationDatas element = new LocationDatas(pos, distance);
+        LocationDatas<T> element = new LocationDatas<T>(owner, pos, distance);
         nearestDistanceHeap.Add(element);
         int idx = Count - 1;
 
@@ -179,7 +181,7 @@ public class DistancePriorityQueue
     private void SwapChildAndParents(int childIdx)
     {
         int parentIdx = (childIdx - 1) / 2;
-        LocationDatas buffer = nearestDistanceHeap[parentIdx];
+        LocationDatas<T> buffer = nearestDistanceHeap[parentIdx];
         nearestDistanceHeap[parentIdx] = nearestDistanceHeap[childIdx];
         nearestDistanceHeap[childIdx] = buffer;
     }
@@ -192,10 +194,10 @@ public class DistancePriorityQueue
 
     public void ChangeStandardPos(Vector3 newStandard)
     {
-        LocationDatas[] buffer = nearestDistanceHeap.ToArray();
+        LocationDatas<T>[] buffer = nearestDistanceHeap.ToArray();
         ChangeStanrdardPosAndInit(newStandard);
         foreach (var a in buffer)
-            Enqueue(a.transform);
+            Enqueue(a.owner, a.transform);
     }
 
     public bool IsContain(Transform transform)
