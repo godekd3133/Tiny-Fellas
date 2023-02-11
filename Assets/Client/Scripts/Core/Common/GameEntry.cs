@@ -19,6 +19,7 @@ public class GameEntry : MonoBehaviour
             int targetWidth = ratio > 1.9f ? 1080 : 1920;
             int targetHeight = (int)(targetWidth * ((float)Screen.height / Screen.width));
             Screen.SetResolution(targetWidth, targetHeight, true);
+            UnityEngine.AI.NavMesh.pathfindingIterationsPerFrame = 100;
         }
     }
 }

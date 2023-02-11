@@ -27,7 +27,6 @@ public class InputManager : MonoBehaviour
 
             Axis.Normalize();
 
-            Debug.Log(Axis);
             return Axis;
         }
     }
@@ -48,7 +47,6 @@ public class InputManager : MonoBehaviour
 #if UNITY_EDITOR_WIN || UNITY_EDITOR_OSX || UNITY_STANDALONE
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Down");
             pressing = true;
             dragStartPosition = Input.mousePosition;
         }
