@@ -6,8 +6,8 @@ using AmazonGameLift;
 
 public class AttackBehaviourBase : MonoBehaviour
 {
-    [SerializeField] private Animator animator;
-    [SerializeField] private Minion owner;
+    private Animator animator;
+    private Minion owner;
 
     private MinionInstanceStat targetStat;
     private BattleAbility battleAbility;
@@ -23,6 +23,19 @@ public class AttackBehaviourBase : MonoBehaviour
         get => !IsOnAttacking;
     }
 
+    public void SetOwner(Minion owner, Animator animator)
+    {
+        this.owner = owner;
+        this.animator = animator;
+    }
+
+    public void SetOwner(Minion owner)
+    {
+        this.owner = owner;
+        animator = owner.GetComponent<Animator>();
+    }
+    
+    
     public bool AttackStart(Minion target, BattleAbility battleAbility)
     {
         this.battleAbility = battleAbility;
@@ -39,11 +52,12 @@ public class AttackBehaviourBase : MonoBehaviour
 
         if (isOnAttacking)
         {
-            Logger.SharedInstance.Write(string.Format("{0} tride to damage {1}, but was already on attacking",target.name));
+            Logger.SharedInstance.Write(string.Format("{0} tried to damage {1}, but was already on attacking",target.name));
             return false;
         }
 
         Attack(target);
+        StartCoroutine(StartAttackDelay());
         return true;
     }
 
@@ -61,7 +75,7 @@ public class AttackBehaviourBase : MonoBehaviour
 
     public bool IsInAttackRagne(Transform target)
     {
-        return (gameObject.transform.position - target.position).magnitude <= battleAbility[EStatName.ATTACK_RAGNE].CurrentValue;
+        return (owner.transform.position - target.position).magnitude <= battleAbility[EStatName.ATTACK_RAGNE].CurrentValue;
     }
 
     // called as animation event

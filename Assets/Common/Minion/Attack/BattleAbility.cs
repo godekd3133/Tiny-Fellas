@@ -27,6 +27,7 @@ public class BattleAbility : StatContainer
 {
     [SerializeField] private EMinionAnimationParameter attackAnimationParameter;
     [SerializeField] private EComatAIName combatAIName;
+    [SerializeField] private AttackBehaviourBase attackBehaviour;
 
     private ACombatAI combatAI;
     private string attackAnimationParameterAsString;
@@ -49,6 +50,8 @@ public class BattleAbility : StatContainer
             return combatAI;
         }
     }
+
+    public AttackBehaviourBase AttackBehaviour => attackBehaviour;
     
 
     private BattleAbility()

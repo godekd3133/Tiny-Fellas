@@ -10,6 +10,7 @@ public class MinionInstanceStat : MonoBehaviour
     private MinionStat currentStat;
     private BattleAbility originBattleAbility;
     private BattleAbility battleAbility;
+    
     public BattleAbility MyBattleAbility => battleAbility;
     
 
