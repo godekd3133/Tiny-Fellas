@@ -41,7 +41,7 @@ public class BattleAbility : StatContainer
         }
     }
 
-    public ACombatAI CombatAi
+    public ACombatAI CombatAI
     {
         get
         {
