@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ACombatAIMelee : ACombatAI
+public class CombatAIMelee : ACombatAI
 {
-    protected override IEnumerator StartCombatAI()
+    protected override IEnumerator StartCombatAI(AttackBehaviourBase attackBehaviour)
     {
         var priorityQueue = new DistancePriorityQueue<Minion>(gameObject.transform.position);
         var waitUntill = new WaitUntil(HasRecognizedEnemy);

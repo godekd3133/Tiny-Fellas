@@ -6,7 +6,6 @@ using UnityEngine.AI;
 public abstract class ACombatAI : MonoBehaviour
 {
     public Minion owner;
-    public AttackBehaviourBase attackBehaviour;
     public float AIUpdateInterval = 0.5f;
     public List<Minion> recognizedMinionList;
     
@@ -18,11 +17,11 @@ public abstract class ACombatAI : MonoBehaviour
         get;
     }
     
-    public void SetActiveAI(bool flag)
+    public void SetActiveAI(bool flag, AttackBehaviourBase attackBehaviour)
     {
         if (flag && !isOn)
         {
-            AICoroutine = StartCoroutine(StartCombatAI());
+            AICoroutine = StartCoroutine(StartCombatAI(attackBehaviour));
             isOn = true;
         }
         else
@@ -32,7 +31,7 @@ public abstract class ACombatAI : MonoBehaviour
         }
     }
 
-    protected abstract IEnumerator StartCombatAI();
+    protected abstract IEnumerator StartCombatAI(AttackBehaviourBase attackBehaviour);
 
     public bool HasRecognizedEnemy()
     {

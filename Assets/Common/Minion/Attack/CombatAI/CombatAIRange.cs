@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public abstract class CombatAIRange : ACombatAI
 {
-    protected override IEnumerator StartCombatAI()
+    protected override IEnumerator StartCombatAI(AttackBehaviourBase battleAbility)
     {
         yield break;
     }
