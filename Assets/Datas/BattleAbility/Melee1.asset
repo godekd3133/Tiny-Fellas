@@ -210,3 +210,5 @@ MonoBehaviour:
       Entry: 8
       Data: 
   attackAnimationParameter: 2
+  combatAIName: 0
+  attackBehaviour: {fileID: -4729200397134154711, guid: 5eb249fc8ed6c354c897b4b96f8573da, type: 3}
