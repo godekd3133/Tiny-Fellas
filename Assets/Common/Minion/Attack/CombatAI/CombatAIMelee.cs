@@ -25,14 +25,14 @@ public class CombatAIMelee : ACombatAI
             {
                 attackBehaviour.AttackStart(nearestMinion, owner.stat.MyBattleAbility);
             }
-            else
-            {
-                var enemyToMeDirection = (owner.transform.position - nearestMinion.transform.position).normalized;
-                var dest = nearestMinion.transform.position +
-                           enemyToMeDirection * owner.stat.MyBattleAbility[EStatName.ATTACK_RAGNE].CurrentValue;
-
-                owner.agent.SetDestination(dest);
-            }
+            // else
+            // {
+            //     var enemyToMeDirection = (owner.transform.position - nearestMinion.transform.position).normalized;
+            //     var dest = nearestMinion.transform.position +
+            //                enemyToMeDirection * owner.stat.MyBattleAbility[EStatName.ATTACK_RAGNE].CurrentValue;
+            //
+            //     owner.agent.SetDestination(dest);
+            // }
         }
         yield break;
     }
