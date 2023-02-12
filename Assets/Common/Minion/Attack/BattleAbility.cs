@@ -27,9 +27,11 @@ public class BattleAbility : StatContainer
 {
     [SerializeField] private EMinionAnimationParameter attackAnimationParameter;
     [SerializeField] private EComatAIName combatAIName;
+    [SerializeField] private ESkillPassiveName passiveSkillName;
     [SerializeField] private AttackBehaviourBase attackBehaviour;
 
     private ACombatAI combatAI;
+    private ASkillPassiveBase passiveSkill;
     private string attackAnimationParameterAsString;
     
     
@@ -51,6 +53,15 @@ public class BattleAbility : StatContainer
         }
     }
 
+    public ASkillPassiveBase PassiveSkill
+    {
+        get
+        {
+            if (passiveSkill == null) SkillPassiveFactory.Instace.GetSkill(passiveSkillName);
+            return passiveSkill;
+        }
+    }
+    
     public AttackBehaviourBase AttackBehaviour => attackBehaviour;
     
 

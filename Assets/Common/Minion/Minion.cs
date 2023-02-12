@@ -22,10 +22,13 @@ public class Minion : MonoBehaviour
     [HideInInspector] public UnityEvent onStatChanged;
     private MinionInstanceStat stat;
 
+    public MinionInstanceStat Stat => stat;
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         stat.MyBattleAbility.AttackBehaviour.SetOwner(this, animator);
+        stat.MyBattleAbility.PassiveSkill.ApplyEffect(this);
     }
 
     public void Attack()

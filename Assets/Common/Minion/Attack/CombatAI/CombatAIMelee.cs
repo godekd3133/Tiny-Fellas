@@ -23,7 +23,7 @@ public class CombatAIMelee : ACombatAI
 
             if (isInAttackRange)
             {
-                attackBehaviour.AttackStart(nearestMinion, owner.stat.MyBattleAbility);
+                attackBehaviour.AttackStart(nearestMinion, owner.Stat.MyBattleAbility);
             }
             // else
             // {

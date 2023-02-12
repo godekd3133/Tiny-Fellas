@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class SkillPassiveBase 
+public abstract class ASkillPassiveBase 
 {
     // subscribe this function to Minion's callback members
     public void ApplyEffect(Minion minion)
