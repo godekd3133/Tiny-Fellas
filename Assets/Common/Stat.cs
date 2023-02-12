@@ -11,10 +11,11 @@ public enum EStatName
     DAMAGE,
     ATTACK_RAGNE,
     GEM_COST,
+    ATTACK_AFTER_DELAY,
 }
 
-[CreateAssetMenu(fileName = "Stat", menuName = "ScriptableObjects/Stat")]
-public class Stat : ScriptableObject
+[Serializable]
+public class Stat 
 {
     [SerializeField]
     private EStatName statName;
