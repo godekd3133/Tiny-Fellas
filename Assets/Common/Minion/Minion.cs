@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,9 +13,14 @@ public class Minion : MonoBehaviour
     public NavMeshAgent agent;
     public Animator animator;
 
+    private Action<Minion> beforeAttack;
+    private Action<Minion> afterAttack;
+    private Action<Minion> befroeDamaged;
+    private Action<Minion> afterDamaged;
+
 
     [HideInInspector] public UnityEvent onStatChanged;
-    public MinionInstanceStat stat;
+    private MinionInstanceStat stat;
 
     private void Awake()
     {
@@ -24,6 +30,59 @@ public class Minion : MonoBehaviour
 
     public void Attack()
     {
+        beforeAttack(this);
         stat.MyBattleAbility.CombatAI.SetActiveAI(true, stat.MyBattleAbility.AttackBehaviour);
+        afterAttack(this);
     }
+
+    public bool TakdeDamage()
+    {
+        befroeDamaged(this);
+        var flag = stat.TakeDamage(this, stat.MyBattleAbility);
+        afterDamaged(this);
+
+        return true;
+    }
+
+    public void SubscribeBeforeAttack(Action<Minion> action)
+    {
+        beforeAttack += action;
+    }
+    
+    public void SubscribeAfterAttack(Action<Minion> action)
+    {
+        afterAttack += action;
+    }
+    
+    public void SubscribeBeforeDamaged(Action<Minion> action)
+    {
+        befroeDamaged += action;
+    }
+    
+    public void SubscribeAfterDamaged(Action<Minion> action)
+    {
+        afterDamaged += action;
+    }
+    
+    public void UnSubscribeBeforeAttack(Action<Minion> action)
+    {
+        beforeAttack -= action;
+    }
+    
+    public void UnSubscribeAfterAttack(Action<Minion> action)
+    {
+        afterAttack -= action;
+    }
+    
+    
+    public void UnSubscribeBeforeDamaged(Action<Minion> action)
+    {
+        befroeDamaged -= action;
+    }
+    
+    public void UnSubscribeAfterDamaged(Action<Minion> action)
+    {
+        afterDamaged -= action;
+    }
+    
 }
