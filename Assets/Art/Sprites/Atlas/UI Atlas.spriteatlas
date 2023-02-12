@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 2cacb61ccd5834bf3ab8af143d3ff5a4, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 122a8120e57fc450c8a57b5ed28b066a, type: 3}
+  - {fileID: 21300000, guid: 180f144074c7a4a21896ba1c4cb38586, type: 3}
+  - {fileID: 21300000, guid: 74b8fbf0ff77f4f1f8e26d503262873e, type: 3}
+  - {fileID: 21300000, guid: 4f579411767944810af7c6ed1464b8fa, type: 3}
+  - {fileID: 21300000, guid: 9ee6e5415ac824e3eaedde3c010fde6e, type: 3}
+  - {fileID: 21300000, guid: 2a6839c1c736c405d90f8a84b00bc5e5, type: 3}
+  - {fileID: 21300000, guid: a1ebcf32d29774bdba7067a9ccdfedfc, type: 3}
+  - {fileID: 21300000, guid: 3a94fea21c4d04012b49cc1bb7887468, type: 3}
+  - {fileID: 21300000, guid: e39513536e3214a81ac0470cc5cae813, type: 3}
+  - {fileID: 21300000, guid: e654d2f3985bf41da9207b3f50d6e5df, type: 3}
+  - {fileID: 21300000, guid: 0f1aaea4054d44ede902c7146ebd9646, type: 3}
+  - {fileID: 21300000, guid: 95776045325a942d0ae36fa414eeef76, type: 3}
+  - {fileID: 21300000, guid: 291d1eb56713744dd801d116fff52d8f, type: 3}
+  - {fileID: 21300000, guid: a9ad8be54db6e48e69fdaba604d0816b, type: 3}
+  - {fileID: 21300000, guid: 6b4506f5ad95b4e1a85717df7a5de99b, type: 3}
+  - {fileID: 21300000, guid: e1ed5af50f4e04a9a8564be515d19790, type: 3}
+  - {fileID: 21300000, guid: a6923116817944bc6a12150089f60b3d, type: 3}
+  - {fileID: 21300000, guid: f9085a661989f4179ac564d60afde781, type: 3}
+  - {fileID: 21300000, guid: 6c7f52371a2b246be8a55cb8f4dae040, type: 3}
+  - {fileID: 21300000, guid: 3ba19c28eedde4dc597620ca1205e10b, type: 3}
+  - {fileID: 21300000, guid: 6db3adb8e74d34a84a7f3900db0879aa, type: 3}
+  - {fileID: 21300000, guid: 2ed74fc887ea649869f6876da69a7aa3, type: 3}
+  - {fileID: 21300000, guid: ca57c809ab78f4894bc0b24291c8ef1c, type: 3}
+  - {fileID: 21300000, guid: 75d55a0962ea04863a6231f2485715c5, type: 3}
+  - {fileID: 21300000, guid: 4c1c9e09e1f6b40b68e4aa2379234130, type: 3}
+  - {fileID: 21300000, guid: 70c293ab6c1704dadbe1ff0ea2666e2b, type: 3}
+  - {fileID: 21300000, guid: 9488870c775c14907981db8754fc2be1, type: 3}
+  - {fileID: 21300000, guid: 54e78e8cce3db4c0db128f4ade839af4, type: 3}
+  - {fileID: 21300000, guid: ad145cfc67fa94524bd4c4dc9a6ae73e, type: 3}
+  - {fileID: 21300000, guid: 46dee6def3b304ce2aabfea0f4e869ae, type: 3}
+  - {fileID: 21300000, guid: 9be1a6fe7e8d8441db81e6fb4ac24a90, type: 3}
+  - {fileID: 21300000, guid: 59c204efc1df54fac98dc1a04fdb1bb3, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Book Icon
+  - Character Sample
+  - Deck Add Frame
+  - Lobby BG
+  - Btn_MainButton_Blue 1
+  - Btn Square Purple
+  - White Box
+  - TA_UI_guide_01
+  - Tap Frame
+  - Btn_MainButton_Green
+  - Card Icon
+  - Btn_MainButton_Yellow
+  - Versus
+  - Btn_MainButton_Red 1
+  - Deck Character Frame
+  - Ability Icon Sample
+  - Tap Focus
+  - Btn_MainButton_Purple 1
+  - Btn_MainButton_Orange 1
+  - Sword Icon
+  - Btn Square Navy
+  - Btn_MainButton_Sky 1
+  - Deck Ability Frame
+  - StatusBarFrame White
+  - Btn_MainButton_White 1
+  - BG
+  - Gold Coin
+  - Add Icon
+  - Shadow White
+  - Btn_MainButton_Gray 1
+  - Btn_MainButton_Dark 1
+  - Lens Icon
+  m_RenderDataMap: {}
+  m_Tag: UI Atlas
+  m_IsVariant: 0
