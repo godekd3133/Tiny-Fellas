@@ -1278,9 +1278,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 832783745}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 680e7632921208641947141c613b642a, type: 3}
+  m_Script: {fileID: 11500000, guid: 86aceb5c3407fc34c937698025fc87c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPostMinionAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  onPostTroopUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+  onPostTroopStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &832783748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2035,6 +2044,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   troopAdmin: {fileID: 1309281745}
+  aroundDestination: {x: 0, y: 0, z: 0}
 --- !u!114 &1309281745
 MonoBehaviour:
   m_ObjectHideFlags: 0
