@@ -10,7 +10,7 @@ public class Minion : MonoBehaviour
 {
     public PlayerData ownerPlayer;
     public float moveSpeed;
-    [SerializeField] NavMeshAgent agent;
+    public NavMeshAgent agent;
     [SerializeField] Animator animator;
 
     public UnityEvent<Minion> beforeAttack { get; private set; }
