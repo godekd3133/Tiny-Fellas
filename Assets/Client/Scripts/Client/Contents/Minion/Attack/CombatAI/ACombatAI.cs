@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,35 +10,36 @@ public abstract class ACombatAI : MonoBehaviour
     public Minion owner;
     public float AIUpdateInterval = 0.5f;
     public List<Minion> recognizedMinionList;
-    
-    private Coroutine AICoroutine;
 
+    CancellationTokenSource tokenSource = new CancellationTokenSource();
     public bool isOn
     {
         private set;
         get;
     }
-    
+
     public void SetActiveAI(bool flag, AttackBehaviourBase attackBehaviour)
     {
         if (flag && !isOn)
         {
-            AICoroutine = StartCoroutine(StartCombatAI(attackBehaviour));
+            tokenSource = new CancellationTokenSource();
+
+            StartCombatAI(attackBehaviour, tokenSource.Token);
             isOn = true;
         }
         else
         {
-            StopCoroutine(AICoroutine);
+            tokenSource.Cancel();
             isOn = false;
         }
     }
 
-    protected abstract IEnumerator StartCombatAI(AttackBehaviourBase attackBehaviour);
+    protected abstract UniTask StartCombatAI(AttackBehaviourBase attackBehaviour, CancellationToken token);
 
     public bool HasRecognizedEnemy()
     {
         if (recognizedMinionList == null) return false;
-        
+
         return recognizedMinionList.Count > 0;
     }
 }

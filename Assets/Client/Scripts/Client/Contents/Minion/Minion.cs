@@ -27,6 +27,7 @@ public class Minion : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponentInChildren<Animator>();
         stat.MyBattleAbility.AttackBehaviour.SetOwner(this, animator);
         stat.MyBattleAbility.PassiveSkill.ApplyEffect(this);
     }
@@ -51,41 +52,41 @@ public class Minion : MonoBehaviour
     {
         beforeAttack += action;
     }
-    
+
     public void SubscribeAfterAttack(Action<Minion> action)
     {
         afterAttack += action;
     }
-    
+
     public void SubscribeBeforeDamaged(Action<Minion> action)
     {
         befroeDamaged += action;
     }
-    
+
     public void SubscribeAfterDamaged(Action<Minion> action)
     {
         afterDamaged += action;
     }
-    
+
     public void UnSubscribeBeforeAttack(Action<Minion> action)
     {
         beforeAttack -= action;
     }
-    
+
     public void UnSubscribeAfterAttack(Action<Minion> action)
     {
         afterAttack -= action;
     }
-    
-    
+
+
     public void UnSubscribeBeforeDamaged(Action<Minion> action)
     {
         befroeDamaged -= action;
     }
-    
+
     public void UnSubscribeAfterDamaged(Action<Minion> action)
     {
         afterDamaged -= action;
     }
-    
+
 }

@@ -1,20 +1,25 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class CombatAIMelee : ACombatAI
 {
-    protected override IEnumerator StartCombatAI(AttackBehaviourBase attackBehaviour)
+    protected override async UniTask StartCombatAI(AttackBehaviourBase attackBehaviour, CancellationToken token)
     {
         var priorityQueue = new DistancePriorityQueue<Minion>(gameObject.transform.position);
         var waitUntill = new WaitUntil(HasRecognizedEnemy);
         while (true)
         {
-            yield return waitUntill;
+            if (token.IsCancellationRequested == true)
+                break;
+
             priorityQueue.Clear();
             priorityQueue.ChangeStandardPos(gameObject.transform.position);
-            for(int i=0;i<recognizedMinionList.Count;i++)
+            for (int i = 0; i < recognizedMinionList.Count; i++)
                 priorityQueue.Enqueue(recognizedMinionList[i], recognizedMinionList[i].transform);
 
             var nearestMinion = priorityQueue.Peek;
@@ -33,7 +38,7 @@ public class CombatAIMelee : ACombatAI
             //
             //     owner.agent.SetDestination(dest);
             // }
+            await UniTask.Delay(TimeSpan.FromSeconds(AIUpdateInterval));
         }
-        yield break;
     }
 }
