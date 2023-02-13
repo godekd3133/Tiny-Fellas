@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using AmazonGameLift;
+using Cysharp.Threading.Tasks;
 
 public class AttackBehaviourBase : MonoBehaviour
 {
@@ -57,14 +59,14 @@ public class AttackBehaviourBase : MonoBehaviour
         }
 
         Attack(target);
-        StartCoroutine(StartAttackDelay());
+        StartAttackDelay();
         return true;
     }
 
-    private IEnumerator StartAttackDelay()
+    private async UniTask StartAttackDelay()
     {
         isOnAttacking = true;
-        yield return new WaitForSeconds(battleAbility[EStatName.ATTACK_AFTER_DELAY].CurrentValue);
+        await UniTask.Delay(Convert.ToInt32(battleAbility[EStatName.ATTACK_AFTER_DELAY].CurrentValue * 1000));
         isOnAttacking = false;
     }
     
