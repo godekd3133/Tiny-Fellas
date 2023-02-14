@@ -8,9 +8,8 @@ using UnityEngine.AI;
 
 public class BotController : MonoBehaviour
 {
-    public TroopAdmin troopAdmin;
-
-    [ReadOnly, ShowInInspector] Vector3 aroundDestination;
+    [SerializeField] TroopAdmin troopAdmin;
+    [ReadOnly, SerializeField] Vector3 aroundDestination;
 
     void Start()
     {

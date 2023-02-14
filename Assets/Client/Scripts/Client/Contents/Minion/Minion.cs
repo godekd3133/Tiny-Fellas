@@ -11,12 +11,12 @@ public class Minion : MonoBehaviour
     public PlayerData ownerPlayer;
     public float moveSpeed;
     public NavMeshAgent agent;
-    public Animator animator;
+    [SerializeField] Animator animator;
 
-    private Action<Minion> beforeAttack;
-    private Action<Minion> afterAttack;
-    private Action<Minion> befroeDamaged;
-    private Action<Minion> afterDamaged;
+    public UnityEvent<Minion> beforeAttack { get; private set; }
+    public UnityEvent<Minion> afterAttack { get; private set; }
+    public UnityEvent<Minion> befroeDamaged { get; private set; }
+    public UnityEvent<Minion> afterDamaged { get; private set; }
 
 
     [HideInInspector] public UnityEvent onStatChanged;
@@ -27,65 +27,24 @@ public class Minion : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponentInChildren<Animator>();
         stat.MyBattleAbility.AttackBehaviour.SetOwner(this, animator);
         stat.MyBattleAbility.PassiveSkill.ApplyEffect(this);
     }
 
     public void Attack()
     {
-        beforeAttack(this);
+        beforeAttack.Invoke(this);
         stat.MyBattleAbility.CombatAI.SetActiveAI(true, stat.MyBattleAbility.AttackBehaviour);
-        afterAttack(this);
+        afterAttack.Invoke(this);
     }
 
     public bool TakdeDamage()
     {
-        befroeDamaged(this);
+        befroeDamaged.Invoke(this);
         var flag = stat.TakeDamage(this, stat.MyBattleAbility);
-        afterDamaged(this);
+        afterDamaged.Invoke(this);
 
         return true;
     }
-
-    public void SubscribeBeforeAttack(Action<Minion> action)
-    {
-        beforeAttack += action;
-    }
-    
-    public void SubscribeAfterAttack(Action<Minion> action)
-    {
-        afterAttack += action;
-    }
-    
-    public void SubscribeBeforeDamaged(Action<Minion> action)
-    {
-        befroeDamaged += action;
-    }
-    
-    public void SubscribeAfterDamaged(Action<Minion> action)
-    {
-        afterDamaged += action;
-    }
-    
-    public void UnSubscribeBeforeAttack(Action<Minion> action)
-    {
-        beforeAttack -= action;
-    }
-    
-    public void UnSubscribeAfterAttack(Action<Minion> action)
-    {
-        afterAttack -= action;
-    }
-    
-    
-    public void UnSubscribeBeforeDamaged(Action<Minion> action)
-    {
-        befroeDamaged -= action;
-    }
-    
-    public void UnSubscribeAfterDamaged(Action<Minion> action)
-    {
-        afterDamaged -= action;
-    }
-    
 }
