@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class DistancePriorityQueue<T> where T: class
 {
-    struct LocationDatas<T>
+    struct LocationDatas<T2>
     {
         public Transform transform;
         public float distance;
-        public T owner;
+        public T2 owner;
 
-        public LocationDatas(T owner,Transform transform, float distance)
+        public LocationDatas(T2 owner,Transform transform, float distance)
         {
             this.transform = transform;
             this.distance = distance;
