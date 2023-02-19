@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Amazon.GameLift;
 using Amazon.GameLift.Model;
 using UnityEngine;
 using UnityEngine.Events;
+using Newtonsoft.Json;
+using Unity.Netcode;
 
 public class GameSessionInstance : MonoWeakSingletonPerScene<GameSessionInstance> , IMinionDeployable
 {
@@ -30,5 +33,16 @@ public class GameSessionInstance : MonoWeakSingletonPerScene<GameSessionInstance
 
             return playerDataByPlayerID;
         }
+    }
+
+
+    public bool AddPlayer(PlayerSession newPlayer)
+    {
+        return true;
+    }
+
+    public bool RemovePlayer(PlayerSession player)
+    {
+        return true;
     }
 }
