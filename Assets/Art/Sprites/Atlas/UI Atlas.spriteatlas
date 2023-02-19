@@ -40,16 +40,24 @@ SpriteAtlas:
   m_PackedSprites:
   - {fileID: 21300000, guid: 122a8120e57fc450c8a57b5ed28b066a, type: 3}
   - {fileID: 21300000, guid: 180f144074c7a4a21896ba1c4cb38586, type: 3}
+  - {fileID: 21300000, guid: b6779e604d215444abcdb7b37bf1b504, type: 3}
   - {fileID: 21300000, guid: 74b8fbf0ff77f4f1f8e26d503262873e, type: 3}
   - {fileID: 21300000, guid: 4f579411767944810af7c6ed1464b8fa, type: 3}
   - {fileID: 21300000, guid: 9ee6e5415ac824e3eaedde3c010fde6e, type: 3}
+  - {fileID: 21300000, guid: 53c2ba414e1894cbcbb113666887132a, type: 3}
   - {fileID: 21300000, guid: 2a6839c1c736c405d90f8a84b00bc5e5, type: 3}
   - {fileID: 21300000, guid: a1ebcf32d29774bdba7067a9ccdfedfc, type: 3}
+  - {fileID: 21300000, guid: 493cc2a280e474148af2dd4d14dff182, type: 3}
   - {fileID: 21300000, guid: 3a94fea21c4d04012b49cc1bb7887468, type: 3}
+  - {fileID: 21300000, guid: 2028c0439c7bf402d8e4f54ce00121cb, type: 3}
   - {fileID: 21300000, guid: e39513536e3214a81ac0470cc5cae813, type: 3}
   - {fileID: 21300000, guid: e654d2f3985bf41da9207b3f50d6e5df, type: 3}
   - {fileID: 21300000, guid: 0f1aaea4054d44ede902c7146ebd9646, type: 3}
+  - {fileID: 21300000, guid: 6d1f2df483a744a4999adcd0c6cde34c, type: 3}
   - {fileID: 21300000, guid: 95776045325a942d0ae36fa414eeef76, type: 3}
+  - {fileID: 21300000, guid: e4abe645630ce470d8da319f7d48d7b6, type: 3}
+  - {fileID: 21300000, guid: 8a00448548dc249319d615dbb9d4471c, type: 3}
+  - {fileID: 21300000, guid: 283b3fa54b92e4c6ea73fbda442c4622, type: 3}
   - {fileID: 21300000, guid: 291d1eb56713744dd801d116fff52d8f, type: 3}
   - {fileID: 21300000, guid: a9ad8be54db6e48e69fdaba604d0816b, type: 3}
   - {fileID: 21300000, guid: 6b4506f5ad95b4e1a85717df7a5de99b, type: 3}
@@ -57,32 +65,54 @@ SpriteAtlas:
   - {fileID: 21300000, guid: a6923116817944bc6a12150089f60b3d, type: 3}
   - {fileID: 21300000, guid: f9085a661989f4179ac564d60afde781, type: 3}
   - {fileID: 21300000, guid: 6c7f52371a2b246be8a55cb8f4dae040, type: 3}
+  - {fileID: 21300000, guid: c54e95182ed0e45eb8b875020b42a5c0, type: 3}
   - {fileID: 21300000, guid: 3ba19c28eedde4dc597620ca1205e10b, type: 3}
   - {fileID: 21300000, guid: 6db3adb8e74d34a84a7f3900db0879aa, type: 3}
   - {fileID: 21300000, guid: 2ed74fc887ea649869f6876da69a7aa3, type: 3}
   - {fileID: 21300000, guid: ca57c809ab78f4894bc0b24291c8ef1c, type: 3}
   - {fileID: 21300000, guid: 75d55a0962ea04863a6231f2485715c5, type: 3}
   - {fileID: 21300000, guid: 4c1c9e09e1f6b40b68e4aa2379234130, type: 3}
+  - {fileID: 21300000, guid: fdffef0924ae344fd9ffb150aba5a7d3, type: 3}
+  - {fileID: 21300000, guid: 46266149dfad24d85bdb95cdb0c2da50, type: 3}
+  - {fileID: 21300000, guid: 4d9da48916adc434a8b648f3da49430a, type: 3}
+  - {fileID: 21300000, guid: 00479989e3ea140e8881d1c356e7bc5c, type: 3}
+  - {fileID: 21300000, guid: 02fb8e7a1001e408bbb92ce804912d0e, type: 3}
+  - {fileID: 21300000, guid: 707ec4ca59fd244e8a2d55a765adc37b, type: 3}
+  - {fileID: 21300000, guid: dc6e69ca8f9f945349127de132f95815, type: 3}
+  - {fileID: 21300000, guid: 2dbc701b1115041c7ac45821c8ef072b, type: 3}
+  - {fileID: 21300000, guid: 1961616bc7b774357ba002f0601778c6, type: 3}
   - {fileID: 21300000, guid: 70c293ab6c1704dadbe1ff0ea2666e2b, type: 3}
   - {fileID: 21300000, guid: 9488870c775c14907981db8754fc2be1, type: 3}
   - {fileID: 21300000, guid: 54e78e8cce3db4c0db128f4ade839af4, type: 3}
   - {fileID: 21300000, guid: ad145cfc67fa94524bd4c4dc9a6ae73e, type: 3}
+  - {fileID: 21300000, guid: 56cb6d8dabe1048dc9d32a8b5ea7fe3d, type: 3}
   - {fileID: 21300000, guid: 46dee6def3b304ce2aabfea0f4e869ae, type: 3}
   - {fileID: 21300000, guid: 9be1a6fe7e8d8441db81e6fb4ac24a90, type: 3}
+  - {fileID: 21300000, guid: 4f853c4f43f8f4d49a99dd8bc5496771, type: 3}
+  - {fileID: 21300000, guid: 7ac3025fcd3fd4432bd0b0edbd9a0332, type: 3}
+  - {fileID: 21300000, guid: 7d441f5fa1e7a4a04a393256afba3cfd, type: 3}
   - {fileID: 21300000, guid: 59c204efc1df54fac98dc1a04fdb1bb3, type: 3}
   m_PackedSpriteNamesToIndex:
   - Book Icon
   - Character Sample
+  - Shop BG
   - Deck Add Frame
   - Lobby BG
   - Btn_MainButton_Blue 1
+  - Slot Frame Mono
   - Btn Square Purple
   - White Box
+  - Ability BG
   - TA_UI_guide_01
+  - Ability Frame Red
   - Tap Frame
   - Btn_MainButton_Green
   - Card Icon
+  - Slider Frame
   - Btn_MainButton_Yellow
+  - Shop Frame Purple
+  - Slider Fill
+  - Ability Empty Frame
   - Versus
   - Btn_MainButton_Red 1
   - Deck Character Frame
@@ -90,18 +120,32 @@ SpriteAtlas:
   - Tap Focus
   - Btn_MainButton_Purple 1
   - Btn_MainButton_Orange 1
+  - Select Frame
   - Sword Icon
   - Btn Square Navy
   - Btn_MainButton_Sky 1
   - Deck Ability Frame
   - StatusBarFrame White
   - Btn_MainButton_White 1
+  - Ability Frame Green
+  - Ability Frame Blue
+  - Shop Frame Yellow
+  - Attack Icon
+  - Title Logo
+  - Shop Frame Blue
+  - Chest Icon
+  - Ability Frame Brown
+  - Defense Icon
   - BG
   - Gold Coin
   - Add Icon
   - Shadow White
+  - Ability Frame Purple
   - Btn_MainButton_Gray 1
   - Btn_MainButton_Dark 1
+  - Ability Frame Yellow
+  - Gradient Frame
+  - Add Btn Icon
   - Lens Icon
   m_RenderDataMap: {}
   m_Tag: UI Atlas

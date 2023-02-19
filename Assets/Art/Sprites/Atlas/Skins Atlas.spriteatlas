@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Skins Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: ef0291704cbf448aebcee2131181144e, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 97199f1140ab64e13b35dac595bcb1d1, type: 3}
+  - {fileID: 21300000, guid: 8a625151f68d3403192acb39ed019d25, type: 3}
+  - {fileID: 21300000, guid: 107e4361809af46eb9175e194fb58a7e, type: 3}
+  - {fileID: 21300000, guid: 69f176e1a66474520b0326b097b42233, type: 3}
+  - {fileID: 21300000, guid: 1ca68f323bef44c1ea777b66ed6f5bd6, type: 3}
+  - {fileID: 21300000, guid: 00c379d27b31346e1b6c24e383ec97d2, type: 3}
+  - {fileID: 21300000, guid: e364ec130eb52448fab9f18159c3b4ae, type: 3}
+  - {fileID: 21300000, guid: 2458fac3f02d641d5ae516cf7d650ad3, type: 3}
+  - {fileID: 21300000, guid: 3b89ccd3b1bd04f49a3df4eacb865838, type: 3}
+  - {fileID: 21300000, guid: 4c9d862456f46443b9494d91d3e50b7c, type: 3}
+  - {fileID: 21300000, guid: dddb3c846bb444bc0b897d0f237bed6a, type: 3}
+  - {fileID: 21300000, guid: 1accafe4a33ec4b36959eaf227ca4624, type: 3}
+  - {fileID: 21300000, guid: f48b8cf41fda54792bffcf2e87b795d3, type: 3}
+  - {fileID: 21300000, guid: a6172d35c455d48d7a80c862adf0d7a7, type: 3}
+  - {fileID: 21300000, guid: 9ad943950c76d498e854c6105655ff03, type: 3}
+  - {fileID: 21300000, guid: 07783c95838904e7296999f8a8a1caf5, type: 3}
+  - {fileID: 21300000, guid: 8eb863a5fa8e749fb9a32f77d512a3bc, type: 3}
+  - {fileID: 21300000, guid: b0cb95b54607b49b79a39e9c86c7775c, type: 3}
+  - {fileID: 21300000, guid: 98e544d5296e04b9d8b95d8ffa1b052d, type: 3}
+  - {fileID: 21300000, guid: c7807cd5242ed4158bc867839562cb8b, type: 3}
+  - {fileID: 21300000, guid: ce2789f500ce54424927611944044526, type: 3}
+  - {fileID: 21300000, guid: 865a8316fc12d4e58a0fbb7d307be31f, type: 3}
+  - {fileID: 21300000, guid: b4378356579964d2fa11d7eac8e0f07d, type: 3}
+  - {fileID: 21300000, guid: e046a5666f7c04f6b8c7975a2fcf06bd, type: 3}
+  - {fileID: 21300000, guid: f16bbef66d50644fe833d992a887a1f7, type: 3}
+  - {fileID: 21300000, guid: 89d71cb7a2d954ff788115139f408c7c, type: 3}
+  - {fileID: 21300000, guid: 2e8311089da1e4f58839a633e9b8868a, type: 3}
+  - {fileID: 21300000, guid: 4c2580989f8694c2ba1aeeef6271ec32, type: 3}
+  - {fileID: 21300000, guid: b7d91bc84703d4860b63d37cb79a5b1d, type: 3}
+  - {fileID: 21300000, guid: 7fe051b9f8f724515add3ada431a8063, type: 3}
+  - {fileID: 21300000, guid: d25386b9c241b4f4c95a2d6ee6f5f4ce, type: 3}
+  - {fileID: 21300000, guid: 37e50ce99ff284fe484f8cddeae4273c, type: 3}
+  - {fileID: 21300000, guid: a0a2d90aaf1574880bd43d24d1d3400f, type: 3}
+  - {fileID: 21300000, guid: 5326586a0938d4636a47448b992b5bbf, type: 3}
+  - {fileID: 21300000, guid: aaed8c6ac41b7491db7528b64b8aee07, type: 3}
+  - {fileID: 21300000, guid: b58556aa516194dc1bfa66345cf85636, type: 3}
+  - {fileID: 21300000, guid: e93c7b2b39f9649119064df7870ed64a, type: 3}
+  - {fileID: 21300000, guid: c5304d2bc930e4449aa4976d7adf8aa0, type: 3}
+  - {fileID: 21300000, guid: 303fc53bfe3934d32bebd929f90fd151, type: 3}
+  - {fileID: 21300000, guid: d3e1334b7b0644f93925d74e93724690, type: 3}
+  - {fileID: 21300000, guid: 96b6a36b9daed431bb9959807d7a72e7, type: 3}
+  - {fileID: 21300000, guid: beef434c1ddc242548ccaa67be6ad0b7, type: 3}
+  - {fileID: 21300000, guid: 14e216dcd11354cf8a9c3b025b3ab961, type: 3}
+  - {fileID: 21300000, guid: 90b6501d251624feda57fcdcc69a6fbb, type: 3}
+  - {fileID: 21300000, guid: 6e36545dde1494fca873aefa91e14e0b, type: 3}
+  - {fileID: 21300000, guid: c30cf79dd93ec4b5f8d1443b60828bad, type: 3}
+  - {fileID: 21300000, guid: 0063d70ea14f441d5bd7ebc28fcae0d4, type: 3}
+  - {fileID: 21300000, guid: 86f47b4ea314040ceb6d90e9de8cd05f, type: 3}
+  - {fileID: 21300000, guid: 679209be317154a6aa09b195ae9aee36, type: 3}
+  - {fileID: 21300000, guid: 5fd4e47f17ce346e08ba00f9277cd7b3, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - 23 Fish
+  - 16 Flame
+  - 32 Moni
+  - 14 Ketchup
+  - 37 Bastet
+  - 08 Panda_
+  - 50 Lava
+  - 46 Chopper
+  - 39 Khnum
+  - 47 Demon
+  - 17 Frost
+  - 19 Shadow
+  - 11 Beezee
+  - 09 Swine
+  - 20 Venom
+  - 10 Tiger
+  - 43 Moose
+  - 25 Shark
+  - 24 Prawn
+  - 26 Black Cat
+  - 03 Dino
+  - 33 Montu
+  - 30 Vampire
+  - 36 Anubis
+  - 41 Bigfoot
+  - 44 Penguin
+  - 01 Beary
+  - 35 Vimon
+  - 49 Hellhound
+  - 38 Horus
+  - 21 Amphimon
+  - 28 Frankenstein
+  - 29 Pumpkin
+  - 27 Devil
+  - 48 Ghoul
+  - 15 Woody
+  - 05 Treasure
+  - 22 Angler
+  - 40 Sobek
+  - 31 Himon
+  - 42 Fox
+  - 06 Buck
+  - 13 Kaktos
+  - 18 Nightingale
+  - 45 Snowman
+  - 02 Cactus
+  - 07 Bully
+  - 12 Flora
+  - 04 Pi
+  - 34 Trimon
+  m_RenderDataMap: {}
+  m_Tag: Skins Atlas
+  m_IsVariant: 0
