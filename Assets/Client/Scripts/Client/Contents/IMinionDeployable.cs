@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IMinionDeployable 
 {
-    public IReadOnlyList<Minion> MinionDeck
+    public IReadOnlyList<MinionData> MinionDeck
     {
         get;
     }

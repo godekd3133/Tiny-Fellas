@@ -29,8 +29,10 @@ public class MinionData
 {
    [SerializeField] private GameObject prefab;
    [SerializeField] private Sprite thumbnail;
+   [SerializeField] private BattleAbility battleAbility;
 
    public GameObject Prefab => prefab;
 
    public Sprite Thumbnail => thumbnail;
+   public BattleAbility BattleAbility => battleAbility;
 }

@@ -12,11 +12,11 @@ public class GameSessionInstance : MonoWeakSingletonPerScene<GameSessionInstance
 {
     private List<PlayerData> playerDataList;
     private Dictionary<string, PlayerData> playerDataByPlayerID ;
-    private List<Minion> minionDeck;
+    private List<MinionData> minionDeck;
     private List<Minion> minionInstanceList;
     private GameSession gameSession;
 
-    public IReadOnlyList<Minion> MinionDeck => minionDeck;
+    public IReadOnlyList<MinionData> MinionDeck => minionDeck;
     public IReadOnlyList<Minion> MinionInstanceList => minionInstanceList;
     public IReadOnlyList<PlayerData> PlayerDataList => playerDataList;
 

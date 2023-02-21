@@ -5,11 +5,11 @@ using Amazon.GameLift.Model;
 [Serializable]
 public class PlayerData : IMinionDeployable
 {
-    private List<Minion> minionDeck;
+    private List<MinionData> minionDeck;
     private List<Minion> minionInstanceList;
     private PlayerSession playerSession;
 
-    public IReadOnlyList<Minion> MinionDeck => minionDeck;
+    public IReadOnlyList<MinionData> MinionDeck => minionDeck;
 
     public IReadOnlyList<Minion> MinionInstanceList => minionInstanceList;
 
