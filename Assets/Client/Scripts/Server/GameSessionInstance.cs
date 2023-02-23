@@ -8,7 +8,12 @@ using UnityEngine.Events;
 using Newtonsoft.Json;
 using Unity.Netcode;
 
-public class GameSessionInstance : MonoWeakSingletonPerScene<GameSessionInstance> , IMinionDeployable
+// empty classs for inherit NetworkManager
+
+public class GameSessionInstance : NetworkManager
+    #if UNITY_SERVER || UNITY_EDITOR
+    ,IMinionDeployable
+    #endif
 {
     private List<PlayerData> playerDataList;
     private Dictionary<string, PlayerData> playerDataByPlayerID ;
