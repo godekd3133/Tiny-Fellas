@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Amazon.GameLift;
-using Aws.GameLift.Server.Model;
+using Amazon.GameLift.Model;
 using Amazon.Runtime;
 using Aws.GameLift.Server;
 using Cysharp.Threading.Tasks;
@@ -10,6 +10,7 @@ using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using GameSession = Aws.GameLift.Server.Model.GameSession;
 
 [RequireComponent(typeof(UnityTransport))]
 public class AWSFleetManager : MonoWeakSingleton<AWSFleetManager>
@@ -42,7 +43,6 @@ public class AWSFleetManager : MonoWeakSingleton<AWSFleetManager>
         
         transport.ConnectionData.Address = gameSession.IpAddress;
         transport.ConnectionData.Port = System.Convert.ToUInt16(gameSession.Port);
-        transport.StartServer();
         NetworkManager.Singleton.StartServer();
     }
     #endif
@@ -60,7 +60,9 @@ public class AWSFleetManager : MonoWeakSingleton<AWSFleetManager>
         
          
         var unityNetworkClient = new NetworkClient();
-        StartClient();
+        transport.ConnectionData.Address = "127.0.0.1";
+        transport.ConnectionData.Port = 0;
+        NetworkManager.Singleton.StartClient();
         var client = new AmazonGameLiftClient(new BasicAWSCredentials("ACCESS_KEY_ID", "SECRET_ACCESS_KEY"), Amazon.RegionEndpoint.APNortheast2);
         client.CreatePlayerSession(new CreatePlayerSessionRequest());
         var describeInstancesRequest = new DescribeInstancesRequest

@@ -40,7 +40,7 @@ public class GameSessionSynchronizer : NetworkBehaviour
 
     private void AddNewPlayerToReplcationTarget(PlayerData playerData)
     {
-        if (replicationFlagTargetTablePerPlayer.Contains(playerData)) return;
+        if (replicationFlagTargetTablePerPlayer.ContainsKey(playerData)) return;
 
         foreach (var flagDic in replicationFlagTargetTablePerPlayer)
             flagDic.Value.Add(playerData, true);
@@ -72,7 +72,6 @@ public class GameSessionSynchronizer : NetworkBehaviour
 
     private IEnumerator SyncMinionInformationFromServer()
     {
-        var gameSession = GameSessionInstance.Singleton;
 
         yield break;
         
@@ -83,10 +82,6 @@ public class GameSessionSynchronizer : NetworkBehaviour
     {
             
 
-    }
-
-    public List<PlayerData> GetPlayerDatasWithinReplicationRagne(PlayerData standardPlayer, List<PlayerData> playerDatas)
-    {
     }
 
     private class ClientIDCombinationContainer

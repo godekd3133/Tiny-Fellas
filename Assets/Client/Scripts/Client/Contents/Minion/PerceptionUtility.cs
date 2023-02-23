@@ -11,7 +11,7 @@ public class PerceptionUtility : MonoBehaviour
     
     public static List<Minion> GetPerceptedMinionList(Minion myMinion, PlayerSession playerSession)
     {
-        var gameSession = GameSessionInstance.GetInstanceOfScene(myMinion.gameObject.scene);
+        var gameSession = GameSessionInstance.Instance;
         var playerDataMap = gameSession.PlayerDataByPlayerID;
         var recognizedMinionInstancesList = new List<Minion>(RECOGNIZED_MINION_LIST_DEFAULT_CAPACITY);
         

@@ -10,7 +10,7 @@ using Unity.Netcode;
 
 // empty classs for inherit NetworkManager
 
-public class GameSessionInstance : NetworkManager
+public class GameSessionInstance : MonoWeakSingleton<GameSessionInstance>
     #if UNITY_SERVER || UNITY_EDITOR
     ,IMinionDeployable
     #endif
