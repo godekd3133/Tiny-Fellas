@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using Aws.GameLift;
 using Aws.GameLift.Server;
+using Aws.GameLift.Server.Model;
 
 #if UNITY_SERVER
 public class SDKInitializer : MonoBehaviour
@@ -70,10 +71,12 @@ private void ProcessReady()
         int port = EnviromentUtils.Port ??  1;
 
         return new ProcessParameters(
-            onStartGameSession: gameSession =>
+             (gameSession) =>
             {
                 Logger.SharedInstance.Write(":) GAMELIFT SESSION REQUESTED");
                 // TODO: game session things
+                AWSFleetManager.Instance.GenerateNewGameSession(gameSession);
+                
                 try
                 {
                     GenericOutcome outcome = GameLiftServerAPI.ActivateGameSession();
@@ -88,17 +91,24 @@ private void ProcessReady()
                     Logger.SharedInstance.Write(":( GAME SESSION ACTIVATION FAILED. ActivateGameSession() exception " + Environment.NewLine + e.Message);
                 }
             },
-            onProcessTerminate: () =>
+            (session) =>
+            {
+                
+            }
+           ,
+             () =>
             {
                 Logger.SharedInstance.Write(":| GAMELIFT PROCESS TERMINATION REQUESTED (OK BYE)");
                 gameLiftRequestedTermination = true;
                 Application.Quit();
-            },
-            onHealthCheck: () =>
-            {
-                Logger.SharedInstance.Write(":) GAMELIFT HEALTH CHECK REQUESTED (HEALTHY)");
-                return true;
-            },
+            }
+            ,
+
+             () =>
+             {
+                 Logger.SharedInstance.Write(":) GAMELIFT HEALTH CHECK REQUESTED (HEALTHY)");
+                 return true;
+             },
             port, // tell the GameLift service which port to connect to this process on.
                    // unless we manage this there can only be one process per server.
             logParameters);

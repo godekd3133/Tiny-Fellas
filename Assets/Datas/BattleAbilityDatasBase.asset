@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc4fc8557eac948e596d6b901c833f69, type: 3}
   m_Name: BattleAbilityDatasBase
   m_EditorClassIdentifier: 
-  battleAbilities: []
+  battleAbilities:
+  - {fileID: 11400000, guid: 06303300319e6334c97b2d053a129e71, type: 2}

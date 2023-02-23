@@ -7,15 +7,49 @@ using UnityEngine;
 using Newtonsoft.Json;
 using Unity.Netcode;
 
-public class GameSessionSynchronizer : MonoWeakSingletonPerScene<GameSessionSynchronizer>
+public class GameSessionSynchronizer : NetworkBehaviour
 {
     public float replicationRange = 100f;
-    private HashSet<ClientIDCombinationContainer> clientIDCombationSet;
-    
+    private HashSet<ClientIDCombinationContainer> clientIDCombationSet = new HashSet<ClientIDCombinationContainer>();
+    private HashSet<ulong> clinetIDSet = new HashSet<ulong>();
+
+    private Dictionary<PlayerData, Dictionary<PlayerData, bool>> replicationFlagTargetTablePerPlayer =
+        new Dictionary<PlayerData, Dictionary<PlayerData, bool>>();
+
+    public bool AddClientID(PlayerData playerData)
+    {
+        ulong clientID = playerData.ClientID;
+        if (clinetIDSet.Contains(clientID)) return false;
+
+        var newCombinationList = new List<ClientIDCombinationContainer>();
+        foreach (var idCombinationContainer in clientIDCombationSet)
+        {
+            var predefinedCombination = idCombinationContainer.ClientIDCombination;
+            var combination = new ulong[predefinedCombination.Length + 1];
+            predefinedCombination.CopyTo(combination, 0);
+            combination[combination.Length - 1] = clientID;
+            newCombinationList.Add(new ClientIDCombinationContainer(combination));
+        }
+
+        for (int i = 0; i < newCombinationList.Count; i++) clientIDCombationSet.Add(newCombinationList[i]);
+        clinetIDSet.Add(clientID);
+
+        return true;
+    }
+
+    private void AddNewPlayerToReplcationTarget(PlayerData playerData)
+    {
+        
+    }
+
+    private void RefreshReplicationTable()
+    {
+        
+    }
+
     private IEnumerator SyncMinionInformationFromServer()
     {
-        var gameSession = GameSessionInstance.GetInstanceOfScene(gameObject.scene);
-        var playerDataList = gameSession.PlayerDataList;
+        var gameSession = GameSessionInstance.Singleton;
 
         yield break;
         
@@ -26,6 +60,10 @@ public class GameSessionSynchronizer : MonoWeakSingletonPerScene<GameSessionSync
     {
             
 
+    }
+
+    public List<PlayerData> GetPlayerDatasWithinReplicationRagne(PlayerData standardPlayer, List<PlayerData> playerDatas)
+    {
     }
 
     private class ClientIDCombinationContainer
