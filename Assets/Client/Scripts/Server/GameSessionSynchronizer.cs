@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -39,12 +40,34 @@ public class GameSessionSynchronizer : NetworkBehaviour
 
     private void AddNewPlayerToReplcationTarget(PlayerData playerData)
     {
+        if (replicationFlagTargetTablePerPlayer.Contains(playerData)) return;
+
+        foreach (var flagDic in replicationFlagTargetTablePerPlayer)
+            flagDic.Value.Add(playerData, true);
         
+        replicationFlagTargetTablePerPlayer.Add(playerData,new Dictionary<PlayerData, bool>());
+
+        var newFlagDic = replicationFlagTargetTablePerPlayer[playerData];
+        foreach (var replcationTable in replicationFlagTargetTablePerPlayer)
+            if(replcationTable.Key != playerData) newFlagDic.Add(replcationTable.Key,true);
     }
 
     private void RefreshReplicationTable()
     {
-        
+        foreach (var replicationFlagTable in replicationFlagTargetTablePerPlayer)
+        {
+            var myPlayerData = replicationFlagTable.Key;
+            //TODO: Get leader minion
+            var standardPos = myPlayerData.MinionInstanceList[0].transform.position;
+            foreach (var flagDic in replicationFlagTable.Value)
+            {
+                var otherPlayerData = flagDic.Key;
+                //TODO: Get leader minion
+                var otherPlayerPos = otherPlayerData.MinionInstanceList[0].transform.position;
+                var isWithinRagne = Vector3.Distance(standardPos, otherPlayerPos) < replicationRange;
+                replicationFlagTable.Value[flagDic.Key] = isWithinRagne;
+            }
+        }
     }
 
     private IEnumerator SyncMinionInformationFromServer()
