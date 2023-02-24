@@ -1,12 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(MinionInstanceStat))]
-public class Minion : MonoBehaviour
+public class Minion : NetworkBehaviour
 {
     public PlayerData ownerPlayer;
     public float moveSpeed;

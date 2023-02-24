@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using Sirenix.Utilities;
+using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.Networking;
+using UnityEngine.Networking.Types;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : NetworkBehaviour
 {
     public TroopAdmin troopAdmin;
 
@@ -16,6 +19,7 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log($"[PlayerController] Changed State Into {state}");
     }
+    
     private void OnPostTroopUpdate(TroopState state)
     {
         if (state == TroopState.IDLE)
