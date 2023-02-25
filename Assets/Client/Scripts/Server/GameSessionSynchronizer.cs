@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using Cysharp.Threading.Tasks;
-using UnityEngine;
 using Newtonsoft.Json;
 using Unity.Netcode;
+using UnityEngine;
 
 public class GameSessionSynchronizer : NetworkBehaviour
 {
@@ -44,12 +44,12 @@ public class GameSessionSynchronizer : NetworkBehaviour
 
         foreach (var flagDic in replicationFlagTargetTablePerPlayer)
             flagDic.Value.Add(playerData, true);
-        
-        replicationFlagTargetTablePerPlayer.Add(playerData,new Dictionary<PlayerData, bool>());
+
+        replicationFlagTargetTablePerPlayer.Add(playerData, new Dictionary<PlayerData, bool>());
 
         var newFlagDic = replicationFlagTargetTablePerPlayer[playerData];
         foreach (var replcationTable in replicationFlagTargetTablePerPlayer)
-            if(replcationTable.Key != playerData) newFlagDic.Add(replcationTable.Key,true);
+            if (replcationTable.Key != playerData) newFlagDic.Add(replcationTable.Key, true);
     }
 
     private void RefreshReplicationTable()
@@ -74,13 +74,13 @@ public class GameSessionSynchronizer : NetworkBehaviour
     {
 
         yield break;
-        
+
     }
 
-    [ClientRpc(Delivery = RpcDelivery.Unreliable)]
+    //[ClientRpc(Delivery = RpcDelivery.Unreliable)]
     private void ReceiveMinionInformations(ClientRpcParams clientRPCParams)
     {
-            
+
 
     }
 
@@ -115,7 +115,7 @@ public class GameSessionSynchronizer : NetworkBehaviour
             var containter = obj as ClientIDCombinationContainer;
             int duplicatedCount = 0;
             var idCombination = containter.clientIDCombination;
-            for (int i = 0; i <idCombination.Length; i++)
+            for (int i = 0; i < idCombination.Length; i++)
                 if (clientIDSet.Contains(idCombination[i])) duplicatedCount++;
 
             return duplicatedCount == clientIDCombination.Length;
@@ -125,7 +125,7 @@ public class GameSessionSynchronizer : NetworkBehaviour
 
 public class GameSessionSynchronizingInfo
 {
-    
+
 }
 
 
