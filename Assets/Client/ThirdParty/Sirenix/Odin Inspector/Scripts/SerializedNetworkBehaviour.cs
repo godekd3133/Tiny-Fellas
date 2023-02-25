@@ -1,17 +1,18 @@
-﻿//-----------------------------------------------------------------------
+﻿using System;
+//-----------------------------------------------------------------------
 // <copyright file="SerializedNetworkBehaviour.cs" company="Sirenix IVS">
 // Copyright (c) Sirenix IVS. All rights reserved.
 // </copyright>
-//-----------------------------------------------------------------------
-#if !UNITY_2019_1_OR_NEWER
+//-----------------------------------------------------------------------
+
 #pragma warning disable 0618
 
 namespace Sirenix.OdinInspector
 {
     using Sirenix.Serialization;
+    using Unity.Netcode;
     using UnityEngine;
     using UnityEngine.Networking;
-
     /// <summary>
     /// A Unity NetworkBehaviour which is serialized by the Sirenix serialization system.
     /// Please note that Odin's custom serialization only works for non-synced variables - [SyncVar] and SyncLists still have the same limitations.
@@ -56,6 +57,7 @@ namespace Sirenix.OdinInspector
         [OnInspectorGUI, PropertyOrder(int.MinValue)]
         private void InternalOnInspectorGUI()
         {
+            Debug.Log("Dassd");
             EditorOnlyModeConfigUtility.InternalOnInspectorGUI(this);
         }
 
@@ -63,4 +65,3 @@ namespace Sirenix.OdinInspector
     }
 }
 
-#endif // UNITY_2019_1_OR_NEWER
