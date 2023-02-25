@@ -1950,6 +1950,42 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1176043966042225132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 769918697089130498, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 8654625865433704231}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6931571333974523632}
+  m_Layer: 0
+  m_Name: 'Minion Storage Slot 19 (Missing Prefab with guid: ece1ec47a526741729843e9e1fa03062)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6931571333974523632
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 8654625865433704231}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176043966042225132}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3865441170324798959}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1190478137238249005
 GameObject:
   m_ObjectHideFlags: 0
@@ -2241,6 +2277,42 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1231745002125123649
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 769918697089130498, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 5970173233610572472}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5400057662587460463}
+  m_Layer: 0
+  m_Name: 'Minion Storage Slot 07 (Missing Prefab with guid: ece1ec47a526741729843e9e1fa03062)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5400057662587460463
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 5970173233610572472}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231745002125123649}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3865441170324798959}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1260335171270818334
 GameObject:
   m_ObjectHideFlags: 0
@@ -2919,6 +2991,42 @@ RectTransform:
   m_AnchoredPosition: {x: -495, y: -158}
   m_SizeDelta: {x: 233.69995, y: 100}
   m_Pivot: {x: 1, y: 0.5}
+--- !u!1 &1804157152965287363
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 769918697089130498, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 4207104822792043494}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2470269141162631729}
+  m_Layer: 0
+  m_Name: 'Minion Storage Slot 03 (Missing Prefab with guid: ece1ec47a526741729843e9e1fa03062)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2470269141162631729
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 4207104822792043494}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804157152965287363}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3865441170324798959}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1810052523391992284
 GameObject:
   m_ObjectHideFlags: 0
@@ -3586,6 +3694,42 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &2021889851642124795
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 769918697089130498, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 1130670471434664498}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1700805900079686629}
+  m_Layer: 0
+  m_Name: 'Minion Storage Slot 08 (Missing Prefab with guid: ece1ec47a526741729843e9e1fa03062)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1700805900079686629
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 1130670471434664498}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021889851642124795}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3865441170324798959}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2187210665634316236
 GameObject:
   m_ObjectHideFlags: 0
@@ -3969,6 +4113,42 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &2308376546240197521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 769918697089130498, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 7714269120085388044}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8296789250187588315}
+  m_Layer: 0
+  m_Name: 'Minion Storage Slot 16 (Missing Prefab with guid: ece1ec47a526741729843e9e1fa03062)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8296789250187588315
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 7714269120085388044}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2308376546240197521}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3865441170324798959}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2364790727160568757
 GameObject:
   m_ObjectHideFlags: 0
@@ -6249,6 +6429,42 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &3239415579339727978
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 769918697089130498, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 1868248035316073429}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 128302602346011138}
+  m_Layer: 0
+  m_Name: 'Minion Storage Slot 10 (Missing Prefab with guid: ece1ec47a526741729843e9e1fa03062)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &128302602346011138
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 1868248035316073429}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3239415579339727978}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3865441170324798959}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3248596550605040156
 GameObject:
   m_ObjectHideFlags: 0
@@ -7034,6 +7250,78 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -182.6, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &3587807581816197048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 769918697089130498, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 4567565177362076490}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2831017513026701981}
+  m_Layer: 0
+  m_Name: 'Minion Storage Slot 15 (Missing Prefab with guid: ece1ec47a526741729843e9e1fa03062)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2831017513026701981
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 4567565177362076490}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3587807581816197048}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3865441170324798959}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &3782065959105327161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 769918697089130498, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 3688772422738099627}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3106267410685895804}
+  m_Layer: 0
+  m_Name: 'Minion Storage Slot 04 (Missing Prefab with guid: ece1ec47a526741729843e9e1fa03062)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3106267410685895804
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 3688772422738099627}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3782065959105327161}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3865441170324798959}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3833458802625475243
@@ -8672,6 +8960,42 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &4450192947969277312
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 769918697089130498, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 7923606204437945059}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8492881685478327092}
+  m_Layer: 0
+  m_Name: 'Minion Storage Slot 01 (Missing Prefab with guid: ece1ec47a526741729843e9e1fa03062)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8492881685478327092
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 7923606204437945059}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4450192947969277312}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3865441170324798959}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4453181261172701598
 GameObject:
   m_ObjectHideFlags: 0
@@ -10195,6 +10519,78 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &5420720706725049963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 769918697089130498, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 1859049206764116574}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 136832429077037961}
+  m_Layer: 0
+  m_Name: 'Minion Storage Slot 02 (Missing Prefab with guid: ece1ec47a526741729843e9e1fa03062)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &136832429077037961
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 1859049206764116574}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5420720706725049963}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3865441170324798959}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &5513800153259108348
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 769918697089130498, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 8781852990875910392}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7058798669878647087}
+  m_Layer: 0
+  m_Name: 'Minion Storage Slot 18 (Missing Prefab with guid: ece1ec47a526741729843e9e1fa03062)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7058798669878647087
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 8781852990875910392}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5513800153259108348}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3865441170324798959}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5614691359388836712
 GameObject:
   m_ObjectHideFlags: 0
@@ -10271,6 +10667,42 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &5617834863379006643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 769918697089130498, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 6151415210298418124}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5581293315841866267}
+  m_Layer: 0
+  m_Name: 'Minion Storage Slot 05 (Missing Prefab with guid: ece1ec47a526741729843e9e1fa03062)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5581293315841866267
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 6151415210298418124}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5617834863379006643}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3865441170324798959}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5656632055059582322
 GameObject:
   m_ObjectHideFlags: 0
@@ -10858,6 +11290,42 @@ RectTransform:
   - {fileID: 351922087023315943}
   m_Father: {fileID: 2733611076481676064}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &6100343872830154078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 769918697089130498, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 8262446127355881196}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7674294019145924411}
+  m_Layer: 0
+  m_Name: 'Minion Storage Slot 11 (Missing Prefab with guid: ece1ec47a526741729843e9e1fa03062)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7674294019145924411
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 8262446127355881196}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6100343872830154078}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3865441170324798959}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -12022,6 +12490,42 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &6853842927384185758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 769918697089130498, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 2251663553989965775}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 510330812223352344}
+  m_Layer: 0
+  m_Name: 'Minion Storage Slot 09 (Missing Prefab with guid: ece1ec47a526741729843e9e1fa03062)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &510330812223352344
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 2251663553989965775}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6853842927384185758}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3865441170324798959}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6861811329979860553
 GameObject:
   m_ObjectHideFlags: 0
@@ -12369,6 +12873,42 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!1 &6912523525002073715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 769918697089130498, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 917828767632929051}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1483447204019742924}
+  m_Layer: 0
+  m_Name: 'Minion Storage Slot 13 (Missing Prefab with guid: ece1ec47a526741729843e9e1fa03062)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1483447204019742924
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 917828767632929051}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6912523525002073715}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3865441170324798959}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6940109114746608904
 GameObject:
   m_ObjectHideFlags: 0
@@ -12633,6 +13173,42 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -160, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &7062244204619432945
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 769918697089130498, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 1119848326626505361}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1702372922404039494}
+  m_Layer: 0
+  m_Name: 'Minion Storage Slot 12 (Missing Prefab with guid: ece1ec47a526741729843e9e1fa03062)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1702372922404039494
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 1119848326626505361}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7062244204619432945}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3865441170324798959}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7072429622671064842
@@ -14514,6 +15090,42 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &7690973531319184768
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 769918697089130498, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 6932407729952021876}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8655451329746420899}
+  m_Layer: 0
+  m_Name: 'Minion Storage Slot 14 (Missing Prefab with guid: ece1ec47a526741729843e9e1fa03062)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8655451329746420899
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 6932407729952021876}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7690973531319184768}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3865441170324798959}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7706657931183083796
 GameObject:
   m_ObjectHideFlags: 0
@@ -14715,6 +15327,42 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &7803247427538128975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 769918697089130498, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 3004177164678036297}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3574292464187007646}
+  m_Layer: 0
+  m_Name: 'Minion Storage Slot 17 (Missing Prefab with guid: ece1ec47a526741729843e9e1fa03062)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3574292464187007646
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 3004177164678036297}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7803247427538128975}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3865441170324798959}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7809091396675314153
 GameObject:
   m_ObjectHideFlags: 0
@@ -15588,6 +16236,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2705361567812329117}
+  - component: {fileID: 4013045563934810064}
   m_Layer: 5
   m_Name: Animator
   m_TagString: Untagged
@@ -15616,6 +16265,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &4013045563934810064
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8365565645019440087}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 39bab3ba62c854564b628e48cba39dca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &8367280808629494166
 GameObject:
   m_ObjectHideFlags: 0
@@ -17396,6 +18065,42 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &9144975281154379084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 769918697089130498, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 8176657460482595778}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7589649055112577557}
+  m_Layer: 0
+  m_Name: 'Minion Storage Slot 06 (Missing Prefab with guid: ece1ec47a526741729843e9e1fa03062)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7589649055112577557
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 8176657460482595778}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9144975281154379084}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3865441170324798959}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &9175901160806446948
 GameObject:
   m_ObjectHideFlags: 0
@@ -17427,6 +18132,42 @@ RectTransform:
   - {fileID: 5859747244798502830}
   m_Father: {fileID: 5441101911927633739}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &9187285688640236732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 769918697089130498, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 6273140489443212688}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5702726115515196487}
+  m_Layer: 0
+  m_Name: 'Minion Storage Slot 20 (Missing Prefab with guid: ece1ec47a526741729843e9e1fa03062)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5702726115515196487
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
+  m_PrefabInstance: {fileID: 6273140489443212688}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9187285688640236732}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3865441170324798959}
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -18448,11 +19189,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
---- !u!224 &1483447204019742924 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
-  m_PrefabInstance: {fileID: 917828767632929051}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &981821238630975915
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18856,11 +19592,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
---- !u!224 &1702372922404039494 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
-  m_PrefabInstance: {fileID: 1119848326626505361}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1130670471434664498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18958,11 +19689,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
---- !u!224 &1700805900079686629 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
-  m_PrefabInstance: {fileID: 1130670471434664498}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1153430036855826116
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19468,11 +20194,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
---- !u!224 &136832429077037961 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
-  m_PrefabInstance: {fileID: 1859049206764116574}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1868248035316073429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19570,11 +20291,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
---- !u!224 &128302602346011138 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
-  m_PrefabInstance: {fileID: 1868248035316073429}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2023839493361817240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19876,11 +20592,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
---- !u!224 &510330812223352344 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
-  m_PrefabInstance: {fileID: 2251663553989965775}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2377528253256253225
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20896,11 +21607,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
---- !u!224 &3574292464187007646 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
-  m_PrefabInstance: {fileID: 3004177164678036297}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3061299510471807647
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21712,11 +22418,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
---- !u!224 &3106267410685895804 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
-  m_PrefabInstance: {fileID: 3688772422738099627}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3747836687014384990
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22120,11 +22821,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
---- !u!224 &2470269141162631729 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
-  m_PrefabInstance: {fileID: 4207104822792043494}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4227590997425324949
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22528,11 +23224,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
---- !u!224 &2831017513026701981 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
-  m_PrefabInstance: {fileID: 4567565177362076490}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4598829704043753913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23446,11 +24137,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
---- !u!224 &5400057662587460463 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
-  m_PrefabInstance: {fileID: 5970173233610572472}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5995664541966319093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23752,11 +24438,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
---- !u!224 &5581293315841866267 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
-  m_PrefabInstance: {fileID: 6151415210298418124}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6217882358335179323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23956,11 +24637,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
---- !u!224 &5702726115515196487 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
-  m_PrefabInstance: {fileID: 6273140489443212688}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6432683901955560340
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24262,11 +24938,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
---- !u!224 &8655451329746420899 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
-  m_PrefabInstance: {fileID: 6932407729952021876}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6972730886251471562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25282,11 +25953,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
---- !u!224 &8296789250187588315 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
-  m_PrefabInstance: {fileID: 7714269120085388044}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7761355438988801518
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25894,11 +26560,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
---- !u!224 &8492881685478327092 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
-  m_PrefabInstance: {fileID: 7923606204437945059}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7969539701612577458
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26404,11 +27065,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
---- !u!224 &7589649055112577557 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
-  m_PrefabInstance: {fileID: 8176657460482595778}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8262446127355881196
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26506,11 +27162,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
---- !u!224 &7674294019145924411 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
-  m_PrefabInstance: {fileID: 8262446127355881196}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8654625865433704231
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26608,11 +27259,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
---- !u!224 &6931571333974523632 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
-  m_PrefabInstance: {fileID: 8654625865433704231}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8761601027669007301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26812,11 +27458,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
---- !u!224 &7058798669878647087 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1741357286850402775, guid: ece1ec47a526741729843e9e1fa03062, type: 3}
-  m_PrefabInstance: {fileID: 8781852990875910392}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8788677149753143086
 PrefabInstance:
   m_ObjectHideFlags: 0
