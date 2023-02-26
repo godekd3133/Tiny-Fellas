@@ -29,10 +29,28 @@ public class MinionData
 {
    [SerializeField] private GameObject prefab;
    [SerializeField] private Sprite thumbnail;
-   [SerializeField] private BattleAbility battleAbility;
+   [SerializeField] private MinionStat stat;
 
    public GameObject Prefab => prefab;
 
    public Sprite Thumbnail => thumbnail;
-   public BattleAbility BattleAbility => battleAbility;
+   public MinionStat Stat => stat;
+
+   public MinionData()
+   {
+   }
+
+   public MinionData(MinionData origin)
+   {
+      prefab = origin.Prefab;
+      thumbnail = origin.Thumbnail;
+      stat = origin.Stat;
+   }
+   
+   public MinionData(MinionData origin , MinionStat stat)
+   {
+      prefab = origin.Prefab;
+      thumbnail = origin.Thumbnail;
+      this.stat = stat;
+   }
 }

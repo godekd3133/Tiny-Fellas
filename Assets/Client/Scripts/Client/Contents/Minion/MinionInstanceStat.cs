@@ -27,18 +27,12 @@ public class MinionInstanceStat : MonoBehaviour
         
         this.originStat = originStat;
         currentStat = new(originStat);
+        originBattleAbility = currentStat.MyBattleAbility;
+        battleAbility = new(battleAbility);
+        
         return true;
     }
     
-    public bool AssignBattleAbility(BattleAbility originBattleAbility)
-    {
-        if (this.originBattleAbility != null)
-            return false;
-        
-        this.originBattleAbility = originBattleAbility;
-        battleAbility = new(battleAbility);
-        return true;
-    }
 
     public bool TakeDamage(Minion attacker,BattleAbility attackerBattleAbility)
     {
