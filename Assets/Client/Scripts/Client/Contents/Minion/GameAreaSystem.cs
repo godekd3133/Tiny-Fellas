@@ -52,6 +52,7 @@ public class GameAreaSystem : NetworkBehaviour
 
     private async UniTask SessionArea()
     {
+        areaGameObject.SetActive(false);
         currentPhase = -1;
 
         await UniTask.Delay(TimeSpan.FromSeconds(startDelay));
@@ -72,7 +73,7 @@ public class GameAreaSystem : NetworkBehaviour
     private async UniTask Reduction(int toPhase)
     {
         Tween scaleTween = areaGameObject.transform.DOScale(new Vector3(areaScalesPerPhase[toPhase],
-                                      200f,
+                                      StartScale.y,
                                       areaScalesPerPhase[toPhase]), areaReductionTimes[toPhase]).SetEase(Ease.Linear);
         bool finished = false;
         scaleTween.onComplete += () => finished = true;

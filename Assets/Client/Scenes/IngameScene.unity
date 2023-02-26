@@ -176,6 +176,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 65638411}
+  - component: {fileID: 65638412}
   m_Layer: 0
   m_Name: Session
   m_TagString: Untagged
@@ -190,8 +191,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 65638410}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.86406, y: 0.8179349, z: 7.893072}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -202,6 +203,18 @@ Transform:
   m_Father: {fileID: 938769221}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &65638412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65638410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac0a746ef093f884ca8e963caa95c00f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &114912733 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1118001327161538, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
@@ -226,6 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 100
   agent: {fileID: 0}
+  recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
@@ -344,8 +358,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 167984131}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.4953165, y: 1.32683, z: -9.981339}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -377,6 +391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 100
   agent: {fileID: 0}
+  recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
@@ -513,6 +528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 100
   agent: {fileID: 0}
+  recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
@@ -605,6 +621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 100
   agent: {fileID: 0}
+  recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
@@ -1187,6 +1204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 100
   agent: {fileID: 0}
+  recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
@@ -1240,7 +1258,6 @@ GameObject:
   m_Component:
   - component: {fileID: 832783746}
   - component: {fileID: 832783747}
-  - component: {fileID: 832783748}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1282,6 +1299,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86aceb5c3407fc34c937698025fc87c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 1
+  isOwner: 1
   onPostMinionAdded:
     m_PersistentCalls:
       m_Calls: []
@@ -1291,19 +1310,6 @@ MonoBehaviour:
   onPostTroopStateChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &832783748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832783745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24a37b02449bb184e93ac3962eca9649, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  troopAdmin: {fileID: 832783747}
 --- !u!1 &872365204 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1118001327161538, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
@@ -1328,6 +1334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 100
   agent: {fileID: 0}
+  recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
@@ -1454,7 +1461,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 16598cf0ca596fc459d18f5013cc854f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1493,7 +1500,7 @@ Transform:
   m_GameObject: {fileID: 946043312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 200, y: 200, z: 200}
+  m_LocalScale: {x: 200, y: 2, z: 200}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1568,6 +1575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 100
   agent: {fileID: 0}
+  recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
@@ -1687,6 +1695,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 100
   agent: {fileID: 0}
+  recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
@@ -1749,6 +1758,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 100
   agent: {fileID: 0}
+  recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
@@ -2074,6 +2084,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 100
   agent: {fileID: 0}
+  recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
@@ -2099,7 +2110,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1309281743}
-  - component: {fileID: 1309281744}
   - component: {fileID: 1309281745}
   m_Layer: 0
   m_Name: Bot (1)
@@ -2130,20 +2140,6 @@ Transform:
   m_Father: {fileID: 65638411}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1309281744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1309281742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae1dc53ecb2cfca4881beb8513d54256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  troopAdmin: {fileID: 1309281745}
-  aroundDestination: {x: 0, y: 0, z: 0}
 --- !u!114 &1309281745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2156,6 +2152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86aceb5c3407fc34c937698025fc87c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 0
+  isOwner: 0
   onPostMinionAdded:
     m_PersistentCalls:
       m_Calls: []
@@ -2189,7 +2187,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1358922293}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.26, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2263,7 +2261,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   startDelay: 5
-  startScale: {x: 100, y: 200, z: 100}
+  startScale: {x: 100, y: 2, z: 100}
   areaGameObject: {fileID: 946043312}
   areaScalesPerPhase:
   - 80
@@ -2436,6 +2434,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0475995556b946d41a374ff9a6aa6af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  troopAdmins:
+  - {fileID: 832783747}
+  - {fileID: 1309281745}
   map: {fileID: 377987633}
 --- !u!1001 &1482345687
 PrefabInstance:
@@ -2664,6 +2665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 100
   agent: {fileID: 0}
+  recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
@@ -3068,6 +3070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 100
   agent: {fileID: 0}
+  recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
@@ -3130,6 +3133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 100
   agent: {fileID: 0}
+  recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
@@ -3192,6 +3196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 100
   agent: {fileID: 0}
+  recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:

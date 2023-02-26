@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 using UnityEditor.Timeline;
 using UnityEngine;
 using UnityEngine.AI;
@@ -21,9 +22,16 @@ public class TroopAdmin : MonoBehaviour
     [ShowInInspector, ReadOnly] public Minion leaderMinion { get; private set; }
     [ShowInInspector, ReadOnly] public TroopState troopState { get; private set; }
 
+    [SerializeField] private bool isPlayer;
+    [SerializeField] private bool isOwner;
+
+    public bool IsPlayer { get { return isPlayer; } }
+    public bool IsOwner { get { return isOwner; } }
+
     [HideInInspector] public UnityEvent<Minion> onPostMinionAdded;
     [HideInInspector] public UnityEvent<TroopState> onPostTroopUpdated;
     [HideInInspector] public UnityEvent<TroopState> onPostTroopStateChanged;
+
     void Awake()
     {
         troopState = TroopState.IDLE;
@@ -41,7 +49,41 @@ public class TroopAdmin : MonoBehaviour
         leaderMinion = minions[0];
     }
 
-    void Update()
+    private void Update()
+    {
+        if (isOwner) OwnerUpdate();
+        else BotUpdate();
+
+        onPostTroopUpdated.Invoke(troopState);
+
+        TroopState newState = CheckTransition(troopState);
+        if (troopState != newState) ChangeState(newState);
+    }
+
+    private void BotUpdate()
+    {
+        if (troopState == TroopState.IDLE)
+        {
+        }
+        else if (troopState == TroopState.MOVE)
+        {
+            if (minions.Any((Minion minion) => (minion.agent.transform.position - minion.agent.destination).magnitude <= minion.agent.stoppingDistance))
+            {
+                Vector3 newAroundDestination = SessionManager.instance.map.GetRandomPosition();
+                while ((leaderMinion.agent.destination - newAroundDestination).magnitude < 25) newAroundDestination = SessionManager.instance.map.GetRandomPosition();
+
+                foreach (var each in minions)
+                {
+                    each.agent.stoppingDistance = each.agent.radius + 0.5f;
+                    NavMeshPath path = new NavMeshPath();
+                    //   NavMesh.CalculatePath(each.agent.transform.position, aroundDestination, 0, path);
+                    each.agent.CalculatePath(newAroundDestination, path);
+                    each.agent.SetPath(path);
+                }
+            }
+        }
+    }
+    private void OwnerUpdate()
     {
         if (troopState == TroopState.IDLE)
         {
@@ -56,10 +98,43 @@ public class TroopAdmin : MonoBehaviour
         }
         else if (troopState == TroopState.MOVE)
         {
-            // 컨트롤중에는 유저의 컨트롤이 최우선이기에 자발적으로 특정한 행동을 하지 않음.
+            foreach (var each in minions)
+            {
+                each.agent.stoppingDistance = 0;
+                each.agent.SetDestination(each.transform.position + InputManager.instance.dragAxis);
+            }
         }
+        else if (troopState == TroopState.CHASE)
+        {
+            foreach (var each in minions)
+            {
+                each.agent.stoppingDistance = 0;
+                if (each.recognizedEnemies.Count > 0)
+                    each.agent.SetDestination(each.recognizedEnemies[0].transform.position);
+                else
+                    each.agent.SetDestination(leaderMinion.recognizedEnemies[0].transform.position);
+            }
+        }
+    }
 
-        onPostTroopUpdated.Invoke(troopState);
+    void ChangeState(TroopState newState)
+    {
+        troopState = newState;
+        onPostTroopStateChanged.Invoke(troopState);
+
+        if (isPlayer) { }
+        else
+        {
+            if (newState == TroopState.MOVE)
+            {
+                Vector3 randomPosition = SessionManager.instance.map.GetRandomPosition();
+                foreach (var each in minions)
+                {
+                    each.agent.stoppingDistance = each.agent.radius + 0.5f;
+                    each.agent.SetDestination(randomPosition);
+                }
+            }
+        }
     }
 
     /// <summary>
@@ -88,8 +163,7 @@ public class TroopAdmin : MonoBehaviour
         isSuccessed = resultState != originState;
         if (isSuccessed == true)
         {
-            troopState = resultState;
-            onPostTroopStateChanged.Invoke(troopState);
+            ChangeState(resultState);
         }
         return resultState;
     }
@@ -99,12 +173,37 @@ public class TroopAdmin : MonoBehaviour
         TroopState targetState = originState;
         if (originState == TroopState.IDLE)
         {
-            // TODO Dectect Logic
-            bool checkEnemyDetection = false;
-            if (checkEnemyDetection == true) targetState = TroopState.CHASE;
-            else targetState = TroopState.IDLE;
-        }
+            if (isOwner)
+            {
+                bool checkEnemyDetection = leaderMinion.recognizedEnemies.Count > 0;
+                // TODO Dectect Logic
 
+                if (checkEnemyDetection == true) targetState = TroopState.CHASE;
+
+                if (InputManager.instance.dragAxis.magnitude > 0)
+                    targetState = TroopState.MOVE;
+            }
+            else
+            {
+                targetState = TroopState.MOVE;
+            }
+
+        }
+        else if (originState == TroopState.MOVE)
+        {
+            if (isOwner)
+            {
+                if (InputManager.instance.dragAxis.magnitude == 0)
+                    targetState = TroopState.IDLE;
+            }
+            else
+            {
+                bool checkEnemyDetection = leaderMinion.recognizedEnemies.Count > 0;
+                // TODO Dectect Logic
+
+                if (checkEnemyDetection == true) targetState = TroopState.CHASE;
+            }
+        }
 
         if (originState != targetState)
             return CheckTransition(targetState);

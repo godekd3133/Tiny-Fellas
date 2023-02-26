@@ -35,7 +35,11 @@ public abstract class ACombatAI : MonoBehaviour
     }
 
     protected abstract UniTask StartCombatAI(AttackBehaviourBase attackBehaviour, CancellationToken token);
-
+    public List<Minion> UpdateRecognizedEnemy()
+    {
+        recognizedMinionList = PerceptionUtility.GetPerceptedMinionListLocalClient(owner);
+        return recognizedMinionList;
+    }
     public bool HasRecognizedEnemy()
     {
         if (recognizedMinionList == null) return false;

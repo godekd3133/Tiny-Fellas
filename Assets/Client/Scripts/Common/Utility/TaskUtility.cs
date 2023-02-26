@@ -36,6 +36,7 @@ public static class TaskUtility
         TaskContinuationOptions.ExecuteSynchronously,
         TaskScheduler.FromCurrentSynchronizationContext()).Unwrap();
 
+
     public static Task<To> Then<From, To>(this Task<From> original, Func<From, Task<To>> convert) => original.ContinueWith(
         task =>
         {
@@ -47,6 +48,7 @@ public static class TaskUtility
         CancellationToken.None,
         TaskContinuationOptions.ExecuteSynchronously,
         TaskScheduler.FromCurrentSynchronizationContext()).Unwrap();
+
 
     public static Task Then<From>(this Task<From> original, Func<From, Task> convert) => original.ContinueWith(
         task =>
