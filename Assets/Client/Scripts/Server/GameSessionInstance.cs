@@ -27,7 +27,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
     public IReadOnlyList<MinionData> MinionDeck => minionDeck;
     public IReadOnlyList<Minion> MinionInstanceList => minionInstanceList;
 #endif
-    public IReadOnlyList<PlayerData> PlayerDataList => playerDataList;
+    public IReadOnlyList<PlayerData> PlayerDataList => playerDataList.Value;
 
     public IReadOnlyDictionary<string, PlayerData> PlayerDataByPlayerID
     {
