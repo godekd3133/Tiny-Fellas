@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "JuexvRGxF/ISboQIznXtaNqNwbyL6zciDpuHQ0CTz5hvc6HsUfhQ3ediH+IuRPvVTWz1qomP5cBhOrA9pk3c3g==",
+  "success": true,
+  "projectFilePath": "C:\\SooLambas\\RequestGameSession\\src\\RequestGameSession\\RequestGameSession.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\wh401\\.nuget\\packages\\amazon.lambda.core\\2.1.0\\amazon.lambda.core.2.1.0.nupkg.sha512",
+    "C:\\Users\\wh401\\.nuget\\packages\\amazon.lambda.serialization.systemtextjson\\2.3.0\\amazon.lambda.serialization.systemtextjson.2.3.0.nupkg.sha512",
+    "C:\\Users\\wh401\\.nuget\\packages\\awssdk.core\\3.7.105.8\\awssdk.core.3.7.105.8.nupkg.sha512",
+    "C:\\Users\\wh401\\.nuget\\packages\\awssdk.gamelift\\3.7.102.47\\awssdk.gamelift.3.7.102.47.nupkg.sha512",
+    "C:\\Users\\wh401\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.14\\microsoft.netcore.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\wh401\\.nuget\\packages\\microsoft.netcore.app.runtime.linux-x64\\6.0.14\\microsoft.netcore.app.runtime.linux-x64.6.0.14.nupkg.sha512",
+    "C:\\Users\\wh401\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.14\\microsoft.windowsdesktop.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\wh401\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.14\\microsoft.aspnetcore.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\wh401\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.linux-x64\\6.0.14\\microsoft.aspnetcore.app.runtime.linux-x64.6.0.14.nupkg.sha512",
+    "C:\\Users\\wh401\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\6.0.14\\microsoft.netcore.app.crossgen2.win-x64.6.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}

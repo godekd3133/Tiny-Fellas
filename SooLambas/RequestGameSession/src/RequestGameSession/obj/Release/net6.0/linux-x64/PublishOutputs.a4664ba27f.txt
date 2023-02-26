@@ -1,0 +1,8 @@
+C:\SooLambas\RequestGameSession\src\RequestGameSession\bin\Release\net6.0\publish\RequestGameSession.deps.json
+C:\SooLambas\RequestGameSession\src\RequestGameSession\bin\Release\net6.0\publish\RequestGameSession.runtimeconfig.json
+C:\SooLambas\RequestGameSession\src\RequestGameSession\bin\Release\net6.0\publish\RequestGameSession.pdb
+C:\SooLambas\RequestGameSession\src\RequestGameSession\bin\Release\net6.0\publish\Amazon.Lambda.Core.dll
+C:\SooLambas\RequestGameSession\src\RequestGameSession\bin\Release\net6.0\publish\Amazon.Lambda.Serialization.SystemTextJson.dll
+C:\SooLambas\RequestGameSession\src\RequestGameSession\bin\Release\net6.0\publish\AWSSDK.Core.dll
+C:\SooLambas\RequestGameSession\src\RequestGameSession\bin\Release\net6.0\publish\AWSSDK.GameLift.dll
+C:\SooLambas\RequestGameSession\src\RequestGameSession\bin\Release\net6.0\publish\RequestGameSession.dll

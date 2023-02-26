@@ -1,0 +1,79 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "C:\\Users\\wh401\\Downloads\\SooLambas\\RequestGameSession\\src\\RequestGameSession\\RequestGameSession.csproj"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\wh401\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\wh401\\Downloads\\SooLambas\\RequestGameSession\\test\\RequestGameSession.Tests\\RequestGameSession.Tests.csproj",
+      "projectName": "RequestGameSession.Tests",
+      "projectPath": "C:\\Users\\wh401\\Downloads\\SooLambas\\RequestGameSession\\test\\RequestGameSession.Tests\\RequestGameSession.Tests.csproj",
+      "packagesPath": "C:\\Users\\wh401\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\wh401\\Downloads\\SooLambas\\RequestGameSession\\test\\RequestGameSession.Tests\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\wh401\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {
+            "C:\\Users\\wh401\\Downloads\\SooLambas\\RequestGameSession\\src\\RequestGameSession\\RequestGameSession.csproj": {
+              "projectPath": "C:\\Users\\wh401\\Downloads\\SooLambas\\RequestGameSession\\src\\RequestGameSession\\RequestGameSession.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "'C:\\Users\\wh401\\Downloads\\SooLambas\\RequestGameSession\\src\\RequestGameSession\\RequestGameSession.csproj'의 프로젝트 정보를 찾을 수 없습니다. Visual Studio를 사용 중인 경우 프로젝트가 언로드되었거나 현재 솔루션에 속하지 않기 때문일 수 있으므로 명령줄에서 복원을 실행하세요. 그러지 않으면 프로젝트 파일이 잘못되었거나 복원에 필요한 대상이 없을 수 있습니다.",
+      "libraryId": "C:\\Users\\wh401\\Downloads\\SooLambas\\RequestGameSession\\src\\RequestGameSession\\RequestGameSession.csproj",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}
