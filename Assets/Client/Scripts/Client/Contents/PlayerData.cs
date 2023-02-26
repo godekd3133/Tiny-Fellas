@@ -16,4 +16,14 @@ public class PlayerData : IMinionDeployable
 
     public PlayerSession PlayerSession => playerSession;
     public ulong ClientID => clientID;
+
+    private PlayerData()
+    {
+    }
+
+    public PlayerData(List<MinionData> deck, PlayerSession playerSession )
+    {
+        minionDeck = deck;
+        this.playerSession = playerSession;
+    }
 }

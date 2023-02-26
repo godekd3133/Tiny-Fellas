@@ -7,7 +7,7 @@ public class MinionDeckDeserializeHelper : MonoWeakSingleton<MinionDeckDeseriali
     [SerializeField] private MinionDataBase minionDataBase;
     [SerializeField] private MinionStatDataBase minionStatDataBase;
 
-    public MinionData GetMinionDeck(List<int> minionIndexList, List<int> statIndexList)
+    public List<MinionData> GetMinionDeck(List<int> minionIndexList, List<int> statIndexList)
     {
         var deck = new List<MinionData>();
         for (int i = 0; i < minionIndexList.Count; i++)
