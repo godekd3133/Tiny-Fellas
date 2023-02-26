@@ -15,6 +15,8 @@ public class GameSessionInstance : MonoWeakSingleton<GameSessionInstance>
     ,IMinionDeployable
     #endif
 {
+    [SerializeField] private bool isLocalTest;
+    
     private List<PlayerData> playerDataList;
     private Dictionary<string, PlayerData> playerDataByPlayerID ;
     private List<MinionData> minionDeck;
@@ -40,14 +42,10 @@ public class GameSessionInstance : MonoWeakSingleton<GameSessionInstance>
         }
     }
 
-
-    public bool AddPlayer(PlayerSession newPlayer)
+    [ServerRpc]
+    public bool Connect(string playerSessionID, ulong clientID)
     {
-        return true;
-    }
-
-    public bool RemovePlayer(PlayerSession player)
-    {
+        //TODO : connect to server then server Generating PlayerData with get some data from DB with playerSessionID
         return true;
     }
 }
