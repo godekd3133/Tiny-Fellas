@@ -61,8 +61,13 @@ namespace RequestGameSession
             requestingPlaeyerSession.GameSessionId = validSession.GameSessionId;
 
             var playerSessionResponse = await client.CreatePlayerSessionAsync(requestingPlaeyerSession);
-            
-            return validSession.IpAddress+"/"+validSession.Port+"/"+playerSessionResponse.PlayerSession.PlayerSessionId;
+            var returnValueAsJson = string.Format("{\"ip\":\"{0}\", \"port\":{1}, \"player_session_id\":\"{2}\"}",
+                validSession.IpAddress
+                , validSession.Port
+                , playerSessionResponse.PlayerSession.PlayerSessionId);
+
+
+            return returnValueAsJson;
         }
 
 

@@ -40,28 +40,28 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 6
+      Data: 4
     - Name: 
       Entry: 7
       Data: 
     - Name: $k
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: $v
       Entry: 7
       Data: 2|Stat, Assembly-CSharp
     - Name: statName
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: maxValue
       Entry: 4
-      Data: 100
+      Data: 0
     - Name: minValue
       Entry: 4
       Data: 0
     - Name: currentValue
       Entry: 4
-      Data: 100
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -73,22 +73,22 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 1
+      Data: 2
     - Name: $v
       Entry: 7
       Data: 3|Stat, Assembly-CSharp
     - Name: statName
       Entry: 3
-      Data: 1
+      Data: 2
     - Name: maxValue
       Entry: 4
-      Data: 0
+      Data: 20
     - Name: minValue
       Entry: 4
-      Data: 0
+      Data: 5
     - Name: currentValue
       Entry: 4
-      Data: 0
+      Data: 20
     - Name: 
       Entry: 8
       Data: 
@@ -100,22 +100,22 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 2
+      Data: 3
     - Name: $v
       Entry: 7
       Data: 4|Stat, Assembly-CSharp
     - Name: statName
       Entry: 3
-      Data: 2
+      Data: 3
     - Name: maxValue
       Entry: 4
-      Data: 20
+      Data: 1
     - Name: minValue
       Entry: 4
-      Data: 5
+      Data: 1
     - Name: currentValue
       Entry: 4
-      Data: 20
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -127,39 +127,12 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 3
+      Data: 5
     - Name: $v
       Entry: 7
       Data: 5|Stat, Assembly-CSharp
     - Name: statName
       Entry: 3
-      Data: 3
-    - Name: maxValue
-      Entry: 4
-      Data: 1
-    - Name: minValue
-      Entry: 4
-      Data: 1
-    - Name: currentValue
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 5
-    - Name: $v
-      Entry: 7
-      Data: 6|Stat, Assembly-CSharp
-    - Name: statName
-      Entry: 3
       Data: 5
     - Name: maxValue
       Entry: 4
@@ -170,33 +143,6 @@ MonoBehaviour:
     - Name: currentValue
       Entry: 4
       Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 4
-    - Name: $v
-      Entry: 7
-      Data: 7|Stat, Assembly-CSharp
-    - Name: statName
-      Entry: 3
-      Data: 4
-    - Name: maxValue
-      Entry: 4
-      Data: 10
-    - Name: minValue
-      Entry: 4
-      Data: 0
-    - Name: currentValue
-      Entry: 4
-      Data: 10
     - Name: 
       Entry: 8
       Data: 
@@ -211,4 +157,5 @@ MonoBehaviour:
       Data: 
   attackAnimationParameter: 2
   combatAIName: 0
+  passiveSkillName: 0
   attackBehaviour: {fileID: -4729200397134154711, guid: 5eb249fc8ed6c354c897b4b96f8573da, type: 3}

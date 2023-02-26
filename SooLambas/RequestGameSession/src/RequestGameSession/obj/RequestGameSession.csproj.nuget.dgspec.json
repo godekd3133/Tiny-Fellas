@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\SooLambas\\RequestGameSession\\src\\RequestGameSession\\RequestGameSession.csproj": {}
+    "C:\\Users\\wh401\\OneDrive\\바탕 화면\\bagelcode\\Tiny-Fellas\\SooLambas\\RequestGameSession\\src\\RequestGameSession\\RequestGameSession.csproj": {}
   },
   "projects": {
-    "C:\\SooLambas\\RequestGameSession\\src\\RequestGameSession\\RequestGameSession.csproj": {
+    "C:\\Users\\wh401\\OneDrive\\바탕 화면\\bagelcode\\Tiny-Fellas\\SooLambas\\RequestGameSession\\src\\RequestGameSession\\RequestGameSession.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SooLambas\\RequestGameSession\\src\\RequestGameSession\\RequestGameSession.csproj",
+        "projectUniqueName": "C:\\Users\\wh401\\OneDrive\\바탕 화면\\bagelcode\\Tiny-Fellas\\SooLambas\\RequestGameSession\\src\\RequestGameSession\\RequestGameSession.csproj",
         "projectName": "RequestGameSession",
-        "projectPath": "C:\\SooLambas\\RequestGameSession\\src\\RequestGameSession\\RequestGameSession.csproj",
+        "projectPath": "C:\\Users\\wh401\\OneDrive\\바탕 화면\\bagelcode\\Tiny-Fellas\\SooLambas\\RequestGameSession\\src\\RequestGameSession\\RequestGameSession.csproj",
         "packagesPath": "C:\\Users\\wh401\\.nuget\\packages\\",
-        "outputPath": "C:\\SooLambas\\RequestGameSession\\src\\RequestGameSession\\obj\\",
+        "outputPath": "C:\\Users\\wh401\\OneDrive\\바탕 화면\\bagelcode\\Tiny-Fellas\\SooLambas\\RequestGameSession\\src\\RequestGameSession\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\wh401\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -74,19 +74,11 @@
               "version": "[6.0.14, 6.0.14]"
             },
             {
-              "name": "Microsoft.AspNetCore.App.Runtime.linux-x64",
-              "version": "[6.0.14, 6.0.14]"
-            },
-            {
               "name": "Microsoft.NETCore.App.Crossgen2.win-x64",
               "version": "[6.0.14, 6.0.14]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.14, 6.0.14]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Runtime.linux-x64",
               "version": "[6.0.14, 6.0.14]"
             },
             {
@@ -100,11 +92,6 @@
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "linux-x64": {
-          "#import": []
         }
       }
     }
