@@ -12,8 +12,8 @@ using Unity.Netcode.Transports.UTP;
 using UnityEngine;
 using GameSession = Amazon.GameLift.Model.GameSession;
 
-[RequireComponent(typeof(UnityTransport), typeof(NetworkManager))]
-public class AWSFleetManager : MonoWeakSingleton<AWSFleetManager>
+[RequireComponent(typeof(UnityTransport), typeof(NetworkManager), typeof(NetworkObject))]
+public class AWSFleetManager : NetworkBehaviourSingleton<AWSFleetManager>
 {
 #if UNITY_SERVER || UNITY_EDITOR
     [SerializeField]
@@ -23,8 +23,11 @@ public class AWSFleetManager : MonoWeakSingleton<AWSFleetManager>
     private AmazonGameLiftClient gameLiftClient;
     private UnityTransport transport;
     private NetworkManager networkManager;
+    private NetworkObject networkObject;
     private void Awake()
     {
+        networkObject = GetComponent<NetworkObject>();
+        networkObject.Spawn(true);
         networkManager = NetworkManager.Singleton;
         networkManager.OnClientConnectedCallback += OnClientConnection;
 

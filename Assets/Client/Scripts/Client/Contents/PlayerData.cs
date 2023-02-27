@@ -4,32 +4,30 @@ using Amazon.GameLift.Model;
 using Unity.Netcode;
 
 [Serializable]
-public class PlayerData : IMinionDeployable,  INetworkSerializable
+public class PlayerData : IMinionDeployable
 {
     private List<MinionData> minionDeck;
     private List<Minion> minionInstanceList;
-    private PlayerSession playerSession;
+    private string playerSessionID;
     private ulong clientID;
+
+    public int currentGem;
 
     public IReadOnlyList<MinionData> MinionDeck => minionDeck;
 
     public IReadOnlyList<Minion> MinionInstanceList => minionInstanceList;
 
-    public PlayerSession PlayerSession => playerSession;
+    public string PlayerSessionID => playerSessionID;
     public ulong ClientID => clientID;
 
     private PlayerData()
     {
     }
 
-    public PlayerData(List<MinionData> deck, PlayerSession playerSession )
+    public PlayerData(List<MinionData> deck, string playerSessionId , ulong clientID)
     {
         minionDeck = deck;
-        this.playerSession = playerSession;
-    }
-
-    public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
-    {
-        throw new NotImplementedException();
+        this.playerSessionID = playerSessionId;
+        this.clientID = clientID;
     }
 }

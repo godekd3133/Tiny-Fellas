@@ -10,15 +10,15 @@ public class PerceptionUtility : MonoBehaviour
 
     public const int RECOGNIZED_MINION_LIST_DEFAULT_CAPACITY = 100;
 
-    public static List<Minion> GetPerceptedMinionList(Minion myMinion, PlayerSession playerSession)
+    public static List<Minion> GetPerceptedMinionList(Minion myMinion, ulong clientID)
     {
         var gameSession = GameSessionInstance.Instance;
-        var playerDataMap = gameSession.PlayerDataByPlayerID;
+        var playerDataMap = gameSession.PlayerDataByClientID;
         var recognizedMinionInstancesList = new List<Minion>(RECOGNIZED_MINION_LIST_DEFAULT_CAPACITY);
 
         foreach (var pair in playerDataMap)
         {
-            if (pair.Key != playerSession.PlayerId)
+            if (pair.Key != clientID)
             {
                 var minionInstanceList = pair.Value.MinionInstanceList;
                 for (int i = 0; i < minionInstanceList.Count; i++)

@@ -8,8 +8,8 @@ using UnityEngine.Events;
 using Newtonsoft.Json;
 using Unity.Netcode;
 
-// empty classs for inherit NetworkManager
 
+[RequireComponent(typeof(NetworkObject))]
 public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance>
     #if UNITY_SERVER || UNITY_EDITOR
     ,IMinionDeployable
@@ -17,8 +17,9 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
 {
     [SerializeField] private bool isLocalTest;
     
-    private NetworkVariable<List<PlayerData>> playerDataList;
-    private Dictionary<string, PlayerData> playerDataByPlayerID ;
+    private List<PlayerData> playerDataList;
+    private Dictionary<ulong, PlayerData> playerDataByClientID ;
+    private NetworkVariable<Dictionary<ulong, Vector3>> leaderMinionPositionPerPlayer;
     private List<MinionData> minionDeck;
     private List<Minion> minionInstanceList;
     private GameSession gameSession;
@@ -27,27 +28,68 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
     public IReadOnlyList<MinionData> MinionDeck => minionDeck;
     public IReadOnlyList<Minion> MinionInstanceList => minionInstanceList;
 #endif
-    public IReadOnlyList<PlayerData> PlayerDataList => playerDataList.Value;
+    public IReadOnlyList<PlayerData> PlayerDataList => playerDataList;
 
-    public IReadOnlyDictionary<string, PlayerData> PlayerDataByPlayerID
+    public IReadOnlyDictionary<ulong, PlayerData> PlayerDataByClientID
     {
         get
         {
-            if (playerDataByPlayerID == null)
+            if (playerDataByClientID == null)
             {
-                playerDataByPlayerID = new Dictionary<string, PlayerData>();
-                foreach (var playerData in playerDataList.Value)
-                    playerDataByPlayerID.Add(playerData.PlayerSession.PlayerId, playerData);
+                playerDataByClientID = new Dictionary<ulong, PlayerData>();
+                foreach (var playerData in playerDataList)
+                    playerDataByClientID.Add(playerData.ClientID, playerData);
             }
 
-            return playerDataByPlayerID;
+            return playerDataByClientID;
         }
+    }
+    
+
+    [ServerRpc]
+    public void Connect_ServerRPC(string playerSessionID, ulong clientID)
+    {
+        if (PlayerDataByClientID.ContainsKey(clientID)) return;
+        
+        //TODO : connect to server then server Generating PlayerData with get some data from DB with playerSessionID
+
+        var tesstMinionIndexList = new List<int>();
+        tesstMinionIndexList.Add(0);
+        tesstMinionIndexList.Add(0);
+        tesstMinionIndexList.Add(1);
+        tesstMinionIndexList.Add(2);
+        tesstMinionIndexList.Add(0);
+        tesstMinionIndexList.Add(5);
+
+        var testMinionStatIndexList = new List<int>(0);
+        testMinionStatIndexList.Add(0);
+        testMinionStatIndexList.Add(0);
+        testMinionStatIndexList.Add(0);
+        testMinionStatIndexList.Add(0);
+        testMinionStatIndexList.Add(0);
+        testMinionStatIndexList.Add(0);
+
+
+        var testDeck =
+            MinionDeckDeserializeHelper.Instance.GetMinionDeck(tesstMinionIndexList, testMinionStatIndexList);
+        var newPlayerData = new PlayerData(testDeck, playerSessionID,clientID);
+        newPlayerData.currentGem = 50;
+        
+        playerDataList.Add(newPlayerData);
     }
 
     [ServerRpc]
-    public bool Connect(string playerSessionID, ulong clientID)
+    public void SpawnMinion_ServerRPC(ulong clientID, int minionDataIndex)
     {
-        //TODO : connect to server then server Generating PlayerData with get some data from DB with playerSessionID
-        return true;
+        var playerData = PlayerDataByClientID[clientID];
+        var minionData = playerData.MinionDeck[minionDataIndex];
+
+        bool isPurchasable = playerData.currentGem >= minionData.Stat.MyBattleAbility[EStatName.GEM_COST].CurrentValue;
+        if (isPurchasable)
+        {
+            //TODO : spawn minion with client ownership
+        }
     }
+    
+    
 }

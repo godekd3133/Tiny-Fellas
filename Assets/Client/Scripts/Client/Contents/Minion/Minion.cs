@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(MinionInstanceStat))]
+[RequireComponent(typeof(MinionInstanceStat), typeof(NetworkObject))]
 public class Minion : NetworkBehaviour
 {
     public PlayerData ownerPlayer;
