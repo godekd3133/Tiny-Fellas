@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Amazon.GameLift.Model;
 using Unity.Netcode;
+using UnityEngine;
 
 [Serializable]
 public class PlayerData : IMinionDeployable
@@ -19,6 +20,17 @@ public class PlayerData : IMinionDeployable
 
     public string PlayerSessionID => playerSessionID;
     public ulong ClientID => clientID;
+
+    public void AddMinionInstance(GameObject newMinion)
+    {
+        minionInstanceList.Add(newMinion.GetComponent<Minion>());
+    }
+
+    [ClientRpc]
+    private void AddMinionInstance()
+    {
+        
+    }
 
     private PlayerData()
     {

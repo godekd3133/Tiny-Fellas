@@ -23,7 +23,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
     private List<MinionData> minionDeck;
     private List<Minion> minionInstanceList;
     private GameSession gameSession;
-
+    
 #if UNITY_SERVER || UNITY_EDITOR
     public IReadOnlyList<MinionData> MinionDeck => minionDeck;
     public IReadOnlyList<Minion> MinionInstanceList => minionInstanceList;
@@ -71,7 +71,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
 
 
         var testDeck =
-            MinionDeckDeserializeHelper.Instance.GetMinionDeck(tesstMinionIndexList, testMinionStatIndexList);
+            MinionDataBaseIngame.Instance.GetMinionDeck(tesstMinionIndexList, testMinionStatIndexList);
         var newPlayerData = new PlayerData(testDeck, playerSessionID,clientID);
         newPlayerData.currentGem = 50;
         
@@ -87,9 +87,13 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
         bool isPurchasable = playerData.currentGem >= minionData.Stat.MyBattleAbility[EStatName.GEM_COST].CurrentValue;
         if (isPurchasable)
         {
-            //TODO : spawn minion with client ownership
+           var newMinion =  Instantiate(minionData.Prefab);
+           var newMinionNetworkobject = newMinion.GetComponent<NetworkObject>();
+           newMinionNetworkobject.SpawnWithOwnership(clientID);
+           
+           playerData.AddMinionInstance(newMinion);
         }
     }
-    
-    
 }
+
+

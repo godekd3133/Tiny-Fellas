@@ -9,6 +9,7 @@ public class MinionDataBase : ScriptableObject
 
    private Dictionary<int, MinionData> dataByIndex;
 
+   public IReadOnlyList<MinionData> MinionDatas => minionDatas;
    public IReadOnlyDictionary<int, MinionData> DataByInex
    {
       get
@@ -47,9 +48,15 @@ public class MinionData
       stat = origin.Stat;
    }
    
-   public MinionData(MinionData origin , MinionStat stat)
+   public MinionData(GameObject prefab,MinionData origin  )
    {
-      prefab = origin.Prefab;
+      this.prefab = prefab;
+      thumbnail = origin.Thumbnail;
+   }
+   
+   public MinionData(GameObject prefab,MinionData origin , MinionStat stat )
+   {
+      this.prefab = prefab;
       thumbnail = origin.Thumbnail;
       this.stat = stat;
    }

@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.Common;
+using Unity.Netcode;
 using UnityEngine;
 
-public class MinionInstanceStat : MonoBehaviour
+[RequireComponent(typeof(NetworkObject))]
+public class MinionInstanceStat : NetworkBehaviour
 {
     private MinionStat originStat;
     private MinionStat currentStat;
@@ -32,8 +34,14 @@ public class MinionInstanceStat : MonoBehaviour
         
         return true;
     }
-    
 
+    [ClientRpc]
+    public void SetHealth_ClientRPC(float value)
+    {
+        
+    }
+    
+#if UNITY_SERVER || UNITY_EDITOR
     public bool TakeDamage(Minion attacker,BattleAbility attackerBattleAbility)
     {
         if (IsDead) return false;
@@ -41,4 +49,5 @@ public class MinionInstanceStat : MonoBehaviour
         currentStat[EStatName.HEALTH].CurrentValue -= attackerBattleAbility[EStatName.DAMAGE].CurrentValue;
         return true;
     }
+    #endif
 }
