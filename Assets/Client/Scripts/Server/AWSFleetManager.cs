@@ -1,36 +1,24 @@
-using System;
-using System.Collections.Generic;
 using Amazon.GameLift;
-using Amazon.GameLift.Model;
-using Amazon.Runtime;
-using Amazon.SecurityToken;
-using Amazon.SecurityToken.Model;
 using Cysharp.Threading.Tasks;
 using Unity.Netcode;
-using Unity.Netcode.Components;
 using Unity.Netcode.Transports.UTP;
 using UnityEngine;
-using GameSession = Amazon.GameLift.Model.GameSession;
+using Aws.GameLift.Server.Model;
 
-[RequireComponent(typeof(UnityTransport), typeof(NetworkManager), typeof(NetworkObject))]
+[RequireComponent( typeof(NetworkObject))]
 public class AWSFleetManager : NetworkBehaviourSingleton<AWSFleetManager>
 {
 #if UNITY_SERVER || UNITY_EDITOR
     [SerializeField]
     private string gameSessionSettingPath = "Assets/Datas/Settinga/GameSessionSetting";
-    
+
     private GameSession gameSession;
     private AmazonGameLiftClient gameLiftClient;
     private UnityTransport transport;
-    private NetworkManager networkManager;
     private NetworkObject networkObject;
     private void Awake()
     {
         networkObject = GetComponent<NetworkObject>();
-        networkObject.Spawn(true);
-        networkManager = NetworkManager.Singleton;
-        networkManager.OnClientConnectedCallback += OnClientConnection;
-
     }
     
     private void OnClientConnection(ulong clientID)

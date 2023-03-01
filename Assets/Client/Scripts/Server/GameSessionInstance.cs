@@ -19,7 +19,6 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
     
     private List<PlayerData> playerDataList;
     private Dictionary<ulong, PlayerData> playerDataByClientID ;
-    private NetworkVariable<Dictionary<ulong, Vector3>> leaderMinionPositionPerPlayer;
     private List<MinionData> minionDeck;
     private List<Minion> minionInstanceList;
     private GameSession gameSession;
@@ -76,6 +75,12 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
         newPlayerData.currentGem = 50;
         
         playerDataList.Add(newPlayerData);
+    }
+
+    [ClientRpc]
+    public void ConnectResponse_ClientRPC()
+    {
+        
     }
 
     [ServerRpc]

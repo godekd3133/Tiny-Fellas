@@ -49,5 +49,5 @@ public class MinionInstanceStat : NetworkBehaviour
         currentStat[EStatName.HEALTH].CurrentValue -= attackerBattleAbility[EStatName.DAMAGE].CurrentValue;
         return true;
     }
-    #endif
+    #endif  
 }

@@ -14,20 +14,20 @@ public class MinionDataBaseIngame : MonoWeakSingleton<MinionDataBaseIngame>
     
     private void Awake()
     {
-        #if UNITY_SERVER || UNITY_EDITOR
-        networkManager = NetworkManager.Singleton;
-
+        networkManager = NetworkManagerInstance.Instance;
+        
         foreach (var minionData in minionDataBase.MinionDatas)
         {
             var newPrefab = Instantiate(minionData.Prefab);
-            newPrefab.AddComponent<NetworkBehaviour>();
             newPrefab.AddComponent<NetworkObject>();
             newPrefab.AddComponent<MinionInstanceStat>();
             networkManager.AddNetworkPrefab(newPrefab);
             minionPrefabListForServer.Add(newPrefab);
+            
+            newPrefab.gameObject.SetActive(false);
         }
-        #endif
     }
+
 #if UNITY_SERVER || UNITY_EDITOR
     public List<MinionData> GetMinionDeck(List<int> minionIndexList, List<int> statIndexList)
     {
