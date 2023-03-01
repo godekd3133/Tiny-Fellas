@@ -9,6 +9,9 @@ public abstract class MonoWeakSingleton<T> : MonoBehaviour where T : MonoBehavio
 
     private static T CreateSingleton()
     {
+        var precreatedObj = GameObject.FindObjectOfType<T>();
+        if (precreatedObj != null) return precreatedObj;
+        
         var ownerObject = new GameObject($"{typeof(T).Name} (singleton)");
         var instance = ownerObject.AddComponent<T>();
         DontDestroyOnLoad(ownerObject);
