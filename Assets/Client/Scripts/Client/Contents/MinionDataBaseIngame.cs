@@ -8,10 +8,12 @@ public class MinionDataBaseIngame : MonoWeakSingleton<MinionDataBaseIngame>
 {
     [SerializeField] private MinionDataBase minionDataBase;
     [SerializeField] private MinionStatDataBase minionStatDataBase;
+   [SerializeField] private List<GameObject> minionNetworkPrefabList = new List<GameObject>();
 
     private NetworkManager networkManager;
-    private List<GameObject> minionPrefabListForServer = new List<GameObject>();
-    
+
+    public IReadOnlyList<GameObject> MinionNetworkPrefabList => minionNetworkPrefabList;
+
     private void Awake()
     {
     }
@@ -27,7 +29,7 @@ public class MinionDataBaseIngame : MonoWeakSingleton<MinionDataBaseIngame>
             newPrefab.AddComponent<NetworkObject>();
             newPrefab.AddComponent<MinionInstanceStat>();
             networkManager.AddNetworkPrefab(newPrefab);
-            minionPrefabListForServer.Add(newPrefab);
+            minionNetworkPrefabList.Add(newPrefab);
             
             newPrefab.gameObject.SetActive(false);
         }
@@ -45,7 +47,7 @@ public class MinionDataBaseIngame : MonoWeakSingleton<MinionDataBaseIngame>
 
     public MinionData GetMinionDataInstance(int minionIndex, int statIndex)
     {
-        return new MinionData(minionPrefabListForServer[minionIndex],minionDataBase.DataByInex[minionIndex], minionStatDataBase.DataByInex[statIndex]);
+        return new MinionData(minionNetworkPrefabList[minionIndex],minionDataBase.DataByInex[minionIndex], minionStatDataBase.DataByInex[statIndex]);
     }
     #endif
 }

@@ -80,7 +80,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
         bool isPurchasable = playerData.currentGem >= minionData.Stat.MyBattleAbility[EStatName.GEM_COST].CurrentValue;
         if (isPurchasable)
         {
-           var newMinion =  Instantiate(minionData.Prefab);
+           var newMinion =  Instantiate(MinionDataBaseIngame.Instance.MinionNetworkPrefabList[minionDataIndex]);
            var newMinionNetworkobject = newMinion.GetComponent<NetworkObject>();
            newMinionNetworkobject.SpawnWithOwnership(clientID);
            
