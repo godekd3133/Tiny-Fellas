@@ -1,3 +1,5 @@
+using System.IO;
+using System.Net;
 using Amazon.GameLift;
 using Cysharp.Threading.Tasks;
 using Unity.Netcode;
@@ -47,11 +49,22 @@ public class AWSFleetManager : NetworkBehaviourSingleton<AWSFleetManager>
     #if !UNITY_SERVER || UNITY_EDITOR
 
     [SerializeField] private FleetConnectionSetting_Client fleetConnectionSetting;
-    public async UniTask<GameSession> ConnectToGameSession_Client()
+    public async UniTask<GameSession> ConnectToGameSession()
     {
+        // TODO: AWS API Gateway
+        string url = "";
+        WebRequest request = HttpWebRequest.Create(url);  
+        WebResponse response = request.GetResponse();  
+        StreamReader reader = new StreamReader(response.GetResponseStream());  
+        string urlText = reader.ReadToEnd(); // it takes the response from your url. now you can use as your need  
         //TODO : call lambda
        
         return null;
+    }
+
+    public void ConnectToGameSession_Teswt()
+    {
+        NetworkManagerInstance.Instance.StartClient();
     }
 
    #endif
