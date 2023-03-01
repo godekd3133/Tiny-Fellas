@@ -19,6 +19,11 @@ public class AWSFleetManager : NetworkBehaviourSingleton<AWSFleetManager>
     private void Awake()
     {
         networkObject = GetComponent<NetworkObject>();
+#if UNITY_EDITOR
+        if(SDKInitializer.Instance.IsLocalTest)
+        NetworkManagerInstance.Instance.StartHost();
+        Logger.SharedInstance.Write("Server starts as host");
+#endif
     }
     
     private void OnClientConnection(ulong clientID)
@@ -35,9 +40,8 @@ public class AWSFleetManager : NetworkBehaviourSingleton<AWSFleetManager>
         // 
         
         
-        transport.ConnectionData.Address = gameSession.IpAddress;
-        transport.ConnectionData.Port = System.Convert.ToUInt16(gameSession.Port);
-        NetworkManager.Singleton.StartServer();
+        NetworkManagerInstance.Instance.StartServer();
+        Logger.SharedInstance.Write("Server starts");
     }
 #endif
     #if !UNITY_SERVER || UNITY_EDITOR
