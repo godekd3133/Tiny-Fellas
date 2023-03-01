@@ -1,13 +1,8 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
-using AmazonGameLift;
 using Cysharp.Threading.Tasks;
-using Unity.Netcode;
 
-public class AttackBehaviourBase : NetworkBehaviour
+public class AttackBehaviourBase : MonoBehaviour
 {
     private Animator animator;
     private Minion owner;
@@ -85,11 +80,5 @@ public class AttackBehaviourBase : NetworkBehaviour
     public virtual void ImpactDamage()
     {
         targetStat.TakeDamage(owner,battleAbility);
-    }
-    
-    // called as animation event
-    public void AttackDone()
-    {
-        isOnAttacking = false;
     }
 }

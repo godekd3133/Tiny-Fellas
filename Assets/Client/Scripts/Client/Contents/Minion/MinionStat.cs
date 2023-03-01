@@ -5,17 +5,17 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "MinionStat", menuName = "ScriptableObjects/MinionStat")]
-public class MinionStat : StatContainer
+public class MinionStat : StatContainer, IIndexContainable
 {
     [SerializeField] private BattleAbility battleAbility;
-    private int? indexInDB;
+    private int? indexInContainer;
 
-    public int? IndexInDB
+    public int? IndexInContainer
     {
-        get => indexInDB;
+        get => indexInContainer;
         set
         {
-            if (indexInDB == null) indexInDB = value;
+            if (indexInContainer == null) indexInContainer = value;
         } 
 
     }
@@ -27,7 +27,7 @@ public class MinionStat : StatContainer
 
     public MinionStat(MinionStat origin) : base(origin)
     {
-        this.indexInDB = origin.IndexInDB;
+        indexInContainer = origin.indexInContainer;
         battleAbility = new(origin.battleAbility);
     }
 

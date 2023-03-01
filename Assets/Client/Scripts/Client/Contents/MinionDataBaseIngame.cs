@@ -30,6 +30,7 @@ public class MinionDataBaseIngame : MonoWeakSingleton<MinionDataBaseIngame>
             var newPrefab = Instantiate(minionData.Prefab);
             newPrefab.AddComponent<NetworkObject>();
             newPrefab.AddComponent<MinionInstanceStat>();
+            newPrefab.AddComponent<Minion>();
             networkManager.AddNetworkPrefab(newPrefab);
             minionNetworkPrefabList.Add(newPrefab);
             
@@ -51,7 +52,7 @@ public class MinionDataBaseIngame : MonoWeakSingleton<MinionDataBaseIngame>
     {
         var originData = minionDataBase.DataByInex[minionIndex];
         var originStat = minionStatDataBase.DataByInex[statIndex];
-        return new MinionData(minionNetworkPrefabList[minionIndex],originData.Thumbnail,originStat,originStat.IndexInDB);
+        return new MinionData(minionNetworkPrefabList[minionIndex],originData.Thumbnail,originStat,originStat.IndexInContainer);
     }
     #endif
 }

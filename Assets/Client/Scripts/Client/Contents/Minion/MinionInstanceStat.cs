@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Data.Common;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -29,6 +25,10 @@ public class MinionInstanceStat : NetworkBehaviour
         originBattleAbility = currentStat.MyBattleAbility;
         battleAbility = new(battleAbility);
         
+        var preCreatedAttackbehaviour = gameObject.GetComponent<AttackBehaviourBase>();
+        if(preCreatedAttackbehaviour != null) Destroy(preCreatedAttackbehaviour);
+        gameObject.AddComponent(battleAbility.AttackBehaviour.GetType());
+        
         return true;
     }
 
@@ -37,7 +37,7 @@ public class MinionInstanceStat : NetworkBehaviour
     {
         currentStat[EStatName.HEALTH].CurrentValue = value;
     }
-
+    
     [ClientRpc]
     public void AssignOriginStat_ClientRPC(int statIndexInDB)
     {

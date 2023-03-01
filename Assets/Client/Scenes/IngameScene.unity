@@ -44362,6 +44362,7 @@ GameObject:
   - component: {fileID: 1374408428}
   - component: {fileID: 1374408429}
   - component: {fileID: 1374408430}
+  - component: {fileID: 1374408431}
   m_Layer: 0
   m_Name: Common
   m_TagString: Untagged
@@ -44414,6 +44415,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameSessionSettingPath: Assets/Datas/Settinga/GameSessionSetting
   fleetConnectionSetting: {fileID: 11400000, guid: 272c5250f5b26c1479167a082a711bfe, type: 2}
+--- !u!114 &1374408431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374408427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c52219bfebfbb584abab7b940be08f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1375998366
 GameObject:
   m_ObjectHideFlags: 0

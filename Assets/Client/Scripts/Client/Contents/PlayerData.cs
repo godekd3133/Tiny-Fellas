@@ -23,7 +23,9 @@ public class PlayerData : IMinionDeployable
 
     public void AddMinionInstance(GameObject newMinion)
     {
-        minionInstanceList.Add(newMinion.GetComponent<Minion>());
+        var minion = newMinion.GetComponent<Minion>();
+        minion.IndexInContainer = minionInstanceList.Count;
+        minionInstanceList.Add(minion);
     }
 
     [ClientRpc]

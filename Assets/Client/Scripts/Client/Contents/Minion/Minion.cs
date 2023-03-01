@@ -9,7 +9,7 @@ using UnityEngine.AI;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(MinionInstanceStat), typeof(NetworkObject))]
-public class Minion : NetworkBehaviour
+public class Minion : NetworkBehaviour, IIndexContainable
 {
     public PlayerData ownerPlayer;
     public float moveSpeed;
@@ -17,6 +17,18 @@ public class Minion : NetworkBehaviour
     public List<Minion> recognizedEnemies;
     [SerializeField] Animator animator;
 
+    private int? indexInMinionInstanceList;
+
+    public int? IndexInContainer
+    {
+        get => indexInMinionInstanceList;
+        set
+        {
+            if (indexInMinionInstanceList == null) return;
+            indexInMinionInstanceList = value;
+        }
+    }
+    
     public UnityEvent<Minion> beforeAttack { get; private set; }
     public UnityEvent<Minion> afterAttack { get; private set; }
     public UnityEvent<Minion> befroeDamaged { get; private set; }
