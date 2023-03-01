@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Amazon.GameLift.Model;
 using UnityEngine;
@@ -36,7 +37,14 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
             return playerDataByClientID;
         }
     }
-    
+
+    private void Awake()
+    {
+        #if UNITY_EDITOR
+        
+        #endif
+    }
+
 
     [ServerRpc]
     public void Connect_ServerRPC(string playerSessionID, ulong clientID)
@@ -82,6 +90,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
         {
            var newMinion =  Instantiate(MinionDataBaseIngame.Instance.MinionNetworkPrefabList[minionDataIndex]);
            var newMinionNetworkobject = newMinion.GetComponent<NetworkObject>();
+           newMinionNetworkobject.gameObject.AddComponent(minionData.Stat.MyBattleAbility.AttackBehaviour.GetType());
            newMinionNetworkobject.SpawnWithOwnership(clientID);
            
            playerData.AddMinionInstance(newMinion);

@@ -35,7 +35,7 @@ public class MinionStatDataBase : ScriptableObject
       for (int i = 0; i < minionStats.Count; i++)
       {
          dataByIndex.Add(i,minionStats[i]);
-         minionStats[i].IndexInDB = i;
+         minionStats[i].IndexInContainer = i;
       }
    }
 }

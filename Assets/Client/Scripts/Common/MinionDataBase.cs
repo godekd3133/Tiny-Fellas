@@ -36,7 +36,7 @@ public class MinionDataBase : ScriptableObject
       for (int i = 0; i < minionDatas.Count; i++)
       {
          dataByIndex.Add(i,minionDatas[i]);
-         minionDatas[i].IndexInDB = i;
+         minionDatas[i].IndexInContainer = i;
       }
 
       hadInitiliazed = true;
@@ -44,24 +44,24 @@ public class MinionDataBase : ScriptableObject
 }
 
 [Serializable]
-public class MinionData
+public class MinionData: IIndexContainable
 {
    [SerializeField] private GameObject prefab;
    [SerializeField] private Sprite thumbnail;
    [SerializeField] private MinionStat stat;
-   private int? indexInDB;
+   private int? indexInContainer;
 
    public GameObject Prefab => prefab;
 
    public Sprite Thumbnail => thumbnail;
    public MinionStat Stat => stat;
 
-   public int? IndexInDB
+   public int? IndexInContainer
    {
-      get => indexInDB;
+      get => indexInContainer;
       set
       {
-         if (indexInDB == null) indexInDB = value;
+         if (indexInContainer == null) indexInContainer = value;
       }
    }
    
@@ -70,12 +70,12 @@ public class MinionData
    {
    }
 
-   public MinionData(GameObject prefab,Sprite thumbnail , MinionStat stat, int? indexInDB )
+   public MinionData(GameObject prefab,Sprite thumbnail , MinionStat stat, int? indexInContainer )
    {
       this.prefab = prefab;
       this.thumbnail = thumbnail;
       this.stat =  new(stat);
-      Assert.IsTrue(indexInDB == null);      
-      this.indexInDB = indexInDB;
+      Assert.IsTrue(indexInContainer == null);      
+      this.indexInContainer = indexInContainer;
    }
 }

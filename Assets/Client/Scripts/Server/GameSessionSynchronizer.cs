@@ -4,10 +4,16 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
+[RequireComponent(typeof(GameSessionInstance))]
 public class GameSessionSynchronizer : NetworkBehaviour
 {
     public float replicationRange = 100f;
-    private NetworkList<ulong> clientIDs;
+
+    [ClientRpc]
+    private void RefreshPlayerData_ClientRPC()
+    {
+        
+    }
 
 }
 

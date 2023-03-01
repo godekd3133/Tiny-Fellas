@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
 using Aws.GameLift;
 using Aws.GameLift.Server;
-using Aws.GameLift.Server.Model;
 
-#if UNITY_SERVER
-public class SDKInitializer : MonoBehaviour
+public class SDKInitializer : MonoWeakSingleton<SDKInitializer>
 {
+#if UNITY_SERVER || UNITY_EDITOR
+    [SerializeField] private bool isLocalTest;
+    
     private bool isConnected;
     private GameLift gameLift;
 
@@ -18,6 +17,9 @@ public class SDKInitializer : MonoBehaviour
     {
         get => isConnected;
     }
+
+    public bool IsLocalTest => isLocalTest;
+    
     void Awake()
     {
         isConnected = false;
@@ -164,5 +166,5 @@ private void ProcessReady()
             Logger.SharedInstance.Write(":( PROCESSENDING FAILED. ProcessEnding() exception " + Environment.NewLine + e.Message);
         }
     }
-}
 #endif
+}
