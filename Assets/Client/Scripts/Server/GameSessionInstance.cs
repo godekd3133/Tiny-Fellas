@@ -1,11 +1,6 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Amazon.GameLift;
 using Amazon.GameLift.Model;
 using UnityEngine;
-using UnityEngine.Events;
-using Newtonsoft.Json;
 using Unity.Netcode;
 
 
@@ -15,8 +10,6 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
     ,IMinionDeployable
     #endif
 {
-    [SerializeField] private bool isLocalTest;
-    
     private List<PlayerData> playerDataList;
     private Dictionary<ulong, PlayerData> playerDataByClientID ;
     private List<MinionData> minionDeck;
@@ -77,12 +70,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
         playerDataList.Add(newPlayerData);
     }
 
-    [ClientRpc]
-    public void ConnectResponse_ClientRPC()
-    {
-        
-    }
-
+    
     [ServerRpc]
     public void SpawnMinion_ServerRPC(ulong clientID, int minionDataIndex)
     {

@@ -14,6 +14,11 @@ public class MinionDataBaseIngame : MonoWeakSingleton<MinionDataBaseIngame>
     
     private void Awake()
     {
+    }
+
+    [ContextMenu("Add minion prefab to NetworkPrefab list")]
+    private void UpdateNetworkMinionPrefabList()
+    {
         networkManager = NetworkManagerInstance.Instance;
         
         foreach (var minionData in minionDataBase.MinionDatas)

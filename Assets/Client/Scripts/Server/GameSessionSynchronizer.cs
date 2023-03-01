@@ -7,7 +7,11 @@ using UnityEngine;
 public class GameSessionSynchronizer : NetworkBehaviour
 {
     public float replicationRange = 100f;
-    private HashSet<ClientIDCombinationContainer> clientIDCombationSet = new HashSet<ClientIDCombinationContainer>();
+    private NetworkList<ulong> clientIDs;
+
+}
+
+ /*private HashSet<ClientIDCombinationContainer> clientIDCombationSet = new HashSet<ClientIDCombinationContainer>();
     private HashSet<ulong> clinetIDSet = new HashSet<ulong>();
 
     private Dictionary<PlayerData, Dictionary<PlayerData, bool>> replicationFlagTargetTablePerPlayer =
@@ -64,23 +68,9 @@ public class GameSessionSynchronizer : NetworkBehaviour
                 replicationFlagTable.Value[flagDic.Key] = isWithinRagne;
             }
         }
-    }
+    }*/
 
-    private IEnumerator SyncMinionInformationFromServer()
-    {
-
-        yield break;
-
-    }
-
-    //[ClientRpc(Delivery = RpcDelivery.Unreliable)]
-    private void ReceiveMinionInformations(ClientRpcParams clientRPCParams)
-    {
-
-
-    }
-
-    private class ClientIDCombinationContainer
+    /*private class ClientIDCombinationContainer
     {
         private ulong[] clientIDCombination;
         private readonly int hashCode;
@@ -116,14 +106,7 @@ public class GameSessionSynchronizer : NetworkBehaviour
 
             return duplicatedCount == clientIDCombination.Length;
         }
-    }
-}
-
-public class GameSessionSynchronizingInfo
-{
-
-}
-
+    }*/
 
 
 
