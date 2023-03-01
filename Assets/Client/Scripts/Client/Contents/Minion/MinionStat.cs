@@ -8,7 +8,17 @@ using UnityEngine.Events;
 public class MinionStat : StatContainer
 {
     [SerializeField] private BattleAbility battleAbility;
+    private int? indexInDB;
 
+    public int? IndexInDB
+    {
+        get => indexInDB;
+        set
+        {
+            if (indexInDB == null) indexInDB = value;
+        } 
+
+    }
     public BattleAbility MyBattleAbility => battleAbility;
 
     private MinionStat()
@@ -17,6 +27,7 @@ public class MinionStat : StatContainer
 
     public MinionStat(MinionStat origin) : base(origin)
     {
+        this.indexInDB = origin.IndexInDB;
         battleAbility = new(origin.battleAbility);
     }
 

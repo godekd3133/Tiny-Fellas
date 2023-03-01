@@ -85,6 +85,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
            newMinionNetworkobject.SpawnWithOwnership(clientID);
            
            playerData.AddMinionInstance(newMinion);
+           newMinionNetworkobject.GetComponent<MinionInstanceStat>().AssignOriginStat_ClientRPC(minionDataIndex);
         }
     }
 }

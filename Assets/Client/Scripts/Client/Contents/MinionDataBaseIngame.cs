@@ -13,6 +13,8 @@ public class MinionDataBaseIngame : MonoWeakSingleton<MinionDataBaseIngame>
     private NetworkManager networkManager;
 
     public IReadOnlyList<GameObject> MinionNetworkPrefabList => minionNetworkPrefabList;
+    public IReadOnlyDictionary<int, MinionStat> MinionStatDataByIndex => minionStatDataBase.DataByInex;
+    public IReadOnlyDictionary<int, MinionData> MinionDataByIndex => minionDataBase.DataByInex;
 
     private void Awake()
     {
@@ -47,7 +49,9 @@ public class MinionDataBaseIngame : MonoWeakSingleton<MinionDataBaseIngame>
 
     public MinionData GetMinionDataInstance(int minionIndex, int statIndex)
     {
-        return new MinionData(minionNetworkPrefabList[minionIndex],minionDataBase.DataByInex[minionIndex], minionStatDataBase.DataByInex[statIndex]);
+        var originData = minionDataBase.DataByInex[minionIndex];
+        var originStat = minionStatDataBase.DataByInex[statIndex];
+        return new MinionData(minionNetworkPrefabList[minionIndex],originData.Thumbnail,originStat,originStat.IndexInDB);
     }
     #endif
 }

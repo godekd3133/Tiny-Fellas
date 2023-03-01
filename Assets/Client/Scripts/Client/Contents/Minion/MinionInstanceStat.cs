@@ -24,9 +24,6 @@ public class MinionInstanceStat : NetworkBehaviour
 
     public bool AssignOriginStat(MinionStat originStat)
     {
-        if (this.originStat != null)
-            return false;
-        
         this.originStat = originStat;
         currentStat = new(originStat);
         originBattleAbility = currentStat.MyBattleAbility;
@@ -38,7 +35,13 @@ public class MinionInstanceStat : NetworkBehaviour
     [ClientRpc]
     public void SetHealth_ClientRPC(float value)
     {
-        
+        currentStat[EStatName.HEALTH].CurrentValue = value;
+    }
+
+    [ClientRpc]
+    public void AssignOriginStat_ClientRPC(int statIndexInDB)
+    {
+        AssignOriginStat(MinionDataBaseIngame.Instance.MinionStatDataByIndex[statIndexInDB]);
     }
     
 #if UNITY_SERVER || UNITY_EDITOR

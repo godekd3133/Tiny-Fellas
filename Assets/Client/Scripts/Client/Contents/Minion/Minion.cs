@@ -55,8 +55,6 @@ public class Minion : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
-        if (!IsOwner) return;
-
         var ownerID = ownerPlayer.ClientID;
         var ownerPlayerData = GameSessionInstance.Instance.PlayerDataByClientID[ownerID];
         ownerPlayerData.AddMinionInstance(gameObject);
