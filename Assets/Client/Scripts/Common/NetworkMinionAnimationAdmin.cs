@@ -5,7 +5,7 @@ using UnityEngine;
 public class NetworkMinionAnimationAdmin : NetworkBehaviourSingleton<NetworkMinionAnimationAdmin>
 {
     [ClientRpc]
-    public void OrderAttackAnimation_ClientRPC(ulong clientID, int minionIndexInInstacneList,  string animparam, int value )
+    public void PlayAnimation_ClientRPC(ulong clientID, int minionIndexInInstacneList,  string animparam, int value )
     {
         var animator = GameSessionInstance.Instance.PlayerDataByClientID[clientID].MinionInstanceList[minionIndexInInstacneList]
             .GetComponent<Animator>();
@@ -14,7 +14,7 @@ public class NetworkMinionAnimationAdmin : NetworkBehaviourSingleton<NetworkMini
     }
     
     [ClientRpc]
-    public void OrderAttackAnimation_ClientRPC(ulong clientID, int minionIndexInInstacneList,  string animparam, float value )
+    public void PlayAnimation_ClientRPC(ulong clientID, int minionIndexInInstacneList,  string animparam, float value )
     {
         var animator = GameSessionInstance.Instance.PlayerDataByClientID[clientID].MinionInstanceList[minionIndexInInstacneList]
             .GetComponent<Animator>();
@@ -23,7 +23,7 @@ public class NetworkMinionAnimationAdmin : NetworkBehaviourSingleton<NetworkMini
     }
     
     [ClientRpc]
-    public void OrderAttackAnimation_ClientRPC(ulong clientID, int minionIndexInInstacneList,  string animparam, bool value )
+    public void PlayAnimation_ClientRPC(ulong clientID, int minionIndexInInstacneList,  string animparam, bool value )
     {
         var animator = GameSessionInstance.Instance.PlayerDataByClientID[clientID].MinionInstanceList[minionIndexInInstacneList]
             .GetComponent<Animator>();
@@ -32,7 +32,7 @@ public class NetworkMinionAnimationAdmin : NetworkBehaviourSingleton<NetworkMini
     }
     
     [ClientRpc]
-    public void OrderAttackAnimation_ClientRPC(ulong clientID, int minionIndexInInstacneList,  string animparam )
+    public void PlayAnimation_ClientRPC(ulong clientID, int minionIndexInInstacneList,  string animparam )
     {
         var animator = GameSessionInstance.Instance.PlayerDataByClientID[clientID].MinionInstanceList[minionIndexInInstacneList]
             .GetComponent<Animator>();
@@ -41,7 +41,7 @@ public class NetworkMinionAnimationAdmin : NetworkBehaviourSingleton<NetworkMini
     }
     
     [ClientRpc]
-    public void OrderAttackAnimationState_ClientRPC(ulong clientID, int minionIndexInInstacneList,  string stateName )
+    public void PlayAnimationState_ClientRPC(ulong clientID, int minionIndexInInstacneList,  string stateName )
     {
         var animator = GameSessionInstance.Instance.PlayerDataByClientID[clientID].MinionInstanceList[minionIndexInInstacneList]
             .GetComponent<Animator>();

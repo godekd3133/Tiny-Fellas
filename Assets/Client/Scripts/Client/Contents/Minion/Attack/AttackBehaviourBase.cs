@@ -69,6 +69,7 @@ public class AttackBehaviourBase : MonoBehaviour
     protected virtual void Attack(Minion target)
     {
         animator.SetTrigger(battleAbility.AttackAnimationParameter);
+        NetworkMinionAnimationAdmin.Instance.PlayAnimation_ClientRPC(owner.OwnerClientId, owner.IndexInContainer.Value, battleAbility.AttackAnimationParameter);
     }
 
     public bool IsInAttackRagne(Transform target)

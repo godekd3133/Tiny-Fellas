@@ -67,15 +67,18 @@ public class Minion : NetworkBehaviour, IIndexContainable
 
     public override void OnNetworkSpawn()
     {
+        if (IsServer) return;
+        
         var ownerID = ownerPlayer.ClientID;
         var ownerPlayerData = GameSessionInstance.Instance.PlayerDataByClientID[ownerID];
         ownerPlayerData.AddMinionInstance(gameObject);
+        GetComponent<AttackBehaviourBase>().SetOwner(this, animator);
     }
 
     public void Attack()
     {
         beforeAttack.Invoke(this);
-        stat.MyBattleAbility.CombatAI.SetActiveAI(true, stat.MyBattleAbility.AttackBehaviour);
+        stat.MyBattleAbility.CombatAI.SetActiveAI(true, stat.MyBattleAbility.OriginAttackBehaviour);
         afterAttack.Invoke(this);
     }
 
