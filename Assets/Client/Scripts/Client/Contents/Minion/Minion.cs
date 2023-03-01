@@ -78,7 +78,7 @@ public class Minion : NetworkBehaviour, IIndexContainable
     public void Attack()
     {
         beforeAttack.Invoke(this);
-        stat.MyBattleAbility.CombatAI.SetActiveAI(true, stat.MyBattleAbility.OriginAttackBehaviour);
+        stat.MyBattleAbility.CombatAI.SetActiveAI(true, stat.MyBattleAbility.AttackBehaviour);
         afterAttack.Invoke(this);
     }
 

@@ -90,7 +90,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
         {
            var newMinion =  Instantiate(MinionDataBaseIngame.Instance.MinionNetworkPrefabList[minionDataIndex]);
            var newMinionNetworkobject = newMinion.GetComponent<NetworkObject>();
-           var attackBehaviour =  newMinionNetworkobject.gameObject.AddComponent(minionData.Stat.MyBattleAbility.OriginAttackBehaviour.GetType());
+           var attackBehaviour =  newMinionNetworkobject.gameObject.AddComponent(minionData.Stat.MyBattleAbility.AttackBehaviour.GetType());
            (attackBehaviour as AttackBehaviourBase).SetOwner(newMinion.GetComponent<Minion>());
            
            newMinionNetworkobject.SpawnWithOwnership(clientID);

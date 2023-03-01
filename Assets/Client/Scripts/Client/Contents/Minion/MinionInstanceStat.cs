@@ -27,7 +27,7 @@ public class MinionInstanceStat : NetworkBehaviour
         
         var preCreatedAttackbehaviour = gameObject.GetComponent<AttackBehaviourBase>();
         if(preCreatedAttackbehaviour != null) Destroy(preCreatedAttackbehaviour);
-        gameObject.AddComponent(battleAbility.OriginAttackBehaviour.GetType());
+        gameObject.AddComponent(battleAbility.AttackBehaviour.GetType());
         
         return true;
     }

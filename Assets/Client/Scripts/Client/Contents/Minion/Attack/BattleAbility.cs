@@ -28,7 +28,7 @@ public class BattleAbility : StatContainer
     [SerializeField] private EMinionAnimationParameter attackAnimationParameter;
     [SerializeField] private EComatAIName combatAIName;
     [SerializeField] private ESkillPassiveName passiveSkillName;
-    [SerializeField] private AttackBehaviourBase originAttackBehaviour;
+    [SerializeField] private AttackBehaviourBase attackBehaviour;
 
     private ACombatAI combatAI;
     private ASkillPassiveBase passiveSkill;
@@ -62,7 +62,7 @@ public class BattleAbility : StatContainer
         }
     }
     
-    public AttackBehaviourBase OriginAttackBehaviour => originAttackBehaviour;
+    public AttackBehaviourBase AttackBehaviour => attackBehaviour;
     
 
     private BattleAbility()
@@ -73,5 +73,8 @@ public class BattleAbility : StatContainer
     {
         attackAnimationParameter = origin.attackAnimationParameter;
         combatAIName = origin.combatAIName;
+
+        var newAttackBehaviourPrefab = Instantiate(origin.AttackBehaviour);
+        attackBehaviour = newAttackBehaviourPrefab;
     }
 }
