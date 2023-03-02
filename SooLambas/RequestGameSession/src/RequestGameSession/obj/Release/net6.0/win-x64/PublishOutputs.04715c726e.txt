@@ -1,0 +1,8 @@
+/Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/bin/Release/net6.0/win-x64/publish/RequestGameSession.deps.json
+/Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/bin/Release/net6.0/win-x64/publish/RequestGameSession.runtimeconfig.json
+/Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/bin/Release/net6.0/win-x64/publish/RequestGameSession.pdb
+/Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/bin/Release/net6.0/win-x64/publish/Amazon.Lambda.Core.dll
+/Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/bin/Release/net6.0/win-x64/publish/Amazon.Lambda.Serialization.SystemTextJson.dll
+/Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/bin/Release/net6.0/win-x64/publish/AWSSDK.Core.dll
+/Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/bin/Release/net6.0/win-x64/publish/AWSSDK.GameLift.dll
+/Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/bin/Release/net6.0/win-x64/publish/RequestGameSession.dll

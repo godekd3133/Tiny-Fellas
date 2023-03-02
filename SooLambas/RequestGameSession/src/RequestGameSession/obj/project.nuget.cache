@@ -1,17 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "Lp4b2npFO71lCogqe1G17ZRtg2XtK0rsllibBxXcs/fWFY7+kUZBvUJdcThyFONdzoQL9zP5NpPonYXoNTqSGQ==",
+  "dgSpecHash": "Ra5F/JyEiLAhZIOn65aAdar4J4FMjoch0DagbxPXLle38UCVIOAjS7jMQolEnZV5J8zfqOJSoVZ/DKF8cMcP5Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\wh401\\OneDrive\\바탕 화면\\bagelcode\\Tiny-Fellas\\SooLambas\\RequestGameSession\\src\\RequestGameSession\\RequestGameSession.csproj",
+  "projectFilePath": "/Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/RequestGameSession.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\wh401\\.nuget\\packages\\amazon.lambda.core\\2.1.0\\amazon.lambda.core.2.1.0.nupkg.sha512",
-    "C:\\Users\\wh401\\.nuget\\packages\\amazon.lambda.serialization.systemtextjson\\2.3.0\\amazon.lambda.serialization.systemtextjson.2.3.0.nupkg.sha512",
-    "C:\\Users\\wh401\\.nuget\\packages\\awssdk.core\\3.7.105.8\\awssdk.core.3.7.105.8.nupkg.sha512",
-    "C:\\Users\\wh401\\.nuget\\packages\\awssdk.gamelift\\3.7.102.47\\awssdk.gamelift.3.7.102.47.nupkg.sha512",
-    "C:\\Users\\wh401\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.14\\microsoft.netcore.app.ref.6.0.14.nupkg.sha512",
-    "C:\\Users\\wh401\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.14\\microsoft.windowsdesktop.app.ref.6.0.14.nupkg.sha512",
-    "C:\\Users\\wh401\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.14\\microsoft.aspnetcore.app.ref.6.0.14.nupkg.sha512",
-    "C:\\Users\\wh401\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\6.0.14\\microsoft.netcore.app.crossgen2.win-x64.6.0.14.nupkg.sha512"
+    "/Users/csc/.nuget/packages/amazon.lambda.apigatewayevents/2.6.0/amazon.lambda.apigatewayevents.2.6.0.nupkg.sha512",
+    "/Users/csc/.nuget/packages/amazon.lambda.core/2.1.0/amazon.lambda.core.2.1.0.nupkg.sha512",
+    "/Users/csc/.nuget/packages/amazon.lambda.serialization.systemtextjson/2.3.1/amazon.lambda.serialization.systemtextjson.2.3.1.nupkg.sha512",
+    "/Users/csc/.nuget/packages/awssdk.core/3.7.105.10/awssdk.core.3.7.105.10.nupkg.sha512",
+    "/Users/csc/.nuget/packages/awssdk.gamelift/3.7.102.49/awssdk.gamelift.3.7.102.49.nupkg.sha512",
+    "/Users/csc/.nuget/packages/microsoft.netcore.app.crossgen2.osx-x64/6.0.14/microsoft.netcore.app.crossgen2.osx-x64.6.0.14.nupkg.sha512"
   ],
   "logs": []
 }

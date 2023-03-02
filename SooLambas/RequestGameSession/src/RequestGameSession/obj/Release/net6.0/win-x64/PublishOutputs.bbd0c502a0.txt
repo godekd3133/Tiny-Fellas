@@ -1,0 +1,8 @@
+/Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/published/RequestGameSession.deps.json
+/Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/published/RequestGameSession.runtimeconfig.json
+/Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/published/RequestGameSession.pdb
+/Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/published/Amazon.Lambda.Core.dll
+/Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/published/Amazon.Lambda.Serialization.SystemTextJson.dll
+/Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/published/AWSSDK.Core.dll
+/Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/published/AWSSDK.GameLift.dll
+/Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/published/RequestGameSession.dll
