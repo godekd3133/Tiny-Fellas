@@ -45,6 +45,14 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
 #endif
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            SpawnMinion_ServerRPC(10,10);
+        }
+    }
+
 
     [ServerRpc(RequireOwnership = false)]
     public void Connect_ServerRPC(string playerSessionID, ulong clientID)
