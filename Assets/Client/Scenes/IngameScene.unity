@@ -42201,6 +42201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25bd35ffa68524ede9ae9ae367262d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkManager: {fileID: 2099790647}
   gameSessionSettingPath: Assets/Datas/Settinga/GameSessionSetting
   fleetConnectionSetting: {fileID: 11400000, guid: 272c5250f5b26c1479167a082a711bfe, type: 2}
 --- !u!114 &1374408431
@@ -66806,7 +66807,7 @@ MonoBehaviour:
   m_MaxConnectAttempts: 60
   m_DisconnectTimeoutMS: 30000
   ConnectionData:
-    Address: 127.0.0.1
+    Address: 172.16.50.224
     Port: 7777
     ServerListenAddress: 
   DebugSimulator:
@@ -66826,7 +66827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RunInBackground: 1
-  LogLevel: 1
+  LogLevel: 0
   NetworkConfig:
     ProtocolVersion: 0
     NetworkTransport: {fileID: 2099790649}
@@ -67079,6 +67080,11 @@ MonoBehaviour:
       OverridingTargetPrefab: {fileID: 0}
     - Override: 0
       Prefab: {fileID: 1578945721}
+      SourcePrefabToOverride: {fileID: 0}
+      SourceHashToOverride: 0
+      OverridingTargetPrefab: {fileID: 0}
+    - Override: 0
+      Prefab: {fileID: 420065251}
       SourcePrefabToOverride: {fileID: 0}
       SourceHashToOverride: 0
       OverridingTargetPrefab: {fileID: 0}
