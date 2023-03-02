@@ -7,6 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(GameSessionInstance))]
 public class GameSessionSynchronizer : NetworkBehaviour
 {
+    #if UNITY_SERVER
     private Dictionary<int, Vector3[]> cachedVector3ArrPerSize = new Dictionary<int, Vector3[]>();
     private Dictionary<int, Quaternion[]> cachedQuaternionArrPerSize = new Dictionary<int, Quaternion[]>();
 
@@ -51,6 +52,7 @@ public class GameSessionSynchronizer : NetworkBehaviour
             SynchronizeMinionTransforms_ClientRPC(playerData.ClientID, positionArr, rotationArr);
         }
     }
+    #endif
 
     [ClientRpc]
     private void SynchronizeMinionTransforms_ClientRPC(ulong clientID, Vector3[] positionList,Quaternion[] rotationList)
