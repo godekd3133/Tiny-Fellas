@@ -7,46 +7,62 @@ using UnityEngine;
 [RequireComponent(typeof(GameSessionInstance))]
 public class GameSessionSynchronizer : NetworkBehaviour
 {
-    private NetworkList<Vector3> minionPositionList = new NetworkList<Vector3>();
-    private NetworkList<Quaternion> minionRotationList = new NetworkList<Quaternion>();
-
-    private void Awake()
-    {
-    }
+    private Dictionary<int, Vector3[]> cachedVector3ArrPerSize = new Dictionary<int, Vector3[]>();
+    private Dictionary<int, Quaternion[]> cachedQuaternionArrPerSize = new Dictionary<int, Quaternion[]>();
 
     private void Update()
+    {
+        SynchronizeAllMinionTransform();
+    }
+
+    private void SynchronizeAllMinionTransform()
     {
         var count = GameSessionInstance.Instance.PlayerDataList.Count;
         for (int i = 0; i < count; i++)
         {
             var playerData = GameSessionInstance.Instance.PlayerDataList[i];
             var minionInstanceList = playerData.MinionInstanceList;
-            minionPositionList.Clear();
-            minionRotationList.Clear();
-
             int minionCount = minionInstanceList.Count;
+
+            Vector3[] positionArr;
+            Quaternion[] rotationArr;
+
+            if (cachedVector3ArrPerSize.ContainsKey(minionCount)) positionArr = cachedVector3ArrPerSize[minionCount];
+            else
+            {
+                positionArr = new Vector3[minionCount];
+                cachedVector3ArrPerSize.Add(minionCount, positionArr);
+            }
+            
+            if (cachedQuaternionArrPerSize.ContainsKey(minionCount)) rotationArr = cachedQuaternionArrPerSize[minionCount];
+            else
+            {
+                rotationArr = new Quaternion[minionCount];
+                cachedQuaternionArrPerSize.Add(minionCount, rotationArr);
+            }
+
             for (int j = 0; j < minionCount; j++)
             {
                 var minion = minionInstanceList[j];
-                minionPositionList.Add(minion.transform.position);
-                minionRotationList.Add(minion.transform.rotation);
+                positionArr[j] = minion.transform.position;
+                rotationArr[j] = minion.transform.rotation;
             }
 
-           //  SynchronizeMinionTransforms_ClientRPC(playerData.ClientID, minionPositionList, minionRotationList);
+            SynchronizeMinionTransforms_ClientRPC(playerData.ClientID, positionArr, rotationArr);
         }
     }
 
-    /*[ClientRpc]
-    private void SynchronizeMinionTransforms_ClientRPC(ulong clientID, NetworkList<Vector3> positionList, NetworkList<Quaternion> rotationList)
+    [ClientRpc]
+    private void SynchronizeMinionTransforms_ClientRPC(ulong clientID, Vector3[] positionList,Quaternion[] rotationList)
     {
         var minionInstanceList = GameSessionInstance.Instance.PlayerDataByClientID[clientID].MinionInstanceList;
 
-        for (int i = 0; i < positionList.Count; i++)
+        for (int i = 0; i < positionList.Length; i++)
         {
             minionInstanceList[i].transform.position = positionList[i];
             minionInstanceList[i].transform.rotation = rotationList[i];
         }
-    }*/
+    }
 }
 
  /*private HashSet<ClientIDCombinationContainer> clientIDCombationSet = new HashSet<ClientIDCombinationContainer>();
