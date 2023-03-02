@@ -21,6 +21,9 @@ public class AttackBehaviourBase : MonoBehaviour
         get => !IsOnAttacking;
     }
 
+    protected MinionInstanceStat TargetStat => targetStat;
+    protected BattleAbility MyBattleAbility => battleAbility;
+
     public void SetOwner(Minion owner, Animator animator)
     {
         this.owner = owner;

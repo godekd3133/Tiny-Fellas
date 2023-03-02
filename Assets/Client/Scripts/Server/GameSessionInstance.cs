@@ -46,9 +46,11 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
     }
 
 
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     public void Connect_ServerRPC(string playerSessionID, ulong clientID)
     {
+        if (!IsServer) return;
+        
         if (PlayerDataByClientID.ContainsKey(clientID)) return;
         Debug.Log(  string.Format("server accept connection from ID {0}",clientID));
         //TODO : connect to server then server Generating PlayerData with get some data from DB with playerSessionID
