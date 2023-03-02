@@ -40,7 +40,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
 
     private void Awake()
     {
-        #if UNITY_EDITOR
+        #if !UNITY_SERVER
         
         #endif
     }
@@ -81,7 +81,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
     }
 
     
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     public void SpawnMinion_ServerRPC(ulong clientID, int minionDataIndex)
     {
         var playerData = PlayerDataByClientID[clientID];
