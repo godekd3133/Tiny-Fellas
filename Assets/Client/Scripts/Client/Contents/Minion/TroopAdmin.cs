@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
@@ -12,11 +13,15 @@ public enum TroopState
     CHASE = 2,
     BATTLE = 3
 }
-public class TroopAdmin : MonoBehaviour
+
+[RequireComponent(typeof(NetworkObject))]
+public class TroopAdmin : NetworkBehaviour
 {
     [ShowInInspector, ReadOnly] public List<Minion> minions { get; private set; }
     [ShowInInspector, ReadOnly] public Minion leaderMinion { get; private set; }
     [ShowInInspector, ReadOnly] public TroopState troopState { get; private set; }
+    
+    [ShowInInspector, ReadOnly] public int[] minionHandDeck { get; private set; }
 
     [SerializeField] private bool isPlayer;
     [SerializeField] private bool isOwner;
@@ -33,6 +38,7 @@ public class TroopAdmin : MonoBehaviour
         troopState = TroopState.IDLE;
         minions = new List<Minion>();
         leaderMinion = null;
+        minionHandDeck = new int[4];
     }
 
     void Start()

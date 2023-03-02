@@ -2369,8 +2369,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 65638411}
-  - component: {fileID: 65638412}
-  - component: {fileID: 65638413}
   m_Layer: 0
   m_Name: Session
   m_TagString: Untagged
@@ -2397,34 +2395,6 @@ Transform:
   m_Father: {fileID: 938769221}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &65638412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 65638410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac0a746ef093f884ca8e963caa95c00f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &65638413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 65638410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1965730833
-  AlwaysReplicateAsRoot: 0
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!1 &66459367
 GameObject:
   m_ObjectHideFlags: 0
@@ -16362,7 +16332,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 63
 --- !u!114 &506265288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26425,6 +26395,7 @@ GameObject:
   m_Component:
   - component: {fileID: 832783746}
   - component: {fileID: 832783747}
+  - component: {fileID: 832783748}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -26477,6 +26448,22 @@ MonoBehaviour:
   onPostTroopStateChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &832783748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832783745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 897586583
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &834949759
 GameObject:
   m_ObjectHideFlags: 0
@@ -40371,6 +40358,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1309281743}
   - component: {fileID: 1309281745}
+  - component: {fileID: 1309281746}
   m_Layer: 0
   m_Name: Bot (1)
   m_TagString: Untagged
@@ -40423,6 +40411,22 @@ MonoBehaviour:
   onPostTroopStateChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1309281746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309281742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 626491027
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &1309343061
 GameObject:
   m_ObjectHideFlags: 0
@@ -45141,6 +45145,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 247641021}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1453156040
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1453156041}
+  m_Layer: 0
+  m_Name: NetworkCommunicator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1453156041
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453156040}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2099790648}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1454459889
@@ -66746,7 +66781,8 @@ Transform:
   m_LocalPosition: {x: 2.3989697, y: -9.610485, z: 9.321653}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1453156041}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -66794,7 +66830,7 @@ MonoBehaviour:
   NetworkConfig:
     ProtocolVersion: 0
     NetworkTransport: {fileID: 2099790649}
-    PlayerPrefab: {fileID: 0}
+    PlayerPrefab: {fileID: 355739207908540155, guid: c22cc77153f924c87a70c87d7a24c56b, type: 3}
     NetworkPrefabs:
     - Override: 0
       Prefab: {fileID: 1591920325}
@@ -67048,7 +67084,7 @@ MonoBehaviour:
       OverridingTargetPrefab: {fileID: 0}
     TickRate: 30
     ClientConnectionBufferTimeout: 10
-    ConnectionApproval: 0
+    ConnectionApproval: 1
     ConnectionData: 
     EnableTimeResync: 0
     TimeResyncInterval: 30
