@@ -50,6 +50,7 @@ public class MinionInstanceStat : NetworkBehaviour
         if (IsDead) return false;
         
         currentStat[EStatName.HEALTH].CurrentValue -= attackerBattleAbility[EStatName.DAMAGE].CurrentValue;
+        SetHealth_ClientRPC(currentStat[EStatName.HEALTH].CurrentValue);
         return true;
     }
     #endif  
