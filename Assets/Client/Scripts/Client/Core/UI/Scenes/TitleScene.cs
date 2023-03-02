@@ -1,12 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.SearchService;
-using UnityEngine;
-using UnityEngine.UI;
 using System.Threading.Tasks;
-using System.Linq;
 using Cysharp.Threading.Tasks;
-using UnityEditor.UI;
+using UnityEngine.UI;
 
 public class TitleScene : UIScene
 {

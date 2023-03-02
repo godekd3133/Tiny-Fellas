@@ -1,11 +1,7 @@
-using System.Threading.Tasks;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using System;
-using System.Threading;
+using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
-using UnityEngine.WSA;
+using UnityEngine;
 
 public class TaskExample : MonoBehaviour
 {
