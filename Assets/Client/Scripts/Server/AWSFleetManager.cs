@@ -21,11 +21,18 @@ public class AWSFleetManager : NetworkBehaviourSingleton<AWSFleetManager>
     private void Awake()
     {
         networkObject = GetComponent<NetworkObject>();
+        if (SDKInitializer.Instance.IsLocalTest)
+        {
 #if UNITY_EDITOR
-        if(SDKInitializer.Instance.IsLocalTest)
-        NetworkManagerInstance.Instance.StartHost();
-        Logger.SharedInstance.Write("Server starts as host");
+            NetworkManagerInstance.Instance.StartHost();
+            Logger.SharedInstance.Write(string.Format("Server starts as host client id is {0}", OwnerClientId));
 #endif
+#if  UNITY_SERVER
+            NetworkManagerInstance.Instance.StartServer();
+            Logger.SharedInstance.Write(string.Format("Server starts as server"));
+#endif
+        }
+        
     }
     
     private void OnClientConnection(ulong clientID)
@@ -62,9 +69,14 @@ public class AWSFleetManager : NetworkBehaviourSingleton<AWSFleetManager>
         return null;
     }
 
-    public void ConnectToGameSession_Teswt()
+    public void ConnectToGameSession_Test()
     {
+        Debug.Log(string.Format("trying to call Connection to server"));
+        if(NetworkManagerInstance.Instance.IsConnectedClient) return;
+        
+        Debug.Log(string.Format("start client and call Connection funtion to server"));
         NetworkManagerInstance.Instance.StartClient();
+        GameSessionInstance.Instance.Connect_ServerRPC("125251245L", OwnerClientId);
     }
 
    #endif

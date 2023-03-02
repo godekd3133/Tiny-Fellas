@@ -11,7 +11,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
     ,IMinionDeployable
     #endif
 {
-    private List<PlayerData> playerDataList;
+    private List<PlayerData> playerDataList = new List<PlayerData>();
     private Dictionary<ulong, PlayerData> playerDataByClientID ;
     private List<MinionData> minionDeck;
     private List<Minion> minionInstanceList;
@@ -50,7 +50,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
     public void Connect_ServerRPC(string playerSessionID, ulong clientID)
     {
         if (PlayerDataByClientID.ContainsKey(clientID)) return;
-        
+        Debug.Log(  string.Format("server accept connection from ID {0}",clientID));
         //TODO : connect to server then server Generating PlayerData with get some data from DB with playerSessionID
 
         var tesstMinionIndexList = new List<int>();
@@ -100,5 +100,6 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
         }
     }
 }
+
 
 
