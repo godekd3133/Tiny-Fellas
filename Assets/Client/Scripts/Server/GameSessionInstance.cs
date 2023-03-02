@@ -1,22 +1,22 @@
 using System;
 using System.Collections.Generic;
 using Amazon.GameLift.Model;
-using UnityEngine;
 using Unity.Netcode;
+using UnityEngine;
 
 
 [RequireComponent(typeof(NetworkObject))]
 public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance>
-    #if UNITY_SERVER || UNITY_EDITOR
-    ,IMinionDeployable
-    #endif
+#if UNITY_SERVER || UNITY_EDITOR
+    , IMinionDeployable
+#endif
 {
     private List<PlayerData> playerDataList = new List<PlayerData>();
-    private Dictionary<ulong, PlayerData> playerDataByClientID ;
+    private Dictionary<ulong, PlayerData> playerDataByClientID;
     private List<MinionData> minionDeck;
     private List<Minion> minionInstanceList;
     private GameSession gameSession;
-    
+
 #if UNITY_SERVER || UNITY_EDITOR
     public IReadOnlyList<MinionData> MinionDeck => minionDeck;
     public IReadOnlyList<Minion> MinionInstanceList => minionInstanceList;
@@ -40,19 +40,20 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
 
     private void Awake()
     {
-        #if !UNITY_SERVER
+#if !UNITY_SERVER
         
-        #endif
+#endif
     }
 
 
     [ServerRpc(RequireOwnership = false)]
     public void Connect_ServerRPC(string playerSessionID, ulong clientID)
     {
+        Debug.Log("Connect_ServerRPC");
         if (!IsServer) return;
-        
+
         if (PlayerDataByClientID.ContainsKey(clientID)) return;
-        Debug.Log(  string.Format("server accept connection from ID {0}",clientID));
+        Debug.Log(string.Format("server accept connection from ID {0}", clientID));
         //TODO : connect to server then server Generating PlayerData with get some data from DB with playerSessionID
 
         var tesstMinionIndexList = new List<int>();
@@ -74,32 +75,40 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
 
         var testDeck =
             MinionDataBaseIngame.Instance.GetMinionDeck(tesstMinionIndexList, testMinionStatIndexList);
-        var newPlayerData = new PlayerData(testDeck, playerSessionID,clientID);
+        var newPlayerData = new PlayerData(testDeck, playerSessionID, clientID);
         newPlayerData.currentGem = 50;
-        
+
         playerDataList.Add(newPlayerData);
+
+    }
+    [ClientRpc]
+    public void ABC_ClientRPC()
+    {
+        Debug.Log("Called CLient RPC");
     }
 
-    
+
     [ServerRpc(RequireOwnership = false)]
     public void SpawnMinion_ServerRPC(ulong clientID, int minionDataIndex)
     {
+        Debug.Log("야후 야야후");
         var playerData = PlayerDataByClientID[clientID];
         var minionData = playerData.MinionDeck[minionDataIndex];
 
         bool isPurchasable = playerData.currentGem >= minionData.Stat.MyBattleAbility[EStatName.GEM_COST].CurrentValue;
         if (isPurchasable)
         {
-           var newMinion =  Instantiate(MinionDataBaseIngame.Instance.MinionNetworkPrefabList[minionDataIndex]);
-           var newMinionNetworkobject = newMinion.GetComponent<NetworkObject>();
-           var attackBehaviour =  newMinionNetworkobject.gameObject.AddComponent(minionData.Stat.MyBattleAbility.AttackBehaviour.GetType());
-           (attackBehaviour as AttackBehaviourBase).SetOwner(newMinion.GetComponent<Minion>());
-           
-           newMinionNetworkobject.SpawnWithOwnership(clientID);
-           
-           playerData.AddMinionInstance(newMinion);
-           newMinionNetworkobject.GetComponent<MinionInstanceStat>().AssignOriginStat_ClientRPC(minionDataIndex);
+            var newMinion = Instantiate(MinionDataBaseIngame.Instance.MinionNetworkPrefabList[minionDataIndex]);
+            var newMinionNetworkobject = newMinion.GetComponent<NetworkObject>();
+            var attackBehaviour = newMinionNetworkobject.gameObject.AddComponent(minionData.Stat.MyBattleAbility.AttackBehaviour.GetType());
+            (attackBehaviour as AttackBehaviourBase).SetOwner(newMinion.GetComponent<Minion>());
+
+            newMinionNetworkobject.SpawnWithOwnership(clientID);
+
+            playerData.AddMinionInstance(newMinion);
+            newMinionNetworkobject.GetComponent<MinionInstanceStat>().AssignOriginStat_ClientRPC(minionDataIndex);
         }
+
     }
 }
 
