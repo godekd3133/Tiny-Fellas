@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\wh401\\OneDrive\\바탕 화면\\bagelcode\\Tiny-Fellas\\SooLambas\\RequestGameSession\\src\\RequestGameSession\\RequestGameSession.csproj": {}
+    "/Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/RequestGameSession.csproj": {}
   },
   "projects": {
-    "C:\\Users\\wh401\\OneDrive\\바탕 화면\\bagelcode\\Tiny-Fellas\\SooLambas\\RequestGameSession\\src\\RequestGameSession\\RequestGameSession.csproj": {
+    "/Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/RequestGameSession.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\wh401\\OneDrive\\바탕 화면\\bagelcode\\Tiny-Fellas\\SooLambas\\RequestGameSession\\src\\RequestGameSession\\RequestGameSession.csproj",
+        "projectUniqueName": "/Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/RequestGameSession.csproj",
         "projectName": "RequestGameSession",
-        "projectPath": "C:\\Users\\wh401\\OneDrive\\바탕 화면\\bagelcode\\Tiny-Fellas\\SooLambas\\RequestGameSession\\src\\RequestGameSession\\RequestGameSession.csproj",
-        "packagesPath": "C:\\Users\\wh401\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\wh401\\OneDrive\\바탕 화면\\bagelcode\\Tiny-Fellas\\SooLambas\\RequestGameSession\\src\\RequestGameSession\\obj\\",
+        "projectPath": "/Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/RequestGameSession.csproj",
+        "packagesPath": "/Users/csc/.nuget/packages/",
+        "outputPath": "/Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\wh401\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/csc/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -42,11 +40,15 @@
           "dependencies": {
             "AWSSDK.Core": {
               "target": "Package",
-              "version": "[3.7.105.8, )"
+              "version": "[3.7.105.10, )"
             },
             "AWSSDK.GameLift": {
               "target": "Package",
-              "version": "[3.7.102.47, )"
+              "version": "[3.7.102.49, )"
+            },
+            "Amazon.Lambda.APIGatewayEvents": {
+              "target": "Package",
+              "version": "[2.6.0, )"
             },
             "Amazon.Lambda.Core": {
               "target": "Package",
@@ -54,7 +56,7 @@
             },
             "Amazon.Lambda.Serialization.SystemTextJson": {
               "target": "Package",
-              "version": "[2.3.0, )"
+              "version": "[2.3.1, )"
             }
           },
           "imports": [
@@ -70,19 +72,7 @@
           "warn": true,
           "downloadDependencies": [
             {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.14, 6.0.14]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Crossgen2.win-x64",
-              "version": "[6.0.14, 6.0.14]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.14, 6.0.14]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "name": "Microsoft.NETCore.App.Crossgen2.osx-x64",
               "version": "[6.0.14, 6.0.14]"
             }
           ],
@@ -91,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.201/RuntimeIdentifierGraph.json"
         }
       }
     }

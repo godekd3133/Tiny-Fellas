@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "Amazon.Lambda.APIGatewayEvents/2.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/Amazon.Lambda.APIGatewayEvents.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Amazon.Lambda.APIGatewayEvents.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Amazon.Lambda.Core/2.1.0": {
         "type": "package",
         "compile": {
@@ -15,7 +28,7 @@
           }
         }
       },
-      "Amazon.Lambda.Serialization.SystemTextJson/2.3.0": {
+      "Amazon.Lambda.Serialization.SystemTextJson/2.3.1": {
         "type": "package",
         "dependencies": {
           "Amazon.Lambda.Core": "2.1.0"
@@ -31,7 +44,7 @@
           }
         }
       },
-      "AWSSDK.Core/3.7.105.8": {
+      "AWSSDK.Core/3.7.105.10": {
         "type": "package",
         "compile": {
           "lib/netcoreapp3.1/AWSSDK.Core.dll": {
@@ -44,10 +57,10 @@
           }
         }
       },
-      "AWSSDK.GameLift/3.7.102.47": {
+      "AWSSDK.GameLift/3.7.102.49": {
         "type": "package",
         "dependencies": {
-          "AWSSDK.Core": "[3.7.105.8, 4.0.0)"
+          "AWSSDK.Core": "[3.7.105.10, 4.0.0)"
         },
         "compile": {
           "lib/netcoreapp3.1/AWSSDK.GameLift.dll": {
@@ -63,6 +76,22 @@
     }
   },
   "libraries": {
+    "Amazon.Lambda.APIGatewayEvents/2.6.0": {
+      "sha512": "IpBKoaQD7cFb38XfoJlyv/+gnYzn+r8Y54sqyubbsPNEMujfedUNnrVgFKW5STVKzbPBw2orQsWqzdp3TvxWQA==",
+      "type": "package",
+      "path": "amazon.lambda.apigatewayevents/2.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "amazon.lambda.apigatewayevents.2.6.0.nupkg.sha512",
+        "amazon.lambda.apigatewayevents.nuspec",
+        "lib/netcoreapp3.1/Amazon.Lambda.APIGatewayEvents.dll",
+        "lib/netcoreapp3.1/Amazon.Lambda.APIGatewayEvents.xml",
+        "lib/netstandard2.0/Amazon.Lambda.APIGatewayEvents.dll",
+        "lib/netstandard2.0/Amazon.Lambda.APIGatewayEvents.xml"
+      ]
+    },
     "Amazon.Lambda.Core/2.1.0": {
       "sha512": "ok06UhfBZw6j6+PhiJR9C0EOMuJvnq8rMCHVkaFmPFrlI/q447ukwGZQKaAKqodV+MNTfpb/iPxjgUPVbSlVVw==",
       "type": "package",
@@ -79,15 +108,15 @@
         "lib/netstandard2.0/Amazon.Lambda.Core.xml"
       ]
     },
-    "Amazon.Lambda.Serialization.SystemTextJson/2.3.0": {
-      "sha512": "qgFCDJp5lyUNqCq1z18U7fZ/+rmMyw6RJf9nKfnJrf79YupDj02klQAjxymEYN66NykWXyc68SGkow6fy53hfg==",
+    "Amazon.Lambda.Serialization.SystemTextJson/2.3.1": {
+      "sha512": "7dGGgikMlEz72rGqeDwQEIxq+O8RDEdR4GH2S7hfZ8uzv5lyWVDuP2urV6MyD6APJ2WVHRwJlV74bB+XJncQpw==",
       "type": "package",
-      "path": "amazon.lambda.serialization.systemtextjson/2.3.0",
+      "path": "amazon.lambda.serialization.systemtextjson/2.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
-        "amazon.lambda.serialization.systemtextjson.2.3.0.nupkg.sha512",
+        "amazon.lambda.serialization.systemtextjson.2.3.1.nupkg.sha512",
         "amazon.lambda.serialization.systemtextjson.nuspec",
         "lib/net6.0/Amazon.Lambda.Serialization.SystemTextJson.dll",
         "lib/net6.0/Amazon.Lambda.Serialization.SystemTextJson.xml",
@@ -95,15 +124,15 @@
         "lib/netcoreapp3.1/Amazon.Lambda.Serialization.SystemTextJson.xml"
       ]
     },
-    "AWSSDK.Core/3.7.105.8": {
-      "sha512": "JkZIT/UJBd/llxZlVurt8vaYjq7I6qtPK1WjaR93K+rSbYcuPSKuNQ10HejxIQfu8eFyIOoue39YnM/mo7x3KQ==",
+    "AWSSDK.Core/3.7.105.10": {
+      "sha512": "LL5YNegNBcj7NbfCr602CD6ASVpXGitbsh4OUUqoSeRHXZZiyblnSXOSYP4JNRob3MtTBI12OBMrI4ShXwyTzQ==",
       "type": "package",
-      "path": "awssdk.core/3.7.105.8",
+      "path": "awssdk.core/3.7.105.10",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "awssdk.core.3.7.105.8.nupkg.sha512",
+        "awssdk.core.3.7.105.10.nupkg.sha512",
         "awssdk.core.nuspec",
         "lib/net35/AWSSDK.Core.dll",
         "lib/net35/AWSSDK.Core.pdb",
@@ -120,16 +149,16 @@
         "tools/account-management.ps1"
       ]
     },
-    "AWSSDK.GameLift/3.7.102.47": {
-      "sha512": "TieTSKD8dGIF85t9Xs02wrI1Se6fvhOpudqc7jx37ezSAZZZ8+CmPWmduRpvoxcl8Ke7dGjabBzAz9/62vAuPg==",
+    "AWSSDK.GameLift/3.7.102.49": {
+      "sha512": "VnVLuj6iWHpBQbQRZSJaszfJzkNRDTgHkO3zkGJBg9u+/pFMMIP5bOh5MMLL7fZ/3t3qT6TKnMIa+FnENp3E2g==",
       "type": "package",
-      "path": "awssdk.gamelift/3.7.102.47",
+      "path": "awssdk.gamelift/3.7.102.49",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "analyzers/dotnet/cs/AWSSDK.GameLift.CodeAnalysis.dll",
-        "awssdk.gamelift.3.7.102.47.nupkg.sha512",
+        "awssdk.gamelift.3.7.102.49.nupkg.sha512",
         "awssdk.gamelift.nuspec",
         "lib/net35/AWSSDK.GameLift.dll",
         "lib/net35/AWSSDK.GameLift.pdb",
@@ -150,33 +179,32 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "AWSSDK.Core >= 3.7.105.8",
-      "AWSSDK.GameLift >= 3.7.102.47",
+      "AWSSDK.Core >= 3.7.105.10",
+      "AWSSDK.GameLift >= 3.7.102.49",
+      "Amazon.Lambda.APIGatewayEvents >= 2.6.0",
       "Amazon.Lambda.Core >= 2.1.0",
-      "Amazon.Lambda.Serialization.SystemTextJson >= 2.3.0"
+      "Amazon.Lambda.Serialization.SystemTextJson >= 2.3.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\wh401\\.nuget\\packages\\": {}
+    "/Users/csc/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\wh401\\OneDrive\\바탕 화면\\bagelcode\\Tiny-Fellas\\SooLambas\\RequestGameSession\\src\\RequestGameSession\\RequestGameSession.csproj",
+      "projectUniqueName": "/Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/RequestGameSession.csproj",
       "projectName": "RequestGameSession",
-      "projectPath": "C:\\Users\\wh401\\OneDrive\\바탕 화면\\bagelcode\\Tiny-Fellas\\SooLambas\\RequestGameSession\\src\\RequestGameSession\\RequestGameSession.csproj",
-      "packagesPath": "C:\\Users\\wh401\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\wh401\\OneDrive\\바탕 화면\\bagelcode\\Tiny-Fellas\\SooLambas\\RequestGameSession\\src\\RequestGameSession\\obj\\",
+      "projectPath": "/Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/RequestGameSession.csproj",
+      "packagesPath": "/Users/csc/.nuget/packages/",
+      "outputPath": "/Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\wh401\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/csc/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -197,11 +225,15 @@
         "dependencies": {
           "AWSSDK.Core": {
             "target": "Package",
-            "version": "[3.7.105.8, )"
+            "version": "[3.7.105.10, )"
           },
           "AWSSDK.GameLift": {
             "target": "Package",
-            "version": "[3.7.102.47, )"
+            "version": "[3.7.102.49, )"
+          },
+          "Amazon.Lambda.APIGatewayEvents": {
+            "target": "Package",
+            "version": "[2.6.0, )"
           },
           "Amazon.Lambda.Core": {
             "target": "Package",
@@ -209,7 +241,7 @@
           },
           "Amazon.Lambda.Serialization.SystemTextJson": {
             "target": "Package",
-            "version": "[2.3.0, )"
+            "version": "[2.3.1, )"
           }
         },
         "imports": [
@@ -225,19 +257,7 @@
         "warn": true,
         "downloadDependencies": [
           {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.14, 6.0.14]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Crossgen2.win-x64",
-            "version": "[6.0.14, 6.0.14]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.14, 6.0.14]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "name": "Microsoft.NETCore.App.Crossgen2.osx-x64",
             "version": "[6.0.14, 6.0.14]"
           }
         ],
@@ -246,7 +266,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.201/RuntimeIdentifierGraph.json"
       }
     }
   }
