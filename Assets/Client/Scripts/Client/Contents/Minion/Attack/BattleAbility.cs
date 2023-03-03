@@ -33,14 +33,14 @@ public class BattleAbility : StatContainer
     private ACombatAI combatAI;
     private ASkillPassiveBase passiveSkill;
     private string attackAnimationParameterAsString;
-    
-    
-    public string AttackAnimationParameter 
+
+
+    public string AttackAnimationParameter
     {
         get
         {
-           if(attackAnimationParameterAsString == null) attackAnimationParameterAsString = attackAnimationParameter.ToString();
-               return new(attackAnimationParameterAsString);
+            if (attackAnimationParameterAsString == null) attackAnimationParameterAsString = attackAnimationParameter.ToString();
+            return new(attackAnimationParameterAsString);
         }
     }
 
@@ -61,9 +61,9 @@ public class BattleAbility : StatContainer
             return passiveSkill;
         }
     }
-    
+
     public AttackBehaviourBase AttackBehaviour => attackBehaviour;
-    
+
 
     private BattleAbility()
     {
