@@ -990,7 +990,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 29168310}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1008,8 +1008,8 @@ Transform:
   - {fileID: 1912386571}
   - {fileID: 1624185354}
   - {fileID: 2134121215}
-  m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &29168314
 MonoBehaviour:
@@ -1027,6 +1027,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -1203,7 +1204,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 31674681}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1221,8 +1222,8 @@ Transform:
   - {fileID: 81395074}
   - {fileID: 837236021}
   - {fileID: 1210009860}
-  m_Father: {fileID: 0}
-  m_RootOrder: 41
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &31674685
 MonoBehaviour:
@@ -1240,6 +1241,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -1320,7 +1322,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 32736799}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1338,8 +1340,8 @@ Transform:
   - {fileID: 129352261}
   - {fileID: 104359147}
   - {fileID: 414305871}
-  m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &32736803
 MonoBehaviour:
@@ -1357,6 +1359,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -2383,17 +2386,18 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 65638410}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1223805006}
   - {fileID: 167984132}
   - {fileID: 832783746}
   - {fileID: 1309281743}
   - {fileID: 2068206991}
-  m_Father: {fileID: 938769221}
-  m_RootOrder: 3
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &66459367
 GameObject:
@@ -3368,7 +3372,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112316809}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3386,8 +3390,8 @@ Transform:
   - {fileID: 165849338}
   - {fileID: 41950980}
   - {fileID: 18701264}
-  m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &112316813
 MonoBehaviour:
@@ -3405,6 +3409,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -3512,6 +3517,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 100
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -3567,6 +3573,22 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+--- !u!208 &114912740
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114912733}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 2.5, z: 0.5}
+  m_MoveThreshold: 0
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0
 --- !u!1 &115933616
 GameObject:
   m_ObjectHideFlags: 0
@@ -4637,7 +4659,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147223544}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4655,8 +4677,8 @@ Transform:
   - {fileID: 430885083}
   - {fileID: 324215084}
   - {fileID: 912175016}
-  m_Father: {fileID: 0}
-  m_RootOrder: 52
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &147223548
 MonoBehaviour:
@@ -4674,6 +4696,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -5280,7 +5303,7 @@ Transform:
   m_Children:
   - {fileID: 377987632}
   m_Father: {fileID: 65638411}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &168938473
 GameObject:
@@ -6018,7 +6041,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193350590}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6036,8 +6059,8 @@ Transform:
   - {fileID: 1644138730}
   - {fileID: 139477421}
   - {fileID: 184779945}
-  m_Father: {fileID: 0}
-  m_RootOrder: 48
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &193350594
 MonoBehaviour:
@@ -6055,6 +6078,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -6216,6 +6240,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 100
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -6271,6 +6296,22 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+--- !u!208 &197532484
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197532477}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 2.5, z: 0.5}
+  m_MoveThreshold: 0
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0
 --- !u!1 &198632424
 GameObject:
   m_ObjectHideFlags: 0
@@ -6496,7 +6537,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 204055053}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6514,8 +6555,8 @@ Transform:
   - {fileID: 1798779669}
   - {fileID: 980067561}
   - {fileID: 360062099}
-  m_Father: {fileID: 0}
-  m_RootOrder: 50
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &204055057
 MonoBehaviour:
@@ -6533,6 +6574,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -8121,7 +8163,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 251353966}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8139,8 +8181,8 @@ Transform:
   - {fileID: 66459368}
   - {fileID: 415006179}
   - {fileID: 1571814545}
-  m_Father: {fileID: 0}
-  m_RootOrder: 53
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &251353970
 MonoBehaviour:
@@ -8158,6 +8200,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -8584,7 +8627,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 261302966}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8602,8 +8645,8 @@ Transform:
   - {fileID: 747232779}
   - {fileID: 226506333}
   - {fileID: 1081640380}
-  m_Father: {fileID: 0}
-  m_RootOrder: 47
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &261302970
 MonoBehaviour:
@@ -8621,6 +8664,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -9020,7 +9064,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278963066}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9038,8 +9082,8 @@ Transform:
   - {fileID: 444596022}
   - {fileID: 914401562}
   - {fileID: 445309207}
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &278963070
 MonoBehaviour:
@@ -9057,6 +9101,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -10029,6 +10074,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 100
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -10067,6 +10113,22 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+--- !u!208 &305547896
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305547888}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 2.5, z: 0.5}
+  m_MoveThreshold: 0
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0
 --- !u!1 &307353098
 GameObject:
   m_ObjectHideFlags: 0
@@ -11595,7 +11657,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 359427770}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11613,8 +11675,8 @@ Transform:
   - {fileID: 1466601178}
   - {fileID: 429495516}
   - {fileID: 1245007762}
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &359427774
 MonoBehaviour:
@@ -11632,6 +11694,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -12033,7 +12096,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 373188372}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12051,8 +12114,8 @@ Transform:
   - {fileID: 2070613962}
   - {fileID: 2080786787}
   - {fileID: 1413363694}
-  m_Father: {fileID: 0}
-  m_RootOrder: 49
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &373188376
 MonoBehaviour:
@@ -12070,6 +12133,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -12511,7 +12575,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386578360}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12529,8 +12593,8 @@ Transform:
   - {fileID: 1413551704}
   - {fileID: 640250576}
   - {fileID: 1212623305}
-  m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &386578364
 MonoBehaviour:
@@ -12548,6 +12612,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -13655,6 +13720,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 100
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -13710,6 +13776,22 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+--- !u!208 &424185581
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424185574}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 2.5, z: 0.5}
+  m_MoveThreshold: 0
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0
 --- !u!1 &424740838
 GameObject:
   m_ObjectHideFlags: 0
@@ -15413,7 +15495,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 478189912}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -15431,8 +15513,8 @@ Transform:
   - {fileID: 1784350946}
   - {fileID: 1076959181}
   - {fileID: 642102669}
-  m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &478189916
 MonoBehaviour:
@@ -15450,6 +15532,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -16408,6 +16491,39 @@ Transform:
   m_Father: {fileID: 991717913}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &510102106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 510102107}
+  m_Layer: 0
+  m_Name: AWS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &510102107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510102106}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.7291007, y: -18.43985, z: -22.629929}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1374408428}
+  - {fileID: 1257222926}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &510619174
 GameObject:
   m_ObjectHideFlags: 0
@@ -16784,8 +16900,9 @@ Transform:
   m_Children:
   - {fileID: 1658366737}
   - {fileID: 1427429598}
-  m_Father: {fileID: 938769221}
-  m_RootOrder: 2
+  - {fileID: 1368844628}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &520817544
 GameObject:
@@ -18505,7 +18622,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579337975}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -18523,8 +18640,8 @@ Transform:
   - {fileID: 1929437785}
   - {fileID: 1356056179}
   - {fileID: 717691493}
-  m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &579337979
 MonoBehaviour:
@@ -18542,6 +18659,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -18716,7 +18834,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 582701346}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -18734,8 +18852,8 @@ Transform:
   - {fileID: 1776913746}
   - {fileID: 294294318}
   - {fileID: 668435531}
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &582701350
 MonoBehaviour:
@@ -18753,6 +18871,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -18991,7 +19110,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 594427638}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -19009,8 +19128,8 @@ Transform:
   - {fileID: 1816517551}
   - {fileID: 441665443}
   - {fileID: 1440802363}
-  m_Father: {fileID: 0}
-  m_RootOrder: 39
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &594427642
 MonoBehaviour:
@@ -19028,6 +19147,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -19395,7 +19515,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605110580}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -19413,8 +19533,8 @@ Transform:
   - {fileID: 1354142070}
   - {fileID: 747897692}
   - {fileID: 1306518736}
-  m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &605110584
 MonoBehaviour:
@@ -19432,6 +19552,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -21567,7 +21688,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677014599}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -21585,8 +21706,8 @@ Transform:
   - {fileID: 1926678127}
   - {fileID: 832062777}
   - {fileID: 849539328}
-  m_Father: {fileID: 0}
-  m_RootOrder: 40
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &677014603
 MonoBehaviour:
@@ -21604,6 +21725,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -22955,7 +23077,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717878505}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -22973,8 +23095,8 @@ Transform:
   - {fileID: 568004579}
   - {fileID: 38178354}
   - {fileID: 1371091008}
-  m_Father: {fileID: 0}
-  m_RootOrder: 36
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &717878509
 MonoBehaviour:
@@ -22992,6 +23114,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -23855,7 +23978,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 742723113}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -23873,8 +23996,8 @@ Transform:
   - {fileID: 1342682917}
   - {fileID: 1829254169}
   - {fileID: 1899090874}
-  m_Father: {fileID: 0}
-  m_RootOrder: 51
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &742723117
 MonoBehaviour:
@@ -23892,6 +24015,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -24602,6 +24726,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 100
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -24657,6 +24782,22 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+--- !u!208 &760406651
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760406644}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 2.5, z: 0.5}
+  m_MoveThreshold: 0
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0
 --- !u!1 &760720800
 GameObject:
   m_ObjectHideFlags: 0
@@ -26423,7 +26564,7 @@ Transform:
   - {fileID: 1583998013}
   - {fileID: 872365205}
   m_Father: {fileID: 65638411}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &832783747
 MonoBehaviour:
@@ -27039,7 +27180,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 845788527}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -27057,8 +27198,8 @@ Transform:
   - {fileID: 638715783}
   - {fileID: 1584775404}
   - {fileID: 703446476}
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &845788531
 MonoBehaviour:
@@ -27076,6 +27217,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -27249,7 +27391,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851538049}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -27267,8 +27409,8 @@ Transform:
   - {fileID: 297930676}
   - {fileID: 2070277522}
   - {fileID: 1631850777}
-  m_Father: {fileID: 0}
-  m_RootOrder: 54
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &851538053
 MonoBehaviour:
@@ -27286,6 +27428,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -27426,11 +27569,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1257222926}
-  - {fileID: 1374408428}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &858153121
 GameObject:
@@ -27711,6 +27852,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 100
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -27766,6 +27908,22 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+--- !u!208 &872365211
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872365204}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 2.5, z: 0.5}
+  m_MoveThreshold: 0
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0
 --- !u!1 &872977991
 GameObject:
   m_ObjectHideFlags: 0
@@ -28181,7 +28339,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878135177}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -28199,8 +28357,8 @@ Transform:
   - {fileID: 2063813100}
   - {fileID: 694573810}
   - {fileID: 1626522992}
-  m_Father: {fileID: 0}
-  m_RootOrder: 37
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &878135181
 MonoBehaviour:
@@ -28218,6 +28376,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -28676,7 +28835,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897798140}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -28694,8 +28853,8 @@ Transform:
   - {fileID: 2141413416}
   - {fileID: 921209877}
   - {fileID: 1102759019}
-  m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &897798144
 MonoBehaviour:
@@ -28713,6 +28872,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -29719,11 +29879,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1223805006}
-  - {fileID: 1507405081}
-  - {fileID: 519458085}
-  - {fileID: 65638411}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -29898,7 +30054,7 @@ GameObject:
   - component: {fileID: 946043314}
   - component: {fileID: 946043313}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Game Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29981,7 +30137,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &947039948
 GameObject:
@@ -30296,7 +30452,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 960079102}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -30314,8 +30470,8 @@ Transform:
   - {fileID: 1431324089}
   - {fileID: 1791092384}
   - {fileID: 727423094}
-  m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &960079106
 MonoBehaviour:
@@ -30333,6 +30489,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -30745,7 +30902,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 965566312}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -30763,8 +30920,8 @@ Transform:
   - {fileID: 12729307}
   - {fileID: 281498211}
   - {fileID: 1089811435}
-  m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &965566316
 MonoBehaviour:
@@ -30782,6 +30939,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -31203,7 +31361,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 978268931}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -31221,8 +31379,8 @@ Transform:
   - {fileID: 813073386}
   - {fileID: 462126088}
   - {fileID: 1500040365}
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &978268935
 MonoBehaviour:
@@ -31240,6 +31398,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -31601,7 +31760,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991717910}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -31619,8 +31778,8 @@ Transform:
   - {fileID: 695426209}
   - {fileID: 51880495}
   - {fileID: 1513245017}
-  m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &991717914
 MonoBehaviour:
@@ -31638,6 +31797,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -32230,6 +32390,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 100
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -32285,6 +32446,22 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+--- !u!208 &1009261577
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009261570}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 2.5, z: 0.5}
+  m_MoveThreshold: 0
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0
 --- !u!1 &1009689025
 GameObject:
   m_ObjectHideFlags: 0
@@ -34908,6 +35085,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 100
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -34963,6 +35141,22 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+--- !u!208 &1100200208
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100200201}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 2.5, z: 0.5}
+  m_MoveThreshold: 0
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0
 --- !u!1 &1102647287
 GameObject:
   m_ObjectHideFlags: 0
@@ -35082,6 +35276,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 100
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -35137,6 +35332,22 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+--- !u!208 &1107430660
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107430653}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 2.5, z: 0.5}
+  m_MoveThreshold: 0
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0
 --- !u!1 &1107604781
 GameObject:
   m_ObjectHideFlags: 0
@@ -35987,7 +36198,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1146261376}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -36005,8 +36216,8 @@ Transform:
   - {fileID: 1611247669}
   - {fileID: 1511319053}
   - {fileID: 54524192}
-  m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1146261380
 MonoBehaviour:
@@ -36024,6 +36235,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -36892,6 +37104,87 @@ Transform:
   m_Children:
   - {fileID: 1176729234}
   m_Father: {fileID: 1696225087}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1185667086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1185667087}
+  m_Layer: 0
+  m_Name: Minion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1185667087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185667086}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1591920328}
+  - {fileID: 1439995934}
+  - {fileID: 2103592016}
+  - {fileID: 1509245310}
+  - {fileID: 1952244126}
+  - {fileID: 278963069}
+  - {fileID: 978268934}
+  - {fileID: 1611150157}
+  - {fileID: 845788530}
+  - {fileID: 582701349}
+  - {fileID: 359427773}
+  - {fileID: 386578363}
+  - {fileID: 1527194556}
+  - {fileID: 2126166802}
+  - {fileID: 1757458281}
+  - {fileID: 960079105}
+  - {fileID: 897798143}
+  - {fileID: 112316812}
+  - {fileID: 1146261379}
+  - {fileID: 1746111261}
+  - {fileID: 29168313}
+  - {fileID: 965566315}
+  - {fileID: 1695095236}
+  - {fileID: 605110583}
+  - {fileID: 32736802}
+  - {fileID: 478189915}
+  - {fileID: 579337978}
+  - {fileID: 991717913}
+  - {fileID: 1887667713}
+  - {fileID: 717878508}
+  - {fileID: 878135180}
+  - {fileID: 1521935663}
+  - {fileID: 594427641}
+  - {fileID: 677014602}
+  - {fileID: 31674684}
+  - {fileID: 1236052962}
+  - {fileID: 1976205952}
+  - {fileID: 1734827711}
+  - {fileID: 1739840482}
+  - {fileID: 1869435420}
+  - {fileID: 261302969}
+  - {fileID: 193350593}
+  - {fileID: 373188375}
+  - {fileID: 204055056}
+  - {fileID: 742723116}
+  - {fileID: 147223547}
+  - {fileID: 251353969}
+  - {fileID: 851538052}
+  - {fileID: 1733393262}
+  - {fileID: 1578945724}
+  m_Father: {fileID: 1885476806}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1186949817
@@ -37960,11 +38253,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223805000}
   m_LocalRotation: {x: 0.018434398, y: -0.9054452, z: 0.422216, w: 0.039532695}
-  m_LocalPosition: {x: 8.54, y: 10.04, z: 9.66}
+  m_LocalPosition: {x: -6.9981155, y: 10.04, z: 0.47128677}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 938769221}
+  m_Father: {fileID: 65638411}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -175, z: 0}
 --- !u!1 &1225526140
@@ -38157,7 +38450,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236052959}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -38175,8 +38468,8 @@ Transform:
   - {fileID: 313810132}
   - {fileID: 950913509}
   - {fileID: 45603154}
-  m_Father: {fileID: 0}
-  m_RootOrder: 42
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1236052963
 MonoBehaviour:
@@ -38194,6 +38487,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -38660,7 +38954,7 @@ GameObject:
   - component: {fileID: 1257222926}
   - component: {fileID: 1257222927}
   m_Layer: 0
-  m_Name: Server
+  m_Name: AWS SDK Intiializer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38673,13 +38967,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1257222925}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.7291007, y: 18.43985, z: 22.629929}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 857558251}
-  m_RootOrder: 0
+  m_Father: {fileID: 510102107}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1257222927
 MonoBehaviour:
@@ -40062,6 +40356,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 100
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -40095,6 +40390,22 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+--- !u!208 &1297790645
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297790638}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 2.5, z: 0.5}
+  m_MoveThreshold: 0
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0
 --- !u!1 &1300683608
 GameObject:
   m_ObjectHideFlags: 0
@@ -40386,7 +40697,7 @@ Transform:
   - {fileID: 2025987141}
   - {fileID: 760406645}
   m_Father: {fileID: 65638411}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1309281745
 MonoBehaviour:
@@ -42046,6 +42357,53 @@ Transform:
   m_Father: {fileID: 1309397632}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1368844627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1368844628}
+  - component: {fileID: 1368844629}
+  m_Layer: 0
+  m_Name: Camera Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1368844628
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368844627}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 519458085}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1368844629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368844627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 867c91507dd5b49b2a69696157c1dc29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 1223805005}
+  followingTarget: {fileID: 305547892}
+  followingOffset: {x: -3.499058, y: 10.04, z: 0.2356434}
 --- !u!1 &1371091007
 GameObject:
   m_ObjectHideFlags: 0
@@ -42152,7 +42510,7 @@ GameObject:
   - component: {fileID: 1374408430}
   - component: {fileID: 1374408431}
   m_Layer: 0
-  m_Name: Common
+  m_Name: (NO) AWS Fleet Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42165,13 +42523,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374408427}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.7291007, y: 18.43985, z: 22.629929}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 857558251}
-  m_RootOrder: 1
+  m_Father: {fileID: 510102107}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1374408429
 MonoBehaviour:
@@ -44546,7 +44904,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1439995931}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -44564,8 +44922,8 @@ Transform:
   - {fileID: 881500591}
   - {fileID: 260249013}
   - {fileID: 187581743}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1439995935
 MonoBehaviour:
@@ -44583,6 +44941,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -46571,8 +46930,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1814470257}
-  m_Father: {fileID: 938769221}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1508296836
 GameObject:
@@ -46668,7 +47027,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1509245307}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -46686,8 +47045,8 @@ Transform:
   - {fileID: 481777887}
   - {fileID: 520817545}
   - {fileID: 1257308209}
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1509245311
 MonoBehaviour:
@@ -46705,6 +47064,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -47307,7 +47667,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1521935660}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -47325,8 +47685,8 @@ Transform:
   - {fileID: 947062097}
   - {fileID: 725089764}
   - {fileID: 2081693709}
-  m_Father: {fileID: 0}
-  m_RootOrder: 38
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1521935664
 MonoBehaviour:
@@ -47344,6 +47704,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -47487,7 +47848,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1527194553}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -47505,8 +47866,8 @@ Transform:
   - {fileID: 1458451283}
   - {fileID: 1196884269}
   - {fileID: 1899924759}
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1527194557
 MonoBehaviour:
@@ -47524,6 +47885,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -49191,7 +49553,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578945721}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -49209,8 +49571,8 @@ Transform:
   - {fileID: 1460188734}
   - {fileID: 1537556245}
   - {fileID: 543243746}
-  m_Father: {fileID: 0}
-  m_RootOrder: 56
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1578945725
 MonoBehaviour:
@@ -49228,6 +49590,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -49455,6 +49818,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 100
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -49510,6 +49874,22 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+--- !u!208 &1583998019
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583998012}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 2.5, z: 0.5}
+  m_MoveThreshold: 0
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0
 --- !u!1 &1584431201
 GameObject:
   m_ObjectHideFlags: 0
@@ -49732,7 +50112,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1591920325}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -49750,8 +50130,8 @@ Transform:
   - {fileID: 1080468481}
   - {fileID: 1473290798}
   - {fileID: 581631290}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1591920329
 MonoBehaviour:
@@ -49769,6 +50149,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -50538,7 +50919,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1611150154}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -50556,8 +50937,8 @@ Transform:
   - {fileID: 510648693}
   - {fileID: 1793955012}
   - {fileID: 238602630}
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1611150158
 MonoBehaviour:
@@ -50575,6 +50956,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -53334,7 +53716,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695095233}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -53352,8 +53734,8 @@ Transform:
   - {fileID: 369125932}
   - {fileID: 1319083438}
   - {fileID: 935944986}
-  m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1695095237
 MonoBehaviour:
@@ -53371,6 +53753,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -54280,7 +54663,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733393259}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -54298,8 +54681,8 @@ Transform:
   - {fileID: 1053585567}
   - {fileID: 1782041702}
   - {fileID: 1398403374}
-  m_Father: {fileID: 0}
-  m_RootOrder: 55
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1733393263
 MonoBehaviour:
@@ -54317,6 +54700,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -54397,7 +54781,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1734827708}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -54415,8 +54799,8 @@ Transform:
   - {fileID: 1175096555}
   - {fileID: 138807795}
   - {fileID: 1514863696}
-  m_Father: {fileID: 0}
-  m_RootOrder: 44
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1734827712
 MonoBehaviour:
@@ -54434,6 +54818,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -54704,7 +55089,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739840479}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -54722,8 +55107,8 @@ Transform:
   - {fileID: 130326873}
   - {fileID: 1326833414}
   - {fileID: 349994819}
-  m_Father: {fileID: 0}
-  m_RootOrder: 45
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1739840483
 MonoBehaviour:
@@ -54741,6 +55126,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -54852,7 +55238,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746111258}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -54870,8 +55256,8 @@ Transform:
   - {fileID: 21197382}
   - {fileID: 1814993685}
   - {fileID: 965216582}
-  m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1746111262
 MonoBehaviour:
@@ -54889,6 +55275,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -55189,7 +55576,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757458278}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -55207,8 +55594,8 @@ Transform:
   - {fileID: 110173208}
   - {fileID: 935195406}
   - {fileID: 912367872}
-  m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1757458282
 MonoBehaviour:
@@ -55226,6 +55613,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -58942,7 +59330,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869435417}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -58960,8 +59348,8 @@ Transform:
   - {fileID: 179035460}
   - {fileID: 222085526}
   - {fileID: 62999736}
-  m_Father: {fileID: 0}
-  m_RootOrder: 46
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1869435421
 MonoBehaviour:
@@ -58979,6 +59367,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -59309,6 +59698,38 @@ Transform:
   m_Father: {fileID: 863386254}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1885476805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1885476806}
+  m_Layer: 0
+  m_Name: Network Prefabs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1885476806
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885476805}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1185667087}
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1886244807
 GameObject:
   m_ObjectHideFlags: 0
@@ -59436,7 +59857,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1887667710}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -59454,8 +59875,8 @@ Transform:
   - {fileID: 721401454}
   - {fileID: 1309024751}
   - {fileID: 1769585793}
-  m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1887667714
 MonoBehaviour:
@@ -59473,6 +59894,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -60969,6 +61391,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 100
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -61024,6 +61447,22 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+--- !u!208 &1934178212
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934178205}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 2.5, z: 0.5}
+  m_MoveThreshold: 0
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0
 --- !u!1 &1934262171
 GameObject:
   m_ObjectHideFlags: 0
@@ -61509,7 +61948,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1952244123}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -61527,8 +61966,8 @@ Transform:
   - {fileID: 412500919}
   - {fileID: 86625492}
   - {fileID: 1198779745}
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1952244127
 MonoBehaviour:
@@ -61546,6 +61985,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -62331,7 +62771,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1976205949}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -62349,8 +62789,8 @@ Transform:
   - {fileID: 1914563563}
   - {fileID: 1041368108}
   - {fileID: 1636617549}
-  m_Father: {fileID: 0}
-  m_RootOrder: 43
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1976205953
 MonoBehaviour:
@@ -62368,6 +62808,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -64102,6 +64543,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 100
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -64157,6 +64599,22 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+--- !u!208 &2022730032
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022730025}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 2.5, z: 0.5}
+  m_MoveThreshold: 0
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0
 --- !u!1 &2022759756
 GameObject:
   m_ObjectHideFlags: 0
@@ -64246,6 +64704,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 100
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -64301,6 +64760,22 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+--- !u!208 &2025987147
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025987140}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 2.5, z: 0.5}
+  m_MoveThreshold: 0
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0
 --- !u!1 &2026161786
 GameObject:
   m_ObjectHideFlags: 0
@@ -65615,7 +66090,7 @@ Transform:
   m_Children:
   - {fileID: 1394133459}
   m_Father: {fileID: 65638411}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2068207750
 GameObject:
@@ -66764,7 +67239,7 @@ GameObject:
   - component: {fileID: 2099790650}
   - component: {fileID: 2099790649}
   m_Layer: 0
-  m_Name: NetworkManager
+  m_Name: Network Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66777,14 +67252,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2099790647}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.3989697, y: -9.610485, z: 9.321653}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1453156041}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2099790649
 MonoBehaviour:
@@ -67355,7 +67830,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103592013}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -67373,8 +67848,8 @@ Transform:
   - {fileID: 2004224154}
   - {fileID: 1924968802}
   - {fileID: 548079515}
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2103592017
 MonoBehaviour:
@@ -67392,6 +67867,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:
@@ -68075,7 +68551,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126166799}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -68093,8 +68569,8 @@ Transform:
   - {fileID: 296731216}
   - {fileID: 790692796}
   - {fileID: 957663667}
-  m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_Father: {fileID: 1185667087}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2126166803
 MonoBehaviour:
@@ -68112,6 +68588,7 @@ MonoBehaviour:
     currentGem: 0
   moveSpeed: 0
   agent: {fileID: 0}
+  obstacle: {fileID: 0}
   recognizedEnemies: []
   animator: {fileID: 0}
   onStatChanged:

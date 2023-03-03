@@ -14,6 +14,7 @@ public class Minion : NetworkBehaviour, IIndexContainable
     public PlayerData ownerPlayer;
     public float moveSpeed;
     public NavMeshAgent agent;
+    public NavMeshObstacle obstacle;
     public List<Minion> recognizedEnemies;
     [SerializeField] Animator animator;
 
@@ -28,7 +29,7 @@ public class Minion : NetworkBehaviour, IIndexContainable
             indexInMinionInstanceList = value;
         }
     }
-    
+
     public UnityEvent<Minion> beforeAttack { get; private set; }
     public UnityEvent<Minion> afterAttack { get; private set; }
     public UnityEvent<Minion> befroeDamaged { get; private set; }
@@ -44,6 +45,7 @@ public class Minion : NetworkBehaviour, IIndexContainable
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
+        obstacle = GetComponentInChildren<NavMeshObstacle>();
         //        stat.MyBattleAbility.AttackBehaviour.SetOwner(this, animator);
         //      stat.MyBattleAbility.PassiveSkill.ApplyEffect(this);
         recognizedEnemies = new List<Minion>();
@@ -68,7 +70,7 @@ public class Minion : NetworkBehaviour, IIndexContainable
     public override void OnNetworkSpawn()
     {
         if (IsServer) return;
-        
+
         var ownerID = ownerPlayer.ClientID;
         var ownerPlayerData = GameSessionInstance.Instance.PlayerDataByClientID[ownerID];
         ownerPlayerData.AddMinionInstance(gameObject);
