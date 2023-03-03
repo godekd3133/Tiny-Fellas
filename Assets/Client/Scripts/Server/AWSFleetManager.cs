@@ -1,11 +1,12 @@
+using System;
 using System.IO;
 using System.Net;
 using Amazon.GameLift;
 using Cysharp.Threading.Tasks;
 using Unity.Netcode;
-using Unity.Netcode.Transports.UTP;
 using UnityEngine;
 using Aws.GameLift.Server.Model;
+using Unity.Netcode.Transports.UTP;
 
 public class AWSFleetManager : MonoWeakSingleton<AWSFleetManager>
 {
@@ -15,42 +16,52 @@ public class AWSFleetManager : MonoWeakSingleton<AWSFleetManager>
 
     private GameSession gameSession;
     private AmazonGameLiftClient gameLiftClient;
-    private UnityTransport transport;
     private NetworkObject networkObject;
     private void Awake()
     {
-        networkObject = GetComponent<NetworkObject>();
-        transport = GetComponent<UnityTransport>();
+        DontDestroyOnLoad(transform.parent);
+        if (SDKInitializer.Instance.IsLocalTest)
+        {
 #if UNITY_EDITOR
-        // NetworkManagerInstance.Instance.StartHost();
-        // Logger.SharedInstance.Write(string.Format("Server starts as host client id is {0}", OwnerClientId));
+            // NetworkManagerInstance.Instance.StartHost();
+            // Logger.SharedInstance.Write(string.Format("Server starts as host client id is {0}", OwnerClientId));
 #endif
 #if UNITY_SERVER
         NetworkManagerInstance.Instance.ConnectionApprovalCallback += (request, response) =>
         {
-            bool alreadtConnected =
+            bool alreadyConnected =
                 GameSessionInstance.Instance.PlayerDataByClientID.ContainsKey(request.ClientNetworkId);
-            response.Approved = !alreadtConnected;
+            response.Approved = !alreadyConnected;
             response.Pending = false;
             
-            if(!alreadtConnected) GameSessionInstance.Instance.
         };
         NetworkManagerInstance.Instance.StartServer();
         Logger.SharedInstance.Write(string.Format("Server starts as server"));
 #endif
+        }
     }
     
     public  void GenerateNewGameSession(GameSession gameSession)
     {
         var gameSessionSetting = Resources.Load<GameSessionSetting>(gameSessionSettingPath);
         this.gameSession = gameSession;
-        transport.ConnectionData.Address = gameSession.IpAddress;
-        transport.ConnectionData.Port = System.Convert.ToUInt16(gameSession.Port);
+        var transporter = NetworkManager.Singleton.GetComponent<UnityTransport>();
+        transporter.ConnectionData.Address = gameSession.IpAddress;
+        transporter.ConnectionData.Port = Convert.ToUInt16(gameSession.Port);
         
+       NetworkManager.Singleton.ConnectionApprovalCallback += (request, response) =>
+        {
+            bool alreadyConnected =
+                GameSessionInstance.Instance.PlayerDataByClientID.ContainsKey(request.ClientNetworkId);
+            response.Approved = !alreadyConnected;
+            response.Pending = false;
+        };
+        
+        
+        NetworkManager.Singleton.StartServer();
        gameLiftClient = new AmazonGameLiftClient("AKIA3MTR52R2BGL7MOGB","ENfwYnCa4B20pg1ro+r1VJDetnOarvEA4DjhGzgv");
         
-        NetworkManagerInstance.Instance.StartServer();
-        Logger.SharedInstance.Write("Server starts");
+        Logger.SharedInstance.Write("Server Start");
     }
 #endif
     #if !UNITY_SERVER || UNITY_EDITOR
