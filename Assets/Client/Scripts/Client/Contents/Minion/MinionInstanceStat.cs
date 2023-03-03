@@ -38,12 +38,6 @@ public class MinionInstanceStat : NetworkBehaviour
         currentStat[EStatName.HEALTH].CurrentValue = value;
     }
     
-    [ClientRpc]
-    public void AssignOriginStat_ClientRPC(int statIndexInDB)
-    {
-        AssignOriginStat(MinionDataBaseIngame.Instance.MinionStatDataByIndex[statIndexInDB]);
-    }
-    
 #if UNITY_SERVER || UNITY_EDITOR
     public bool TakeDamage(Minion attacker,BattleAbility attackerBattleAbility)
     {

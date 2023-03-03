@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 public enum EMinionAnimationParameter
@@ -30,6 +26,7 @@ public class BattleAbility : StatContainer
     [SerializeField] private ESkillPassiveName passiveSkillName;
     [SerializeField] private AttackBehaviourBase attackBehaviour;
     [SerializeField] private ProjectileBase projectilePrefab;
+    [SerializeField] private GameObject attackEffect;
 
     private ACombatAI combatAI;
     private ASkillPassiveBase passiveSkill;
@@ -75,8 +72,5 @@ public class BattleAbility : StatContainer
     {
         attackAnimationParameter = origin.attackAnimationParameter;
         combatAIName = origin.combatAIName;
-
-        var newAttackBehaviourPrefab = Instantiate(origin.AttackBehaviour);
-        attackBehaviour = newAttackBehaviourPrefab;
     }
 }
