@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9766066b3b2524e6bba24b1d4af46395, type: 3}
-  m_Name: MeleeStat
+  m_Name: InstantRangeStat
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -55,13 +55,13 @@ MonoBehaviour:
       Data: 4
     - Name: maxValue
       Entry: 4
-      Data: 10
+      Data: 20
     - Name: minValue
       Entry: 4
       Data: 0
     - Name: currentValue
       Entry: 4
-      Data: 10
+      Data: 20
     - Name: 
       Entry: 8
       Data: 
@@ -74,4 +74,4 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  battleAbility: {fileID: 11400000, guid: 06303300319e6334c97b2d053a129e71, type: 2}
+  battleAbility: {fileID: 11400000, guid: 43f31f73831754b3ba0b8d9ef1914035, type: 2}

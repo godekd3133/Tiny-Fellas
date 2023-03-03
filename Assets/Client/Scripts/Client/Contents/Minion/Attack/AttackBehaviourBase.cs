@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using Cysharp.Threading.Tasks;
+using Unity.Netcode;
 
 public class AttackBehaviourBase : MonoBehaviour
 {
@@ -68,11 +69,18 @@ public class AttackBehaviourBase : MonoBehaviour
         await UniTask.Delay(Convert.ToInt32(battleAbility[EStatName.ATTACK_AFTER_DELAY].CurrentValue * 1000));
         isOnAttacking = false;
     }
+
+    [ClientRpc]
+    protected void Attack_ClientRPC()
+    {
+        animator.SetTrigger(battleAbility.AttackAnimationParameter);
+    }
     
     protected virtual void Attack(Minion target)
     {
         animator.SetTrigger(battleAbility.AttackAnimationParameter);
-        NetworkMinionAnimationAdmin.Instance.PlayAnimation_ClientRPC(owner.OwnerClientId, owner.IndexInContainer.Value, battleAbility.AttackAnimationParameter);
+        if (NetworkManagerInstance.Instance.IsServer) Attack_ClientRPC();
+        // NetworkMinionAnimationAdmin.Instance.PlayAnimation_ClientRPC(owner.OwnerClientId, owner.IndexInContainer.Value, battleAbility.AttackAnimationParameter);
     }
 
     public bool IsInAttackRagne(Transform target)
@@ -83,6 +91,8 @@ public class AttackBehaviourBase : MonoBehaviour
     // called as animation event
     public virtual void ImpactDamage()
     {
+        #if UNITY_SERVER
         targetStat.TakeDamage(owner,battleAbility);
+        #endif
     }
 }

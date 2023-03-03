@@ -45,14 +45,6 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
 #endif
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            SpawnMinion_ServerRPC(10,10);
-        }
-    }
-
 
     [ServerRpc(RequireOwnership = false)]
     public void Connect_ServerRPC(string playerSessionID, ulong clientID)
@@ -87,36 +79,45 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
         newPlayerData.currentGem = 50;
 
         playerDataList.Add(newPlayerData);
-
+        BroadCastNewPlayerConnection_ClientRPC(clientID, tesstMinionIndexList.ToArray(), testMinionStatIndexList.ToArray());
     }
+
     [ClientRpc]
-    public void ABC_ClientRPC()
+    public void BroadCastNewPlayerConnection_ClientRPC(ulong clientID, int[] minionAssetIndexArr, int[] battalAbilityAssetIndexPerMinion)
     {
-        Debug.Log("Called CLient RPC");
+        if (playerDataByClientID.ContainsKey(clientID)) return;
+        
+        var testDeck =
+            MinionDataBaseIngame.Instance.GetMinionDeck(minionAssetIndexArr, battalAbilityAssetIndexPerMinion);
+        var playerData = new PlayerData(testDeck,string.Empty,clientID);
+        playerDataList.Add(playerData);
     }
-
 
     [ServerRpc(RequireOwnership = false)]
-    public void SpawnMinion_ServerRPC(ulong clientID, int minionDataIndex)
+    private void SpawnMinion_ServerRPC(ulong clientID, int minionDataIndex)
     {
-        Debug.Log("야후 야야후");
+        SpawnMinion(clientID,minionDataIndex);
+    }
+
+    private void SpawnMinion(ulong clientID, int minionDataIndex, bool forcePurchaseEvenNoGem = false)
+    {
         var playerData = PlayerDataByClientID[clientID];
         var minionData = playerData.MinionDeck[minionDataIndex];
 
-        bool isPurchasable = playerData.currentGem >= minionData.Stat.MyBattleAbility[EStatName.GEM_COST].CurrentValue;
+        bool isPurchasable =forcePurchaseEvenNoGem || playerData.currentGem >= minionData.Stat.MyBattleAbility[EStatName.GEM_COST].CurrentValue;
         if (isPurchasable)
         {
             var newMinion = Instantiate(MinionDataBaseIngame.Instance.MinionNetworkPrefabList[minionDataIndex]);
             var newMinionNetworkobject = newMinion.GetComponent<NetworkObject>();
-            var attackBehaviour = newMinionNetworkobject.gameObject.AddComponent(minionData.Stat.MyBattleAbility.AttackBehaviour.GetType());
-            (attackBehaviour as AttackBehaviourBase).SetOwner(newMinion.GetComponent<Minion>());
+            newMinion.GetComponent<MinionInstanceStat>().AssignOriginStat(minionData.Stat);
+            newMinion.GetComponent<AttackBehaviourBase>().SetOwner(newMinion.GetComponent<Minion>());
 
+            // spawned minion's OnNetworkSpawn logic will automatically add itself to player data's minion instance list in client
             newMinionNetworkobject.SpawnWithOwnership(clientID);
 
             playerData.AddMinionInstance(newMinion);
-            newMinionNetworkobject.GetComponent<MinionInstanceStat>().AssignOriginStat_ClientRPC(minionDataIndex);
+            playerData.currentGem -= minionData.Stat.MyBattleAbility[EStatName.GEM_COST].CurrentValue;
         }
-
     }
 }
 

@@ -54,7 +54,7 @@ public class GameSessionSynchronizer : NetworkBehaviour
     }
     #endif
 
-    [ClientRpc]
+    [ClientRpc(Delivery = RpcDelivery.Unreliable)]
     private void SynchronizeMinionTransforms_ClientRPC(ulong clientID, Vector3[] positionList,Quaternion[] rotationList)
     {
         var minionInstanceList = GameSessionInstance.Instance.PlayerDataByClientID[clientID].MinionInstanceList;

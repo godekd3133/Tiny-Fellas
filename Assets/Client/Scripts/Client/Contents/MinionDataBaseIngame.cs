@@ -8,7 +8,7 @@ public class MinionDataBaseIngame : MonoWeakSingleton<MinionDataBaseIngame>
 {
     [SerializeField] private MinionDataBase minionDataBase;
     [SerializeField] private MinionStatDataBase minionStatDataBase;
-    [SerializeField] private List<GameObject> minionNetworkPrefabList = new List<GameObject>();
+   [SerializeField] private List<GameObject> minionNetworkPrefabList = new List<GameObject>();
 
     private NetworkManager networkManager;
 
@@ -24,6 +24,7 @@ public class MinionDataBaseIngame : MonoWeakSingleton<MinionDataBaseIngame>
     private void UpdateNetworkMinionPrefabList()
     {
         networkManager = NetworkManagerInstance.Instance;
+        
         foreach (var minionData in minionDataBase.MinionDatas)
         {
             var newPrefab = Instantiate(minionData.Prefab);
@@ -32,16 +33,24 @@ public class MinionDataBaseIngame : MonoWeakSingleton<MinionDataBaseIngame>
             newPrefab.AddComponent<Minion>();
             networkManager.AddNetworkPrefab(newPrefab);
             minionNetworkPrefabList.Add(newPrefab);
-
+            
             newPrefab.gameObject.SetActive(false);
         }
     }
 
-#if UNITY_SERVER || UNITY_EDITOR
     public List<MinionData> GetMinionDeck(List<int> minionIndexList, List<int> statIndexList)
     {
         var deck = new List<MinionData>();
         for (int i = 0; i < minionIndexList.Count; i++)
+            deck.Add(GetMinionDataInstance(minionIndexList[i], statIndexList[i]));
+
+        return deck;
+    }
+    
+    public List<MinionData> GetMinionDeck(int[]minionIndexList, int[]statIndexList)
+    {
+        var deck = new List<MinionData>();
+        for (int i = 0; i < minionIndexList.Length; i++)
             deck.Add(GetMinionDataInstance(minionIndexList[i], statIndexList[i]));
 
         return deck;
@@ -51,8 +60,7 @@ public class MinionDataBaseIngame : MonoWeakSingleton<MinionDataBaseIngame>
     {
         var originData = minionDataBase.DataByInex[minionIndex];
         var originStat = minionStatDataBase.DataByInex[statIndex];
-        return new MinionData(minionNetworkPrefabList[minionIndex], originData.Thumbnail, originStat, originStat.IndexInContainer);
+        return new MinionData(minionNetworkPrefabList[minionIndex],originData.Thumbnail,originStat,originStat.IndexInContainer);
     }
-#endif
 }
 

@@ -12,7 +12,7 @@ public class PlayerData : IMinionDeployable
     private string playerSessionID;
     private ulong clientID;
 
-    public int currentGem;
+    public float currentGem;
 
     public IReadOnlyList<MinionData> MinionDeck => minionDeck;
 
