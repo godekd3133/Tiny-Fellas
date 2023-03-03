@@ -20,7 +20,7 @@ public class TroopAdmin : NetworkBehaviour
     [ShowInInspector, ReadOnly] public List<Minion> minions { get; private set; }
     [ShowInInspector, ReadOnly] public Minion leaderMinion { get; private set; }
     [ShowInInspector, ReadOnly] public TroopState troopState { get; private set; }
-    
+
     [ShowInInspector, ReadOnly] public int[] minionHandDeck { get; private set; }
 
     [SerializeField] private bool isPlayer;
@@ -48,18 +48,37 @@ public class TroopAdmin : NetworkBehaviour
         {
             minions.Add(transform.GetChild(i).GetComponent<Minion>());
         }
-        leaderMinion = minions[0];
+        if (minions.Count > 0)
+        {
+            leaderMinion = minions[0];
+        }
+
+        ChangeState(TroopState.IDLE);
+        foreach (var each in minions)
+        {
+            each.obstacle.enabled = false;
+            each.agent.enabled = true;
+        }
+
+        if (isPlayer)
+        {
+            CameraManager.Instance.followingTarget = leaderMinion.transform;
+        }
     }
 
     private void Update()
     {
-        if (isOwner) OwnerUpdate();
-        else BotUpdate();
 
-        onPostTroopUpdated.Invoke(troopState);
+        if (minions.Count > 0)
+        {
+            if (isOwner) OwnerUpdate();
+            else BotUpdate();
 
-        TroopState newState = CheckTransition(troopState);
-        if (troopState != newState) ChangeState(newState);
+            onPostTroopUpdated.Invoke(troopState);
+
+            TroopState newState = CheckTransition(troopState);
+            if (troopState != newState) ChangeState(newState);
+        }
     }
 
     private void BotUpdate()
@@ -111,23 +130,59 @@ public class TroopAdmin : NetworkBehaviour
             foreach (var each in minions)
             {
                 each.agent.stoppingDistance = 0;
-                if (each.recognizedEnemies.Count > 0)
-                    each.agent.SetDestination(each.recognizedEnemies[0].transform.position);
-                else
-                    each.agent.SetDestination(leaderMinion.recognizedEnemies[0].transform.position);
+
+                // 찾은 적이 있을경우 해당 적을향해, 없을경우 리더 미니언을 쫒아가면서 적을 찾음.
+                if (each.recognizedEnemies.Count > 0) each.agent.SetDestination(each.recognizedEnemies[0].transform.position);
+                else each.agent.SetDestination(leaderMinion.recognizedEnemies[0].transform.position);
+            }
+        }
+        else if (troopState == TroopState.BATTLE)
+        {
+            foreach (var each in minions)
+            {
+                each.agent.stoppingDistance = 0;
+
+                // 찾은 적이 있을경우 해당 적을향해, 없을경우 리더 미니언을 쫒아가면서 적을 찾음.
+                if (each.recognizedEnemies.Count > 0) each.agent.SetDestination(each.recognizedEnemies[0].transform.position);
+                else each.agent.SetDestination(leaderMinion.recognizedEnemies[0].transform.position);
             }
         }
     }
 
     void ChangeState(TroopState newState)
     {
+        TroopState oldState = troopState;
         troopState = newState;
         onPostTroopStateChanged.Invoke(troopState);
 
-        if (isPlayer) { }
-        else
+        // 만약 전투상태일 때 적과 거리가 멀어질경우 배틀 AI는 중단
+        if (oldState == TroopState.BATTLE)
         {
-            if (newState == TroopState.MOVE)
+            foreach (var minion in minions)
+            {
+                minion.Stat.MyBattleAbility.CombatAI.SetActiveAI(true, minion.Stat.MyBattleAbility.AttackBehaviour);
+                minion.obstacle.enabled = false;
+                minion.agent.enabled = true;
+            }
+        }
+
+        // 만약 전투상태가 아닐 때 적과 거리가 가까워질 경우 배틀 AI 시작/재개
+        if (newState == TroopState.BATTLE)
+        {
+            foreach (var minion in minions)
+            {
+                minion.Stat.MyBattleAbility.CombatAI.SetActiveAI(true, minion.Stat.MyBattleAbility.AttackBehaviour);
+                minion.obstacle.enabled = true;
+                minion.agent.enabled = false;
+            }
+
+        }
+
+
+
+        if (newState == TroopState.MOVE)
+        {
+            if (!isPlayer)
             {
                 Vector3 randomPosition = SessionManager.instance.map.GetRandomPosition();
                 foreach (var each in minions)
@@ -204,6 +259,32 @@ public class TroopAdmin : NetworkBehaviour
                 // TODO Dectect Logic
 
                 if (checkEnemyDetection == true) targetState = TroopState.CHASE;
+            }
+        }
+        else if (originState == TroopState.CHASE)
+        {
+            if (isOwner)
+            {
+                if (InputManager.instance.dragAxis.magnitude > 0)
+                    targetState = TroopState.MOVE;
+            }
+            else
+            {
+                bool checkEnemyDetection = leaderMinion.recognizedEnemies.Count == 0;
+                if (checkEnemyDetection == true) targetState = TroopState.IDLE;
+            }
+        }
+        else if (originState == TroopState.BATTLE)
+        {
+            if (isOwner)
+            {
+                if (InputManager.instance.dragAxis.magnitude > 0)
+                    targetState = TroopState.MOVE;
+            }
+            else
+            {
+                bool checkEnemyDetection = leaderMinion.recognizedEnemies.Count == 0;
+                if (checkEnemyDetection == true) targetState = TroopState.IDLE;
             }
         }
 
