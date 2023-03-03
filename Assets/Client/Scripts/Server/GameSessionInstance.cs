@@ -40,9 +40,15 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
 
     private void Awake()
     {
-#if !UNITY_SERVER
         
+#if !UNITY_SERVER
+
 #endif
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A)) Connect_ServerRPC("", NetworkManager.LocalClientId);
     }
 
 

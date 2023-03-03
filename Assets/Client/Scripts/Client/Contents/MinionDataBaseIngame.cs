@@ -18,6 +18,7 @@ public class MinionDataBaseIngame : MonoWeakSingleton<MinionDataBaseIngame>
 
     private void Awake()
     {
+        DontDestroyOnLoad(gameObject);
     }
 
     [ContextMenu("Add minion prefab to NetworkPrefab list")]
@@ -31,6 +32,7 @@ public class MinionDataBaseIngame : MonoWeakSingleton<MinionDataBaseIngame>
             newPrefab.AddComponent<NetworkObject>();
             newPrefab.AddComponent<MinionInstanceStat>();
             newPrefab.AddComponent<Minion>();
+            newPrefab.transform.SetParent(transform);
             networkManager.AddNetworkPrefab(newPrefab);
             minionNetworkPrefabList.Add(newPrefab);
             
