@@ -82,7 +82,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
     }
 
     [ClientRpc]
-    private void BroadCastNewPlayerConnection(ulong clientID)
+    private void BroadCastNewPlayerConnection_ClientRPC(ulong clientID)
     {
         if (playerDataByClientID.ContainsKey(clientID)) return;
         

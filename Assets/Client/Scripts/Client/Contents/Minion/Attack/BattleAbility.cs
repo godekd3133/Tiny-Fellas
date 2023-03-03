@@ -29,6 +29,7 @@ public class BattleAbility : StatContainer
     [SerializeField] private EComatAIName combatAIName;
     [SerializeField] private ESkillPassiveName passiveSkillName;
     [SerializeField] private AttackBehaviourBase attackBehaviour;
+    [SerializeField] private ProjectileBase projectilePrefab;
 
     private ACombatAI combatAI;
     private ASkillPassiveBase passiveSkill;
@@ -63,6 +64,7 @@ public class BattleAbility : StatContainer
     }
     
     public AttackBehaviourBase AttackBehaviour => attackBehaviour;
+    public ProjectileBase ProjectilePrefab => projectilePrefab;
     
 
     private BattleAbility()

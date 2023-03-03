@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   battleAbilities:
   - {fileID: 11400000, guid: 06303300319e6334c97b2d053a129e71, type: 2}
+  - {fileID: 11400000, guid: 43f31f73831754b3ba0b8d9ef1914035, type: 2}
