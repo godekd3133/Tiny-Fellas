@@ -1029,10 +1029,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &29168315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1243,10 +1245,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &31674686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1361,10 +1365,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &32736804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3411,10 +3417,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &112316814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3519,10 +3527,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!195 &114912736
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4698,10 +4708,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &147223549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6080,10 +6092,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &193350595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6242,10 +6256,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!195 &197532480
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6253,7 +6269,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 197532477}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 10
@@ -6576,10 +6592,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &204055058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8202,10 +8220,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &251353971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8666,10 +8686,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &261302971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9103,10 +9125,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &278963071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10043,7 +10067,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305547888}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 10
@@ -10076,10 +10100,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!4 &305547892 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
@@ -11696,10 +11722,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &359427775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12135,10 +12163,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &373188377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12614,10 +12644,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &386578365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13722,10 +13754,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!195 &424185577
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -15534,10 +15568,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &478189917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18661,10 +18697,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &579337980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18873,10 +18911,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &582701351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19149,10 +19189,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &594427643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19554,10 +19596,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &605110585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21727,10 +21771,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &677014604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22780,6 +22826,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.4990575
       objectReference: {fileID: 0}
@@ -23116,10 +23174,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &717878510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24017,10 +24077,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &742723118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24728,10 +24790,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!195 &760406647
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -27213,10 +27277,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &845788532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27424,10 +27490,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &851538054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27848,10 +27916,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!195 &872365207
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -28372,10 +28442,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &878135182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28868,10 +28940,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &897798145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30485,10 +30559,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &960079107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30935,10 +31011,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &965566317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31394,10 +31472,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &978268936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31793,10 +31873,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &991717915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32386,10 +32468,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!195 &1009261573
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -35081,10 +35165,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!195 &1100200204
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -35272,10 +35358,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!195 &1107430656
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -35673,6 +35761,18 @@ PrefabInstance:
     - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36231,10 +36331,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &1146261381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38483,10 +38585,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &1236052964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40133,6 +40237,18 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.4990575
       objectReference: {fileID: 0}
@@ -40319,7 +40435,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297790638}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 10
@@ -40352,10 +40468,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &1297790642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43393,6 +43511,18 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.59
       objectReference: {fileID: 0}
@@ -43513,6 +43643,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
       propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
+      propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
@@ -44931,10 +45073,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &1439995936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47054,10 +47198,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &1509245312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47487,6 +47633,18 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.4990575
       objectReference: {fileID: 0}
@@ -47694,10 +47852,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &1521935665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47875,10 +48035,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &1527194558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49580,10 +49742,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &1578945726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49808,10 +49972,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!195 &1583998015
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -50139,10 +50305,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &1591920330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50946,10 +51114,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &1611150159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51576,6 +51746,18 @@ PrefabInstance:
     - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4471737087396278, guid: 20383ffecad6e824d9cffe08089dee4a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -53743,10 +53925,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &1695095238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54690,10 +54874,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &1733393264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54808,10 +54994,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &1734827713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55116,10 +55304,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &1739840484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55265,10 +55455,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &1746111263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55603,10 +55795,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &1757458283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59357,10 +59551,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &1869435422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59884,10 +60080,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &1887667715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61381,10 +61579,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!195 &1934178208
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -61975,10 +62175,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &1952244128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62798,10 +63000,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &1976205954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64533,10 +64737,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!195 &2022730028
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -64694,10 +64900,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!195 &2025987143
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -67857,10 +68065,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &2103592018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68578,10 +68788,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   obstacle: {fileID: 0}
   recognizedEnemies: []
+  troopAdmin: {fileID: 0}
   animator: {fileID: 0}
   onStatChanged:
     m_PersistentCalls:
       m_Calls: []
+  chaseTarget: {fileID: 0}
 --- !u!114 &2126166804
 MonoBehaviour:
   m_ObjectHideFlags: 0

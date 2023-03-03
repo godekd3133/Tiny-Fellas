@@ -28,25 +28,25 @@ public class BattleAbility : StatContainer
     [SerializeField] private ProjectileBase projectilePrefab;
     [SerializeField] private GameObject attackEffect;
 
-    private ACombatAI combatAI;
+    private BattleAI combatAI;
     private ASkillPassiveBase passiveSkill;
     private string attackAnimationParameterAsString;
-    
-    
-    public string AttackAnimationParameter 
+
+
+    public string AttackAnimationParameter
     {
         get
         {
-           if(attackAnimationParameterAsString == null) attackAnimationParameterAsString = attackAnimationParameter.ToString();
-               return new(attackAnimationParameterAsString);
+            if (attackAnimationParameterAsString == null) attackAnimationParameterAsString = attackAnimationParameter.ToString();
+            return new(attackAnimationParameterAsString);
         }
     }
 
-    public ACombatAI CombatAI
+    public BattleAI CombatAI
     {
         get
         {
-            if (combatAI == null) combatAI = CombatAIFactory.Instace.GetCombatAI(combatAIName);
+            if (combatAI == null) combatAI = BattleAIFactory.Instace.GetCombatAI(combatAIName);
             return combatAI;
         }
     }
@@ -59,10 +59,10 @@ public class BattleAbility : StatContainer
             return passiveSkill;
         }
     }
-    
+
     public AttackBehaviourBase AttackBehaviour => attackBehaviour;
     public ProjectileBase ProjectilePrefab => projectilePrefab;
-    
+
 
     private BattleAbility()
     {

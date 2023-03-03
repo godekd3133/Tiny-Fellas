@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using Unity.Netcode;
 using UnityEngine;
@@ -16,6 +17,9 @@ public class Minion : NetworkBehaviour, IIndexContainable
     public NavMeshAgent agent;
     public NavMeshObstacle obstacle;
     public List<Minion> recognizedEnemies;
+    public TroopAdmin troopAdmin;
+
+    public bool isLeader => troopAdmin.leaderMinion == this;
     [SerializeField] Animator animator;
 
     private int? indexInMinionInstanceList;
@@ -35,11 +39,13 @@ public class Minion : NetworkBehaviour, IIndexContainable
     public UnityEvent<Minion> befroeDamaged { get; private set; }
     public UnityEvent<Minion> afterDamaged { get; private set; }
 
+    private MinionState minionState;
 
     [HideInInspector] public UnityEvent onStatChanged;
     private MinionInstanceStat stat;
 
     public MinionInstanceStat Stat => stat;
+    public Minion chaseTarget;
 
     private void Awake()
     {
@@ -54,18 +60,54 @@ public class Minion : NetworkBehaviour, IIndexContainable
 
     private void Start()
     {
-        DetectEnemyUpdate().Forget();
+        StateUpdate(this.GetCancellationTokenOnDestroy()).Forget();
+        DetectEnemyUpdate(this.GetCancellationTokenOnDestroy()).Forget();
     }
 
-    private async UniTask DetectEnemyUpdate()
+    private async UniTask DetectEnemyUpdate(CancellationToken cancellationToken)
     {
         const float updateInterval = 0.15f;
         while (true)
         {
+            if (cancellationToken.IsCancellationRequested) break;
+
             recognizedEnemies = PerceptionUtility.GetPerceptedMinionListLocalClient(this);
-            await UniTask.Delay(TimeSpan.FromSeconds(updateInterval));
+            await UniTask.Delay(TimeSpan.FromSeconds(updateInterval),
+                                DelayType.DeltaTime,
+                                PlayerLoopTiming.Update,
+                                cancellationToken);
+
         }
     }
+    private async UniTask StateUpdate(CancellationToken cancellationToken)
+    {
+        minionState = new MinionStateIdle(this);
+        minionState.EnterState();
+        CancellationTokenSource stateChangeToken = new CancellationTokenSource();
+        minionState.UpdateState(CancellationTokenSource.CreateLinkedTokenSource(cancellationToken, stateChangeToken.Token).Token).Forget();
+
+        while (true)
+        {
+            if (cancellationToken.IsCancellationRequested) break;
+
+            MinionState newState = minionState.CheckTransition();
+            if (newState != minionState)
+            {
+                stateChangeToken.Cancel();
+                await UniTask.WaitUntil(() => minionState.enabled == false);
+                minionState.ExitState();
+                minionState = newState;
+
+                minionState.EnterState();
+                stateChangeToken = new CancellationTokenSource();
+                minionState.UpdateState(CancellationTokenSource.CreateLinkedTokenSource(cancellationToken, stateChangeToken.Token).Token).Forget();
+            }
+
+            await UniTask.NextFrame();
+        }
+
+    }
+
 
     public override void OnNetworkSpawn()
     {

@@ -58,7 +58,7 @@ public class PerceptionUtility : MonoBehaviour
                 }
             }
         }
-
+        recognizedMinionInstancesList.Sort((Minion prev, Minion next) => { return (prev.transform.position - myMinion.transform.position).magnitude.CompareTo((next.transform.position - myMinion.transform.position).magnitude); });
         return recognizedMinionInstancesList;
     }
 }

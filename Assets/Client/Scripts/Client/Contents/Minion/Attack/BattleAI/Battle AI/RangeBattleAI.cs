@@ -5,7 +5,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class CombatAIRange : ACombatAI
+public class RangeBattleAI : BattleAI
 {
     protected override async UniTask StartCombatAI(AttackBehaviourBase attackBehaviour, CancellationToken token)
     {

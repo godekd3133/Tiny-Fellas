@@ -5,7 +5,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
 
-public abstract class ACombatAI : MonoBehaviour
+public abstract class BattleAI : MonoBehaviour
 {
     public Minion owner;
     public float AIUpdateInterval = 0.5f;

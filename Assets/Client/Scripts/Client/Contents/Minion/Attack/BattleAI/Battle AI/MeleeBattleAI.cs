@@ -6,7 +6,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class CombatAIMelee : ACombatAI
+public class MeleeBattleAI : BattleAI
 {
     protected override async UniTask StartCombatAI(AttackBehaviourBase attackBehaviour, CancellationToken token)
     {
@@ -28,6 +28,7 @@ public class CombatAIMelee : ACombatAI
 
             if (isInAttackRange)
             {
+                Debug.Log("어택!");
                 attackBehaviour.AttackStart(nearestMinion, owner.Stat.MyBattleAbility);
             }
             // else
