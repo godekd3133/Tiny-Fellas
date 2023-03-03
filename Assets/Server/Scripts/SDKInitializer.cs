@@ -1,13 +1,13 @@
-using UnityEngine;
 using System;
+
 using Aws.GameLift;
 using Aws.GameLift.Server;
-
+using UnityEngine;
 public class SDKInitializer : MonoWeakSingleton<SDKInitializer>
 {
 #if UNITY_SERVER || UNITY_EDITOR
     [SerializeField] private bool isLocalTest;
-    
+
     private bool isConnected;
     private GameLift gameLift;
 
@@ -19,15 +19,15 @@ public class SDKInitializer : MonoWeakSingleton<SDKInitializer>
     }
 
     public bool IsLocalTest => isLocalTest;
-    
+
     void Awake()
     {
         isConnected = false;
         Application.runInBackground = true;
-        
+
         string sdkVersion = GameLiftServerAPI.GetSdkVersion().Result;
         Logger.SharedInstance.Write(":) SDK VERSION: " + sdkVersion);
-        
+
         try
         {
             GenericOutcome initOutcome = GameLiftServerAPI.InitSDK();
@@ -48,13 +48,13 @@ public class SDKInitializer : MonoWeakSingleton<SDKInitializer>
             Logger.SharedInstance.Write(":( SERVER NOT IN A FLEET. GameLiftServerAPI.InitSDK() exception " + Environment.NewLine + e.Message);
         }
     }
-private void ProcessReady()
+    private void ProcessReady()
     {
         try
         {
             ProcessParameters processParams = CreateProcessParameters();
             GenericOutcome processReadyOutcome = GameLiftServerAPI.ProcessReady(processParams);
-            isConnected =  processReadyOutcome.Success;
+            isConnected = processReadyOutcome.Success;
 
             if (processReadyOutcome.Success)
                 Logger.SharedInstance.Write(":) PROCESSREADY SUCCESS.");
@@ -70,7 +70,7 @@ private void ProcessReady()
     private ProcessParameters CreateProcessParameters()
     {
         var logParameters = new LogParameters();
-        int port = EnviromentUtils.Port ??  1;
+        int port = EnviromentUtils.Port ?? 1;
 
         return new ProcessParameters(
              (gameSession) =>
@@ -78,7 +78,7 @@ private void ProcessReady()
                 Logger.SharedInstance.Write(":) GAMELIFT SESSION REQUESTED");
                 // TODO: game session things
                 AWSFleetManager.Instance.GenerateNewGameSession(gameSession);
-                
+
                 try
                 {
                     GenericOutcome outcome = GameLiftServerAPI.ActivateGameSession();
@@ -95,7 +95,7 @@ private void ProcessReady()
             },
             (session) =>
             {
-                
+
             }
            ,
              () =>
@@ -112,7 +112,7 @@ private void ProcessReady()
                  return true;
              },
             port, // tell the GameLift service which port to connect to this process on.
-                   // unless we manage this there can only be one process per server.
+                  // unless we manage this there can only be one process per server.
             logParameters);
     }
 

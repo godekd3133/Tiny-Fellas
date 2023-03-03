@@ -8,7 +8,7 @@ public class MinionDataBaseIngame : MonoWeakSingleton<MinionDataBaseIngame>
 {
     [SerializeField] private MinionDataBase minionDataBase;
     [SerializeField] private MinionStatDataBase minionStatDataBase;
-   [SerializeField] private List<GameObject> minionNetworkPrefabList = new List<GameObject>();
+    [SerializeField] private List<GameObject> minionNetworkPrefabList = new List<GameObject>();
 
     private NetworkManager networkManager;
 
@@ -24,7 +24,6 @@ public class MinionDataBaseIngame : MonoWeakSingleton<MinionDataBaseIngame>
     private void UpdateNetworkMinionPrefabList()
     {
         networkManager = NetworkManagerInstance.Instance;
-        
         foreach (var minionData in minionDataBase.MinionDatas)
         {
             var newPrefab = Instantiate(minionData.Prefab);
@@ -33,7 +32,7 @@ public class MinionDataBaseIngame : MonoWeakSingleton<MinionDataBaseIngame>
             newPrefab.AddComponent<Minion>();
             networkManager.AddNetworkPrefab(newPrefab);
             minionNetworkPrefabList.Add(newPrefab);
-            
+
             newPrefab.gameObject.SetActive(false);
         }
     }
@@ -52,8 +51,8 @@ public class MinionDataBaseIngame : MonoWeakSingleton<MinionDataBaseIngame>
     {
         var originData = minionDataBase.DataByInex[minionIndex];
         var originStat = minionStatDataBase.DataByInex[statIndex];
-        return new MinionData(minionNetworkPrefabList[minionIndex],originData.Thumbnail,originStat,originStat.IndexInContainer);
+        return new MinionData(minionNetworkPrefabList[minionIndex], originData.Thumbnail, originStat, originStat.IndexInContainer);
     }
-    #endif
+#endif
 }
 
