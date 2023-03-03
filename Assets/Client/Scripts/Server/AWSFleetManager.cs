@@ -28,8 +28,12 @@ public class AWSFleetManager : MonoWeakSingleton<AWSFleetManager>
 #if UNITY_SERVER
         NetworkManagerInstance.Instance.ConnectionApprovalCallback += (request, response) =>
         {
-            response.Approved = true;
+            bool alreadtConnected =
+                GameSessionInstance.Instance.PlayerDataByClientID.ContainsKey(request.ClientNetworkId);
+            response.Approved = !alreadtConnected;
             response.Pending = false;
+            
+            if(!alreadtConnected) GameSessionInstance.Instance.
         };
         NetworkManagerInstance.Instance.StartServer();
         Logger.SharedInstance.Write(string.Format("Server starts as server"));
@@ -61,7 +65,7 @@ public class AWSFleetManager : MonoWeakSingleton<AWSFleetManager>
         StreamReader reader = new StreamReader(response.GetResponseStream());  
         string urlText = reader.ReadToEnd(); // it takes the response from your url. now you can use as your need  
         //TODO : call lambda
-       
+        OnConnectionResponse();
         return null;
     }
 

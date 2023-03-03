@@ -42201,7 +42201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25bd35ffa68524ede9ae9ae367262d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  networkManager: {fileID: 2099790647}
   gameSessionSettingPath: Assets/Datas/Settinga/GameSessionSetting
   fleetConnectionSetting: {fileID: 11400000, guid: 272c5250f5b26c1479167a082a711bfe, type: 2}
 --- !u!114 &1374408431
@@ -67095,7 +67094,7 @@ MonoBehaviour:
     EnableTimeResync: 0
     TimeResyncInterval: 30
     EnsureNetworkVariableLengthSafety: 0
-    EnableSceneManagement: 1
+    EnableSceneManagement: 0
     ForceSamePrefabs: 0
     RecycleNetworkIds: 1
     NetworkIdRecycleDelay: 120

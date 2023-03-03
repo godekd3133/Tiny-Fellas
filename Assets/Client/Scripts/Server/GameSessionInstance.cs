@@ -79,10 +79,11 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
         newPlayerData.currentGem = 50;
 
         playerDataList.Add(newPlayerData);
+        BroadCastNewPlayerConnection_ClientRPC(clientID);
     }
 
     [ClientRpc]
-    private void BroadCastNewPlayerConnection_ClientRPC(ulong clientID)
+    public void BroadCastNewPlayerConnection_ClientRPC(ulong clientID)
     {
         if (playerDataByClientID.ContainsKey(clientID)) return;
         
