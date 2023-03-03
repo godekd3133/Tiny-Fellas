@@ -38,11 +38,19 @@ public class MinionDataBaseIngame : MonoWeakSingleton<MinionDataBaseIngame>
         }
     }
 
-#if UNITY_SERVER || UNITY_EDITOR
     public List<MinionData> GetMinionDeck(List<int> minionIndexList, List<int> statIndexList)
     {
         var deck = new List<MinionData>();
         for (int i = 0; i < minionIndexList.Count; i++)
+            deck.Add(GetMinionDataInstance(minionIndexList[i], statIndexList[i]));
+
+        return deck;
+    }
+    
+    public List<MinionData> GetMinionDeck(int[]minionIndexList, int[]statIndexList)
+    {
+        var deck = new List<MinionData>();
+        for (int i = 0; i < minionIndexList.Length; i++)
             deck.Add(GetMinionDataInstance(minionIndexList[i], statIndexList[i]));
 
         return deck;
@@ -54,6 +62,5 @@ public class MinionDataBaseIngame : MonoWeakSingleton<MinionDataBaseIngame>
         var originStat = minionStatDataBase.DataByInex[statIndex];
         return new MinionData(minionNetworkPrefabList[minionIndex],originData.Thumbnail,originStat,originStat.IndexInContainer);
     }
-    #endif
 }
 

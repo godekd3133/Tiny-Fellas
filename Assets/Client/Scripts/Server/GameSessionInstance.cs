@@ -79,15 +79,17 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
         newPlayerData.currentGem = 50;
 
         playerDataList.Add(newPlayerData);
-        BroadCastNewPlayerConnection_ClientRPC(clientID);
+        BroadCastNewPlayerConnection_ClientRPC(clientID, tesstMinionIndexList.ToArray(), testMinionStatIndexList.ToArray());
     }
 
     [ClientRpc]
-    public void BroadCastNewPlayerConnection_ClientRPC(ulong clientID)
+    public void BroadCastNewPlayerConnection_ClientRPC(ulong clientID, int[] minionAssetIndexArr, int[] battalAbilityAssetIndexPerMinion)
     {
         if (playerDataByClientID.ContainsKey(clientID)) return;
         
-        var playerData = new PlayerData(null,string.Empty,clientID);
+        var testDeck =
+            MinionDataBaseIngame.Instance.GetMinionDeck(minionAssetIndexArr, battalAbilityAssetIndexPerMinion);
+        var playerData = new PlayerData(testDeck,string.Empty,clientID);
         playerDataList.Add(playerData);
     }
 
