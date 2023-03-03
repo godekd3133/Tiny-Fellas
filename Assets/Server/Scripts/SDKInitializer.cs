@@ -70,7 +70,7 @@ private void ProcessReady()
     private ProcessParameters CreateProcessParameters()
     {
         var logParameters = new LogParameters();
-        int port = EnviromentUtils.Port ??  1;
+        int port = EnviromentUtils.Port ??  7878;
 
         return new ProcessParameters(
              (gameSession) =>
