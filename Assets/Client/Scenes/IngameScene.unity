@@ -26583,12 +26583,6 @@ MonoBehaviour:
   onPostMinionAdded:
     m_PersistentCalls:
       m_Calls: []
-  onPostTroopUpdated:
-    m_PersistentCalls:
-      m_Calls: []
-  onPostTroopStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &832783748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38987,7 +38981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63848b7d12cc7094c90b80a5fa38214e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocalTest: 1
+  isLocalTest: 0
 --- !u!1 &1257308208
 GameObject:
   m_ObjectHideFlags: 0
@@ -40716,12 +40710,6 @@ MonoBehaviour:
   onPostMinionAdded:
     m_PersistentCalls:
       m_Calls: []
-  onPostTroopUpdated:
-    m_PersistentCalls:
-      m_Calls: []
-  onPostTroopStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1309281746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42403,7 +42391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 1223805005}
   followingTarget: {fileID: 305547892}
-  followingOffset: {x: -3.499058, y: 10.04, z: 0.2356434}
+  followingOffset: {x: 0, y: 11, z: 7.7}
 --- !u!1 &1371091007
 GameObject:
   m_ObjectHideFlags: 0
