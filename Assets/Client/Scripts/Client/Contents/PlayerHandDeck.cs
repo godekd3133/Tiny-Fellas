@@ -35,7 +35,10 @@ public class PlayerHandDeck : NetworkBehaviourSingleton<PlayerHandDeck>
     [ClientRpc]
     public void UpdateHandDeck_ClientRPC(int targetHandIndex, int minionDataindexInDeck, ClientRpcParams param = default)
     {
+        #if UNITY_EDITOR
         Debug.Log("hand deck updated at hand index "+targetHandIndex);
+        #endif
+        
         var playerData =
             GameSessionInstance.Instance.PlayerDataByClientID[param.Send.TargetClientIds[0]];
 
@@ -49,7 +52,9 @@ public class PlayerHandDeck : NetworkBehaviourSingleton<PlayerHandDeck>
     [ClientRpc]
     public void SetHandDeck_ClientRPC(int[] minionDataindices, ClientRpcParams param = default)
     {
+#if UNITY_EDITOR
         Debug.Log("hand deck initialized at client");
+        #endif
         var playerData =
             GameSessionInstance.Instance.PlayerDataByClientID[NetworkManager.Singleton.LocalClientId];
 

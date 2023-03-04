@@ -114,6 +114,9 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
     [ServerRpc(RequireOwnership = false)]
     public void SpawnMinion_ServerRPC(ulong clientID, int minionDataIndex, int targetHandDeckIndex)
     {
+        #if UNITY_EDITOR
+        Debug.Log("spawn data in deck of index "+minionDataIndex+" , hand index is "+targetHandDeckIndex);
+        #endif
        var spawned= SpawnMinion(clientID,minionDataIndex);
        if (spawned)
        {
