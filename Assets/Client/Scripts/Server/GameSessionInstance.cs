@@ -24,7 +24,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
     [SerializeField]
 #endif
     private List<Minion> minionInstanceList;
-    private Dictionary<ulong, PlayerData> playerDataByClientID;
+    private Dictionary<ulong, PlayerData> playerDataByClientID = new Dictionary<ulong, PlayerData>();
     private GameSession gameSession;
 
 #if UNITY_SERVER || UNITY_EDITOR

@@ -10,11 +10,11 @@ public class PlayerData : IMinionDeployable
 #if UNITY_EDITOR
     [SerializeField]
 #endif
-    private List<MinionData> minionDeck;
+    private List<MinionData> minionDeck = new List<MinionData>();
 #if UNITY_EDITOR
     [SerializeField]
 #endif
-    private List<Minion> minionInstanceList;
+    private List<Minion> minionInstanceList = new List<Minion>();
 #if UNITY_EDITOR
     [SerializeField]
 #endif
