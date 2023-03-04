@@ -13,15 +13,15 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
 #endif
 {
     #if UNITY_EDITOR
-    [ShowInInspector, ReadOnly]
+    [SerializeField]
     #endif
     private List<PlayerData> playerDataList = new List<PlayerData>();
 #if UNITY_EDITOR
-    [ShowInInspector, ReadOnly]
+    [SerializeField]
 #endif
     private List<MinionData> minionDeck;
 #if UNITY_EDITOR
-    [ShowInInspector, ReadOnly]
+    [SerializeField]
 #endif
     private List<Minion> minionInstanceList;
     private Dictionary<ulong, PlayerData> playerDataByClientID;

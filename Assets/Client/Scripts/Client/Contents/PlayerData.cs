@@ -7,9 +7,21 @@ using UnityEngine;
 [Serializable]
 public class PlayerData : IMinionDeployable
 {
+#if UNITY_EDITOR
+    [SerializeField]
+#endif
     private List<MinionData> minionDeck;
+#if UNITY_EDITOR
+    [SerializeField]
+#endif
     private List<Minion> minionInstanceList;
+#if UNITY_EDITOR
+    [SerializeField]
+#endif
     private string playerSessionID;
+#if UNITY_EDITOR
+    [SerializeField]
+#endif
     private ulong clientID;
 
     public float currentGem;
