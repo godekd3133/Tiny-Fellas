@@ -17,6 +17,15 @@ public class PlayerHandDeck : NetworkBehaviourSingleton<PlayerHandDeck>
 
     private int[] minionDataIndexPerButton = { -1, -1, -1, -1 };
 
+#if UNITY_EDITOR
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Keypad0)) Spawn(0);
+        if (Input.GetKeyDown(KeyCode.Keypad1)) Spawn(1);
+        if (Input.GetKeyDown(KeyCode.Keypad2)) Spawn(2);
+        if (Input.GetKeyDown(KeyCode.Keypad3)) Spawn(3);
+    }
+#endif
     // called from button
     public void Spawn(int targetHandIndex)
     {
@@ -26,6 +35,7 @@ public class PlayerHandDeck : NetworkBehaviourSingleton<PlayerHandDeck>
     [ClientRpc]
     public void UpdateHandDeck_ClientRPC(int targetHandIndex, int minionDataindexInDeck, ClientRpcParams param = default)
     {
+        Debug.Log("hand deck updated at hand index "+targetHandIndex);
         var playerData =
             GameSessionInstance.Instance.PlayerDataByClientID[param.Send.TargetClientIds[0]];
 
@@ -39,6 +49,7 @@ public class PlayerHandDeck : NetworkBehaviourSingleton<PlayerHandDeck>
     [ClientRpc]
     public void SetHandDeck_ClientRPC(int[] minionDataindices, ClientRpcParams param = default)
     {
+        Debug.Log("hand deck initialized at client");
         var playerData =
             GameSessionInstance.Instance.PlayerDataByClientID[NetworkManager.Singleton.LocalClientId];
 
@@ -48,7 +59,7 @@ public class PlayerHandDeck : NetworkBehaviourSingleton<PlayerHandDeck>
             statThumbnailList[i].sprite = minionData.Stat.MyBattleAbility.Thumbnail;
             minionThumbnailList[i].sprite = minionData.Thumbnail;
             gemCostList[i].text =
-                minionData.Stat.MyBattleAbility[EStatName.GEM_COST].CurrentValue.ToString();
+                minionData.Stat[EStatName.GEM_COST].CurrentValue.ToString();
             minionDataIndexPerButton[i] = minionDataindices[i];
         }
     }
