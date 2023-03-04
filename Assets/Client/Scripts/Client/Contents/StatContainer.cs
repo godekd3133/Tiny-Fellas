@@ -13,15 +13,25 @@ public class StatContainer : SerializedScriptableObject
     public ReadOnlyDictionary<EStatName, Stat> StatMap => new (statMap);
     
     public Stat this[EStatName name] => StatMap[name];
+}
 
-    protected StatContainer()
+public class StatContainerInstance
+{
+    [SerializeField] 
+    private Dictionary<EStatName, Stat> statMap;
+
+    public ReadOnlyDictionary<EStatName, Stat> StatMap => new (statMap);
+    
+    public Stat this[EStatName name] => StatMap[name];
+
+    protected StatContainerInstance()
     {
     }
 
-    public StatContainer(StatContainer origin)
+    public StatContainerInstance(StatContainer origin)
     {
         statMap = new Dictionary<EStatName, Stat>();
-        foreach (var pair in origin.statMap)
+        foreach (var pair in origin.StatMap)
             statMap.Add(pair.Key,pair.Value);
     }
 }

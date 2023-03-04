@@ -2,14 +2,14 @@ using Unity.Netcode;
 using UnityEngine;
 
 [RequireComponent(typeof(NetworkObject))]
-public class MinionInstanceStat : NetworkBehaviour
+public class MinionInstance : NetworkBehaviour
 {
-    private MinionStat originStat;
-    private MinionStat currentStat;
-    private BattleAbility originBattleAbility;
-    private BattleAbility battleAbility;
+    private MinionStatInstance originStat;
+    private MinionStatInstance currentStat;
+    private BattleAbilityInstance originBattleAbility;
+    private BattleAbilityInstance battleAbility;
     
-    public BattleAbility MyBattleAbility => battleAbility;
+    public BattleAbilityInstance MyBattleAbility => battleAbility;
     
 
     public bool IsDead => currentStat[EStatName.HEALTH].CurrentValue <= currentStat[EStatName.HEALTH].MinValue;
@@ -20,10 +20,10 @@ public class MinionInstanceStat : NetworkBehaviour
 
     public bool AssignOriginStat(MinionStat originStat)
     {
-        this.originStat = originStat;
-        currentStat = new(originStat);
-        originBattleAbility = currentStat.MyBattleAbility;
-        battleAbility = new(battleAbility);
+        this.originStat = new MinionStatInstance(originStat);
+        currentStat  = new MinionStatInstance(originStat);
+        originBattleAbility = this.originStat.MyBattleAbility;
+        battleAbility = currentStat.MyBattleAbility;
         
         var preCreatedAttackbehaviour = gameObject.GetComponent<AttackBehaviourBase>();
         if(preCreatedAttackbehaviour != null) Destroy(preCreatedAttackbehaviour);
@@ -39,7 +39,7 @@ public class MinionInstanceStat : NetworkBehaviour
     }
     
 #if UNITY_SERVER || UNITY_EDITOR
-    public bool TakeDamage(Minion attacker,BattleAbility attackerBattleAbility)
+    public bool TakeDamage(Minion attacker,BattleAbilityInstance attackerBattleAbility)
     {
         if (IsDead) return false;
         

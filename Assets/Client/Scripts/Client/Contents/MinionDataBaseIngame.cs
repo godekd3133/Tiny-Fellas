@@ -30,7 +30,7 @@ public class MinionDataBaseIngame : MonoWeakSingleton<MinionDataBaseIngame>
         {
             var newPrefab = Instantiate(minionData.Prefab);
             newPrefab.AddComponent<NetworkObject>();
-            newPrefab.AddComponent<MinionInstanceStat>();
+            newPrefab.AddComponent<MinionInstance>();
             newPrefab.AddComponent<Minion>();
             newPrefab.transform.SetParent(transform);
             networkManager.AddNetworkPrefab(newPrefab);

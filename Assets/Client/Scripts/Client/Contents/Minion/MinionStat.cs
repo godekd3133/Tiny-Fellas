@@ -24,11 +24,33 @@ public class MinionStat : StatContainer, IIndexContainable
     private MinionStat()
     {
     }
+}
 
-    public MinionStat(MinionStat origin) : base(origin)
+[Serializable]
+public class MinionStatInstance : StatContainerInstance, IIndexContainable
+{
+    [SerializeField] private BattleAbilityInstance battleAbility;
+    private int? indexInContainer;
+
+    public int? IndexInContainer
     {
-        indexInContainer = origin.indexInContainer;
-        battleAbility = new(origin.battleAbility);
+        get => indexInContainer;
+        set
+        {
+            if (indexInContainer == null) indexInContainer = value;
+        } 
+
+    }
+    public BattleAbilityInstance MyBattleAbility => battleAbility;
+
+    private MinionStatInstance()
+    {
+    }
+
+    public MinionStatInstance(MinionStat origin) : base(origin)
+    {
+        indexInContainer = origin.IndexInContainer;
+        battleAbility = new BattleAbilityInstance(origin.MyBattleAbility);
     }
 
 }

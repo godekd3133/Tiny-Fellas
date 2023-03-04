@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public enum EMinionAnimationParameter
@@ -20,6 +21,54 @@ public enum EComatAIName
 
 [CreateAssetMenu(fileName = "BattleAbility", menuName = "ScriptableObjects/BattleAbility")]
 public class BattleAbility : StatContainer
+{
+    [SerializeField] private EMinionAnimationParameter attackAnimationParameter;
+    [SerializeField] private EComatAIName combatAIName;
+    [SerializeField] private ESkillPassiveName passiveSkillName;
+    [SerializeField] private AttackBehaviourBase attackBehaviour;
+    [SerializeField] private ProjectileBase projectilePrefab;
+    [SerializeField] private GameObject attackEffect;
+
+    private BattleAI combatAI;
+    private ASkillPassiveBase passiveSkill;
+    private string attackAnimationParameterAsString;
+
+
+    public EMinionAnimationParameter AttackAnimationparameterEnum => attackAnimationParameter;
+    public EComatAIName CombatAIName => combatAIName;
+    public string AttackAnimationParameter
+    {
+        get
+        {
+            if (attackAnimationParameterAsString == null) attackAnimationParameterAsString = attackAnimationParameter.ToString();
+            return new(attackAnimationParameterAsString);
+        }
+    }
+
+    public BattleAI CombatAI
+    {
+        get
+        {
+            if (combatAI == null) combatAI = BattleAIFactory.Instace.GetCombatAI(combatAIName);
+            return combatAI;
+        }
+    }
+
+    public ASkillPassiveBase PassiveSkill
+    {
+        get
+        {
+            if (passiveSkill == null) SkillPassiveFactory.Instace.GetSkill(passiveSkillName);
+            return passiveSkill;
+        }
+    }
+
+    public AttackBehaviourBase AttackBehaviour => attackBehaviour;
+    public ProjectileBase ProjectilePrefab => projectilePrefab;
+}
+
+[Serializable]
+public class BattleAbilityInstance : StatContainerInstance
 {
     [SerializeField] private EMinionAnimationParameter attackAnimationParameter;
     [SerializeField] private EComatAIName combatAIName;
@@ -64,13 +113,14 @@ public class BattleAbility : StatContainer
     public ProjectileBase ProjectilePrefab => projectilePrefab;
 
 
-    private BattleAbility()
+    private BattleAbilityInstance()
     {
     }
 
-    public BattleAbility(BattleAbility origin) : base(origin)
+    public BattleAbilityInstance(BattleAbility origin) : base(origin)
     {
-        attackAnimationParameter = origin.attackAnimationParameter;
-        combatAIName = origin.combatAIName;
+        attackAnimationParameter = origin.AttackAnimationparameterEnum;
+        combatAIName = origin.CombatAIName;
+        attackBehaviour = origin.AttackBehaviour;
     }
 }

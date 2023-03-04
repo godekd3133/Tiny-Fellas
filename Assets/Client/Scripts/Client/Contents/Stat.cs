@@ -49,4 +49,16 @@ public class Stat
     {
         return value >= minValue && value < maxValue;
     }
+
+    public Stat()
+    {
+    }
+
+    public Stat(Stat origin)
+    {
+        statName = origin.statName;
+        maxValue = origin.maxValue;
+        minValue = origin.maxValue;
+      currentValue = origin.currentValue;
+    }
 }

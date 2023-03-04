@@ -115,7 +115,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
         {
             var newMinion = Instantiate(MinionDataBaseIngame.Instance.MinionNetworkPrefabList[minionDataIndex]);
             var newMinionNetworkobject = newMinion.GetComponent<NetworkObject>();
-            newMinion.GetComponent<MinionInstanceStat>().AssignOriginStat(minionData.Stat);
+            newMinion.GetComponent<MinionInstance>().AssignOriginStat(minionData.Stat);
             newMinion.GetComponent<AttackBehaviourBase>().SetOwner(newMinion.GetComponent<Minion>());
 
             // spawned minion's OnNetworkSpawn logic will automatically add itself to player data's minion instance list in client

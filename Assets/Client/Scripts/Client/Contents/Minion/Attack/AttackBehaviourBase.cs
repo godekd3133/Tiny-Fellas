@@ -8,8 +8,8 @@ public class AttackBehaviourBase : MonoBehaviour
     private Animator animator;
     private Minion owner;
 
-    private MinionInstanceStat targetStat;
-    private BattleAbility battleAbility;
+    private MinionInstance targetStat;
+    private BattleAbilityInstance battleAbility;
     
     private bool isOnAttacking;
     public bool IsOnAttacking
@@ -22,8 +22,8 @@ public class AttackBehaviourBase : MonoBehaviour
         get => !IsOnAttacking;
     }
 
-    protected MinionInstanceStat TargetStat => targetStat;
-    protected BattleAbility MyBattleAbility => battleAbility;
+    protected MinionInstance TargetStat => targetStat;
+    protected BattleAbilityInstance MyBattleAbility => battleAbility;
 
     public void SetOwner(Minion owner, Animator animator)
     {
@@ -38,13 +38,13 @@ public class AttackBehaviourBase : MonoBehaviour
     }
     
     
-    public bool AttackStart(Minion target, BattleAbility battleAbility)
+    public bool AttackStart(Minion target, BattleAbilityInstance battleAbility)
     {
         this.battleAbility = battleAbility;
         if (IsInAttackRagne(target.transform) == false)
             return false;
         
-        var targetStat = target.GetComponent<MinionInstanceStat>();
+        var targetStat = target.GetComponent<MinionInstance>();
         if (target.GetComponent<MinionStat>() == null)
         {
             Logger.SharedInstance.Write(string.Format("{0} tride to damage {1}, but stat component is null",target.name));

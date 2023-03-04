@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(MinionInstanceStat), typeof(NetworkObject))]
+[RequireComponent(typeof(MinionInstance), typeof(NetworkObject))]
 public class Minion : NetworkBehaviour, IIndexContainable
 {
     public PlayerData ownerPlayer;
@@ -42,9 +42,9 @@ public class Minion : NetworkBehaviour, IIndexContainable
     private MinionState minionState;
 
     [HideInInspector] public UnityEvent onStatChanged;
-    private MinionInstanceStat stat;
+    private MinionInstance stat;
 
-    public MinionInstanceStat Stat => stat;
+    public MinionInstance Stat => stat;
     public Minion chaseTarget;
 
     private void Awake()
