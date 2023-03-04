@@ -1,9 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using Amazon.GameLift.Model;
+using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 
@@ -13,10 +16,59 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
     , IMinionDeployable
 #endif
 {
+    //========================================================================================
+    //Callback Functions
+    //========================================================================================
+    public UnityEvent<PlayerData> onPostNewPlayerConnect;   // Server , Client
+    public UnityEvent<PlayerData> onPostPlayerDisConnect;   // Server , Client
+    public UnityAction onGameStart;                         // Server , Client
+    //========================================================================================
+
+    //========================================================================================
+    //Game Room Properties
+    //========================================================================================
+    [Space(20), Header("Game Room Properties")]
+    // 유저 매칭 최대 대기시간, 해당 시간을 넘기도록 유저가 모이지 않으면 AI로 채우고 시작
+    [SerializeField] private float maxPreparationTime;
+    public float MaxPreparationTime { get { return maxPreparationTime; } }
+
+    // 세션에 접속할 수 있는 최대 유저 수
+    [SerializeField] private float maxUserCount;
+    public float MaxUserCount { get { return maxUserCount; } }
+    //========================================================================================
+
+    //========================================================================================
+    //Runtime Local Variables
+    //========================================================================================
+    /// Server Only
+
+    /// Client Only
+
+    /// Mixed
+    [Space(20), Header("Runtime Only Variables")]
+    /// 유저 매칭 최대 대기시간, 해당 시간을 넘기도록 유저가 모이지 않으면 AI로 채우고 시작
+    [SerializeField] private bool isGameRunning;
+    public bool IsGameRunning { get { return isGameRunning; } }
+    [SerializeField] private bool isSessionRunning;
+    public bool IsSessionRunning { get { return isSessionRunning; } }
+
     [SerializeField] private PlayerHandDeck handDeck;
-    #if UNITY_EDITOR
+    public PlayerHandDeck HandDeck { get { return handDeck; } }
+    //========================================================================================
+
+    //========================================================================================
+    //Runtime Sync Properties
+    //========================================================================================
+    public NetworkVariable<float> SessionStartTime { get; private set; }
+    public NetworkVariable<float> SessionTime { get; private set; }
+    public NetworkVariable<float> GameTime { get; private set; }
+    public NetworkVariable<float> GameStartTime { get; private set; }
+    //========================================================================================
+
+
+#if UNITY_EDITOR
     [SerializeField]
-    #endif
+#endif
     private List<PlayerData> playerDataList = new List<PlayerData>();
 #if UNITY_EDITOR
     [SerializeField]
@@ -42,21 +94,119 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
 
     private void Awake()
     {
-        
+        Initialize();
 #if !UNITY_SERVER
 
 #endif
     }
 
-    [ServerRpc(RequireOwnership = false)]
-    public void Connect_ServerRPC(string playerSessionID, ulong clientID)
+    private void Initialize()
     {
-        Debug.Log("Connect_ServerRPC");
+        isSessionRunning = false;
+        isGameRunning = false;
+
+        SessionStartTime = new NetworkVariable<float>(0f);
+        SessionTime = new NetworkVariable<float>(0f);
+        GameStartTime = new NetworkVariable<float>(0f);
+        GameTime = new NetworkVariable<float>(0f);
+
+        AWSFleetManager.Instance.OnPostCreateSession += OnGameSessionCreate;
+    }
+
+
+    [ServerRpc(RequireOwnership = false)]
+    public void SpawnMinion_ServerRPC(ulong clientID, int minionDataIndex, int targetHandDeckIndex)
+    {
+        //유저 입장에서 세션에 커넥트되는 시점에는 이미 세션이 돌아가고있는것과 마찬가지
+        isSessionRunning = true;
+
+#if UNITY_EDITOR
+        Debug.Log("spawn data in deck of index " + minionDataIndex + " , hand index is " + targetHandDeckIndex);
+#endif
+
+        var spawned = SpawnMinion(clientID, minionDataIndex);
+        if (spawned)
+        {
+            var playerData = playerDataByClientID[clientID];
+            var randomMinionIndex = Random.Range(0, playerData.MinionDeck.Count);
+            var RPCParam = new ClientRpcParams();
+            RPCParam.Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[] { clientID }
+            };
+            handDeck.UpdateHandDeck_ClientRPC(targetHandDeckIndex, randomMinionIndex, RPCParam);
+        }
+    }
+
+    private bool SpawnMinion(ulong clientID, int minionDataIndex, bool forcePurchaseEvenNoGem = false)
+    {
+        var playerData = PlayerDataByClientID[clientID];
+        var minionData = playerData.MinionDeck[minionDataIndex];
+
+        bool isPurchasable = forcePurchaseEvenNoGem || playerData.currentGem >= minionData.Stat[EStatName.GEM_COST].CurrentValue;
+        if (isPurchasable)
+        {
+            var newMinion = Instantiate(MinionDataBaseIngame.Instance.MinionNetworkPrefabList[minionDataIndex]);
+            newMinion.gameObject.SetActive(true);
+            var newMinionNetworkobject = newMinion.GetComponent<NetworkObject>();
+            newMinion.GetComponent<MinionInstance>().AssignOriginStat(minionData.Stat);
+            newMinion.GetComponent<AttackBehaviourBase>().SetOwner(newMinion.GetComponent<Minion>());
+
+            // spawned minion's OnNetworkSpawn logic will automatically add itself to player data's minion instance list in client
+            newMinionNetworkobject.SpawnWithOwnership(clientID);
+
+            playerData.AddMinionInstance(newMinion);
+            playerData.currentGem -= minionData.Stat[EStatName.GEM_COST].CurrentValue;
+        }
+
+        return isPurchasable;
+    }
+
+
+    //========================================================================================
+    // Server Only
+    //========================================================================================
+    [ClientRpc]
+    public void BroadCastNewPlayerConnection_ClientRPC(ulong clientID, int[] minionAssetIndexArr, int[] battalAbilityAssetIndexPerMinion)
+    {
+        //자기자신은 해당되지않음
+        if (playerDataByClientID.ContainsKey(clientID)) return;
+
+        var testDeck =
+            MinionDataBaseIngame.Instance.GetMinionDeck(minionAssetIndexArr, battalAbilityAssetIndexPerMinion);
+        var playerData = new PlayerData(testDeck, string.Empty, clientID);
+        playerDataList.Add(playerData);
+        playerDataByClientID.Add(clientID, playerData);
+        onPostNewPlayerConnect?.Invoke(playerData);
+    }
+
+    [ClientRpc]
+    public void BroadcastBeginGame_ClientRPC()
+    {
+        isGameRunning = true;
+        onGameStart?.Invoke();
+    }
+    //========================================================================================
+
+    //========================================================================================
+    // Clent Only
+    //========================================================================================
+    [ServerRpc(RequireOwnership = false)]
+    public void ResponseConnect_ServerRPC(string playerSessionID, ulong clientID)
+    {
+        Debug.Log("ResponseConnect_ServerRPC");
         if (!IsServer) return;
 
         if (PlayerDataByClientID.ContainsKey(clientID)) return;
         Debug.Log(string.Format("server accept connection from ID {0}", clientID));
         //TODO : connect to server then server Generating PlayerData with get some data from DB with playerSessionID
+
+        //첫 유저 입장시 행동
+        if (playerDataList.Count == 0)
+        {
+            SessionStartTime.Value = Time.time;
+            SessionTime.Value = 0f;
+        }
 
         var tesstMinionIndexList = new List<int>();
         tesstMinionIndexList.Add(0);
@@ -81,7 +231,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
         newPlayerData.currentGem = 50;
 
         playerDataList.Add(newPlayerData);
-        playerDataByClientID.Add(clientID,newPlayerData);
+        playerDataByClientID.Add(clientID, newPlayerData);
         BroadCastNewPlayerConnection_ClientRPC(clientID, tesstMinionIndexList.ToArray(), testMinionStatIndexList.ToArray());
 
         var handDeckIndices = new int[4];
@@ -93,67 +243,55 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
         {
             TargetClientIds = new ulong[] { clientID }
         };
-        handDeck.SetHandDeck_ClientRPC(handDeckIndices,RPCParam);
-        
+        handDeck.SetHandDeck_ClientRPC(handDeckIndices, RPCParam);
+
         var playerObject = Instantiate(NetworkManager.Singleton.NetworkConfig.PlayerPrefab);
         playerObject.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientID);
+
+        onPostNewPlayerConnect?.Invoke(newPlayerData);
     }
 
-    [ClientRpc]
-    public void BroadCastNewPlayerConnection_ClientRPC(ulong clientID, int[] minionAssetIndexArr, int[] battalAbilityAssetIndexPerMinion)
+    private void OnGameSessionCreate()
     {
-        if (playerDataByClientID.ContainsKey(clientID)) return;
-        
-        var testDeck =
-            MinionDataBaseIngame.Instance.GetMinionDeck(minionAssetIndexArr, battalAbilityAssetIndexPerMinion);
-        var playerData = new PlayerData(testDeck,string.Empty,clientID);
-        playerDataList.Add(playerData);
-        playerDataByClientID.Add( clientID, playerData);
+        isSessionRunning = true;
+        SessionTime.Value = 0f;
+        SessionStartTime.Value = Time.time;
+
+        SessionUpdate().Forget();
     }
 
-    [ServerRpc(RequireOwnership = false)]
-    public void SpawnMinion_ServerRPC(ulong clientID, int minionDataIndex, int targetHandDeckIndex)
+    private async UniTask SessionUpdate()
     {
-        #if UNITY_EDITOR
-        Debug.Log("spawn data in deck of index "+minionDataIndex+" , hand index is "+targetHandDeckIndex);
-        #endif
-       var spawned= SpawnMinion(clientID,minionDataIndex);
-       if (spawned)
-       {
-           var playerData = playerDataByClientID[clientID];
-           var randomMinionIndex = Random.Range(0, playerData.MinionDeck.Count);
-           var RPCParam = new ClientRpcParams();
-           RPCParam.Send = new ClientRpcSendParams
-           {
-               TargetClientIds = new ulong[] { clientID }
-           };
-           handDeck.UpdateHandDeck_ClientRPC(targetHandDeckIndex, randomMinionIndex, RPCParam);
-       }
-    }
-
-    private bool SpawnMinion(ulong clientID, int minionDataIndex, bool forcePurchaseEvenNoGem = false)
-    {
-        var playerData = PlayerDataByClientID[clientID];
-        var minionData = playerData.MinionDeck[minionDataIndex];
-
-        bool isPurchasable =forcePurchaseEvenNoGem || playerData.currentGem >= minionData.Stat[EStatName.GEM_COST].CurrentValue;
-        if (isPurchasable)
+        while (true)
         {
-            var newMinion = Instantiate(MinionDataBaseIngame.Instance.MinionNetworkPrefabList[minionDataIndex]);
-            newMinion.gameObject.SetActive(true);
-            var newMinionNetworkobject = newMinion.GetComponent<NetworkObject>();
-            newMinion.GetComponent<MinionInstance>().AssignOriginStat(minionData.Stat);
-            newMinion.GetComponent<AttackBehaviourBase>().SetOwner(newMinion.GetComponent<Minion>());
+            SessionTime.Value = Time.time - SessionStartTime.Value;
 
-            // spawned minion's OnNetworkSpawn logic will automatically add itself to player data's minion instance list in client
-            newMinionNetworkobject.SpawnWithOwnership(clientID);
+            if (!isGameRunning)
+            {
+                bool canStartGame = playerDataList.Count == maxUserCount || SessionTime.Value >= maxPreparationTime;
 
-            playerData.AddMinionInstance(newMinion);
-            playerData.currentGem -= minionData.Stat[EStatName.GEM_COST].CurrentValue;
+                // 게임 세션을 시작할수 있는지 체크 후 게임 세션 시작\
+                if (canStartGame)
+                {
+                    onGameStart?.Invoke();
+                    GameUpdate().Forget();
+                }
+            }
+            await UniTask.NextFrame();
         }
-
-        return isPurchasable;
     }
+
+    private async UniTask GameUpdate()
+    {
+        while (true)
+
+        {
+            GameTime.Value = Time.time - GameStartTime.Value;
+            await UniTask.NextFrame();
+        }
+    }
+    //========================================================================================
+
 }
 
 
