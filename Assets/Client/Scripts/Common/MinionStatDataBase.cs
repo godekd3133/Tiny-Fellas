@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +11,11 @@ public class MinionStatDataBase : ScriptableObject
    
    
    private bool hasInitialized;
+
+   private void Awake()
+   {
+      hasInitialized = false;
+   }
 
    public IReadOnlyList<MinionStat> MinionStats
    {

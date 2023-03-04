@@ -28,6 +28,9 @@ public class MinionDataBase : ScriptableObject
          if (!hadInitiliazed)   Initialize();
          return dataByIndex;
       }
+   }  private void Awake()
+   {
+      hadInitiliazed = false;
    }
 
    private void Initialize()
