@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1599927045}
-  m_IndirectSpecularColor: {r: 0.59803814, g: 0.8977804, b: 0.8386489, a: 1}
+  m_IndirectSpecularColor: {r: 0.5980322, g: 0.8977804, b: 0.8385875, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -343,6 +343,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0a746ef093f884ca8e963caa95c00f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handDeck: {fileID: 961498570}
+  playerDataList: []
+  minionDeck: []
+  minionInstanceList: []
 --- !u!114 &420065255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1035,6 +1039,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 961498573, guid: 07fd88e9293d34e2fa9e32dc4bac67de, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2616735066
+      objectReference: {fileID: 0}
     - target: {fileID: 5663400567796361407, guid: 07fd88e9293d34e2fa9e32dc4bac67de, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1069,18 +1077,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5663400567796361407, guid: 07fd88e9293d34e2fa9e32dc4bac67de, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5663400567796361407, guid: 07fd88e9293d34e2fa9e32dc4bac67de, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5663400567796361407, guid: 07fd88e9293d34e2fa9e32dc4bac67de, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5663400567796361407, guid: 07fd88e9293d34e2fa9e32dc4bac67de, type: 3}
-      propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5663400567796361407, guid: 07fd88e9293d34e2fa9e32dc4bac67de, type: 3}
@@ -1135,42 +1131,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: In Game UI
       objectReference: {fileID: 0}
-    - target: {fileID: 8598679934515450071, guid: 07fd88e9293d34e2fa9e32dc4bac67de, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8872519673843994751, guid: 07fd88e9293d34e2fa9e32dc4bac67de, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07fd88e9293d34e2fa9e32dc4bac67de, type: 3}
---- !u!1 &961498570 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8147963849023687280, guid: 07fd88e9293d34e2fa9e32dc4bac67de, type: 3}
+--- !u!114 &961498570 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6512120688511744661, guid: 07fd88e9293d34e2fa9e32dc4bac67de, type: 3}
   m_PrefabInstance: {fileID: 961498569}
   m_PrefabAsset: {fileID: 0}
---- !u!223 &961498571
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 961498570}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05685cc287cc74f49af3220f0d59c6ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &976089929
 GameObject:
   m_ObjectHideFlags: 0
