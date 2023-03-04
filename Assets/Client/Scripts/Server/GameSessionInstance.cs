@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Amazon.GameLift.Model;
+using Sirenix.OdinInspector;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -11,10 +12,19 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
     , IMinionDeployable
 #endif
 {
+    #if UNITY_EDITOR
+    [ShowInInspector, ReadOnly]
+    #endif
     private List<PlayerData> playerDataList = new List<PlayerData>();
-    private Dictionary<ulong, PlayerData> playerDataByClientID;
+#if UNITY_EDITOR
+    [ShowInInspector, ReadOnly]
+#endif
     private List<MinionData> minionDeck;
+#if UNITY_EDITOR
+    [ShowInInspector, ReadOnly]
+#endif
     private List<Minion> minionInstanceList;
+    private Dictionary<ulong, PlayerData> playerDataByClientID;
     private GameSession gameSession;
 
 #if UNITY_SERVER || UNITY_EDITOR
