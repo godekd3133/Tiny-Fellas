@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Ra5F/JyEiLAhZIOn65aAdar4J4FMjoch0DagbxPXLle38UCVIOAjS7jMQolEnZV5J8zfqOJSoVZ/DKF8cMcP5Q==",
+  "dgSpecHash": "tSzFmde0bqfMD2haz5pfk3h4j2QBDYpCNJTNfZ6IfHUQvsaXXPpTXJrX+/KA7mxEQ1SivV240ffAcRo2iw+XKg==",
   "success": true,
   "projectFilePath": "/Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/RequestGameSession.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,8 @@
     "/Users/csc/.nuget/packages/amazon.lambda.serialization.systemtextjson/2.3.1/amazon.lambda.serialization.systemtextjson.2.3.1.nupkg.sha512",
     "/Users/csc/.nuget/packages/awssdk.core/3.7.105.10/awssdk.core.3.7.105.10.nupkg.sha512",
     "/Users/csc/.nuget/packages/awssdk.gamelift/3.7.102.49/awssdk.gamelift.3.7.102.49.nupkg.sha512",
+    "/Users/csc/.nuget/packages/microsoft.netcore.app.runtime.linux-x64/6.0.14/microsoft.netcore.app.runtime.linux-x64.6.0.14.nupkg.sha512",
+    "/Users/csc/.nuget/packages/microsoft.aspnetcore.app.runtime.linux-x64/6.0.14/microsoft.aspnetcore.app.runtime.linux-x64.6.0.14.nupkg.sha512",
     "/Users/csc/.nuget/packages/microsoft.netcore.app.crossgen2.osx-x64/6.0.14/microsoft.netcore.app.crossgen2.osx-x64.6.0.14.nupkg.sha512"
   ],
   "logs": []

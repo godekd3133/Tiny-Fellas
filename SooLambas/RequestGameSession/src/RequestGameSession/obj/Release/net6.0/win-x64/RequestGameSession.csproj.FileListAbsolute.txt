@@ -17,3 +17,4 @@
 /Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/obj/Release/net6.0/win-x64/RequestGameSession.pdb
 /Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/obj/Release/net6.0/win-x64/RequestGameSession.genruntimeconfig.cache
 /Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/obj/Release/net6.0/win-x64/ref/RequestGameSession.dll
+/Users/csc/Documents/Tiny-Fellas/SooLambas/RequestGameSession/src/RequestGameSession/bin/Release/net6.0/win-x64/Amazon.Lambda.APIGatewayEvents.dll

@@ -1,16 +1,22 @@
+using System.Runtime.Serialization.Json;
+using System.Buffers;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Amazon.GameLift;
-using Amazon.Lambda.Core;
 using Amazon.Lambda.APIGatewayEvents;
+using Amazon.Lambda.Core;
 using Amazon.GameLift.Model;
 using Amazon.Lambda.Serialization.SystemTextJson;
 
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
 namespace RequestGameSession
 {
+    public class RequestBody
+    {
+        public string fleetID { get; set; }
+    }
     public class Function
     {
 
@@ -20,17 +26,24 @@ namespace RequestGameSession
         /// <param name="input"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public APIGatewayProxyResponse FunctionHandler(APIGatewayProxyRequest request, ILambdaContext context)
+        public async Task<APIGatewayProxyResponse> FunctionHandler(APIGatewayProxyRequest request, ILambdaContext context)
         {
-            // if(request.QueryStringParameters != null && request.QueryStringParameters.ContainsKey("fleetID")){
-                 // var fleetID = request.QueryStringParameters["fleetID"];
-            // }
-            var fleetID = request.QueryStringParameters["fleetID"];
+
+            var requestBody = request.Body;
+            var jsonBody = JsonSerializer.Deserialize<RequestBody>(requestBody);
+            var fleetID = jsonBody.fleetID;
+            // var responseJson = string.Format("\"test\": \"{0}\"", fleetID);
+            // return new APIGatewayProxyResponse
+            // {
+            //     StatusCode = 200,
+            //     Body = responseJson
+            // }; 
+
             var client = new AmazonGameLiftClient("AKIA3MTR52R2BGL7MOGB","ENfwYnCa4B20pg1ro+r1VJDetnOarvEA4DjhGzgv");
             var requestSearchingGameSessionRequest = new SearchGameSessionsRequest();
             requestSearchingGameSessionRequest.FleetId = fleetID;
 
-            var response = client.SearchGameSessions(requestSearchingGameSessionRequest);
+            var response = await client.SearchGameSessionsAsync(requestSearchingGameSessionRequest);
 
             GameSession validSession = null;
             foreach (var session in response.GameSessions)
@@ -50,7 +63,7 @@ namespace RequestGameSession
                 creatingGameSessionRequest.FleetId = fleetID;
                 creatingGameSessionRequest.GameSessionId = GetNewGameSessionID(response.GameSessions);
                 creatingGameSessionRequest.MaximumPlayerSessionCount = 10;
-                var creatingGameSessionResponse = client.CreateGameSession(creatingGameSessionRequest);
+                var creatingGameSessionResponse =await client.CreateGameSessionAsync(creatingGameSessionRequest);
                 
                 validSession = creatingGameSessionResponse.GameSession;
             }
@@ -59,22 +72,23 @@ namespace RequestGameSession
             describePlayerSessionRequest.GameSessionId = validSession.GameSessionId;
 
             var connectPlayerSessions =
-                client.DescribePlayerSessions(describePlayerSessionRequest).PlayerSessions;
+                (await client.DescribePlayerSessionsAsync(describePlayerSessionRequest)).PlayerSessions;
             
             var requestingPlaeyerSession = new CreatePlayerSessionRequest();
             requestingPlaeyerSession.PlayerId = GetNewPlayerSessionID(connectPlayerSessions);
             requestingPlaeyerSession.GameSessionId = validSession.GameSessionId;
 
-            var playerSessionResponse = client.CreatePlayerSession(requestingPlaeyerSession);
+            var playerSessionResponse = await client.CreatePlayerSessionAsync(requestingPlaeyerSession);
             var returnValueAsJson = string.Format("{\"ip\":\"{0}\", \"port\":{1}, \"player_session_id\":\"{2}\"}",
                 validSession.IpAddress
                 , validSession.Port
                 , playerSessionResponse.PlayerSession.PlayerSessionId);
 
-            return new APIGatewayProxyResponse{
+            return new APIGatewayProxyResponse
+            {
                 StatusCode = 200,
                 Body = returnValueAsJson
-            };
+            }; 
         }
 
 
