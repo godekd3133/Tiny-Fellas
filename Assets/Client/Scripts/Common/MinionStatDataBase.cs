@@ -12,7 +12,7 @@ public class MinionStatDataBase : ScriptableObject
    
    private bool hasInitialized;
 
-   private void Awake()
+   private void OnEnable()
    {
       hasInitialized = false;
    }

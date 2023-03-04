@@ -28,7 +28,7 @@ public class MinionDataBase : ScriptableObject
          if (!hadInitiliazed)   Initialize();
          return dataByIndex;
       }
-   }  private void Awake()
+   }  private void OnEnable()
    {
       hadInitiliazed = false;
    }
@@ -52,6 +52,10 @@ public class MinionData: IIndexContainable
    [SerializeField] private GameObject prefab;
    [SerializeField] private Sprite thumbnail;
    [SerializeField] private MinionStat stat;
+   
+   #if UNITY_EDITOR
+   [SerializeField] private int indexInContainerNullCheckVariable = -1;
+   #endif
    private int? indexInContainer;
 
    public GameObject Prefab => prefab;
@@ -64,7 +68,13 @@ public class MinionData: IIndexContainable
       get => indexInContainer;
       set
       {
-         if (indexInContainer == null) indexInContainer = value;
+         if (indexInContainer == null)
+         {
+            indexInContainer = value;
+#if UNITY_EDITOR
+            indexInContainerNullCheckVariable = value.Value;
+#endif
+         }
       }
    }
    
