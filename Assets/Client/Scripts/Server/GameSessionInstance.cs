@@ -4,6 +4,7 @@ using Amazon.GameLift.Model;
 using Sirenix.OdinInspector;
 using Unity.Netcode;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 
 [RequireComponent(typeof(NetworkObject))]
@@ -12,6 +13,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
     , IMinionDeployable
 #endif
 {
+    [SerializeField] private PlayerHandDeck handDeck;
     #if UNITY_EDITOR
     [SerializeField]
     #endif
@@ -90,6 +92,17 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
 
         playerDataList.Add(newPlayerData);
         BroadCastNewPlayerConnection_ClientRPC(clientID, tesstMinionIndexList.ToArray(), testMinionStatIndexList.ToArray());
+
+        var handDeckIndices = new int[4];
+        for (int i = 0; i < handDeckIndices.Length; i++)
+            handDeckIndices[i] = Random.Range(0, newPlayerData.MinionDeck.Count);
+
+        var RPCParam = new ClientRpcParams();
+        RPCParam.Send = new ClientRpcSendParams()
+        {
+            TargetClientIds = new ulong[] { clientID }
+        };
+        handDeck.SetHandDeck_ClientRPC(handDeckIndices,RPCParam);
     }
 
     [ClientRpc]
@@ -105,12 +118,23 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
     }
 
     [ServerRpc(RequireOwnership = false)]
-    public void SpawnMinion_ServerRPC(ulong clientID, int minionDataIndex)
+    public void SpawnMinion_ServerRPC(ulong clientID, int minionDataIndex, int targetHandDeckIndex)
     {
-        SpawnMinion(clientID,minionDataIndex);
+       var spawned= SpawnMinion(clientID,minionDataIndex);
+       if (spawned)
+       {
+           var playerData = playerDataByClientID[clientID];
+           var randomMinionIndex = Random.Range(0, playerData.MinionDeck.Count);
+           var RPCParam = new ClientRpcParams();
+           RPCParam.Send = new ClientRpcSendParams
+           {
+               TargetClientIds = new ulong[] { clientID }
+           };
+           handDeck.UpdateHandDeck_ClientRPC(targetHandDeckIndex, randomMinionIndex, RPCParam);
+       }
     }
 
-    private void SpawnMinion(ulong clientID, int minionDataIndex, bool forcePurchaseEvenNoGem = false)
+    private bool SpawnMinion(ulong clientID, int minionDataIndex, bool forcePurchaseEvenNoGem = false)
     {
         var playerData = PlayerDataByClientID[clientID];
         var minionData = playerData.MinionDeck[minionDataIndex];
@@ -129,6 +153,8 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
             playerData.AddMinionInstance(newMinion);
             playerData.currentGem -= minionData.Stat.MyBattleAbility[EStatName.GEM_COST].CurrentValue;
         }
+
+        return isPurchasable;
     }
 }
 
