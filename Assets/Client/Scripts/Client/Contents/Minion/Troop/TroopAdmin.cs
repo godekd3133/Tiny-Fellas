@@ -10,29 +10,20 @@ using UnityEngine.Events;
 [RequireComponent(typeof(NetworkObject))]
 public class TroopAdmin : NetworkBehaviour
 {
-    [ShowInInspector, ReadOnly] public List<Minion> minions { get; private set; }
+    [ShowInInspector, ReadOnly] private IReadOnlyList<Minion> minionList;
     [ShowInInspector, ReadOnly] public Minion leaderMinion { get; private set; }
-
-
-    [SerializeField] private bool isPlayer;
-    [SerializeField] private bool isOwner;
-
-    public bool IsPlayer { get { return isPlayer; } }
-    public bool IsOwner { get { return isOwner; } }
 
 
     public UnityEvent<Minion> onPostMinionAdded;
 
-    void Awake()
+    public override void OnNetworkSpawn()
     {
-        minions = new List<Minion>();
-        leaderMinion = null;
+        minionList = GameSessionInstance.Instance.PlayerDataByClientID[OwnerClientId].MinionInstanceList;
     }
 
     void Start()
     {
-        if (isPlayer)
-            CameraManager.Instance.followingTarget = leaderMinion.transform;
+        if(IsClient) CameraManager.Instance.followingTarget = leaderMinion.transform;
     }
 
     private void Update()
@@ -45,21 +36,7 @@ public class TroopAdmin : NetworkBehaviour
     /// <returns> Selected leader minion</returns>
     public Minion UpdateLeaderMinion()
     {
-        //TODO 리더 미니언을 셀렉하는 방식을 고안한 후에 변경해야함.
-        leaderMinion = minions.First();
+        leaderMinion = minionList.First();
         return leaderMinion;
     }
-
-    /// <summary>
-    /// 미니언 생성, 초기화 
-    /// </summary>
-    /// <returns> Generated minion</returns>
-    public Minion AddMinion(Minion minion)
-    {
-        onPostMinionAdded.Invoke(minion);
-
-        return minion;
-    }
-
-
 }

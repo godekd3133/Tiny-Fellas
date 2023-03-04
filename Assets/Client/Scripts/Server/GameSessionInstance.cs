@@ -62,6 +62,10 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
         Debug.Log(string.Format("server accept connection from ID {0}", clientID));
         //TODO : connect to server then server Generating PlayerData with get some data from DB with playerSessionID
 
+
+        var playerObject = Instantiate(NetworkManager.Singleton.NetworkConfig.PlayerPrefab);
+        playerObject.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientID);
+        
         var tesstMinionIndexList = new List<int>();
         tesstMinionIndexList.Add(0);
         tesstMinionIndexList.Add(0);
