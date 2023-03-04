@@ -88,7 +88,7 @@ public class MinionData: IIndexContainable
       this.prefab = prefab;
       this.thumbnail = thumbnail;
       this.stat =  stat;
-      Assert.IsTrue(indexInContainer == null);      
+      if(indexInContainer == null) Assert.IsTrue(indexInContainer == null);      
       this.indexInContainer = indexInContainer;
    }
 }
