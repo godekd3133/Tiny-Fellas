@@ -10,7 +10,6 @@ public class MinionStateChase : MinionState
 
     public override MinionState CheckTransition()
     {
-        if (owner.troopAdmin.IsPlayer)
             if (InputManager.instance.dragAxis.magnitude > 0)
                 return new MinionStateMove(owner);
 

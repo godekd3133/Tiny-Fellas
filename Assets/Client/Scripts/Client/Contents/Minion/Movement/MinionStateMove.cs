@@ -65,14 +65,14 @@ public class MinionStateMove : MinionState
                     Vector3 newAroundDestination = SessionManager.instance.map.GetRandomPosition();
                     while ((owner.agent.destination - newAroundDestination).magnitude < 25) newAroundDestination = SessionManager.instance.map.GetRandomPosition();
 
-                    foreach (var each in owner.troopAdmin.minions)
-                    {
-                        each.agent.stoppingDistance = each.agent.radius + 0.5f;
-                        UnityEngine.AI.NavMeshPath path = new UnityEngine.AI.NavMeshPath();
-                        //   NavMesh.CalculatePath(each.agent.transform.position, aroundDestination, 0, path);
-                        each.agent.CalculatePath(newAroundDestination, path);
-                        each.agent.SetPath(path);
-                    }
+                    // foreach (var each in NetworkManager)
+                    // {
+                    //     each.agent.stoppingDistance = each.agent.radius + 0.5f;
+                    //     UnityEngine.AI.NavMeshPath path = new UnityEngine.AI.NavMeshPath();
+                    //     //   NavMesh.CalculatePath(each.agent.transform.position, aroundDestination, 0, path);
+                    //     each.agent.CalculatePath(newAroundDestination, path);
+                    //     each.agent.SetPath(path);
+                    // }
                 }
             }
             await UniTask.NextFrame();

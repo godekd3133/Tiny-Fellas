@@ -40,25 +40,27 @@ public class PerceptionUtility : MonoBehaviour
     {
         //var gameSession = GameSessionInstance.Instance;
         //var playerDataMap = gameSession.PlayerDataByPlayerID;
-        var recognizedMinionInstancesList = new List<Minion>(RECOGNIZED_MINION_LIST_DEFAULT_CAPACITY);
+        // var recognizedMinionInstancesList = new List<Minion>(RECOGNIZED_MINION_LIST_DEFAULT_CAPACITY);
+        //
+        // foreach (var each in SessionManager.instance.troopAdmins)
+        // {
+        //     if (each.minions.Any((Minion minion) => minion == myMinion) == false)
+        //     {
+        //         var minionInstanceList = each.minions;
+        //         for (int i = 0; i < minionInstanceList.Count; i++)
+        //         {
+        //             var targetMinion = minionInstanceList[i];
+        //             if ((targetMinion.transform.position - myMinion.transform.position).magnitude <= perceptionRange)
+        //             {
+        //                 recognizedMinionInstancesList.AddRange(minionInstanceList);
+        //                 break;
+        //             }
+        //         }
+        //     }
+        // }
+        // recognizedMinionInstancesList.Sort((Minion prev, Minion next) => { return (prev.transform.position - myMinion.transform.position).magnitude.CompareTo((next.transform.position - myMinion.transform.position).magnitude); });
+        // return recognizedMinionInstancesList;
 
-        foreach (var each in SessionManager.instance.troopAdmins)
-        {
-            if (each.minions.Any((Minion minion) => minion == myMinion) == false)
-            {
-                var minionInstanceList = each.minions;
-                for (int i = 0; i < minionInstanceList.Count; i++)
-                {
-                    var targetMinion = minionInstanceList[i];
-                    if ((targetMinion.transform.position - myMinion.transform.position).magnitude <= perceptionRange)
-                    {
-                        recognizedMinionInstancesList.AddRange(minionInstanceList);
-                        break;
-                    }
-                }
-            }
-        }
-        recognizedMinionInstancesList.Sort((Minion prev, Minion next) => { return (prev.transform.position - myMinion.transform.position).magnitude.CompareTo((next.transform.position - myMinion.transform.position).magnitude); });
-        return recognizedMinionInstancesList;
+        return null;
     }
 }

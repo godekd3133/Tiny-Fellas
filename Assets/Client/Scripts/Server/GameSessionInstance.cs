@@ -105,7 +105,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
     }
 
     [ServerRpc(RequireOwnership = false)]
-    private void SpawnMinion_ServerRPC(ulong clientID, int minionDataIndex)
+    public void SpawnMinion_ServerRPC(ulong clientID, int minionDataIndex)
     {
         SpawnMinion(clientID,minionDataIndex);
     }

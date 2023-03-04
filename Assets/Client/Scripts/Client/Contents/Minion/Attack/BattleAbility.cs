@@ -28,12 +28,17 @@ public class BattleAbility : StatContainer
     [SerializeField] private AttackBehaviourBase attackBehaviour;
     [SerializeField] private ProjectileBase projectilePrefab;
     [SerializeField] private GameObject attackEffect;
+    [SerializeField] private GameObject inGameIcon;
+    [SerializeField] private Sprite thumbnail;
 
     private BattleAI combatAI;
     private ASkillPassiveBase passiveSkill;
     private string attackAnimationParameterAsString;
 
 
+    public Sprite Thumbnail => thumbnail;
+    public GameObject InGameIcon => inGameIcon;
+    public GameObject Attackeffect => attackEffect;
     public EMinionAnimationParameter AttackAnimationparameterEnum => attackAnimationParameter;
     public EComatAIName CombatAIName => combatAIName;
     public string AttackAnimationParameter
