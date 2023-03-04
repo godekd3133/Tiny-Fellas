@@ -35,17 +35,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
 
     public IReadOnlyDictionary<ulong, PlayerData> PlayerDataByClientID
     {
-        get
-        {
-            if (playerDataByClientID == null)
-            {
-                playerDataByClientID = new Dictionary<ulong, PlayerData>();
-                foreach (var playerData in playerDataList)
-                    playerDataByClientID.Add(playerData.ClientID, playerData);
-            }
-
-            return playerDataByClientID;
-        }
+        get => playerDataByClientID;
     }
 
     private void Awake()
@@ -107,6 +97,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
             MinionDataBaseIngame.Instance.GetMinionDeck(minionAssetIndexArr, battalAbilityAssetIndexPerMinion);
         var playerData = new PlayerData(testDeck,string.Empty,clientID);
         playerDataList.Add(playerData);
+        playerDataByClientID.Add( clientID, playerData);
     }
 
     [ServerRpc(RequireOwnership = false)]
