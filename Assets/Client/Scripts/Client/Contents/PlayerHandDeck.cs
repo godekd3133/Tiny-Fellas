@@ -40,13 +40,13 @@ public class PlayerHandDeck : NetworkBehaviourSingleton<PlayerHandDeck>
         #endif
         
         var playerData =
-            GameSessionInstance.Instance.PlayerDataByClientID[param.Send.TargetClientIds[0]];
+            GameSessionInstance.Instance.PlayerDataByClientID[NetworkManager.Singleton.LocalClientId];
 
         var minionData = playerData.MinionDeck[minionDataindexInDeck];
         statThumbnailList[targetHandIndex].sprite = minionData.Stat.MyBattleAbility.Thumbnail;
         minionThumbnailList[targetHandIndex].sprite = minionData.Thumbnail;
         minionDataIndexPerButton[targetHandIndex] = minionDataindexInDeck;
-        gemCostList[targetHandIndex].text = minionData.Stat.MyBattleAbility[EStatName.GEM_COST].CurrentValue.ToString();
+        gemCostList[targetHandIndex].text = minionData.Stat[EStatName.GEM_COST].CurrentValue.ToString();
     }
     
     [ClientRpc]

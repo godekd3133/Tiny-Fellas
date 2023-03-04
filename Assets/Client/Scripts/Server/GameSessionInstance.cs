@@ -140,6 +140,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
         if (isPurchasable)
         {
             var newMinion = Instantiate(MinionDataBaseIngame.Instance.MinionNetworkPrefabList[minionDataIndex]);
+            newMinion.gameObject.SetActive(true);
             var newMinionNetworkobject = newMinion.GetComponent<NetworkObject>();
             newMinion.GetComponent<MinionInstance>().AssignOriginStat(minionData.Stat);
             newMinion.GetComponent<AttackBehaviourBase>().SetOwner(newMinion.GetComponent<Minion>());

@@ -58,8 +58,10 @@ public class GameSessionSynchronizer : NetworkBehaviour
     private void SynchronizeMinionTransforms_ClientRPC(ulong clientID, Vector3[] positionList,Quaternion[] rotationList)
     {
         var minionInstanceList = GameSessionInstance.Instance.PlayerDataByClientID[clientID].MinionInstanceList;
+        var instanceCount = minionInstanceList.Count;
+        // instance list count and server's array length can be different, due to spawn minion order would not be received in client
 
-        for (int i = 0; i < positionList.Length; i++)
+        for (int i = 0; i < positionList.Length && i<instanceCount; i++)
         {
             minionInstanceList[i].transform.position = positionList[i];
             minionInstanceList[i].transform.rotation = rotationList[i];
