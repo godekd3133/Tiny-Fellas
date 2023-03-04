@@ -23,8 +23,8 @@ MonoBehaviour:
     SerializationNodes:
     - Name: statMap
       Entry: 7
-      Data: 0|Unity.Cloud.Collaborate.Common.SerializableDictionary`2[[EStatName,
-        Assembly-CSharp],[Stat, Assembly-CSharp]], Unity.CollabProxy.Editor
+      Data: 0|System.Collections.Generic.Dictionary`2[[EStatName, Assembly-CSharp],[Stat,
+        Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
       Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[EStatName, Assembly-CSharp]],
@@ -55,13 +55,13 @@ MonoBehaviour:
       Data: 4
     - Name: maxValue
       Entry: 4
-      Data: 15
+      Data: 5
     - Name: minValue
       Entry: 4
-      Data: 15
+      Data: 5
     - Name: currentValue
       Entry: 4
-      Data: 15
+      Data: 5
     - Name: 
       Entry: 8
       Data: 
@@ -82,13 +82,13 @@ MonoBehaviour:
       Data: 0
     - Name: maxValue
       Entry: 4
-      Data: 50
+      Data: 15
     - Name: minValue
       Entry: 4
-      Data: 50
+      Data: 15
     - Name: currentValue
       Entry: 4
-      Data: 50
+      Data: 15
     - Name: 
       Entry: 8
       Data: 

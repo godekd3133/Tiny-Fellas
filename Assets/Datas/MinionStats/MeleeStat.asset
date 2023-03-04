@@ -46,22 +46,22 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 4
+      Data: 0
     - Name: $v
       Entry: 7
       Data: 2|Stat, Assembly-CSharp
     - Name: statName
       Entry: 3
-      Data: 4
+      Data: 0
     - Name: maxValue
       Entry: 4
-      Data: 40
+      Data: 30
     - Name: minValue
       Entry: 4
-      Data: 40
+      Data: 30
     - Name: currentValue
       Entry: 4
-      Data: 40
+      Data: 30
     - Name: 
       Entry: 8
       Data: 
@@ -73,22 +73,22 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 0
+      Data: 4
     - Name: $v
       Entry: 7
       Data: 3|Stat, Assembly-CSharp
     - Name: statName
       Entry: 3
-      Data: 0
+      Data: 4
     - Name: maxValue
       Entry: 4
-      Data: 100
+      Data: 10
     - Name: minValue
       Entry: 4
-      Data: 100
+      Data: 10
     - Name: currentValue
       Entry: 4
-      Data: 100
+      Data: 10
     - Name: 
       Entry: 8
       Data: 

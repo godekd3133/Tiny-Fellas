@@ -45,8 +45,8 @@ public class PlayerHandDeck : NetworkBehaviourSingleton<PlayerHandDeck>
         var minionData = playerData.MinionDeck[minionDataindexInDeck];
         statThumbnailList[targetHandIndex].sprite = minionData.Stat.MyBattleAbility.Thumbnail;
         minionThumbnailList[targetHandIndex].sprite = minionData.Thumbnail;
-        gemCostList[targetHandIndex].text = minionData.Stat.MyBattleAbility[EStatName.GEM_COST].CurrentValue.ToString();
         minionDataIndexPerButton[targetHandIndex] = minionDataindexInDeck;
+        gemCostList[targetHandIndex].text = minionData.Stat.MyBattleAbility[EStatName.GEM_COST].CurrentValue.ToString();
     }
     
     [ClientRpc]
@@ -63,9 +63,9 @@ public class PlayerHandDeck : NetworkBehaviourSingleton<PlayerHandDeck>
             var minionData = playerData.MinionDeck[minionDataindices[i]];
             statThumbnailList[i].sprite = minionData.Stat.MyBattleAbility.Thumbnail;
             minionThumbnailList[i].sprite = minionData.Thumbnail;
+            minionDataIndexPerButton[i] = minionDataindices[i];
             gemCostList[i].text =
                 minionData.Stat[EStatName.GEM_COST].CurrentValue.ToString();
-            minionDataIndexPerButton[i] = minionDataindices[i];
         }
     }
 }

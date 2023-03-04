@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: MinionStatDataBase
   m_EditorClassIdentifier: 
   minionStats:
-  - {fileID: 11400000, guid: b28f88a8fd32f46d3891749330ee1c3a, type: 2}
   - {fileID: 11400000, guid: 0d7287fbd2a03f04a8d85eefdd3068c7, type: 2}
+  - {fileID: 11400000, guid: b28f88a8fd32f46d3891749330ee1c3a, type: 2}
