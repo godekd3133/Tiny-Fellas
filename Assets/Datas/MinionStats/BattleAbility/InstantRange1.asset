@@ -160,3 +160,6 @@ MonoBehaviour:
   passiveSkillName: 0
   attackBehaviour: {fileID: -4729200397134154711, guid: 5eb249fc8ed6c354c897b4b96f8573da, type: 3}
   projectilePrefab: {fileID: 0}
+  attackEffect: {fileID: 0}
+  inGameIcon: {fileID: 8147963849023687280, guid: 5000c06e98cd446f0bd5c381a5edace2, type: 3}
+  thumbnail: {fileID: 21300000, guid: 458380611155748129c3048efe024fcb, type: 3}
