@@ -7,9 +7,11 @@ using Unity.Netcode;
 using UnityEngine;
 using Aws.GameLift.Server.Model;
 using Unity.Netcode.Transports.UTP;
+using UnityEngine.SceneManagement;
 
 public class AWSFleetManager : MonoWeakSingleton<AWSFleetManager>
 {
+    [SerializeField] private string gameSessionScenePath = "Assets/Client/Scenes/IngameScene.unity";
 #if UNITY_SERVER || UNITY_EDITOR
     [SerializeField]
     private string gameSessionSettingPath = "Assets/Datas/Settinga/GameSessionSetting";
@@ -17,8 +19,9 @@ public class AWSFleetManager : MonoWeakSingleton<AWSFleetManager>
     private GameSession gameSession;
     private AmazonGameLiftClient gameLiftClient;
     private NetworkObject networkObject;
-    private void Awake()
+    private void Start()
     {
+        
         DontDestroyOnLoad(transform.parent);
         if (SDKInitializer.Instance.IsLocalTest)
         {
@@ -27,6 +30,11 @@ public class AWSFleetManager : MonoWeakSingleton<AWSFleetManager>
             // Logger.SharedInstance.Write(string.Format("Server starts as host client id is {0}", OwnerClientId));
 #endif
 #if UNITY_SERVER
+            NetworkManager.Singleton.OnServerStarted += () =>
+            {
+                NetworkManager.Singleton.SceneManager.LoadScene(gameSessionScenePath, LoadSceneMode.Single);
+            };
+            
         NetworkManagerInstance.Instance.ConnectionApprovalCallback += (request, response) =>
         {
             bool alreadyConnected =
@@ -35,7 +43,7 @@ public class AWSFleetManager : MonoWeakSingleton<AWSFleetManager>
             response.Pending = false;
             
         };
-        NetworkManagerInstance.Instance.StartServer();
+        NetworkManager.Singleton.StartServer();
         Logger.SharedInstance.Write(string.Format("Server starts as server"));
 #endif
         }
@@ -49,6 +57,11 @@ public class AWSFleetManager : MonoWeakSingleton<AWSFleetManager>
         transporter.ConnectionData.Address = gameSession.IpAddress;
         transporter.ConnectionData.Port = Convert.ToUInt16(gameSession.Port);
         
+        NetworkManager.Singleton.OnServerStarted += () =>
+        {
+            NetworkManager.Singleton.SceneManager.LoadScene(gameSessionScenePath, LoadSceneMode.Single);
+        };
+
        NetworkManager.Singleton.ConnectionApprovalCallback += (request, response) =>
         {
             bool alreadyConnected =
