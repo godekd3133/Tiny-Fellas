@@ -13,7 +13,6 @@ public class TroopAdmin : NetworkBehaviour
     [ShowInInspector, ReadOnly] public List<Minion> minions { get; private set; }
     [ShowInInspector, ReadOnly] public Minion leaderMinion { get; private set; }
 
-    [ShowInInspector, ReadOnly] public int[] minionHandDeck { get; private set; }
 
     [SerializeField] private bool isPlayer;
     [SerializeField] private bool isOwner;
@@ -28,34 +27,12 @@ public class TroopAdmin : NetworkBehaviour
     {
         minions = new List<Minion>();
         leaderMinion = null;
-        minionHandDeck = new int[4];
-
-        //Test
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            minions.Add(transform.GetChild(i).GetComponent<Minion>());
-            transform.GetChild(i).GetComponent<Minion>().troopAdmin = this;
-        }
-        if (minions.Count > 0)
-        {
-            leaderMinion = minions[0];
-        }
     }
 
     void Start()
     {
-
-
-        foreach (var each in minions)
-        {
-            each.obstacle.enabled = false;
-            each.agent.enabled = true;
-        }
-
         if (isPlayer)
-        {
             CameraManager.Instance.followingTarget = leaderMinion.transform;
-        }
     }
 
     private void Update()
@@ -77,10 +54,8 @@ public class TroopAdmin : NetworkBehaviour
     /// 미니언 생성, 초기화 
     /// </summary>
     /// <returns> Generated minion</returns>
-    public Minion AddMinion()
+    public Minion AddMinion(Minion minion)
     {
-        //TODO 미니언 추가 시스템을 구축한 후에 변경해야함.
-        Minion minion = null;
         onPostMinionAdded.Invoke(minion);
 
         return minion;

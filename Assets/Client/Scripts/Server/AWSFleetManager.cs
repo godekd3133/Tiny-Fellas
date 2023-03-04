@@ -21,7 +21,6 @@ public class AWSFleetManager : MonoWeakSingleton<AWSFleetManager>
     private NetworkObject networkObject;
     private void Start()
     {
-        
         DontDestroyOnLoad(transform.parent);
         if (SDKInitializer.Instance.IsLocalTest)
         {

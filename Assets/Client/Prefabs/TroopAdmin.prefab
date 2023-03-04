@@ -61,14 +61,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86aceb5c3407fc34c937698025fc87c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayer: 0
-  isOwner: 0
+  isPlayer: 1
+  isOwner: 1
   onPostMinionAdded:
-    m_PersistentCalls:
-      m_Calls: []
-  onPostTroopUpdated:
-    m_PersistentCalls:
-      m_Calls: []
-  onPostTroopStateChanged:
     m_PersistentCalls:
       m_Calls: []
