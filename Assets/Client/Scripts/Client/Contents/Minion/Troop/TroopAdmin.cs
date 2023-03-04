@@ -18,12 +18,12 @@ public class TroopAdmin : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
-        minionList = GameSessionInstance.Instance.PlayerDataByClientID[OwnerClientId].MinionInstanceList;
+       minionList = GameSessionInstance.Instance.PlayerDataByClientID[OwnerClientId].MinionInstanceList;
     }
 
     void Start()
     {
-        if(IsClient) CameraManager.Instance.followingTarget = leaderMinion.transform;
+ //        if(IsClient) CameraManager.Instance.followingTarget = leaderMinion.transform;
     }
 
     private void Update()

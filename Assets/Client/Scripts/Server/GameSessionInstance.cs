@@ -87,6 +87,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
         newPlayerData.currentGem = 50;
 
         playerDataList.Add(newPlayerData);
+        playerDataByClientID.Add(clientID,newPlayerData);
         BroadCastNewPlayerConnection_ClientRPC(clientID, tesstMinionIndexList.ToArray(), testMinionStatIndexList.ToArray());
 
         var handDeckIndices = new int[4];

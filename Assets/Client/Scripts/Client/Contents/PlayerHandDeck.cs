@@ -40,7 +40,7 @@ public class PlayerHandDeck : NetworkBehaviourSingleton<PlayerHandDeck>
     public void SetHandDeck_ClientRPC(int[] minionDataindices, ClientRpcParams param = default)
     {
         var playerData =
-            GameSessionInstance.Instance.PlayerDataByClientID[param.Send.TargetClientIds[0]];
+            GameSessionInstance.Instance.PlayerDataByClientID[NetworkManager.Singleton.LocalClientId];
 
         for (int i = 0; i < minionDataindices.Length; i++)
         {
