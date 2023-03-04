@@ -55,13 +55,13 @@ MonoBehaviour:
       Data: 4
     - Name: maxValue
       Entry: 4
-      Data: 20
+      Data: 15
     - Name: minValue
       Entry: 4
-      Data: 0
+      Data: 15
     - Name: currentValue
       Entry: 4
-      Data: 20
+      Data: 15
     - Name: 
       Entry: 8
       Data: 
