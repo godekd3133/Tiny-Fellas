@@ -28,8 +28,8 @@ public class TroopAdmin : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
        minionList = GameSessionInstance.Instance.PlayerDataByClientID[OwnerClientId].MinionInstanceList;
-       if(IsClient) CameraManager.Instance.followingTarget = leaderMinion.transform;
-       DetectEnemyUpdate(this.GetCancellationTokenOnDestroy()).Forget();
+//       if(IsClient) CameraManager.Instance.followingTarget = leaderMinion.transform;
+     if(IsServer)  DetectEnemyUpdate(this.GetCancellationTokenOnDestroy()).Forget();
     }
 
     private async UniTask DetectEnemyUpdate(CancellationToken cancellationToken)
