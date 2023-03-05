@@ -1,7 +1,6 @@
 
 using System.Threading;
 using Cysharp.Threading.Tasks;
-using UnityEngine;
 
 public class MinionStateMove : MinionState
 {
@@ -18,7 +17,7 @@ public class MinionStateMove : MinionState
         }
         else
         {
-            bool checkEnemyDetection = Owner.troopAdmin.leaderMinion.recognizedEnemies.Count > 0;
+            bool checkEnemyDetection =  MyTroopAdmin.RecognizedEnemyMinionList.Count > 0;
             if (checkEnemyDetection == true) return new MinionStateChase(Owner);
         }
         return this;

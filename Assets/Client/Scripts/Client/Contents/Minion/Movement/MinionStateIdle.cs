@@ -18,7 +18,7 @@ public class MinionStateIdle : MinionState
 
             Minion leaderMinion = Owner.troopAdmin.leaderMinion;
 
-            bool checkEnemyDetection = leaderMinion.recognizedEnemies.Count > 0;
+            bool checkEnemyDetection =  MyTroopAdmin.RecognizedEnemyMinionList.Count > 0;
 
             if (checkEnemyDetection == true)
                 return new MinionStateChase(Owner);

@@ -14,7 +14,7 @@ public class MinionStateChase : MinionState
                 return new MinionStateMove(Owner);
 
 
-        bool checkEnemyDetection = Owner.troopAdmin.leaderMinion.recognizedEnemies.Count > 0;
+        bool checkEnemyDetection = MyTroopAdmin.RecognizedEnemyMinionList.Count > 0;
         if (checkEnemyDetection == false)
             return new MinionStateIdle(Owner);
 
@@ -47,15 +47,15 @@ public class MinionStateChase : MinionState
             }            //owner.Stat.MyBattleAbility.StatMap[EStatName.ATTACK_RAGNE].CurrentValue ?? 
             Owner.agent.stoppingDistance = 2f - 0.15f;
             // 찾은 적이 있을경우 해당 적을향해, 없을경우 리더 미니언을 쫒아가면서 적을 찾음.
-            if (Owner.recognizedEnemies.Count > 0)
+            if ( MyTroopAdmin.RecognizedEnemyMinionList.Count > 0)
             {
-                Owner.agent.SetDestination(Owner.recognizedEnemies[0].transform.position);
-                Owner.chaseTarget = Owner.recognizedEnemies[0];
+                Owner.agent.SetDestination( MyTroopAdmin.RecognizedEnemyMinionList[0].transform.position);
+                Owner.chaseTarget = MyTroopAdmin.RecognizedEnemyMinionList[0];
             }
             else
             {
-                Owner.agent.SetDestination(Owner.troopAdmin.leaderMinion.recognizedEnemies[0].transform.position);
-                Owner.chaseTarget = Owner.troopAdmin.leaderMinion.recognizedEnemies[0];
+                Owner.agent.SetDestination( MyTroopAdmin.RecognizedEnemyMinionList[0].transform.position);
+                Owner.chaseTarget = MyTroopAdmin.RecognizedEnemyMinionList[0];
             }
 
             await UniTask.NextFrame();

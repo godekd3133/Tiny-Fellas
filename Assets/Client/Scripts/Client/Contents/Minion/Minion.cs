@@ -15,7 +15,6 @@ public class Minion : NetworkBehaviour, IIndexContainable
     public float moveSpeed;
     public NavMeshAgent agent;
     public NavMeshObstacle obstacle;
-    public List<Minion> recognizedEnemies;
     public TroopAdmin troopAdmin;
 
     public bool isLeader => troopAdmin.leaderMinion == this;
@@ -48,38 +47,10 @@ public class Minion : NetworkBehaviour, IIndexContainable
 
     private void Awake()
     {
-        agent = GetComponent<NavMeshAgent>();
-        animator = GetComponentInChildren<Animator>();
-        obstacle = GetComponentInChildren<NavMeshObstacle>();
         //        stat.MyBattleAbility.AttackBehaviour.SetOwner(this, animator);
         //      stat.MyBattleAbility.PassiveSkill.ApplyEffect(this);
-        recognizedEnemies = new List<Minion>();
-
     }
 
-    private void Start()
-    {
-        if (!IsServer) return;
-        
-        StateUpdate(this.GetCancellationTokenOnDestroy()).Forget();
-        DetectEnemyUpdate(this.GetCancellationTokenOnDestroy()).Forget();
-    }
-
-    private async UniTask DetectEnemyUpdate(CancellationToken cancellationToken)
-    {
-        const float updateInterval = 0.15f;
-        while (true)
-        {
-            if (cancellationToken.IsCancellationRequested) break;
-
-            recognizedEnemies = PerceptionUtility.GetPerceptedMinionList(this, OwnerClientId);
-            await UniTask.Delay(TimeSpan.FromSeconds(updateInterval),
-                                DelayType.DeltaTime,
-                                PlayerLoopTiming.Update,
-                                cancellationToken);
-
-        }
-    }
     private async UniTask StateUpdate(CancellationToken cancellationToken)
     {
         minionState = new MinionStateIdle(this);
@@ -112,12 +83,17 @@ public class Minion : NetworkBehaviour, IIndexContainable
 
     public override void OnNetworkSpawn()
     {
+        agent = GetComponent<NavMeshAgent>();
+        obstacle = GetComponent<NavMeshObstacle>();
+        
         if (IsClient)
         {
             var ownerID = OwnerClientId;
             var ownerPlayerData = GameSessionInstance.Instance.PlayerDataByClientID[ownerID];
             ownerPlayerData.AddMinionInstance(gameObject);
         }
+        else if (IsServer)
+            StateUpdate(this.GetCancellationTokenOnDestroy()).Forget();
     }
 
     public void Attack(Minion target)
