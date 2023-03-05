@@ -49,6 +49,6 @@ public class TroopAdmin : NetworkBehaviour
     
     private bool waitForFirstMinionSpawn()
     {
-        return GameSessionInstance.Instance.PlayerDataByClientID[OwnerClientId].MinionInstanceList[0].Count > 0;
+        return GameSessionInstance.Instance.PlayerDataByClientID[OwnerClientId].MinionInstanceList.Count > 0;
     }
 }
