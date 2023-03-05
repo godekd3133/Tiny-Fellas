@@ -147,6 +147,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
         if (isPurchasable)
         {
             var newMinion = Instantiate(MinionDataBaseIngame.Instance.MinionNetworkPrefabList[minionDataIndex]);
+            playerData.AddMinionInstance(newMinion);
             newMinion.gameObject.SetActive(true);
             var newMinionNetworkobject = newMinion.GetComponent<NetworkObject>();
             newMinion.GetComponent<MinionInstance>().AssignOriginStat(minionData.Stat, newMinion);
@@ -155,7 +156,6 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
             // spawned minion's OnNetworkSpawn logic will automatically add itself to player data's minion instance list in client
             newMinionNetworkobject.SpawnWithOwnership(clientID);
 
-            playerData.AddMinionInstance(newMinion);
             playerData.currentGem -= minionData.Stat[EStatName.GEM_COST].CurrentValue;
         }
 
