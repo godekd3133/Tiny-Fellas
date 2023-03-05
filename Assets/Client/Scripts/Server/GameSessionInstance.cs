@@ -149,7 +149,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
             var newMinion = Instantiate(MinionDataBaseIngame.Instance.MinionNetworkPrefabList[minionDataIndex]);
             newMinion.gameObject.SetActive(true);
             var newMinionNetworkobject = newMinion.GetComponent<NetworkObject>();
-            newMinion.GetComponent<MinionInstance>().AssignOriginStat(minionData.Stat);
+            newMinion.GetComponent<MinionInstance>().AssignOriginStat(minionData.Stat, newMinion);
             newMinion.GetComponent<AttackBehaviourBase>().SetOwner(newMinion.GetComponent<Minion>());
 
             // spawned minion's OnNetworkSpawn logic will automatically add itself to player data's minion instance list in client
@@ -179,6 +179,9 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
         playerDataByClientID.Add(clientID, playerData);
         onPostNewPlayerConnect?.Invoke(playerData);
     }
+    
+    //========================================================================================
+    //========================================================================================
 
     [ClientRpc]
     public void BroadcastBeginGame_ClientRPC()

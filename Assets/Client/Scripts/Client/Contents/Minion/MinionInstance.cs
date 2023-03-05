@@ -8,8 +8,10 @@ public class MinionInstance : NetworkBehaviour
     private MinionStatInstance currentStat;
     private BattleAbilityInstance originBattleAbility;
     private BattleAbilityInstance battleAbility;
+    private AttackBehaviourBase attackBehaviour;
     
     public BattleAbilityInstance MyBattleAbility => battleAbility;
+    public AttackBehaviourBase MyAttackBehaviour => attackBehaviour;
     
 
     public bool IsDead => currentStat[EStatName.HEALTH].CurrentValue <= currentStat[EStatName.HEALTH].MinValue;
@@ -17,8 +19,13 @@ public class MinionInstance : NetworkBehaviour
     {
         originStat = null;
     }
+    
+    public bool AssignOriginStat(MinionStat originStat, GameObject owner)
+    {
+        return AssignOriginStat(originStat, owner.GetComponent<Minion>());
+    }
 
-    public bool AssignOriginStat(MinionStat originStat)
+    public bool AssignOriginStat(MinionStat originStat, Minion owner)
     {
         this.originStat = new MinionStatInstance(originStat);
         currentStat  = new MinionStatInstance(originStat);
@@ -26,10 +33,17 @@ public class MinionInstance : NetworkBehaviour
         battleAbility = currentStat.MyBattleAbility;
         
         var preCreatedAttackbehaviour = gameObject.GetComponent<AttackBehaviourBase>();
-        if(preCreatedAttackbehaviour != null) Destroy(preCreatedAttackbehaviour);
-        gameObject.AddComponent(battleAbility.AttackBehaviour.GetType());
+        if(preCreatedAttackbehaviour != null) Destroy(preCreatedAttackbehaviour); 
+        attackBehaviour = gameObject.AddComponent(battleAbility.AttackBehaviour.GetType()) as AttackBehaviourBase;
+        
+        attackBehaviour.SetOwner(owner);
         
         return true;
+    }
+
+    public void Attack(Minion target)
+    {
+        attackBehaviour.AttackStart(target, battleAbility);
     }
 
     [ClientRpc]
