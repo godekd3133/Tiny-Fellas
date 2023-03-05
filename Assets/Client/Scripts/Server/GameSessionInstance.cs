@@ -148,13 +148,13 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
         {
             var newMinion = Instantiate(MinionDataBaseIngame.Instance.MinionNetworkPrefabList[minionDataIndex]);
             playerData.AddMinionInstance(newMinion);
-            newMinion.gameObject.SetActive(true);
             var newMinionNetworkobject = newMinion.GetComponent<NetworkObject>();
+            newMinionNetworkobject.SpawnWithOwnership(clientID);
+            newMinion.gameObject.SetActive(true);
             newMinion.GetComponent<MinionInstance>().AssignOriginStat(minionData.Stat, newMinion);
             newMinion.GetComponent<AttackBehaviourBase>().SetOwner(newMinion.GetComponent<Minion>());
 
             // spawned minion's OnNetworkSpawn logic will automatically add itself to player data's minion instance list in client
-            newMinionNetworkobject.SpawnWithOwnership(clientID);
 
             playerData.currentGem -= minionData.Stat[EStatName.GEM_COST].CurrentValue;
         }
