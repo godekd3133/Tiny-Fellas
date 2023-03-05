@@ -54,7 +54,7 @@ public class InputManager : NetworkBehaviour
         if (IsServer)
         {
             #if UNITY_EDITOR
-            Debug.Log(latestDragAxis);
+            Debug.Log(latestDragAxis.Value.ToString());
             #endif
             return;
         }
