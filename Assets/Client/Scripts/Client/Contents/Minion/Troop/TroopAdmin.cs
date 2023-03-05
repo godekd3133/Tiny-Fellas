@@ -33,6 +33,7 @@ public class TroopAdmin : NetworkBehaviour
     private async UniTask DetectEnemyUpdate(CancellationToken cancellationToken)
     {
         const float updateInterval = 0.15f;
+        await UniTask.WaitUntil(waitForFirstMinionSpawn);
         while (true)
         {
             if (cancellationToken.IsCancellationRequested) break;
@@ -44,5 +45,10 @@ public class TroopAdmin : NetworkBehaviour
                 cancellationToken);
 
         }
+    }
+    
+    private bool waitForFirstMinionSpawn()
+    {
+        return GameSessionInstance.Instance.PlayerDataByClientID[OwnerClientId].MinionInstanceList[0].Count > 0;
     }
 }
