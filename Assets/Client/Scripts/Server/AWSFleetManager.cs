@@ -10,6 +10,7 @@ using Unity.Netcode.Transports.UTP;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using GameSession = Aws.GameLift.Server.Model.GameSession;
 
 public class AWSFleetManager : MonoWeakSingleton<AWSFleetManager>
 {
