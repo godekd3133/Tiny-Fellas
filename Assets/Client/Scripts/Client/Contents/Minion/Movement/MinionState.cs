@@ -20,6 +20,8 @@ public abstract class MinionState
 
     public bool enabled;
 
+    private MinionState(){}
+    
     public MinionState(Minion owner)
     {
         this.owner = owner;

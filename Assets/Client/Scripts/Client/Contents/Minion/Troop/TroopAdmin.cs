@@ -13,8 +13,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(NetworkObject))]
 public class TroopAdmin : NetworkBehaviour
 {
-    [ShowInInspector, ReadOnly] private IReadOnlyList<Minion> minionList;
-    [ShowInInspector, ReadOnly] public Minion leaderMinion => minionList[0];
+    [ShowInInspector, ReadOnly] public Minion leaderMinion =>  GameSessionInstance.Instance.PlayerDataByClientID[OwnerClientId].MinionInstanceList[0] ;
 
     public IReadOnlyList<Minion> RecognizedEnemyMinionList
     {
@@ -27,7 +26,6 @@ public class TroopAdmin : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
-       minionList = GameSessionInstance.Instance.PlayerDataByClientID[OwnerClientId].MinionInstanceList;
 //       if(IsClient) CameraManager.Instance.followingTarget = leaderMinion.transform;
      if(IsServer)  DetectEnemyUpdate(this.GetCancellationTokenOnDestroy()).Forget();
     }
@@ -35,7 +33,6 @@ public class TroopAdmin : NetworkBehaviour
     private async UniTask DetectEnemyUpdate(CancellationToken cancellationToken)
     {
         const float updateInterval = 0.15f;
-        await UniTask.WaitUntil(waitForFirstMinionSpawn);
         while (true)
         {
             if (cancellationToken.IsCancellationRequested) break;
@@ -47,10 +44,5 @@ public class TroopAdmin : NetworkBehaviour
                 cancellationToken);
 
         }
-    }
-
-    private bool waitForFirstMinionSpawn()
-    {
-        return minionList.Count > 0;
     }
 }
