@@ -1,4 +1,5 @@
 
+
 using System.Threading;
 using Cysharp.Threading.Tasks;
 
@@ -10,26 +11,26 @@ public class MinionStateMove : MinionState
 
     public override MinionState CheckTransition()
     {
-            if (MyInputManager.DragAxis.magnitude == 0f)
-                return new MinionStateIdle(Owner);
-            else
-            {
-                bool checkEnemyDetection = MyTroopAdmin.RecognizedEnemyMinionList.Count > 0;
-                if (checkEnemyDetection == true) return new MinionStateChase(Owner);
-            }
+        if (MyInputManager.DragAxis.magnitude == 0f)
+            return new MinionStateIdle(Owner);
+        else
+        {
+            bool checkEnemyDetection = MyTroopAdmin.RecognizedEnemyMinionList.Count > 0;
+            if (checkEnemyDetection == true) return new MinionStateChase(Owner);
+        }
 
-            return this;
+        return this;
     }
 
-    public override void EnterState()
+    public override async UniTask EnterState()
     {
-            /*Vector3 randomPosition = SessionManager.instance.map.GetRandomPosition();
+        /*Vector3 randomPosition = SessionManager.instance.map.GetRandomPosition();
 
-            Owner.agent.stoppingDistance = owner.agent.radius + 0.5f;
-            Owner.agent.SetDestination(randomPosition);*/
+        Owner.agent.stoppingDistance = owner.agent.radius + 0.5f;
+        Owner.agent.SetDestination(randomPosition);*/
     }
 
-    public override void ExitState()
+    public override async UniTask ExitState()
     {
     }
 

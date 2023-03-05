@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Amazon.GameLift.Model;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.Events;
 
 [Serializable]
 public class PlayerData : IMinionDeployable
@@ -35,11 +36,14 @@ public class PlayerData : IMinionDeployable
     public ulong ClientID => clientID;
     public bool IsBot => isBot;
 
+    public UnityEvent<Minion> OnPostMinionAdded;
+
     public void AddMinionInstance(GameObject newMinion)
     {
         var minion = newMinion.GetComponent<Minion>();
         minion.IndexInContainer = minionInstanceList.Count;
         minionInstanceList.Add(minion);
+        OnPostMinionAdded?.Invoke(minion);
     }
 
     [ClientRpc]

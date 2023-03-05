@@ -10,8 +10,8 @@ public class MinionStateBattle : MinionState
 
     public override MinionState CheckTransition()
     {
-            if (MyInputManager.DragAxis.magnitude > 0)
-                return new MinionStateMove(Owner);
+        if (MyInputManager.DragAxis.magnitude > 0)
+            return new MinionStateMove(Owner);
 
         if (Owner.chaseTarget != null)
         {
@@ -22,7 +22,7 @@ public class MinionStateBattle : MinionState
         return this;
     }
 
-    public override void EnterState()
+    public override async UniTask EnterState()
     {
         //  owner.Stat.MyBattleAbility.CombatAI.SetActiveAI(true, owner.Stat.MyBattleAbility.AttackBehaviour);
 
@@ -31,7 +31,7 @@ public class MinionStateBattle : MinionState
         Owner.agent.avoidancePriority = 40;
     }
 
-    public override void ExitState()
+    public override async UniTask ExitState()
     {
         //  owner.Stat.MyBattleAbility.CombatAI.SetActiveAI(true, owner.Stat.MyBattleAbility.AttackBehaviour);
         Owner.obstacle.enabled = false;
@@ -52,12 +52,12 @@ public class MinionStateBattle : MinionState
             }
 
             Owner.Attack(Owner.chaseTarget);
-            await UniTask.NextFrame( cancellationToken);
+            await UniTask.NextFrame(cancellationToken);
         }
     }
 
     private bool WaitForAttackDealy()
     {
-        return Owner.Stat.MyAttackBehaviour.IsAttackable ;
+        return Owner.Stat.MyAttackBehaviour.IsAttackable;
     }
 }

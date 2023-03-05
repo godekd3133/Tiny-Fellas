@@ -8,18 +8,18 @@ public abstract class ASkillPassiveBase
     // subscribe this function to Minion's callback members
     public void ApplyEffect(Minion minion)
     {
-        minion.befroeDamaged.AddListener(BeforeDamagedEffect);
-        minion.beforeAttack.AddListener(BeforeAttackEffect);
-        minion.afterDamaged.AddListener(AffterDamagedEffect);
-        minion.afterAttack.AddListener(AfterAttackEffect);
+        minion.OnPreDamaged.AddListener(BeforeDamagedEffect);
+        minion.OnPreAttack.AddListener(BeforeAttackEffect);
+        minion.OnPostDamaged.AddListener(AffterDamagedEffect);
+        minion.OnPostAttack.AddListener(AfterAttackEffect);
     }
 
     public void DettachEffect(Minion minion)
     {
-        minion.befroeDamaged.RemoveListener(BeforeDamagedEffect);
-        minion.beforeAttack.RemoveListener(BeforeAttackEffect);
-        minion.afterDamaged.RemoveListener(AffterDamagedEffect);
-        minion.afterAttack.RemoveListener(AfterAttackEffect);
+        minion.OnPreDamaged.RemoveListener(BeforeDamagedEffect);
+        minion.OnPreAttack.RemoveListener(BeforeAttackEffect);
+        minion.OnPostDamaged.RemoveListener(AffterDamagedEffect);
+        minion.OnPostAttack.RemoveListener(AfterAttackEffect);
     }
 
     protected virtual void BeforeAttackEffect(Minion minion)

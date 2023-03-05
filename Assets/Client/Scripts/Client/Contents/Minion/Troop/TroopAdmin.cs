@@ -13,27 +13,26 @@ using UnityEngine.Events;
 [RequireComponent(typeof(NetworkObject))]
 public class TroopAdmin : NetworkBehaviour
 {
-    [ShowInInspector, ReadOnly] public Minion leaderMinion =>  GameSessionInstance.Instance.PlayerDataByClientID[OwnerClientId].MinionInstanceList[0] ;
 
+    public IReadOnlyList<Minion> Minions => GameSessionInstance.Instance.PlayerDataByClientID[OwnerClientId].MinionInstanceList;
+
+    [ShowInInspector, ReadOnly] public Minion leaderMinion => Minions[0];
     public IReadOnlyList<Minion> RecognizedEnemyMinionList
     {
         get;
         private set;
     } = new Minion[1];
 
-
-    public UnityEvent<Minion> onPostMinionAdded;
-
     public override void OnNetworkSpawn()
     {
-//       if(IsClient) CameraManager.Instance.followingTarget = leaderMinion.transform;
-     if(IsServer)  DetectEnemyUpdate(this.GetCancellationTokenOnDestroy()).Forget();
+        //       if(IsClient) CameraManager.Instance.followingTarget = leaderMinion.transform;
+        if (IsServer) DetectEnemyUpdate(this.GetCancellationTokenOnDestroy()).Forget();
     }
 
     private async UniTask DetectEnemyUpdate(CancellationToken cancellationToken)
     {
         const float updateInterval = 0.15f;
-        await UniTask.WaitUntil(waitForFirstMinionSpawn);
+        await UniTask.WaitUntil(CheckFirstMinionSpawn);
         while (true)
         {
             if (cancellationToken.IsCancellationRequested) break;
@@ -46,8 +45,12 @@ public class TroopAdmin : NetworkBehaviour
 
         }
     }
-    
-    private bool waitForFirstMinionSpawn()
+
+    public int LivingMinionCount() => Minions.Count((Minion minion) => minion.MinionState.GetType() != typeof(MinionStateDead));
+
+    public bool IsInBattle() => Minions.Any((Minion minion) => GameSessionInstance.Instance.GameTime.Value - minion.LastBattleTIme < 10f);
+
+    private bool CheckFirstMinionSpawn()
     {
         return GameSessionInstance.Instance.PlayerDataByClientID[OwnerClientId].MinionInstanceList.Count > 0;
     }
