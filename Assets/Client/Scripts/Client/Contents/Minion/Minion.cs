@@ -83,23 +83,24 @@ Debug.Log(minionState);
         Initailize();
     }
 
-    private async void Initailize()
+    private async UniTask Initailize()
     {
         await UniTask.WaitUntil(waitForSpawningDone);
         agent = GetComponent<NavMeshAgent>();
         obstacle = GetComponent<NavMeshObstacle>();
         if (NetworkManager.Singleton.IsServer)
+        if (IsClient)
         {
             var ownerID = OwnerClientId;
             var ownerPlayerData = GameSessionInstance.Instance.PlayerDataByClientID[ownerID];
             ownerPlayerData.AddMinionInstance(gameObject);
         }
-        else if(NetworkManager.Singleton.IsServer) StateUpdate(this.GetCancellationTokenOnDestroy()).Forget();
+        else if(IsServer) StateUpdate(this.GetCancellationTokenOnDestroy()).Forget();
     }
 
     private bool waitForSpawningDone()
     {
-        return IsSpawned;
+        return IsSpawned && gameObject.activeSelf;
     }
 
     public void Attack(Minion target)
