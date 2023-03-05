@@ -10,19 +10,15 @@ public class MinionStateMove : MinionState
 
     public override MinionState CheckTransition()
     {
-        if (Owner.troopAdmin.IsOwner)
-        {
             if (MyInputManager.DragAxis.magnitude == 0f)
                 return new MinionStateIdle(Owner);
-        }
-        else
-        {
-            bool checkEnemyDetection =  MyTroopAdmin.RecognizedEnemyMinionList.Count > 0;
-            if (checkEnemyDetection == true) return new MinionStateChase(Owner);
-        }
-        return this;
+            else
+            {
+                bool checkEnemyDetection = MyTroopAdmin.RecognizedEnemyMinionList.Count > 0;
+                if (checkEnemyDetection == true) return new MinionStateChase(Owner);
+            }
 
-
+            return this;
     }
 
     public override void EnterState()

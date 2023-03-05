@@ -15,9 +15,7 @@ public class Minion : NetworkBehaviour, IIndexContainable
     public float moveSpeed;
     public NavMeshAgent agent;
     public NavMeshObstacle obstacle;
-    public TroopAdmin troopAdmin;
 
-    public bool isLeader => troopAdmin.leaderMinion == this;
     [SerializeField] Animator animator;
 
     private int? indexInMinionInstanceList;

@@ -14,7 +14,7 @@ using UnityEngine.Events;
 public class TroopAdmin : NetworkBehaviour
 {
     [ShowInInspector, ReadOnly] private IReadOnlyList<Minion> minionList;
-    [ShowInInspector, ReadOnly] public Minion leaderMinion { get; private set; }
+    [ShowInInspector, ReadOnly] public Minion leaderMinion => minionList[0];
 
     public IReadOnlyList<Minion> RecognizedEnemyMinionList
     {
@@ -52,15 +52,5 @@ public class TroopAdmin : NetworkBehaviour
     private bool waitForFirstMinionSpawn()
     {
         return minionList.Count > 0;
-    }
-
-    /// <summary>
-    /// 리더 미니언 갱신
-    /// </summary>
-    /// <returns> Selected leader minion</returns>
-    public Minion UpdateLeaderMinion()
-    {
-        leaderMinion = minionList.First();
-        return leaderMinion;
     }
 }

@@ -16,7 +16,7 @@ public class MinionStateIdle : MinionState
             if (MyInputManager.DragAxis.magnitude > 0)
                 return new MinionStateMove(Owner);
 
-            Minion leaderMinion = Owner.troopAdmin.leaderMinion;
+            Minion leaderMinion = MyTroopAdmin.leaderMinion;
 
             bool checkEnemyDetection =  MyTroopAdmin.RecognizedEnemyMinionList.Count > 0;
 
