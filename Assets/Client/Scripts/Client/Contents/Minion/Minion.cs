@@ -12,7 +12,6 @@ using UnityEngine.Events;
 [RequireComponent(typeof(MinionInstance), typeof(NetworkObject))]
 public class Minion : NetworkBehaviour, IIndexContainable
 {
-    public PlayerData ownerPlayer;
     public float moveSpeed;
     public NavMeshAgent agent;
     public NavMeshObstacle obstacle;
@@ -60,6 +59,8 @@ public class Minion : NetworkBehaviour, IIndexContainable
 
     private void Start()
     {
+        if (!IsServer) return;
+        
         StateUpdate(this.GetCancellationTokenOnDestroy()).Forget();
         DetectEnemyUpdate(this.GetCancellationTokenOnDestroy()).Forget();
     }
@@ -71,7 +72,7 @@ public class Minion : NetworkBehaviour, IIndexContainable
         {
             if (cancellationToken.IsCancellationRequested) break;
 
-            recognizedEnemies = PerceptionUtility.GetPerceptedMinionListLocalClient(this);
+            recognizedEnemies = PerceptionUtility.GetPerceptedMinionList(this, OwnerClientId);
             await UniTask.Delay(TimeSpan.FromSeconds(updateInterval),
                                 DelayType.DeltaTime,
                                 PlayerLoopTiming.Update,
@@ -113,7 +114,7 @@ public class Minion : NetworkBehaviour, IIndexContainable
     {
         if (IsServer) return;
 
-        var ownerID = ownerPlayer.ClientID;
+        var ownerID = OwnerClientId;
         var ownerPlayerData = GameSessionInstance.Instance.PlayerDataByClientID[ownerID];
         ownerPlayerData.AddMinionInstance(gameObject);
         GetComponent<AttackBehaviourBase>().SetOwner(this, animator);
