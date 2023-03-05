@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MinionDataBaseIngame : MonoWeakSingleton<MinionDataBaseIngame>
 {
@@ -32,6 +33,9 @@ public class MinionDataBaseIngame : MonoWeakSingleton<MinionDataBaseIngame>
             newPrefab.AddComponent<NetworkObject>();
             newPrefab.AddComponent<MinionInstance>();
             newPrefab.AddComponent<Minion>();
+            newPrefab.AddComponent<NavMeshAgent>();
+            newPrefab.AddComponent<NavMeshObstacle>();
+            
             newPrefab.transform.SetParent(transform);
             networkManager.AddNetworkPrefab(newPrefab);
             minionNetworkPrefabList.Add(newPrefab);
