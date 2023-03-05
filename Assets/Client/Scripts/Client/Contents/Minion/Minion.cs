@@ -90,8 +90,12 @@ public class Minion : NetworkBehaviour, IIndexContainable
             var ownerPlayerData = GameSessionInstance.Instance.PlayerDataByClientID[ownerID];
             ownerPlayerData.AddMinionInstance(gameObject);
         }
-        else if (IsServer)
-            StateUpdate(this.GetCancellationTokenOnDestroy()).Forget();
+     
+    }
+
+    private void OnEnable()
+    { 
+        if (IsServer) StateUpdate(this.GetCancellationTokenOnDestroy()).Forget();
     }
 
     public void Attack(Minion target)

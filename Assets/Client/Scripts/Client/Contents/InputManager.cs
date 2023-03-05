@@ -51,7 +51,13 @@ public class InputManager : NetworkBehaviour
 
     void Update()
     {
-        if (IsServer) return;
+        if (IsServer)
+        {
+            #if UNITY_EDITOR
+            Debug.Log(latestDragAxis);
+            #endif
+            return;
+        }
         
         latestDragAxis.SetDirty(false);
 #if UNITY_EDITOR_WIN || UNITY_EDITOR_OSX || UNITY_STANDALONE
