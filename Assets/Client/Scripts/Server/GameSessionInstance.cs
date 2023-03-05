@@ -7,6 +7,7 @@ using Sirenix.OdinInspector;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
 using Random = UnityEngine.Random;
 
 
@@ -33,8 +34,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
     public float MaxPreparationTime { get { return maxPreparationTime; } }
 
     // 세션에 접속할 수 있는 최대 유저 수
-    [SerializeField] private float maxUserCount;
-    public float MaxUserCount { get { return maxUserCount; } }
+    public int MaxUserCount => 10;
     //========================================================================================
 
     //========================================================================================
@@ -164,17 +164,17 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
 
 
     //========================================================================================
-    // Server Only
+    // Called from server
     //========================================================================================
     [ClientRpc]
-    public void BroadCastNewPlayerConnection_ClientRPC(ulong clientID, int[] minionAssetIndexArr, int[] battalAbilityAssetIndexPerMinion)
+    public void BroadCastNewPlayerConnection_ClientRPC(ulong clientID, int[] minionAssetIndexArr, int[] battalAbilityAssetIndexPerMinion, bool isBot)
     {
         //자기자신은 해당되지않음
         if (playerDataByClientID.ContainsKey(clientID)) return;
 
         var testDeck =
             MinionDataBaseIngame.Instance.GetMinionDeck(minionAssetIndexArr, battalAbilityAssetIndexPerMinion);
-        var playerData = new PlayerData(testDeck, string.Empty, clientID);
+        var playerData = new PlayerData(testDeck, string.Empty, clientID, isBot);
         playerDataList.Add(playerData);
         playerDataByClientID.Add(clientID, playerData);
         onPostNewPlayerConnect?.Invoke(playerData);
@@ -192,7 +192,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
     //========================================================================================
 
     //========================================================================================
-    // Clent Only
+    // Called clent to server
     //========================================================================================
     [ServerRpc(RequireOwnership = false)]
     public void ResponseConnect_ServerRPC(string playerSessionID, ulong clientID)
@@ -230,12 +230,12 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
 
         var testDeck =
             MinionDataBaseIngame.Instance.GetMinionDeck(tesstMinionIndexList, testMinionStatIndexList);
-        var newPlayerData = new PlayerData(testDeck, playerSessionID, clientID);
+        var newPlayerData = new PlayerData(testDeck, playerSessionID, clientID, false);
         newPlayerData.currentGem = 50;
 
         playerDataList.Add(newPlayerData);
         playerDataByClientID.Add(clientID, newPlayerData);
-        BroadCastNewPlayerConnection_ClientRPC(clientID, tesstMinionIndexList.ToArray(), testMinionStatIndexList.ToArray());
+        BroadCastNewPlayerConnection_ClientRPC(clientID, tesstMinionIndexList.ToArray(), testMinionStatIndexList.ToArray(), false);
 
         var handDeckIndices = new int[4];
         for (int i = 0; i < handDeckIndices.Length; i++)
@@ -271,11 +271,19 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
 
             if (!isGameRunning)
             {
-                bool canStartGame = playerDataList.Count == maxUserCount || SessionTime.Value >= maxPreparationTime;
+                bool canStartGame = playerDataList.Count == MaxUserCount || SessionTime.Value >= maxPreparationTime;
 
                 // 게임 세션을 시작할수 있는지 체크 후 게임 세션 시작\
                 if (canStartGame)
                 {
+                    if (playerDataList.Count < MaxUserCount)
+                    {
+                        for (int i = 0; i < MaxUserCount - playerDataList.Count; i++)
+                        {
+                            AddBot();
+                        }
+                    }
+
                     onGameStart?.Invoke();
                     GameUpdate().Forget();
                 }
@@ -283,6 +291,56 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
             await UniTask.NextFrame();
         }
     }
+    private void AddBot()
+    {
+        ulong localBotFakeClientID = 10000;
+        string localBotPlayerSessionID = "IAMABEST";
+
+        while (this.playerDataByClientID.ContainsKey(localBotFakeClientID)) localBotFakeClientID++;
+
+        var tesstMinionIndexList = new List<int>();
+        tesstMinionIndexList.Add(0);
+        tesstMinionIndexList.Add(0);
+        tesstMinionIndexList.Add(1);
+        tesstMinionIndexList.Add(2);
+        tesstMinionIndexList.Add(0);
+        tesstMinionIndexList.Add(5);
+
+        var testMinionStatIndexList = new List<int>(0);
+        testMinionStatIndexList.Add(0);
+        testMinionStatIndexList.Add(0);
+        testMinionStatIndexList.Add(0);
+        testMinionStatIndexList.Add(0);
+        testMinionStatIndexList.Add(0);
+        testMinionStatIndexList.Add(0);
+
+
+        var testDeck =
+            MinionDataBaseIngame.Instance.GetMinionDeck(tesstMinionIndexList, testMinionStatIndexList);
+        var newPlayerData = new PlayerData(testDeck, localBotPlayerSessionID, localBotFakeClientID, true);
+        newPlayerData.currentGem = 50;
+
+        playerDataList.Add(newPlayerData);
+        playerDataByClientID.Add(localBotFakeClientID, newPlayerData);
+        BroadCastNewPlayerConnection_ClientRPC(localBotFakeClientID, tesstMinionIndexList.ToArray(), testMinionStatIndexList.ToArray(), true);
+
+        var handDeckIndices = new int[4];
+        for (int i = 0; i < handDeckIndices.Length; i++)
+            handDeckIndices[i] = Random.Range(0, newPlayerData.MinionDeck.Count);
+
+        var RPCParam = new ClientRpcParams();
+        RPCParam.Send = new ClientRpcSendParams()
+        {
+            TargetClientIds = new ulong[] { localBotFakeClientID }
+        };
+        handDeck.SetHandDeck_ClientRPC(handDeckIndices, RPCParam);
+
+        var playerObject = Instantiate(NetworkManager.Singleton.NetworkConfig.PlayerPrefab);
+        playerObject.GetComponent<NetworkObject>().SpawnAsPlayerObject(localBotFakeClientID);
+
+        onPostNewPlayerConnect?.Invoke(newPlayerData);
+    }
+
 
     private async UniTask GameUpdate()
     {
