@@ -147,8 +147,15 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
         if (isPurchasable)
         {
             var newMinion = Instantiate(MinionDataBaseIngame.Instance.MinionNetworkPrefabList[minionDataIndex]);
+            bool isFirstMinion = playerData.MinionInstanceList.Count == 0;
             playerData.AddMinionInstance(newMinion);
             var newMinionNetworkobject = newMinion.GetComponent<NetworkObject>();
+
+            var spawnPosition = isFirstMinion
+                ? SessionManager.instance.map.GetRandomPosition()
+                : playerData.MinionInstanceList[0].transform.position;
+
+            newMinion.transform.position = spawnPosition;
             newMinion.gameObject.SetActive(true);
             newMinionNetworkobject.SpawnWithOwnership(clientID);
             newMinion.GetComponent<MinionInstance>().AssignOriginStat(minionData.Stat, newMinion);
