@@ -75,7 +75,6 @@ public class Minion : NetworkBehaviour, IIndexContainable
 
             await UniTask.NextFrame();
         }
-
     }
 
 
@@ -83,19 +82,14 @@ public class Minion : NetworkBehaviour, IIndexContainable
     {
         agent = GetComponent<NavMeshAgent>();
         obstacle = GetComponent<NavMeshObstacle>();
-        
         if (IsClient)
         {
             var ownerID = OwnerClientId;
             var ownerPlayerData = GameSessionInstance.Instance.PlayerDataByClientID[ownerID];
             ownerPlayerData.AddMinionInstance(gameObject);
         }
+        else if(IsServer) StateUpdate(this.GetCancellationTokenOnDestroy()).Forget();
      
-    }
-
-    private void OnEnable()
-    { 
-        if (IsServer) StateUpdate(this.GetCancellationTokenOnDestroy()).Forget();
     }
 
     public void Attack(Minion target)
