@@ -1,30 +1,21 @@
 {
   "runtimeTarget": {
-    "name": ".NETCoreApp,Version=v6.0/linux-x64",
+    "name": ".NETCoreApp,Version=v6.0/win-x64",
     "signature": ""
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {},
-    ".NETCoreApp,Version=v6.0/linux-x64": {
+    ".NETCoreApp,Version=v6.0/win-x64": {
       "RequestGameSession/1.0.0": {
         "dependencies": {
           "AWSSDK.Core": "3.7.105.10",
           "AWSSDK.GameLift": "3.7.102.49",
-          "Amazon.Lambda.APIGatewayEvents": "2.6.0",
           "Amazon.Lambda.Core": "2.1.0",
           "Amazon.Lambda.Serialization.SystemTextJson": "2.3.1"
         },
         "runtime": {
           "RequestGameSession.dll": {}
-        }
-      },
-      "Amazon.Lambda.APIGatewayEvents/2.6.0": {
-        "runtime": {
-          "lib/netcoreapp3.1/Amazon.Lambda.APIGatewayEvents.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.2.0.0"
-          }
         }
       },
       "Amazon.Lambda.Core/2.1.0": {
@@ -72,13 +63,6 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
-    },
-    "Amazon.Lambda.APIGatewayEvents/2.6.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-IpBKoaQD7cFb38XfoJlyv/+gnYzn+r8Y54sqyubbsPNEMujfedUNnrVgFKW5STVKzbPBw2orQsWqzdp3TvxWQA==",
-      "path": "amazon.lambda.apigatewayevents/2.6.0",
-      "hashPath": "amazon.lambda.apigatewayevents.2.6.0.nupkg.sha512"
     },
     "Amazon.Lambda.Core/2.1.0": {
       "type": "package",
