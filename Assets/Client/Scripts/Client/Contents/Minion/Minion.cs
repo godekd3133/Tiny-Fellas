@@ -78,7 +78,7 @@ public class Minion : NetworkBehaviour, IIndexContainable
     }
 
 
-    public override void OnNetworkSpawn()
+    public void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         obstacle = GetComponent<NavMeshObstacle>();
