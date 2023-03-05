@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Net;
 using Amazon.GameLift;
+using Amazon.GameLift.Model;
 using Aws.GameLift.Server.Model;
 using Cysharp.Threading.Tasks;
 using Unity.Netcode;
@@ -81,6 +82,11 @@ public class AWSFleetManager : MonoWeakSingleton<AWSFleetManager>
              response.Approved = !alreadyConnected;
              response.Pending = false;
          };
+
+
+        NetworkManager.Singleton.OnClientDisconnectCallback += (clinetID) =>
+        {
+        };
 
 
         NetworkManager.Singleton.StartServer();
