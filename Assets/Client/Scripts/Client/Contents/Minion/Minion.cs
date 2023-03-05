@@ -85,23 +85,25 @@ public class Minion : NetworkBehaviour, IIndexContainable
         }
     }
 
-
     public override void OnNetworkSpawn()
     {
         Initailize();
     }
 
-    private async void Initailize()
+    private async UniTask Initailize()
     {
         await UniTask.WaitUntil(waitForSpawningDone);
         agent = GetComponent<NavMeshAgent>();
         obstacle = GetComponent<NavMeshObstacle>();
         chaseTarget = null;
-        if (NetworkManager.Singleton.IsServer)
+        if (NetworkManager.Singleton.IsClient)
         {
+            Destroy(agent);
+            Destroy(obstacle);
             var ownerID = OwnerClientId;
             var ownerPlayerData = GameSessionInstance.Instance.PlayerDataByClientID[ownerID];
             ownerPlayerData.AddMinionInstance(gameObject);
+            gameObject.SetActive(true);
         }
         else if (NetworkManager.Singleton.IsServer)
         {
@@ -113,7 +115,7 @@ public class Minion : NetworkBehaviour, IIndexContainable
 
     private bool waitForSpawningDone()
     {
-        return IsSpawned;
+        return IsSpawned && gameObject.activeSelf;
     }
 
     public void Attack(Minion target)

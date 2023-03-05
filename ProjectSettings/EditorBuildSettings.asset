@@ -17,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Client/Scenes/IngameScene.unity
     guid: 389edb67ad332244b902dde41a8198f2
+  - enabled: 1
+    path: Assets/Client/Scenes/ServerBootstrap.unity
+    guid: 3070bfb1bb1c94e4d9164d198e36d6c9
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 9a2f4dfa336ae734d849994f7e7cc052, type: 2}
