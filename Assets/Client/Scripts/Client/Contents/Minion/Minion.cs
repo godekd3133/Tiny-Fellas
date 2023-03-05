@@ -82,14 +82,13 @@ public class Minion : NetworkBehaviour, IIndexContainable
     {
         agent = GetComponent<NavMeshAgent>();
         obstacle = GetComponent<NavMeshObstacle>();
-        if (IsClient)
+        if (NetworkManager.Singleton.IsServer)
         {
             var ownerID = OwnerClientId;
             var ownerPlayerData = GameSessionInstance.Instance.PlayerDataByClientID[ownerID];
             ownerPlayerData.AddMinionInstance(gameObject);
         }
-        else if(IsServer) StateUpdate(this.GetCancellationTokenOnDestroy()).Forget();
-     
+        else if(NetworkManager.Singleton.IsServer) StateUpdate(this.GetCancellationTokenOnDestroy()).Forget();
     }
 
     public void Attack(Minion target)
