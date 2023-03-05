@@ -23,6 +23,7 @@ public class PlayerData : IMinionDeployable
     [SerializeField]
 #endif
     private ulong clientID;
+    private bool isBot;
 
     public float currentGem;
 
@@ -32,6 +33,7 @@ public class PlayerData : IMinionDeployable
 
     public string PlayerSessionID => playerSessionID;
     public ulong ClientID => clientID;
+    public bool IsBot => isBot;
 
     public void AddMinionInstance(GameObject newMinion)
     {
@@ -43,17 +45,18 @@ public class PlayerData : IMinionDeployable
     [ClientRpc]
     private void AddMinionInstance()
     {
-        
+
     }
 
     private PlayerData()
     {
     }
 
-    public PlayerData(List<MinionData> deck, string playerSessionId , ulong clientID)
+    public PlayerData(List<MinionData> deck, string playerSessionId, ulong clientID, bool isBot)
     {
         minionDeck = deck;
         this.playerSessionID = playerSessionId;
         this.clientID = clientID;
+        this.isBot = isBot;
     }
 }
