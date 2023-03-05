@@ -77,7 +77,6 @@ Debug.Log(minionState);
         }
     }
 
-
     public override void OnNetworkSpawn()
     {
         Initailize();
@@ -88,12 +87,14 @@ Debug.Log(minionState);
         await UniTask.WaitUntil(waitForSpawningDone);
         agent = GetComponent<NavMeshAgent>();
         obstacle = GetComponent<NavMeshObstacle>();
-        if (NetworkManager.Singleton.IsServer)
         if (IsClient)
         {
+            Destroy(agent);
+            Destroy(obstacle);
             var ownerID = OwnerClientId;
             var ownerPlayerData = GameSessionInstance.Instance.PlayerDataByClientID[ownerID];
             ownerPlayerData.AddMinionInstance(gameObject);
+            gameObject.SetActive(true);
         }
         else if(IsServer) StateUpdate(this.GetCancellationTokenOnDestroy()).Forget();
     }
