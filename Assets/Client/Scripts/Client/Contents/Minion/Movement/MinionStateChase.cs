@@ -10,17 +10,17 @@ public class MinionStateChase : MinionState
 
     public override MinionState CheckTransition()
     {
-            if (InputManager.instance.dragAxis.magnitude > 0)
-                return new MinionStateMove(owner);
+            if (MyInputManager.DragAxis.magnitude > 0)
+                return new MinionStateMove(Owner);
 
 
-        bool checkEnemyDetection = owner.troopAdmin.leaderMinion.recognizedEnemies.Count > 0;
+        bool checkEnemyDetection = Owner.troopAdmin.leaderMinion.recognizedEnemies.Count > 0;
         if (checkEnemyDetection == false)
-            return new MinionStateIdle(owner);
+            return new MinionStateIdle(Owner);
 
-        if (owner.chaseTarget != null)
-            if ((owner.agent.transform.position - owner.chaseTarget.agent.destination).magnitude <= owner.agent.stoppingDistance)
-                return new MinionStateBattle(owner);
+        if (Owner.chaseTarget != null)
+            if ((Owner.agent.transform.position - Owner.chaseTarget.agent.destination).magnitude <= Owner.agent.stoppingDistance)
+                return new MinionStateBattle(Owner);
 
         return this;
     }
@@ -45,17 +45,17 @@ public class MinionStateChase : MinionState
                 enabled = false;
                 break;
             }            //owner.Stat.MyBattleAbility.StatMap[EStatName.ATTACK_RAGNE].CurrentValue ?? 
-            owner.agent.stoppingDistance = 2f - 0.15f;
+            Owner.agent.stoppingDistance = 2f - 0.15f;
             // 찾은 적이 있을경우 해당 적을향해, 없을경우 리더 미니언을 쫒아가면서 적을 찾음.
-            if (owner.recognizedEnemies.Count > 0)
+            if (Owner.recognizedEnemies.Count > 0)
             {
-                owner.agent.SetDestination(owner.recognizedEnemies[0].transform.position);
-                owner.chaseTarget = owner.recognizedEnemies[0];
+                Owner.agent.SetDestination(Owner.recognizedEnemies[0].transform.position);
+                Owner.chaseTarget = Owner.recognizedEnemies[0];
             }
             else
             {
-                owner.agent.SetDestination(owner.troopAdmin.leaderMinion.recognizedEnemies[0].transform.position);
-                owner.chaseTarget = owner.troopAdmin.leaderMinion.recognizedEnemies[0];
+                Owner.agent.SetDestination(Owner.troopAdmin.leaderMinion.recognizedEnemies[0].transform.position);
+                Owner.chaseTarget = Owner.troopAdmin.leaderMinion.recognizedEnemies[0];
             }
 
             await UniTask.NextFrame();

@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.UI.Extensions;
 
-public class InputManager : MonoBehaviour
+public class InputManager : NetworkBehaviour
 {
-    public static InputManager instance;
-
     private Vector3 dragStartPosition;
     private Vector3 dragCurrentPosition;
     private bool pressing;
 
+    private Vector3 previousDrageAxis = Vector3.zero;
 
-    public Vector3 dragAxis
+    private NetworkVariable<Vector3> latestDragAxis = new NetworkVariable<Vector3>(default,NetworkVariableReadPermission.Everyone,NetworkVariableWritePermission.Owner);
+
+    public Vector3 DragAxis => latestDragAxis.Value;
+
+
+    private Vector3 DragAxis_Client
     {
         get
         {
@@ -31,19 +35,25 @@ public class InputManager : MonoBehaviour
         }
     }
 
+    public override void OnNetworkSpawn()
+    {
+        latestDragAxis.OnValueChanged = (previous, current) =>
+        {
+            latestDragAxis.Value =  current;
+        };
+    }
+
     private void Awake()
     {
-        instance = this;
         pressing = false;
         dragStartPosition = Vector3.zero;
     }
 
-    void Start()
-    {
-    }
-
     void Update()
     {
+        if (IsServer) return;
+        
+        latestDragAxis.SetDirty(false);
 #if UNITY_EDITOR_WIN || UNITY_EDITOR_OSX || UNITY_STANDALONE
         if (Input.GetMouseButtonDown(0))
         {
@@ -55,6 +65,13 @@ public class InputManager : MonoBehaviour
             pressing = false;
         }
         if (pressing) dragCurrentPosition = Input.mousePosition;
+
+        var currentDragAxis = DragAxis_Client;
+        if (currentDragAxis != previousDrageAxis)
+        {
+            latestDragAxis.Value = DragAxis_Client;
+            previousDrageAxis = currentDragAxis;
+        }
 #elif UNITY_IOS || UNITY_ANDROID
 
 #endif

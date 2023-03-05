@@ -1,6 +1,8 @@
 
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
+using Unity.Netcode;
 
 public class MinionStateIdle : MinionState
 {
@@ -11,24 +13,16 @@ public class MinionStateIdle : MinionState
 
     public override MinionState CheckTransition()
     {
-        if (owner.troopAdmin.IsOwner)
-        {
-            if (InputManager.instance.dragAxis.magnitude > 0)
-                return new MinionStateMove(owner);
+            if (MyInputManager.DragAxis.magnitude > 0)
+                return new MinionStateMove(Owner);
 
-            Minion leaderMinion = owner.troopAdmin.leaderMinion;
+            Minion leaderMinion = Owner.troopAdmin.leaderMinion;
 
             bool checkEnemyDetection = leaderMinion.recognizedEnemies.Count > 0;
 
             if (checkEnemyDetection == true)
-                return new MinionStateChase(owner);
+                return new MinionStateChase(Owner);
 
-
-        }
-        else
-        {
-            return new MinionStateMove(owner);
-        }
 
         return this;
     }
@@ -51,18 +45,14 @@ public class MinionStateIdle : MinionState
                 enabled = false;
                 break;
             }
-            if (owner.troopAdmin.IsOwner)
+
+            Minion leaderMinion = MyTroopAdmin.leaderMinion;
+            if (Owner.agent.destination != MyTroopAdmin.leaderMinion.transform.position)
             {
-                if (!owner.isLeader)
-                {
-                    Minion leaderMinion = owner.troopAdmin.leaderMinion;
-                    if (owner.agent.destination != owner.troopAdmin.leaderMinion.transform.position)
-                    {
-                        owner.agent.stoppingDistance = 2.5f;
-                        owner.agent.SetDestination(leaderMinion.transform.position);
-                    }
-                }
+                Owner.agent.stoppingDistance = 2.5f;
+                Owner.agent.SetDestination(leaderMinion.transform.position);
             }
+
             await UniTask.NextFrame();
         }
     }

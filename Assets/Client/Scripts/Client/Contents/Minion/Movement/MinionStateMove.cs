@@ -11,15 +11,15 @@ public class MinionStateMove : MinionState
 
     public override MinionState CheckTransition()
     {
-        if (owner.troopAdmin.IsOwner)
+        if (Owner.troopAdmin.IsOwner)
         {
-            if (InputManager.instance.dragAxis.magnitude == 0f)
-                return new MinionStateIdle(owner);
+            if (MyInputManager.DragAxis.magnitude == 0f)
+                return new MinionStateIdle(Owner);
         }
         else
         {
-            bool checkEnemyDetection = owner.troopAdmin.leaderMinion.recognizedEnemies.Count > 0;
-            if (checkEnemyDetection == true) return new MinionStateChase(owner);
+            bool checkEnemyDetection = Owner.troopAdmin.leaderMinion.recognizedEnemies.Count > 0;
+            if (checkEnemyDetection == true) return new MinionStateChase(Owner);
         }
         return this;
 
@@ -28,13 +28,10 @@ public class MinionStateMove : MinionState
 
     public override void EnterState()
     {
-        if (!owner.troopAdmin.IsOwner)
-        {
-            Vector3 randomPosition = SessionManager.instance.map.GetRandomPosition();
+            /*Vector3 randomPosition = SessionManager.instance.map.GetRandomPosition();
 
-            owner.agent.stoppingDistance = owner.agent.radius + 0.5f;
-            owner.agent.SetDestination(randomPosition);
-        }
+            Owner.agent.stoppingDistance = owner.agent.radius + 0.5f;
+            Owner.agent.SetDestination(randomPosition);*/
     }
 
     public override void ExitState()
@@ -53,12 +50,9 @@ public class MinionStateMove : MinionState
                 break;
             }
 
-            if (owner.troopAdmin.IsOwner)
-            {
-                owner.agent.stoppingDistance = 0;
-                owner.agent.SetDestination(owner.transform.position + InputManager.instance.dragAxis);
-            }
-            else
+            Owner.agent.stoppingDistance = 0.05f;
+            Owner.agent.SetDestination(Owner.transform.position + MyInputManager.DragAxis);
+            /*else
             {
                 if ((owner.agent.transform.position - owner.agent.destination).magnitude <= owner.agent.stoppingDistance)
                 {
@@ -74,7 +68,7 @@ public class MinionStateMove : MinionState
                     //     each.agent.SetPath(path);
                     // }
                 }
-            }
+            }*/
             await UniTask.NextFrame();
         }
     }

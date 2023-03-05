@@ -10,13 +10,13 @@ public class MinionStateBattle : MinionState
 
     public override MinionState CheckTransition()
     {
-            if (InputManager.instance.dragAxis.magnitude > 0)
-                return new MinionStateMove(owner);
+            if (MyInputManager.DragAxis.magnitude > 0)
+                return new MinionStateMove(Owner);
 
-        if (owner.chaseTarget != null)
+        if (Owner.chaseTarget != null)
         {
-            if ((owner.agent.transform.position - owner.chaseTarget.agent.destination).magnitude > owner.agent.stoppingDistance)
-                return new MinionStateChase(owner);
+            if ((Owner.agent.transform.position - Owner.chaseTarget.agent.destination).magnitude > Owner.agent.stoppingDistance)
+                return new MinionStateChase(Owner);
         }
 
         return this;
@@ -26,17 +26,17 @@ public class MinionStateBattle : MinionState
     {
         //  owner.Stat.MyBattleAbility.CombatAI.SetActiveAI(true, owner.Stat.MyBattleAbility.AttackBehaviour);
 
-        owner.obstacle.enabled = false;
-        owner.agent.enabled = true;
-        owner.agent.avoidancePriority = 40;
+        Owner.obstacle.enabled = false;
+        Owner.agent.enabled = true;
+        Owner.agent.avoidancePriority = 40;
     }
 
     public override void ExitState()
     {
         //  owner.Stat.MyBattleAbility.CombatAI.SetActiveAI(true, owner.Stat.MyBattleAbility.AttackBehaviour);
-        owner.obstacle.enabled = false;
-        owner.agent.enabled = true;
-        owner.agent.avoidancePriority = 50;
+        Owner.obstacle.enabled = false;
+        Owner.agent.enabled = true;
+        Owner.agent.avoidancePriority = 50;
 
     }
 
@@ -50,15 +50,14 @@ public class MinionStateBattle : MinionState
                 enabled = false;
                 break;
             }
-            if (owner.troopAdmin.IsOwner)
-            {
 
-            }
-            else
-            {
-
-            }
-            await UniTask.NextFrame();
+            Owner.Attack(Owner.chaseTarget);
+            await UniTask.NextFrame( cancellationToken);
         }
+    }
+
+    private bool WaitForAttackDealy()
+    {
+        return Owner.Stat.MyAttackBehaviour.IsAttackable ;
     }
 }

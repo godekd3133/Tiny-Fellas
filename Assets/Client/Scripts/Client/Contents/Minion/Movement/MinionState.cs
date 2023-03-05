@@ -1,11 +1,19 @@
 
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using Unity.Netcode;
+using UnityEditor.AddressableAssets.Build.BuildPipelineTasks;
 using UnityEngine.Events;
 
 public abstract class MinionState
 {
-    protected Minion owner;
+    private Minion owner;
+    private InputManager inputManager;
+    private TroopAdmin troopAdmin;
+
+    public Minion Owner => owner;
+    public InputManager MyInputManager => inputManager;
+    public TroopAdmin MyTroopAdmin => troopAdmin;
 
 
     public UnityEvent onPostStateUpdated;
@@ -16,6 +24,8 @@ public abstract class MinionState
     {
         this.owner = owner;
         enabled = true;
+         troopAdmin = NetworkManager.Singleton.SpawnManager.GetPlayerNetworkObject(owner.OwnerClientId).GetComponent<TroopAdmin>();
+        inputManager = troopAdmin.GetComponentInChildren<InputManager>();
     }
 
     public abstract MinionState CheckTransition();
