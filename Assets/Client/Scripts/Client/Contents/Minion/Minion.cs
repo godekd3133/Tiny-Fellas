@@ -72,7 +72,7 @@ public class Minion : NetworkBehaviour, IIndexContainable
                 stateChangeToken = new CancellationTokenSource();
                 minionState.UpdateState(CancellationTokenSource.CreateLinkedTokenSource(cancellationToken, stateChangeToken.Token).Token).Forget();
             }
-
+Debug.Log(minionState);
             await UniTask.NextFrame();
         }
     }
