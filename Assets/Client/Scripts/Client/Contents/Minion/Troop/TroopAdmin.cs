@@ -35,6 +35,7 @@ public class TroopAdmin : NetworkBehaviour
         set => currenetGem.Value = value;
     }
     
+    
     public int LivingMinionCount() =>
         Minions.Count((Minion minion) => minion.MinionState.GetType() != typeof(MinionStateDead));
 
@@ -95,5 +96,10 @@ public class TroopAdmin : NetworkBehaviour
     private bool CheckFirstMinionSpawn()
     {
         return GameSessionInstance.Instance.PlayerDataByClientID[OwnerClientId].MinionInstanceList.Count > 0;
+    }
+
+    public void AssignCallbackOnGemValueChange(Action<float, float> callback)
+    {
+        currenetGem.OnValueChanged = (previous, current) => { callback(previous, current);};
     }
 }

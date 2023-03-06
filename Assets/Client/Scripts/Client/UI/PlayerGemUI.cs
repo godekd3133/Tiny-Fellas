@@ -1,18 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
+using TMPro;
+using Unity.Netcode;
 using UnityEngine;
 
 public class PlayerGemUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private TextMeshProUGUI text;
+
+    #if !UNITY_SERVER || UNITY_EDITOR
+    private void Awake()
     {
-        
+        AssignGemChangeCallback();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private async UniTask AssignGemChangeCallback()
     {
-        
+        await UniTask.WaitUntil(waitTroopAdmimSpawn);
+        NetworkManager.Singleton.SpawnManager.GetLocalPlayerObject().GetComponent<TroopAdmin>().AssignCallbackOnGemValueChange(
+            (previous, current) =>
+            {
+                text.text = current.ToString();
+            });
     }
+
+    private bool waitTroopAdmimSpawn()
+    {
+        return NetworkManager.Singleton.SpawnManager.GetLocalPlayerObject() != null;
+    }
+    #endif
 }
