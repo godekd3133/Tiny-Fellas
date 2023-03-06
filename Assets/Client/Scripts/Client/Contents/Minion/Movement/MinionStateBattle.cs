@@ -18,14 +18,19 @@ public class MinionStateBattle : MinionState
             if ((Owner.agent.transform.position - Owner.chaseTarget.agent.destination).magnitude > Owner.agent.stoppingDistance)
                 return new MinionStateChase(Owner);
         }
+        else
+        {
+            return new MinionStateIdle(Owner);
+
+        }
+
 
         return this;
     }
 
     public override async UniTask EnterState()
     {
-        //  owner.Stat.MyBattleAbility.CombatAI.SetActiveAI(true, owner.Stat.MyBattleAbility.AttackBehaviour);
-
+        Owner.Stat.MyBattleAbility.CombatAI.SetActiveAI(true, Owner.Stat.MyBattleAbility.AttackBehaviour);
         Owner.obstacle.enabled = false;
         Owner.agent.enabled = true;
         Owner.agent.avoidancePriority = 40;
@@ -33,7 +38,7 @@ public class MinionStateBattle : MinionState
 
     public override async UniTask ExitState()
     {
-        //  owner.Stat.MyBattleAbility.CombatAI.SetActiveAI(true, owner.Stat.MyBattleAbility.AttackBehaviour);
+        Owner.Stat.MyBattleAbility.CombatAI.SetActiveAI(true, Owner.Stat.MyBattleAbility.AttackBehaviour);
         Owner.obstacle.enabled = false;
         Owner.agent.enabled = true;
         Owner.agent.avoidancePriority = 50;
