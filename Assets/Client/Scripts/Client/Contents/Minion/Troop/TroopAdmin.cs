@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
@@ -24,7 +25,6 @@ public class TroopAdmin : NetworkBehaviour
     public IReadOnlyList<Minion> Minions =>
         GameSessionInstance.Instance.PlayerDataByClientID[OwnerClientId].MinionInstanceList;
 
-    [ShowInInspector, ReadOnly] public Minion leaderMinion => Minions[0];
     public IReadOnlyList<Minion> RecognizedEnemyMinionList { get; private set; } = new Minion[1];
 
 
