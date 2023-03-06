@@ -20,19 +20,19 @@ public abstract class MinionState
 
     public bool enabled;
 
-    private MinionState(){}
-    
+    private MinionState() { }
+
     public MinionState(Minion owner)
     {
         this.owner = owner;
         enabled = true;
-         troopAdmin = NetworkManager.Singleton.SpawnManager.GetPlayerNetworkObject(owner.OwnerClientId).GetComponent<TroopAdmin>();
+        troopAdmin = NetworkManager.Singleton.SpawnManager.GetPlayerNetworkObject(owner.OwnerClientId).GetComponent<TroopAdmin>();
         inputManager = troopAdmin.GetComponentInChildren<InputManager>();
     }
 
     public abstract MinionState CheckTransition();
-    public abstract void EnterState();
+    public abstract UniTask EnterState();
     public abstract UniTask UpdateState(CancellationToken cancellationToken);
-    public abstract void ExitState();
+    public abstract UniTask ExitState();
 
 }

@@ -20,10 +20,10 @@ public class PlayerHandDeck : NetworkBehaviourSingleton<PlayerHandDeck>
 #if UNITY_EDITOR
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Keypad0)) Spawn(0);
-        if (Input.GetKeyDown(KeyCode.Keypad1)) Spawn(1);
-        if (Input.GetKeyDown(KeyCode.Keypad2)) Spawn(2);
-        if (Input.GetKeyDown(KeyCode.Keypad3)) Spawn(3);
+        if (Input.GetKeyDown(KeyCode.Keypad0) || Input.GetKeyDown(KeyCode.Alpha1)) Spawn(0);
+        if (Input.GetKeyDown(KeyCode.Keypad1)|| Input.GetKeyDown(KeyCode.Alpha2)) Spawn(1);
+        if (Input.GetKeyDown(KeyCode.Keypad2)|| Input.GetKeyDown(KeyCode.Alpha3)) Spawn(2);
+        if (Input.GetKeyDown(KeyCode.Keypad3)|| Input.GetKeyDown(KeyCode.Alpha4)) Spawn(3);
     }
 #endif
     // called from button

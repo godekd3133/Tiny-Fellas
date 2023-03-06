@@ -11,22 +11,35 @@ using UnityEngine.Events;
 [RequireComponent(typeof(NetworkObject))]
 public class TroopAdmin : NetworkBehaviour
 {
-    [ShowInInspector, ReadOnly] public Minion leaderMinion =>  GameSessionInstance.Instance.PlayerDataByClientID[OwnerClientId].MinionInstanceList[0] ;
-    [SerializeField] private float addingGemPerSec = 10f;
-    
-    private NetworkVariable<float> currenetGem = new NetworkVariable<float>(0f,NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
 
-    public IReadOnlyList<Minion> RecognizedEnemyMinionList
-    {
-        get;
-        private set;
-    } = new Minion[1];
+    [ShowInInspector, ReadOnly]
+    public Minion leaderMinion =>
+        GameSessionInstance.Instance.PlayerDataByClientID[OwnerClientId].MinionInstanceList[0];
+
+    [SerializeField] private float addingGemPerSec = 10f;
+
+    private NetworkVariable<float> currenetGem = new NetworkVariable<float>(0f, NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Server);
+
+    public IReadOnlyList<Minion> Minions =>
+        GameSessionInstance.Instance.PlayerDataByClientID[OwnerClientId].MinionInstanceList;
+
+    [ShowInInspector, ReadOnly] public Minion leaderMinion => Minions[0];
+    public IReadOnlyList<Minion> RecognizedEnemyMinionList { get; private set; } = new Minion[1];
+
+
 
     public float CurrentGem
     {
         get => currenetGem.Value;
         set => currenetGem.Value = value;
     }
+    
+    public int LivingMinionCount() =>
+        Minions.Count((Minion minion) => minion.MinionState.GetType() != typeof(MinionStateDead));
+
+    public bool IsInBattle() => Minions.Any((Minion minion) =>
+        GameSessionInstance.Instance.GameTime.Value - minion.LastBattleTIme < 10f);
 
 
     public UnityEvent<Minion> onPostMinionAdded;
@@ -35,7 +48,7 @@ public class TroopAdmin : NetworkBehaviour
     {
         Initailize();
     }
-    
+
     private async UniTask Initailize()
     {
         await UniTask.WaitUntil(waitForSpawningDone);
@@ -45,13 +58,13 @@ public class TroopAdmin : NetworkBehaviour
             UpdateGem().Forget();
         }
     }
-    
+
 
     private bool waitForSpawningDone()
     {
         return IsSpawned && gameObject.activeSelf;
     }
-    
+
     private async UniTask UpdateGem()
     {
         while (true)
@@ -59,12 +72,13 @@ public class TroopAdmin : NetworkBehaviour
             currenetGem.Value += addingGemPerSec;
             await UniTask.Delay(1000);
         }
+
     }
 
     private async UniTask DetectEnemyUpdate(CancellationToken cancellationToken)
     {
         const float updateInterval = 0.15f;
-        await UniTask.WaitUntil(waitForFirstMinionSpawn);
+        await UniTask.WaitUntil(CheckFirstMinionSpawn);
         while (true)
         {
             if (cancellationToken.IsCancellationRequested) break;
@@ -77,8 +91,8 @@ public class TroopAdmin : NetworkBehaviour
 
         }
     }
-    
-    private bool waitForFirstMinionSpawn()
+
+    private bool CheckFirstMinionSpawn()
     {
         return GameSessionInstance.Instance.PlayerDataByClientID[OwnerClientId].MinionInstanceList.Count > 0;
     }

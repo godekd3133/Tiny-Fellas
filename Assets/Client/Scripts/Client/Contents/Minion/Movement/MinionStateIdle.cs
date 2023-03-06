@@ -13,25 +13,25 @@ public class MinionStateIdle : MinionState
 
     public override MinionState CheckTransition()
     {
-            if (MyInputManager.DragAxis.magnitude > 0)
-                return new MinionStateMove(Owner);
+        if (MyInputManager.DragAxis.magnitude > 0)
+            return new MinionStateMove(Owner);
 
-            Minion leaderMinion = MyTroopAdmin.leaderMinion;
+        Minion leaderMinion = MyTroopAdmin.leaderMinion;
 
-            bool checkEnemyDetection =  MyTroopAdmin.RecognizedEnemyMinionList.Count > 0;
+        bool checkEnemyDetection = MyTroopAdmin.RecognizedEnemyMinionList.Count > 0;
 
-            if (checkEnemyDetection == true)
-                return new MinionStateChase(Owner);
+        if (checkEnemyDetection == true)
+            return new MinionStateChase(Owner);
 
 
         return this;
     }
 
-    public override void EnterState()
+    public override async UniTask EnterState()
     {
     }
 
-    public override void ExitState()
+    public override async UniTask ExitState()
     {
     }
 

@@ -13,6 +13,7 @@ using UnityEngine.Events;
 public class Minion : NetworkBehaviour, IIndexContainable
 {
     public float moveSpeed;
+    public TroopAdmin troopAdmin;
     public NavMeshAgent agent;
     public NavMeshObstacle obstacle;
 
@@ -30,19 +31,26 @@ public class Minion : NetworkBehaviour, IIndexContainable
         }
     }
 
-    public UnityEvent<Minion> beforeAttack { get; private set; }
-    public UnityEvent<Minion> afterAttack { get; private set; }
-    public UnityEvent<Minion> befroeDamaged { get; private set; }
-    public UnityEvent<Minion> afterDamaged { get; private set; }
+    public UnityEvent<Minion> OnPreAttack { get; private set; }
+    public UnityEvent<Minion> OnPostAttack { get; private set; }
+    public UnityEvent<Minion> OnPreDamaged { get; private set; }
+    public UnityEvent<Minion> OnPostDamaged { get; private set; }
+    public UnityEvent<MinionInstance> OnPostStatChanged { get; private set; }
 
     private MinionState minionState;
+    public MinionState MinionState => minionState;
 
-    [HideInInspector] public UnityEvent onStatChanged;
     private MinionInstance stat;
-
     public MinionInstance Stat => stat;
+
     public Minion chaseTarget;
 
+    private float lastBattleTime;
+    public float LastBattleTIme => lastBattleTime;
+
+    public void OnSpawn()
+    {
+    }
     private void Awake()
     {
         //        stat.MyBattleAbility.AttackBehaviour.SetOwner(this, animator);
@@ -65,14 +73,14 @@ public class Minion : NetworkBehaviour, IIndexContainable
             {
                 stateChangeToken.Cancel();
                 await UniTask.WaitUntil(() => minionState.enabled == false);
-                minionState.ExitState();
+                await minionState.ExitState();
                 minionState = newState;
 
-                minionState.EnterState();
+                await minionState.EnterState();
                 stateChangeToken = new CancellationTokenSource();
                 minionState.UpdateState(CancellationTokenSource.CreateLinkedTokenSource(cancellationToken, stateChangeToken.Token).Token).Forget();
             }
-Debug.Log(minionState);
+            Debug.Log(minionState);
             await UniTask.NextFrame();
         }
     }
@@ -87,7 +95,8 @@ Debug.Log(minionState);
         await UniTask.WaitUntil(waitForSpawningDone);
         agent = GetComponent<NavMeshAgent>();
         obstacle = GetComponent<NavMeshObstacle>();
-        if (IsClient)
+        chaseTarget = null;
+        if (NetworkManager.Singleton.IsClient)
         {
             Destroy(agent);
             Destroy(obstacle);
@@ -96,7 +105,12 @@ Debug.Log(minionState);
             ownerPlayerData.AddMinionInstance(gameObject);
             gameObject.SetActive(true);
         }
-        else if(IsServer) StateUpdate(this.GetCancellationTokenOnDestroy()).Forget();
+        else if (NetworkManager.Singleton.IsServer)
+        {
+            lastBattleTime = -1f;
+
+            StateUpdate(this.GetCancellationTokenOnDestroy()).Forget();
+        }
     }
 
     private bool waitForSpawningDone()
@@ -106,17 +120,25 @@ Debug.Log(minionState);
 
     public void Attack(Minion target)
     {
-        beforeAttack.Invoke(this);
+        OnPreAttack.Invoke(this);
         stat.Attack(target);
-        afterAttack.Invoke(this);
+        if (IsServer) UpdateBattleTime();
+        OnPostAttack.Invoke(this);
     }
 
-    public bool TakdeDamage()
+    public bool TakeDamage()
     {
-        befroeDamaged.Invoke(this);
+        OnPreDamaged.Invoke(this);
         var flag = stat.TakeDamage(this, stat.MyBattleAbility);
-        afterDamaged.Invoke(this);
+        if (IsServer) UpdateBattleTime();
+        OnPostDamaged.Invoke(this);
 
         return true;
+    }
+
+
+    public void UpdateBattleTime()
+    {
+        lastBattleTime = GameSessionInstance.Instance.GameTime.Value;
     }
 }
