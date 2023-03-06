@@ -26,7 +26,7 @@ public abstract class MinionState
     {
         this.owner = owner;
         enabled = true;
-        troopAdmin = owner.troopAdmin;
+        troopAdmin = NetworkManager.Singleton.SpawnManager.GetPlayerNetworkObject(owner.OwnerClientId).GetComponent<TroopAdmin>();
         inputManager = troopAdmin.GetComponentInChildren<InputManager>();
     }
 
