@@ -60,7 +60,7 @@ public class Minion : NetworkBehaviour, IIndexContainable
         while (true)
         {
 
-            agent.speed = 10;
+            agent.speed = 1;
             await UniTask.NextFrame();
         }
     }
