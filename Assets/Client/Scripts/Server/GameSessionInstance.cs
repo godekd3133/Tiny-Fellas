@@ -268,7 +268,12 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
         handDeck.SetHandDeck_ClientRPC(handDeckIndices, RPCParam);
 
         var playerObject = Instantiate(troopAdminObject);
-        playerObject.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientID);
+        var netcodeObject = playerObject.GetComponent<NetworkObject>();
+        netcodeObject.CheckObjectVisibility = (id) =>
+        {
+            return id == clientID;
+        };
+        netcodeObject.SpawnAsPlayerObject(clientID);
 
         onPostNewPlayerConnect?.Invoke(newPlayerData);
     }
