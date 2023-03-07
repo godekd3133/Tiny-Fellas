@@ -259,6 +259,11 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
 
         var playerObject = Instantiate(NetworkManager.Singleton.NetworkConfig.PlayerPrefab);
         playerObject.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientID);
+        foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
+        {
+            Debug.Log(client.PlayerObject.OwnerClientId);
+            Debug.Log(client.PlayerObject.NetworkObjectId);
+        }
 
         onPostNewPlayerConnect?.Invoke(newPlayerData);
     }
