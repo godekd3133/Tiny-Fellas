@@ -158,6 +158,11 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
             newMinion.gameObject.SetActive(true);
             newMinionNetworkobject.SpawnWithOwnership(clientID);
             var minionInstance = newMinion.GetComponent<MinionInstance>();
+            foreach (var stat in minionData.Stat.MyBattleAbility.StatMap)
+            {
+                Debug.Log(stat.Key+" , "+stat.Value);
+            }
+            
             minionInstance.AssignOriginStat(minionData.Stat, newMinion);
             minionInstance.AssignOriginStat_ClientRPC(minionDataIndex);
 
