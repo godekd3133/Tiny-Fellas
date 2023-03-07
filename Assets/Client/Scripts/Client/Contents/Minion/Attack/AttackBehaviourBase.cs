@@ -3,7 +3,7 @@ using UnityEngine;
 using Cysharp.Threading.Tasks;
 using Unity.Netcode;
 
-public class AttackBehaviourBase : MonoBehaviour
+public class AttackBehaviourBase : NetworkBehaviour
 {
     private Animator animator;
     private Minion owner;
