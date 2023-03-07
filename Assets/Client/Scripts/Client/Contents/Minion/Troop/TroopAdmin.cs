@@ -88,7 +88,6 @@ public class TroopAdmin : NetworkBehaviour
     private async UniTask DetectEnemyUpdate(CancellationToken cancellationToken)
     {
         const float updateInterval = 0.15f;
-        CameraManager.Instance.followingTarget = leaderMinion.transform;
         while (true)
         {
             if (cancellationToken.IsCancellationRequested) break;
