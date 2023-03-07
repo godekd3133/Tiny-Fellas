@@ -57,7 +57,7 @@ public class SceneLoader
         loadingOp.allowSceneActivation = false;
         if (loadingHandler.Count == 1)
         {
-            loadingHandler[0].GetComponent<LoadingScene>().LoadingOp = loadingOp;
+            //loadingHandler[0].GetComponent<LoadingScene>().LoadingOp = loadingOp;
         }
         // 추가 로딩
         if (AdditionalLoadingTasks.Count != 0)

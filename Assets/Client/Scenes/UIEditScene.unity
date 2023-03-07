@@ -182,5 +182,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: RootCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8827314283557929696, guid: 92951adbf37283d4bb44c6d05dea6d32, type: 3}
+      propertyPath: m_FOVAxisMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92951adbf37283d4bb44c6d05dea6d32, type: 3}

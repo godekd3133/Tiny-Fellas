@@ -406,7 +406,7 @@ MonoBehaviour:
   Popup: {fileID: 2084157770265222498}
   Overlay: {fileID: 1273654330428939975}
   EntryScene:
-    m_AssetGUID: 
+    m_AssetGUID: 6c51ea1c6bb488b48bd65fc41973cddc
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0

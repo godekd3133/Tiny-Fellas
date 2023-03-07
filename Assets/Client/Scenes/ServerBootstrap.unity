@@ -349,7 +349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7567867157896051350, guid: 92951adbf37283d4bb44c6d05dea6d32, type: 3}
       propertyPath: EntryScene.m_AssetGUID
-      value: 1bca009f74069934b8120eafa1a8ceb1
+      value: 6c51ea1c6bb488b48bd65fc41973cddc
       objectReference: {fileID: 0}
     - target: {fileID: 8355608460370233156, guid: 92951adbf37283d4bb44c6d05dea6d32, type: 3}
       propertyPath: m_Name
