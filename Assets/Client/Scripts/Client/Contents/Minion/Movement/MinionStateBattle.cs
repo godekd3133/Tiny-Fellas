@@ -15,8 +15,11 @@ public class MinionStateBattle : MinionState
 
         if (Owner.chaseTarget != null)
         {
-            if ((Owner.agent.transform.position - Owner.chaseTarget.agent.destination).magnitude > Owner.agent.stoppingDistance)
+            if (!Owner.Stat.MyAttackBehaviour.IsInAttackRagne(Owner.chaseTarget.transform))
+            {
+
                 return new MinionStateChase(Owner);
+            }
         }
         else
         {
@@ -30,7 +33,6 @@ public class MinionStateBattle : MinionState
 
     public override async UniTask EnterState()
     {
-        Owner.Stat.MyBattleAbility.CombatAI.SetActiveAI(true, Owner.Stat.MyBattleAbility.AttackBehaviour);
         Owner.obstacle.enabled = false;
         Owner.agent.enabled = true;
         Owner.agent.avoidancePriority = 40;
@@ -38,7 +40,6 @@ public class MinionStateBattle : MinionState
 
     public override async UniTask ExitState()
     {
-        Owner.Stat.MyBattleAbility.CombatAI.SetActiveAI(true, Owner.Stat.MyBattleAbility.AttackBehaviour);
         Owner.obstacle.enabled = false;
         Owner.agent.enabled = true;
         Owner.agent.avoidancePriority = 50;
@@ -56,9 +57,13 @@ public class MinionStateBattle : MinionState
                 break;
             }
 
-            Owner.Attack(Owner.chaseTarget);
+            if (!this.Owner.Stat.MyAttackBehaviour.IsOnAttacking)
+            {
+                this.Owner.Stat.MyAttackBehaviour.AttackStart(Owner.chaseTarget, Owner.Stat.MyBattleAbility);
+            }
             await UniTask.NextFrame(cancellationToken);
         }
+
     }
 
     private bool WaitForAttackDealy()
