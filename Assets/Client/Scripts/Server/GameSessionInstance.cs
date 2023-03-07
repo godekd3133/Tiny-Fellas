@@ -1,13 +1,9 @@
-using System;
 using System.Collections.Generic;
-using System.Threading;
 using Amazon.GameLift.Model;
 using Cysharp.Threading.Tasks;
-using Sirenix.OdinInspector;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Rendering;
 using Random = UnityEngine.Random;
 
 
@@ -44,6 +40,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
 
     /// Client Only
 
+    [SerializeField] private GameObject troopAdminObject;
     /// Mixed
     [Space(20), Header("Runtime Only Variables")]
     /// 유저 매칭 최대 대기시간, 해당 시간을 넘기도록 유저가 모이지 않으면 AI로 채우고 시작
@@ -257,13 +254,8 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
         };
         handDeck.SetHandDeck_ClientRPC(handDeckIndices, RPCParam);
 
-        var playerObject = Instantiate(NetworkManager.Singleton.NetworkConfig.PlayerPrefab);
+        var playerObject = Instantiate(troopAdminObject);
         playerObject.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientID);
-        foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
-        {
-            Debug.Log(client.PlayerObject.OwnerClientId);
-            Debug.Log(client.PlayerObject.NetworkObjectId);
-        }
 
         onPostNewPlayerConnect?.Invoke(newPlayerData);
     }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1599927045}
-  m_IndirectSpecularColor: {r: 0.5980322, g: 0.8977804, b: 0.8385875, a: 1}
+  m_IndirectSpecularColor: {r: 0.59803814, g: 0.8977804, b: 0.8386489, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -347,6 +347,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   maxPreparationTime: 0
+  troopAdminObject: {fileID: 355739207908540155, guid: c22cc77153f924c87a70c87d7a24c56b, type: 3}
   isGameRunning: 0
   isSessionRunning: 0
   handDeck: {fileID: 961498570}
