@@ -1,24 +1,25 @@
 using System;
-using UnityEngine;
 using Cysharp.Threading.Tasks;
 using Unity.Netcode;
+using UnityEngine;
 
+[Serializable]
 public class AttackBehaviourBase : NetworkBehaviour
 {
     private Animator animator;
     private Minion owner;
 
-    private MinionInstance targetStat;
-    private BattleAbilityInstance battleAbility;
-    
-    private bool isOnAttacking;
+    [SerializeField] private MinionInstance targetStat;
+    [SerializeField] private BattleAbilityInstance battleAbility;
+
+    [SerializeField] private bool isOnAttacking;
     public bool IsOnAttacking
     {
         get => isOnAttacking;
     }
 
     public virtual bool IsAttackable
-    { 
+    {
         get => !IsOnAttacking;
     }
 
@@ -36,25 +37,25 @@ public class AttackBehaviourBase : NetworkBehaviour
         this.owner = owner;
         animator = owner.GetComponent<Animator>();
     }
-    
-    
+
+
     public bool AttackStart(Minion target, BattleAbilityInstance battleAbility)
     {
         this.battleAbility = battleAbility;
         if (IsInAttackRagne(target.transform) == false)
             return false;
-        
+
         var targetStat = target.GetComponent<MinionInstance>();
         if (target.GetComponent<MinionStat>() == null)
         {
-            Logger.SharedInstance.Write(string.Format("{0} tride to damage {1}, but stat component is null",target.name));
+            Logger.SharedInstance.Write(string.Format("{0} tride to damage {1}, but stat component is null", target.name));
             return false;
         }
         this.targetStat = targetStat;
 
         if (isOnAttacking)
         {
-            Logger.SharedInstance.Write(string.Format("{0} tried to damage {1}, but was already on attacking",target.name));
+            Logger.SharedInstance.Write(string.Format("{0} tried to damage {1}, but was already on attacking", target.name));
             return false;
         }
 
@@ -75,7 +76,7 @@ public class AttackBehaviourBase : NetworkBehaviour
     {
         animator.SetTrigger(battleAbility.AttackAnimationParameter);
     }
-    
+
     protected virtual void Attack(Minion target)
     {
         animator.SetTrigger(battleAbility.AttackAnimationParameter);
@@ -91,8 +92,8 @@ public class AttackBehaviourBase : NetworkBehaviour
     // called as animation event
     public virtual void ImpactDamage()
     {
-        #if UNITY_SERVER
-        targetStat.TakeDamage(owner,battleAbility);
-        #endif
+#if UNITY_SERVER
+        targetStat.TakeDamage(owner, battleAbility);
+#endif
     }
 }

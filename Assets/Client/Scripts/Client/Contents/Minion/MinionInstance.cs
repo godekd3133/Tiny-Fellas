@@ -5,10 +5,10 @@ using UnityEngine;
 public class MinionInstance : NetworkBehaviour
 {
     private MinionStatInstance originStat;
-    private MinionStatInstance currentStat;
+    [SerializeField] private MinionStatInstance currentStat;
     private BattleAbilityInstance originBattleAbility;
-    private BattleAbilityInstance battleAbility;
-    private AttackBehaviourBase attackBehaviour;
+    [SerializeField] private BattleAbilityInstance battleAbility;
+    [SerializeField] private AttackBehaviourBase attackBehaviour;
 
     public BattleAbilityInstance MyBattleAbility => battleAbility;
     public AttackBehaviourBase MyAttackBehaviour => attackBehaviour;
