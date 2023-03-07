@@ -50,6 +50,8 @@ public class RootCanvas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DontDestroyOnLoad(this.gameObject);
+
         Bootup().Catch(e => Debug.LogException(e));
     }
 
