@@ -70,6 +70,7 @@ public class InputManager : NetworkBehaviour
             pressing = false;
         }
         if (pressing) dragCurrentPosition = Input.mousePosition;
+        latestDragAxis.SetDirty(false);
 
         var currentDragAxis = DragAxis_Client;
         if (currentDragAxis != previousDrageAxis)
