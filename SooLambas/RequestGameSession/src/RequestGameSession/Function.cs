@@ -46,17 +46,23 @@ namespace RequestGameSession
             var response = await client.SearchGameSessionsAsync(requestSearchingGameSessionRequest);
 
             GameSession validSession = null;
+            int onActivatingSessionCount = 0;
             foreach (var session in response.GameSessions)
             {
-                if (session.CurrentPlayerSessionCount >= session.MaximumPlayerSessionCount) continue;
-                else
+                
+                if (session.Status == "ACTIVATING")
+                {
+                    onActivatingSessionCount++;
+                    continue;
+                }
+                if (session.Status == "ACTIVE" && session.CurrentPlayerSessionCount <= session.MaximumPlayerSessionCount)
                 {
                     validSession = session;
                     break;
                 }
             }
 
-            if (validSession == null)
+            if (validSession == null && onActivatingSessionCount == 0)
             {
                 //TODO : insteade of making new session instantly, use MatchMaking or Queue
                 var creatingGameSessionRequest = new CreateGameSessionRequest();
@@ -65,7 +71,11 @@ namespace RequestGameSession
                 creatingGameSessionRequest.MaximumPlayerSessionCount = 10;
                 var creatingGameSessionResponse =await client.CreateGameSessionAsync(creatingGameSessionRequest);
                 
-                validSession = creatingGameSessionResponse.GameSession;
+                return new APIGatewayProxyResponse
+                {
+                    StatusCode = 200,
+                    Body = "{\"body\":\"there was no valids session so i created new one, wait some second and request again please\"}"
+                }; 
             }
 
             var describePlayerSessionRequest = new DescribePlayerSessionsRequest();
