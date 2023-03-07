@@ -17,12 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: ed35367609d3782448ee922b1a3665c2
   m_SerializeEntries:
-  - m_GUID: 1bca009f74069934b8120eafa1a8ceb1
-    m_Address: Assets/Prefabs/TestScene.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 2d76699a70b8d7f42b906184e25a8b7e
-    m_Address: Assets/ProjectA/Prefabs/TitleScene.prefab
+    m_Address: UIScene/LobbyScene.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 2f860dea5e4d37c47a0a6a1739940073
@@ -47,6 +43,10 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: 6c51ea1c6bb488b48bd65fc41973cddc
     m_Address: Assets/ProjectA/Prefabs/LoadingScene.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4ef3c2b0be65640d398281587421d92b
+    m_Address: UIScene/InGameScene.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
