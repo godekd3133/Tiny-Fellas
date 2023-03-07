@@ -49,6 +49,9 @@ public class GameSessionSynchronizer : NetworkBehaviour
                 rotationArr[j] = minion.transform.rotation;
             }
 
+            #if UNITY_EDITOR
+            Debug.Log("client ID "+playerData.ClientID+" 's minion count "+positionArr.Length+" will be synchronized");
+            #endif
             SynchronizeMinionTransforms_ClientRPC(playerData.ClientID, positionArr, rotationArr);
         }
     }
@@ -60,7 +63,9 @@ public class GameSessionSynchronizer : NetworkBehaviour
         var minionInstanceList = GameSessionInstance.Instance.PlayerDataByClientID[clientID].MinionInstanceList;
         var instanceCount = minionInstanceList.Count;
         // instance list count and server's array length can be different, due to spawn minion order would not be received in client
-
+#if UNITY_EDITOR
+        Debug.Log("client ID "+clientID+" 's minion count "+positionList.Length+" will be synchronized (This is client message)");
+#endif
         for (int i = 0; i < positionList.Length && i<instanceCount; i++)
         {
             minionInstanceList[i].transform.position = positionList[i];
