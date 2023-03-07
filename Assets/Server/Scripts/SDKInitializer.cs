@@ -2,6 +2,8 @@ using UnityEngine;
 using System;
 using Aws.GameLift;
 using Aws.GameLift.Server;
+using Cysharp.Threading.Tasks;
+using Unity.Netcode;
 
 public class SDKInitializer : MonoWeakSingleton<SDKInitializer>
 {
@@ -19,9 +21,16 @@ public class SDKInitializer : MonoWeakSingleton<SDKInitializer>
     }
 
     public bool IsLocalTest => isLocalTest;
-    
-    void Awake()
+
+    private void Awake()
     {
+        StartSDKInitializingProcess();
+    }
+
+    private async UniTask StartSDKInitializingProcess()
+    {
+        await UniTask.WaitUntil(()=> NetworkManager.Singleton != null);
+        
         isConnected = false;
         Application.runInBackground = true;
         
