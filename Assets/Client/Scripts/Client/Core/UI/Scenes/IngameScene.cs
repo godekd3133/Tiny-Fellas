@@ -10,7 +10,7 @@ public class IngameScene : UIScene
     public override void OnAdd()
     {
         base.OnAdd();
-        GameSessionInstance.Instance.HandDeck = playerHandDeck;
+        //       GameSessionInstance.Instance.HandDeck = playerHandDeck;
     }
 
     public override void OnRemove()
