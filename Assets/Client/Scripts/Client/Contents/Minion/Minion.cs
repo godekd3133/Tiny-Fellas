@@ -12,7 +12,6 @@ using UnityEngine.Events;
 [RequireComponent(typeof(MinionInstance), typeof(NetworkObject))]
 public class Minion : NetworkBehaviour, IIndexContainable
 {
-    public float moveSpeed;
     public TroopAdmin troopAdmin;
     public NavMeshAgent agent;
     public NavMeshObstacle obstacle;
@@ -35,7 +34,6 @@ public class Minion : NetworkBehaviour, IIndexContainable
     public UnityEvent<Minion> OnPostAttack { get; private set; }
     public UnityEvent<Minion> OnPreDamaged { get; private set; }
     public UnityEvent<Minion> OnPostDamaged { get; private set; }
-    public UnityEvent<MinionInstance> OnPostStatChanged { get; private set; }
 
     private MinionState minionState;
     public MinionState MinionState => minionState;
@@ -55,6 +53,16 @@ public class Minion : NetworkBehaviour, IIndexContainable
     {
         //        stat.MyBattleAbility.AttackBehaviour.SetOwner(this, animator);
         //      stat.MyBattleAbility.PassiveSkill.ApplyEffect(this);
+    }
+
+    private async UniTask StatUpdate(CancellationToken cancellationToken)
+    {
+        while (true)
+        {
+
+            agent.speed = 10;
+            await UniTask.NextFrame();
+        }
     }
 
     private async UniTask StateUpdate(CancellationToken cancellationToken)
@@ -80,7 +88,6 @@ public class Minion : NetworkBehaviour, IIndexContainable
                 stateChangeToken = new CancellationTokenSource();
                 minionState.UpdateState(CancellationTokenSource.CreateLinkedTokenSource(cancellationToken, stateChangeToken.Token).Token).Forget();
             }
-            Debug.Log(minionState);
             await UniTask.NextFrame();
         }
     }
@@ -108,7 +115,7 @@ public class Minion : NetworkBehaviour, IIndexContainable
         else if (NetworkManager.Singleton.IsServer)
         {
             lastBattleTime = -1f;
-
+            StatUpdate(this.GetCancellationTokenOnDestroy()).Forget();
             StateUpdate(this.GetCancellationTokenOnDestroy()).Forget();
         }
     }
