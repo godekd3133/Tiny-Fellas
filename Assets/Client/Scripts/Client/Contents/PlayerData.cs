@@ -12,6 +12,9 @@ public class PlayerData : IMinionDeployable
     [SerializeField]
 #endif
     private List<MinionData> minionDeck = new List<MinionData>();
+
+    private int[] minionAssetIndexArrInDeck;
+    private int[] battleAbilityIndexArrInDeck;
 #if UNITY_EDITOR
     [SerializeField]
 #endif
@@ -31,6 +34,8 @@ public class PlayerData : IMinionDeployable
     public IReadOnlyList<MinionData> MinionDeck => minionDeck;
 
     public IReadOnlyList<Minion> MinionInstanceList => minionInstanceList;
+    public int[] MinionAssetIndexArrInDeck => minionAssetIndexArrInDeck;
+    public int[] BattleAbilityArrIndeck => battleAbilityIndexArrInDeck;
 
     public string PlayerSessionID => playerSessionID;
     public ulong ClientID => clientID;
@@ -56,11 +61,16 @@ public class PlayerData : IMinionDeployable
     {
     }
 
-    public PlayerData(List<MinionData> deck, string playerSessionId, ulong clientID, bool isBot)
+    public PlayerData(string playerSessionId, ulong clientID, int[] minionAssetIndexArrInDeck , int[] battleAbilityIndexArrInDeck,bool isBot)
     {
-        minionDeck = deck;
+        minionDeck = MinionDataBaseIngame.Instance.GetMinionDeck(minionAssetIndexArrInDeck, battleAbilityIndexArrInDeck);
         this.playerSessionID = playerSessionId;
         this.clientID = clientID;
         this.isBot = isBot;
+        this.minionAssetIndexArrInDeck = minionAssetIndexArrInDeck;
+        this.battleAbilityIndexArrInDeck = battleAbilityIndexArrInDeck;
+        
+        
+
     }
 }

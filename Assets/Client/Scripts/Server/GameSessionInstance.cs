@@ -178,9 +178,19 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
         //자기자신은 해당되지않음
         if (playerDataByClientID.ContainsKey(clientID)) return;
 
-        var testDeck =
-            MinionDataBaseIngame.Instance.GetMinionDeck(minionAssetIndexArr, battalAbilityAssetIndexPerMinion);
-        var playerData = new PlayerData(testDeck, string.Empty, clientID, isBot);
+        var playerData = new PlayerData( string.Empty, clientID,minionAssetIndexArr,battalAbilityAssetIndexPerMinion, isBot);
+        playerDataList.Add(playerData);
+        playerDataByClientID.Add(clientID, playerData);
+        onPostNewPlayerConnect?.Invoke(playerData);
+    }
+    
+    [ClientRpc]
+    public void SendAlreadyConnectedClientInfo_ClientRPC(ulong clientID, int[] minionAssetIndexArr, int[] battalAbilityAssetIndexPerMinion,bool isBot  )
+    {
+        //자기자신은 해당되지않음
+        if (playerDataByClientID.ContainsKey(clientID)) return;
+
+        var playerData = new PlayerData(string.Empty, clientID,minionAssetIndexArr, battalAbilityAssetIndexPerMinion,isBot);
         playerDataList.Add(playerData);
         playerDataByClientID.Add(clientID, playerData);
         onPostNewPlayerConnect?.Invoke(playerData);
@@ -234,11 +244,14 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
         testMinionStatIndexList.Add(0);
 
 
-        var testDeck =
-            MinionDataBaseIngame.Instance.GetMinionDeck(tesstMinionIndexList, testMinionStatIndexList);
-        var newPlayerData = new PlayerData(testDeck, playerSessionID, clientID, false);
+        var newPlayerData = new PlayerData(playerSessionID, clientID, tesstMinionIndexList.ToArray(),testMinionStatIndexList.ToArray(),false);
         newPlayerData.currentGem = 50;
 
+        for (int i = 0; i < playerDataList.Count; i++)
+        {
+            var playerData = playerDataList[i];
+            SendAlreadyConnectedClientInfo_ClientRPC(playerData.ClientID, playerData.MinionAssetIndexArrInDeck, playerData.BattleAbilityArrIndeck, false);
+        }
         playerDataList.Add(newPlayerData);
         playerDataByClientID.Add(clientID, newPlayerData);
         BroadCastNewPlayerConnection_ClientRPC(clientID, tesstMinionIndexList.ToArray(), testMinionStatIndexList.ToArray(), false);
@@ -321,9 +334,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
         testMinionStatIndexList.Add(0);
 
 
-        var testDeck =
-            MinionDataBaseIngame.Instance.GetMinionDeck(tesstMinionIndexList, testMinionStatIndexList);
-        var newPlayerData = new PlayerData(testDeck, localBotPlayerSessionID, localBotFakeClientID, true);
+        var newPlayerData = new PlayerData(localBotPlayerSessionID, localBotFakeClientID, tesstMinionIndexList.ToArray(),testMinionStatIndexList.ToArray(),true);
         newPlayerData.currentGem = 50;
 
         playerDataList.Add(newPlayerData);
