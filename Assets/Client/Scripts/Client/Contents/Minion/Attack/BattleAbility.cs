@@ -19,7 +19,7 @@ public enum EComatAIName
     RAGNE,
 }
 
-[CreateAssetMenu(fileName = "BattleAbility", menuName = "ScriptableObjects/BattleAbility")]
+[CreateAssetMenu(fileName = "BattleAbility", menuName = "ScriptableObjects/BattleAbility"),Serializable]
 public class BattleAbility : StatContainer
 {
     [SerializeField] private EMinionAnimationParameter attackAnimationParameter;
