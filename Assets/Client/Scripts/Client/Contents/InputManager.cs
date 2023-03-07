@@ -59,7 +59,6 @@ public class InputManager : NetworkBehaviour
             return;
         }
         
-        latestDragAxis.SetDirty(false);
 #if UNITY_EDITOR_WIN || UNITY_EDITOR_OSX || UNITY_STANDALONE
         if (Input.GetMouseButtonDown(0))
         {
