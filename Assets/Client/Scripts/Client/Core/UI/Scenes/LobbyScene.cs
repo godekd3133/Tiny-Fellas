@@ -31,8 +31,17 @@ public class LobbyScene : UIScene
 
     private void OnConnectionButtonDown()
     {
-        AWSFleetManager.Instance.ConnectToGameSession_Test();
+        SetUpLobby();
     }
+
+    private async Task SetUpLobby()
+    {
+
+
+        AWSFleetManager.Instance.ConnectToGameSession_Test();
+        this.gameObject.SetActive(false);
+    }
+
 
     // public void OnStartGame()
     // {

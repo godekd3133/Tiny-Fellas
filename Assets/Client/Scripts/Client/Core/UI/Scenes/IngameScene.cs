@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class IngameScene : UIScene
 {
+    [SerializeField] PlayerHandDeck playerHandDeck;
 
     public override void OnAdd()
     {
         base.OnAdd();
+        GameSessionInstance.Instance.HandDeck = playerHandDeck;
     }
 
     public override void OnRemove()
