@@ -60,6 +60,14 @@ public class GameSessionSynchronizer : NetworkBehaviour
     [ClientRpc(Delivery = RpcDelivery.Unreliable)]
     private void SynchronizeMinionTransforms_ClientRPC(ulong clientID, Vector3[] positionList,Quaternion[] rotationList)
     {
+        if (GameSessionInstance.Instance.PlayerDataByClientID.ContainsKey(clientID) == false)
+        {
+            #if UNITY_EDITOR
+            Debug.Log(clientID+"'s data is not present in this client");
+            #endif
+            return;
+        }
+        
         var minionInstanceList = GameSessionInstance.Instance.PlayerDataByClientID[clientID].MinionInstanceList;
         var instanceCount = minionInstanceList.Count;
         // instance list count and server's array length can be different, due to spawn minion order would not be received in client
