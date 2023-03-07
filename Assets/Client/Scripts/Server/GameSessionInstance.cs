@@ -141,9 +141,11 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
     private bool SpawnMinion(ulong clientID, int minionDataIndex, bool forcePurchaseEvenNoGem = false)
     {
         var playerData = PlayerDataByClientID[clientID];
+        var playerTroopadmin = NetworkManager.Singleton.SpawnManager.GetPlayerNetworkObject(clientID)
+            .GetComponent<TroopAdmin>();
         var minionData = playerData.MinionDeck[minionDataIndex];
 
-        bool isPurchasable = forcePurchaseEvenNoGem || playerData.currentGem >= minionData.Stat[EStatName.GEM_COST].CurrentValue;
+        bool isPurchasable = forcePurchaseEvenNoGem || playerTroopadmin.CurrentGem >= minionData.Stat[EStatName.GEM_COST].CurrentValue;
         if (isPurchasable)
         {
             var newMinion = Instantiate(MinionDataBaseIngame.Instance.MinionNetworkPrefabList[minionDataIndex]);
@@ -163,7 +165,7 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
 
             // spawned minion's OnNetworkSpawn logic will automatically add itself to player data's minion instance list in client
 
-            playerData.currentGem -= minionData.Stat[EStatName.GEM_COST].CurrentValue;
+            playerTroopadmin.CurrentGem -= minionData.Stat[EStatName.GEM_COST].CurrentValue;
         }
 
         return isPurchasable;
