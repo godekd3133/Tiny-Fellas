@@ -2,8 +2,6 @@ using System;
 using System.IO;
 using System.Net;
 using Amazon.GameLift;
-using Amazon.GameLift.Model;
-using Aws.GameLift.Server.Model;
 using Cysharp.Threading.Tasks;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
@@ -16,9 +14,6 @@ public class AWSFleetManager : MonoWeakSingleton<AWSFleetManager>
 {
     [SerializeField] private string gameSessionScenePath = "Assets/Client/Scenes/IngameScene.unity";
 #if UNITY_SERVER || UNITY_EDITOR
-    [SerializeField]
-    private string gameSessionSettingPath = "Assets/Datas/Settinga/GameSessionSetting";
-
     private GameSession gameSession;
     private AmazonGameLiftClient gameLiftClient;
     private NetworkObject networkObject;
@@ -65,7 +60,6 @@ public class AWSFleetManager : MonoWeakSingleton<AWSFleetManager>
 
     public void GenerateNewGameSession(GameSession gameSession)
     {
-        var gameSessionSetting = Resources.Load<GameSessionSetting>(gameSessionSettingPath);
         this.gameSession = gameSession;
         var transporter = NetworkManager.Singleton.GetComponent<UnityTransport>();
         transporter.ConnectionData.Address = gameSession.IpAddress;
@@ -94,7 +88,6 @@ public class AWSFleetManager : MonoWeakSingleton<AWSFleetManager>
         gameLiftClient = new AmazonGameLiftClient("AKIA3MTR52R2BGL7MOGB", "ENfwYnCa4B20pg1ro+r1VJDetnOarvEA4DjhGzgv");
 
         Logger.SharedInstance.Write("Server Start");
-
         OnPostCreateSession?.Invoke();
     }
 #endif

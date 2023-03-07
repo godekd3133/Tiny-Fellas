@@ -28,20 +28,7 @@ public class MinionDataBaseIngame : MonoWeakSingleton<MinionDataBaseIngame>
         networkManager = NetworkManagerInstance.Instance;
         
         foreach (var minionData in minionDataBase.MinionDatas)
-        {
-            var newPrefab = Instantiate(minionData.Prefab);
-            newPrefab.AddComponent<NetworkObject>();
-            newPrefab.AddComponent<MinionInstance>();
-            newPrefab.AddComponent<Minion>();
-            newPrefab.AddComponent<NavMeshAgent>();
-            newPrefab.AddComponent<NavMeshObstacle>();
-            
-            newPrefab.transform.SetParent(transform);
-            networkManager.AddNetworkPrefab(newPrefab);
-            minionNetworkPrefabList.Add(newPrefab);
-            
-            newPrefab.gameObject.SetActive(false);
-        }
+            minionNetworkPrefabList.Add(minionData.Prefab);
     }
 
     public List<MinionData> GetMinionDeck(List<int> minionIndexList, List<int> statIndexList)

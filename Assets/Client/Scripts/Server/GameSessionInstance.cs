@@ -160,11 +160,11 @@ public class GameSessionInstance : NetworkBehaviourSingleton<GameSessionInstance
             newMinion.transform.position = spawnPosition;
             newMinion.gameObject.SetActive(true);
             newMinionNetworkobject.SpawnWithOwnership(clientID);
-            newMinion.GetComponent<MinionInstance>().AssignOriginStat(minionData.Stat, newMinion);
-            newMinion.GetComponent<AttackBehaviourBase>().SetOwner(newMinion.GetComponent<Minion>());
+            var minionInstance = newMinion.GetComponent<MinionInstance>();
+            minionInstance.AssignOriginStat(minionData.Stat, newMinion);
+            minionInstance.AssignOriginStat_ClientRPC(minionDataIndex);
 
             // spawned minion's OnNetworkSpawn logic will automatically add itself to player data's minion instance list in client
-
             playerTroopadmin.CurrentGem -= minionData.Stat[EStatName.GEM_COST].CurrentValue;
         }
 

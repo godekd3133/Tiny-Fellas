@@ -21,6 +21,14 @@ public class MinionInstance : NetworkBehaviour
         originStat = null;
     }
 
+    [ClientRpc]
+    public void AssignOriginStat_ClientRPC(int minionDataIndex)
+    {
+        var playerData = GameSessionInstance.Instance.PlayerDataByClientID[OwnerClientId];
+        var minionData = playerData.MinionDeck[minionDataIndex];
+        AssignOriginStat(minionData.Stat, GetComponent<Minion>());
+    }
+
     public bool AssignOriginStat(MinionStat originStat, GameObject owner)
     {
         return AssignOriginStat(originStat, owner.GetComponent<Minion>());
