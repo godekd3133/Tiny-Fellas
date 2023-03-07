@@ -58,12 +58,21 @@ public class TroopAdmin : NetworkBehaviour
             DetectEnemyUpdate(this.GetCancellationTokenOnDestroy()).Forget();
             UpdateGem().Forget();
         }
+        else if (IsClient)
+            SetCameraTarget();
     }
 
 
     private bool waitForSpawningDone()
     {
         return IsSpawned && gameObject.activeSelf;
+    }
+
+    private async UniTask SetCameraTarget()
+    {
+        await UniTask.WaitUntil(CheckFirstMinionSpawn);
+        CameraManager.Instance.followingTarget = leaderMinion.transform;
+        
     }
 
     private async UniTask UpdateGem()
@@ -79,7 +88,7 @@ public class TroopAdmin : NetworkBehaviour
     private async UniTask DetectEnemyUpdate(CancellationToken cancellationToken)
     {
         const float updateInterval = 0.15f;
-        await UniTask.WaitUntil(CheckFirstMinionSpawn);
+        CameraManager.Instance.followingTarget = leaderMinion.transform;
         while (true)
         {
             if (cancellationToken.IsCancellationRequested) break;
