@@ -36,26 +36,11 @@ public class MinionInstance : NetworkBehaviour
 
     public bool AssignOriginStat(MinionStat originStat, Minion owner)
     {
-        foreach (var stat in originStat.MyBattleAbility.StatMap)
-        {
-            Debug.Log(stat.Key+" , "+stat.Value);
-        }
-        
         this.originStat = new MinionStatInstance(originStat);
         currentStat = new MinionStatInstance(originStat);
         originBattleAbility = this.originStat.MyBattleAbility;
         battleAbility = currentStat.MyBattleAbility;
         
-        foreach (var stat in currentStat.StatMap)
-        {
-            Debug.Log(stat.Key+" , "+stat.Value);
-        }
-        
-        foreach (var stat in currentStat.MyBattleAbility.StatMap)
-        {
-            Debug.Log(stat.Key+" , "+stat.Value);
-        }
-
         var preCreatedAttackbehaviour = gameObject.GetComponent<AttackBehaviourBase>();
         if (preCreatedAttackbehaviour != null) Destroy(preCreatedAttackbehaviour);
         attackBehaviour = gameObject.AddComponent(battleAbility.AttackBehaviour.GetType()) as AttackBehaviourBase;

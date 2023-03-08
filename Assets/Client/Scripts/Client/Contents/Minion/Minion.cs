@@ -51,7 +51,7 @@ public class Minion : NetworkBehaviour, IIndexContainable
     }
     private void Awake()
     {
-        //        stat.MyBattleAbility.AttackBehaviour.SetOwner(this, animator);
+        //        stat.MyBattleAbility.\haviour.SetOwner(this, animator);
         //      stat.MyBattleAbility.PassiveSkill.ApplyEffect(this);
     }
 
@@ -88,6 +88,7 @@ public class Minion : NetworkBehaviour, IIndexContainable
                 stateChangeToken = new CancellationTokenSource();
                 minionState.UpdateState(CancellationTokenSource.CreateLinkedTokenSource(cancellationToken, stateChangeToken.Token).Token).Forget();
             }
+            Debug.Log(minionState);
             await UniTask.NextFrame();
         }
     }

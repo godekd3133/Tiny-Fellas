@@ -47,10 +47,6 @@ public class MinionStateChase : MinionState
                 break;
             }            //owner.Stat.MyBattleAbility.StatMap[EStatName.ATTACK_RAGNE].CurrentValue ?? 
 
-            foreach (var stat in Owner.Stat.MyBattleAbility.StatMap)
-            {
-                Debug.Log(stat.Key +" , "+stat.Value);
-            }
             Owner.agent.stoppingDistance = Owner.Stat.MyBattleAbility[EStatName.ATTACK_RAGNE].CurrentValue - 0.25f;
             // 찾은 적이 있을경우 해당 적을향해, 없을경우 리더 미니언을 쫒아가면서 적을 찾음.
             if (MyTroopAdmin.RecognizedEnemyMinionList.Count > 0)

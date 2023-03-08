@@ -41,6 +41,7 @@ public class AttackBehaviourBase : NetworkBehaviour
 
     public bool AttackStart(Minion target, BattleAbilityInstance battleAbility)
     {
+        Debug.Log("attack start in server");
         this.battleAbility = battleAbility;
         if ((target.transform.position - gameObject.transform.position).magnitude <= battleAbility[EStatName.ATTACK_RAGNE].CurrentValue)
             return false;
@@ -80,6 +81,7 @@ public class AttackBehaviourBase : NetworkBehaviour
 
     protected virtual void Attack(Minion target)
     {
+        Debug.Log("attack order in server");
         animator.SetTrigger(battleAbility.AttackAnimationParameter);
         if (NetworkManagerInstance.Instance.IsServer) Attack_ClientRPC();
         // NetworkMinionAnimationAdmin.Instance.PlayAnimation_ClientRPC(owner.OwnerClientId, owner.IndexInContainer.Value, battleAbility.AttackAnimationParameter);
