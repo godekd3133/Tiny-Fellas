@@ -116,7 +116,7 @@ public class Minion : NetworkBehaviour, IIndexContainable
         }
         else if (NetworkManager.Singleton.IsServer)
         {
-            agent.speed = 1f;
+            agent.speed = 0.0001f;
             lastBattleTime = -1f;
             StatUpdate(this.GetCancellationTokenOnDestroy()).Forget();
             StateUpdate(this.GetCancellationTokenOnDestroy()).Forget();
