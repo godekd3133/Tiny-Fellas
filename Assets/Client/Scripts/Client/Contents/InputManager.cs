@@ -76,6 +76,7 @@ public class InputManager : NetworkBehaviour
         {
             previousDrageAxis = Vector3.zero;
             latestDragAxis.Value = previousDrageAxis;
+            return;
         }
 
         var currentDragAxis = DragAxis_Client;
