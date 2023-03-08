@@ -102,6 +102,7 @@ public class Minion : NetworkBehaviour, IIndexContainable
         await UniTask.WaitUntil(waitForSpawningDone);
         agent = GetComponent<NavMeshAgent>();
         obstacle = GetComponent<NavMeshObstacle>();
+        stat = GetComponent<MinionInstance>();
         chaseTarget = null;
         if (NetworkManager.Singleton.IsClient)
         {
