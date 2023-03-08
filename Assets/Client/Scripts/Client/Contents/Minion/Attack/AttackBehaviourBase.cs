@@ -46,7 +46,7 @@ public class AttackBehaviourBase : NetworkBehaviour
             return false;
 
         var targetStat = target.GetComponent<MinionInstance>();
-        if (target.GetComponent<MinionStat>() == null)
+        if (targetStat == null)
         {
             Logger.SharedInstance.Write(string.Format("{0} tride to damage {1}, but stat component is null", target.name));
             return false;
@@ -74,6 +74,7 @@ public class AttackBehaviourBase : NetworkBehaviour
     [ClientRpc]
     protected void Attack_ClientRPC()
     {
+        Debug.Log("aattack order from server");
         animator.SetTrigger(battleAbility.AttackAnimationParameter);
     }
 
