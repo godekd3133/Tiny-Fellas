@@ -24,13 +24,9 @@ public class MeleeBattleAI : BattleAI
 
             var nearestMinion = priorityQueue.Peek;
 
-            bool isInAttackRange = attackBehaviour.IsInAttackRagne(nearestMinion.transform);
 
-            if (isInAttackRange)
-            {
                 Debug.Log("어택!");
                 attackBehaviour.AttackStart(nearestMinion, owner.Stat.MyBattleAbility);
-            }
             // else
             // {
             //     var enemyToMeDirection = (owner.transform.position - nearestMinion.transform.position).normalized;

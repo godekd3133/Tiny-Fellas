@@ -42,7 +42,7 @@ public class AttackBehaviourBase : NetworkBehaviour
     public bool AttackStart(Minion target, BattleAbilityInstance battleAbility)
     {
         this.battleAbility = battleAbility;
-        if (IsInAttackRagne(target.transform) == false)
+        if ((target.transform.position - gameObject.transform.position).magnitude <= battleAbility[EStatName.ATTACK_RAGNE].CurrentValue)
             return false;
 
         var targetStat = target.GetComponent<MinionInstance>();
@@ -82,11 +82,6 @@ public class AttackBehaviourBase : NetworkBehaviour
         animator.SetTrigger(battleAbility.AttackAnimationParameter);
         if (NetworkManagerInstance.Instance.IsServer) Attack_ClientRPC();
         // NetworkMinionAnimationAdmin.Instance.PlayAnimation_ClientRPC(owner.OwnerClientId, owner.IndexInContainer.Value, battleAbility.AttackAnimationParameter);
-    }
-
-    public bool IsInAttackRagne(Transform target)
-    {
-        return (owner.transform.position - target.position).magnitude <= battleAbility[EStatName.ATTACK_RAGNE].CurrentValue;
     }
 
     // called as animation event

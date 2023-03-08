@@ -20,7 +20,7 @@ public class MinionStateChase : MinionState
             return new MinionStateIdle(Owner);
 
         if (Owner.chaseTarget != null)
-            if (Owner.Stat.MyAttackBehaviour.IsInAttackRagne(Owner.chaseTarget.transform))
+            if ((Owner.transform.position - Owner.chaseTarget.transform.position).magnitude <= Owner.Stat.MyBattleAbility[EStatName.ATTACK_RAGNE].CurrentValue)
                 return new MinionStateBattle(Owner);
 
         return this;
