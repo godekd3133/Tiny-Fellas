@@ -61,7 +61,6 @@ public class MinionInstance : NetworkBehaviour
         currentStat[EStatName.HEALTH].CurrentValue = value;
     }
 
-#if UNITY_SERVER || UNITY_EDITOR
     public bool TakeDamage(Minion attacker, BattleAbilityInstance attackerBattleAbility)
     {
         if (IsDead) return false;
@@ -70,5 +69,4 @@ public class MinionInstance : NetworkBehaviour
         SetHealth_ClientRPC(currentStat[EStatName.HEALTH].CurrentValue);
         return true;
     }
-#endif
 }

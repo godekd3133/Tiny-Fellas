@@ -9,7 +9,7 @@ public class AttackBehaviourBase : NetworkBehaviour
     private Animator animator;
     private Minion owner;
 
-    [SerializeField] private MinionInstance targetStat;
+    [SerializeField] private Minion target;
     [SerializeField] private BattleAbilityInstance battleAbility;
 
     [SerializeField] private bool isOnAttacking;
@@ -23,7 +23,7 @@ public class AttackBehaviourBase : NetworkBehaviour
         get => !IsOnAttacking;
     }
 
-    protected MinionInstance TargetStat => targetStat;
+    protected Minion Target => target;
     protected BattleAbilityInstance MyBattleAbility => battleAbility;
 
     public void SetOwner(Minion owner, Animator animator)
@@ -37,7 +37,7 @@ public class AttackBehaviourBase : NetworkBehaviour
         this.owner = owner;
         animator = owner.GetComponent<Animator>();
     }
-
+    
 
     public bool AttackStart(Minion target, BattleAbilityInstance battleAbility)
     {
@@ -52,7 +52,7 @@ public class AttackBehaviourBase : NetworkBehaviour
             Logger.SharedInstance.Write(string.Format("{0} tride to damage {1}, but stat component is null", target.name));
             return false;
         }
-        this.targetStat = targetStat;
+        this.target = target;
 
         if (isOnAttacking)
         {
@@ -72,26 +72,20 @@ public class AttackBehaviourBase : NetworkBehaviour
         isOnAttacking = false;
     }
 
-    [ClientRpc]
-    protected void Attack_ClientRPC()
+    public void AttackAnimation()
     {
-        Debug.Log("aattack order from server");
+        Debug.Log("start attack animation");
         animator.SetTrigger(battleAbility.AttackAnimationParameter);
     }
 
     protected virtual void Attack(Minion target)
     {
         Debug.Log("attack order in server");
-        animator.SetTrigger(battleAbility.AttackAnimationParameter);
-        if (NetworkManagerInstance.Instance.IsServer) Attack_ClientRPC();
-        // NetworkMinionAnimationAdmin.Instance.PlayAnimation_ClientRPC(owner.OwnerClientId, owner.IndexInContainer.Value, battleAbility.AttackAnimationParameter);
+        AttackAnimation();
     }
 
-    // called as animation event
     public virtual void ImpactDamage()
     {
-#if UNITY_SERVER
-        targetStat.TakeDamage(owner, battleAbility);
-#endif
+        target.TakeDamage(battleAbility);
     }
 }

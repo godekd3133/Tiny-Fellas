@@ -57,9 +57,9 @@ public class MinionStateBattle : MinionState
                 break;
             }
 
-            if (!this.Owner.Stat.MyAttackBehaviour.IsOnAttacking)
+            if (!Owner.Stat.MyAttackBehaviour.IsOnAttacking)
             {
-                this.Owner.Stat.MyAttackBehaviour.AttackStart(Owner.chaseTarget, Owner.Stat.MyBattleAbility);
+                Owner.Attack(Owner.chaseTarget);
             }
             await UniTask.NextFrame(cancellationToken);
         }

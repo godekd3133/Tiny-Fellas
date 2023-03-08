@@ -131,14 +131,22 @@ public class Minion : NetworkBehaviour, IIndexContainable
     {
         OnPreAttack.Invoke(this);
         stat.Attack(target);
+        AttackAnimation_ClientRPC();
         if (IsServer) UpdateBattleTime();
         OnPostAttack.Invoke(this);
     }
 
-    public bool TakeDamage()
+    [ClientRpc]
+    public void AttackAnimation_ClientRPC()
+    {
+        stat.MyAttackBehaviour.AttackAnimation();
+    }
+
+
+    public bool TakeDamage(BattleAbilityInstance battleAbility)
     {
         OnPreDamaged.Invoke(this);
-        var flag = stat.TakeDamage(this, stat.MyBattleAbility);
+        var flag = stat.TakeDamage(this, battleAbility);
         if (IsServer) UpdateBattleTime();
         OnPostDamaged.Invoke(this);
 
