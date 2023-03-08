@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Net;
 using Amazon.GameLift;
+using AmazonGameLift.Runtime;
 using Cysharp.Threading.Tasks;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
@@ -12,7 +13,10 @@ using GameSession = Aws.GameLift.Server.Model.GameSession;
 
 public class AWSFleetManager : MonoWeakSingleton<AWSFleetManager>
 {
+    [SerializeField] private GameLiftClientSettings config;
     [SerializeField] private string gameSessionScenePath = "Assets/Client/Scenes/IngameScene.unity";
+
+    public GameLiftClientSettings Config => config;
 #if UNITY_SERVER || UNITY_EDITOR
     private GameSession gameSession;
     private AmazonGameLiftClient gameLiftClient;

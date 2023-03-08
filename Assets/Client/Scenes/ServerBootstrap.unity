@@ -409,6 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25bd35ffa68524ede9ae9ae367262d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  config: {fileID: 11400000, guid: 07392ad0ccf0f44d28649a931c0dc135, type: 2}
   gameSessionScenePath: Assets/Client/Scenes/IngameScene.unity
   fleetConnectionSetting: {fileID: 11400000, guid: 272c5250f5b26c1479167a082a711bfe, type: 2}
 --- !u!1 &1020544292
