@@ -54,10 +54,12 @@ public class InputManager : NetworkBehaviour
         if (IsServer)
         {
             #if UNITY_EDITOR
-            Debug.Log(latestDragAxis.Value.ToString());
+//            Debug.Log(latestDragAxis.Value.ToString());
             #endif
             return;
         }
+        
+        latestDragAxis.SetDirty(false);
         
 #if UNITY_EDITOR_WIN || UNITY_EDITOR_OSX || UNITY_STANDALONE
         if (Input.GetMouseButtonDown(0))
@@ -70,7 +72,11 @@ public class InputManager : NetworkBehaviour
             pressing = false;
         }
         if (pressing) dragCurrentPosition = Input.mousePosition;
-        latestDragAxis.SetDirty(false);
+        else
+        {
+            previousDrageAxis = Vector3.zero;
+            latestDragAxis.Value = previousDrageAxis;
+        }
 
         var currentDragAxis = DragAxis_Client;
         if (currentDragAxis != previousDrageAxis)
