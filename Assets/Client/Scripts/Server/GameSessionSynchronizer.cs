@@ -72,7 +72,7 @@ public class GameSessionSynchronizer : NetworkBehaviour
         var instanceCount = minionInstanceList.Count;
         // instance list count and server's array length can be different, due to spawn minion order would not be received in client
 #if UNITY_EDITOR
-        Debug.Log("client ID "+clientID+" 's minion count "+positionList.Length+" will be synchronized (This is client message)");
+//        Debug.Log("client ID "+clientID+" 's minion count "+positionList.Length+" will be synchronized (This is client message)");
 #endif
         for (int i = 0; i < positionList.Length && i<instanceCount; i++)
         {
