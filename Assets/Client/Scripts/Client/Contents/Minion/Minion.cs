@@ -115,7 +115,7 @@ public class Minion : NetworkBehaviour, IIndexContainable
         }
         else if (NetworkManager.Singleton.IsServer)
         {
-            agent.speed = 0.0001f;
+            agent.speed = 1f;
             lastBattleTime = -1f;
             StatUpdate(this.GetCancellationTokenOnDestroy()).Forget();
             StateUpdate(this.GetCancellationTokenOnDestroy()).Forget();
@@ -129,18 +129,18 @@ public class Minion : NetworkBehaviour, IIndexContainable
 
     public void Attack(Minion target)
     {
-        OnPreAttack.Invoke(this);
+        OnPreAttack?.Invoke(this);
         stat.Attack(target);
         if (IsServer) UpdateBattleTime();
-        OnPostAttack.Invoke(this);
+        OnPostAttack?.Invoke(this);
     }
 
     public bool TakeDamage()
     {
-        OnPreDamaged.Invoke(this);
+        OnPreDamaged?.Invoke(this);
         var flag = stat.TakeDamage(this, stat.MyBattleAbility);
         if (IsServer) UpdateBattleTime();
-        OnPostDamaged.Invoke(this);
+        OnPostDamaged?.Invoke(this);
 
         return true;
     }
