@@ -54,11 +54,7 @@ public class MinionStateChase : MinionState
                 Owner.agent.SetDestination(MyTroopAdmin.RecognizedEnemyMinionList[0].transform.position);
                 Owner.chaseTarget = MyTroopAdmin.RecognizedEnemyMinionList[0];
             }
-            else
-            {
-                Owner.agent.SetDestination(MyTroopAdmin.RecognizedEnemyMinionList[0].transform.position);
-                Owner.chaseTarget = MyTroopAdmin.RecognizedEnemyMinionList[0];
-            }
+
 
             await UniTask.NextFrame();
         }
