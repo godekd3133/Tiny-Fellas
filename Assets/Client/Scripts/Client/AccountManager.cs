@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Amazon.CognitoIdentityProvider;
 using UnityEngine;
 using Amazon.CognitoIdentityProvider.Model;
+using Amazon.Runtime;
 using Cysharp.Threading.Tasks;
 using ConfirmSignUpRequest = Amazon.CognitoIdentityProvider.Model.ConfirmSignUpRequest;
 using SignUpRequest = Amazon.CognitoIdentityProvider.Model.SignUpRequest;
@@ -75,6 +76,16 @@ public class AccountManager : MonoWeakSingleton<AccountManager>
         };
 
         var authResponse = await cognitoProvier.InitiateAuthAsync(authRequest);
+        var authChallengeRequest = new RespondToAuthChallengeRequest()
+        {
+            ClientId = AuthFlowType.USER_PASSWORD_AUTH,
+            Session = authResponse.Session,
+            ChallengeName = authResponse.ChallengeName
+        };
+        var authChallengeResponse = await cognitoProvier.RespondToAuthChallengeAsync(authChallengeRequest);
+        // authChallengeResponse.AuthenticationResult.AccessToken;
+        
+        
     }
 }
 
